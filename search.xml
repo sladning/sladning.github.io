@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA['ceshi']]></title>
-    <url>%2F2019%2F03%2F06%2Fceshi%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[爱词语]]></title>
+    <url>%2F2019%2F03%2F06%2Fpoet%2F</url>
+    <content type="text"><![CDATA[现代诗 酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。]]></content>
+      <tags>
+        <tag>现代诗</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[java]]></title>
