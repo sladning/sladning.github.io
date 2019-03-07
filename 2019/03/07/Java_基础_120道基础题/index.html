@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="1.什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？答案：  运行原理：java源程序经过javac 编译器编译成二进制的xx.class 字节码文件, xx.class 在jvm（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将相同的字节码解释成对应平台的机器码，进而执行。  知识：  一份 xx.class 文件(不会变化）被 不同的jvm 解释成 相对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-07T02:34:02.961Z">
+<meta property="og:updated_time" content="2019-03-07T03:05:28.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java面试经典题目（120道，牛客网）">
 <meta name="twitter:description" content="1.什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？答案：  运行原理：java源程序经过javac 编译器编译成二进制的xx.class 字节码文件, xx.class 在jvm（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将相同的字节码解释成对应平台的机器码，进而执行。  知识：  一份 xx.class 文件(不会变化）被 不同的jvm 解释成 相对">
@@ -355,6 +355,39 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/java面试经典题目/" itemprop="url" rel="index">
+                    <span itemprop="name">java面试经典题目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -394,7 +427,7 @@
 <p>知识：</p>
 <blockquote>
 <p>一份 <code>xx.class</code> 文件(不会变化）被 <strong>不同的jvm</strong> 解释成 <strong>相对应的机器码</strong> </p>
-<p><strong>机器码:</strong> 依附于硬件，根本不存在跨平台行，不同型号的CPU 给相同的指令（eg：10011110）,解析成不同的结果</p>
+<p><strong>机器码:</strong> 依附于硬件，根本不存在跨平台行，不同型号的CPU给相同的指令（eg：10011110）,解析成不同的结果</p>
 </blockquote>
 <p>题外知识：</p>
 <blockquote>
@@ -408,7 +441,13 @@
 <p>如果需要运行Java程序，只需要安装JRE（JRE根据不同操作系统有很多不同的版本）</p>
 <p>如果需要编写Java程序，需要安装JDK</p>
 </blockquote>
-<p>时间：2019.3.17</p>
+<p>补充知识：</p>
+<blockquote>
+<p>JRE和JVM的区别是什么？</p>
+<p>JRE包括JVM和lib（Jvm所需要的类库），JRE里有运行<code>xx.class</code> 的<code>java.exe</code> </p>
+<p>只有JVM还不能成class的执行，因为在解释class的时候JVM需要调用解释所需要的类库lib，而jre包含lib类库</p>
+</blockquote>
+<p>时间：2019.3.7</p>
 
       
     </div>
@@ -452,6 +491,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/07/写博客/" rel="prev" title="博客">
+                博客 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -535,12 +578,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -548,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
