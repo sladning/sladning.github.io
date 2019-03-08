@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Java基础知识_引用]]></title>
-    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%BC%95%E7%94%A8%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[Java基础知识---基础语法(2)]]></title>
+    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(2)%2F</url>
+    <content type="text"><![CDATA[一. 语句1.1 条件语句 if 语句 switch 语句 循环语句 for 循环语句 while 循环与do while 循环 break 和 continue 语句 二. 方法 一段用来完成特定功能的代码片段 1234[修饰符1 修饰符2 ...] 返回值类型 方法名(形式参数列表) &#123; java 语句; ...&#125; 方法可以有返回值，但可以不用这个返回值。方法首先要定义，然后才能调用 三、变量的作用域 变量的作用域只在“{ }”有效，出了这个“{ }”就没有作用了 四、递归调用 递归：在一个方法内部对自身的调用就称为递归 具体的参考 孤傲苍狼 博客 五、程序的执行过程参考博文: 孤傲苍狼 java基础学习总结——基础语法2]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>基础语法</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识_static关键字]]></title>
+    <title><![CDATA[Java基础知识---基础语法(1)]]></title>
+    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(1)%2F</url>
+    <content type="text"><![CDATA[一.标识符​ 对于各种变量, 方法和类等要素 命名时使用的字符序列 成为标识符 凡事自己可以命名的地方都叫标识符,都遵循标识符的规则 二.关键字​ 一些赋以特定的含义, 用作专门用途的字符串 成为关键字 大部分编辑会将关键字用特殊方式标出 所有Java关键字都是小写英文 三. java基础数据类型Java常量​ eg: 整型常量: 123, 字符常量: ‘a’ 注意: 区分字符常量和字符串常量 注意: “常量”这个名词还会用在另外其它语境中表示 值不可变的变量 Java变量123int i = 100;float f = 3.14;String s = "hello"; 变量是 内存 中的一小块区域, 使用 变量名 来访问这块区域 因此,每一个变量使用前必须要先 声明, 然后必须进行 赋值 (填充内容), 才能使用 补充(本质上理解): 一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 存放在硬盘上是无法运行的 ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 整个.exe文件被放在了在内存里面 ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，会不断地在内存里面分配一些区域 变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值 即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，变量的本质就是一小块内存区域 。就变量来说，该在内存里面分配多大的存储空间呢？不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。 Java变量的分类:按被声明的 位置 划分: 局部变量: 方法或语句块内部定义的变量 成员变量: 方法外部, 累的内部定义的变量 类外面不能有变量的声明 按所属数据的 数据类型 划分: 基本数据类型变量 引用数据类型变量 Java数据类型基本数据类型 整数型: byte, short, int, long, 浮动型: float, double 布尔型: bool 字符型: char 引用数据类型 类(class) 接口(interface) 数组 基本数据类型的转换 boolean 类型不可以转换为其他的数据类型 容量小的类型自动转换为容量大的数据类型 容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出 有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 容量最大 的那一种数据类型,然后在进行计算 1234567891011121314151617181920public class TestConvert &#123; public static void main(String arg[]) &#123; int i1 = 123; int i2 = 456; double d1 = (i1+i2)*1.2;//系统将转换为double型运算 float f1 = (float)((i1+i2)*1.2);//需要加强制转换符 byte b1 = 67; byte b2 = 89; byte b3 = (byte)(b1+b2);//系统将转换为int型运算，需要强制转换符 System.out.println(b3); double d2 = 1e200; float f2 = (float)d2;//会产生溢出 System.out.println(f2); float f3 = 1.23f;//必须加f long l1 = 123; long l2 = 30000000000L;//必须加l float f = l1+l2+f3;//系统将转换为float型计算 long l = (long)f;//强制转换会舍去小数部分（不是四舍五入） &#125;&#125; 参考博文: java基础学习总结——基础语法1 孤傲苍狼]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>基础语法</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---引用]]></title>
+    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%BC%95%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[一. Java类的定义 使用 class 关键字定义一个类 12345678910class Person &#123; // 成员变量(属性)定义 private int id; private int age = 10; //方法定义 public int getAge() &#123; return age; &#125; public void setAge(int i) &#123; age = i; &#125;&#125; 成员变量: 成员变量的作用范围为 整个类体 定义成员变量可以对其初始化, 如果 不对其初始化 , Java 使用默认的值 对其初始化(若不记得JAVA对成员变量默认的初始化是多少的话，定义一个成员变量，不给它初始化，然后直接打印这个成员变量,进行查看) 在 JAVA 里面的任何变量首先应该要声明，然后再赋值，然后再使用 成员变量和局部变量的区别: 成员变量 局部变量 不进行初始化 默认给初始化 不默认给初始化, 在方法里面声明一个局部变量如果不给它初始化时就会出错 Java基本数据类型: 基本概念–引用: Java语言中除基本类型之外的变量类型都称之为引用类型 Java中的对象是通过引用对其操作的]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>java面向对象</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---static关键字]]></title>
     <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---static%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
     <content type="text"><![CDATA[Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 可以通过对象引用或 类名 (不需要实例化)访问静态成员 参考博文: java基础学习总结——super关键字]]></content>
       <categories>
@@ -30,7 +61,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[数据结构 线性表]]></title>
+    <title><![CDATA[数据结构---线性表]]></title>
     <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[线性表：定义:​ 由 n(n≥0) 个数据特性相同的元素构成的 有限序列 特点: 存在唯一的一个被称为”第一个”的数据元素 存在唯一的一个被称为”最后一个”的数据元素 除第一个之外, 结构中的每个数据元素均只有一个前驱元素 除最后一个之外, 结构中的每个数据元素均只有一个后继元素 存储结构及运算: 存储结构方式: 顺序存储方式(顺序表), 链接存储方式(链表) 运算: 线性表的初始化 求表的长度 取出表的元素 查找运算 随笔: 线性表中的数据元素之间的逻辑关系就是其相互位置上的 邻接关系 ,该关系是线性的,因此,线性表是一种线性结构 常见例子: 学生成绩表, 列车时刻表, 英文字母表 顺序表特点:​ 逻辑关系相邻的两个结点在 物理位置 上也相邻, 结点的逻辑次序和物理次序一致 实现方式:​ 数组 基本操作的实现: 初始化 1234Status InitList(SqList &amp;L)&#123; L.elem = new&#125; ​]]></content>
       <categories>
@@ -99,7 +130,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话]]></title>
+    <title><![CDATA[人间词话---惊艳的文字]]></title>
     <url>%2F2019%2F03%2F06%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%83%8A%E8%89%B3%E7%9A%84%E6%96%87%E5%AD%97%2F</url>
     <content type="text"><![CDATA[现代诗 酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。]]></content>
       <tags>

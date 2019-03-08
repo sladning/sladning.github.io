@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java基础知识,">
 
 
 
@@ -123,17 +123,18 @@
 
 
 
-<meta name="description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta name="description" content="一. Java类的定义 使用 class 关键字定义一个类  12345678910class Person &amp;#123;    // 成员变量(属性)定义    private int id;    private int age = 10;    //方法定义    public int getAge() &amp;#123; return age; &amp;#125;    public void set">
+<meta name="keywords" content="java基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础知识_引用">
+<meta property="og:title" content="Java基础知识---引用">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---引用/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta property="og:description" content="一. Java类的定义 使用 class 关键字定义一个类  12345678910class Person &amp;#123;    // 成员变量(属性)定义    private int id;    private int age = 10;    //方法定义    public int getAge() &amp;#123; return age; &amp;#125;    public void set">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T03:38:55.162Z">
+<meta property="og:updated_time" content="2019-03-08T14:36:48.142Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础知识_引用">
-<meta name="twitter:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta name="twitter:title" content="Java基础知识---引用">
+<meta name="twitter:description" content="一. Java类的定义 使用 class 关键字定义一个类  12345678910class Person &amp;#123;    // 成员变量(属性)定义    private int id;    private int age = 10;    //方法定义    public int getAge() &amp;#123; return age; &amp;#125;    public void set">
 
 
 
@@ -169,7 +170,7 @@
 
 
 
-  <title>Java基础知识_引用 | sladning</title>
+  <title>Java基础知识---引用 | sladning</title>
   
 
 
@@ -362,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java基础知识_引用</h1>
+          <h1 class="post-title" itemprop="name headline">Java基础知识---引用</h1>
         
 
         <div class="post-meta">
@@ -384,6 +385,39 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/java面向对象/" itemprop="url" rel="index">
+                    <span itemprop="name">java面向对象</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -411,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  301
                 </span>
               
 
@@ -448,7 +482,42 @@
       
 
       
-        
+        <h3 id="一-Java类的定义"><a href="#一-Java类的定义" class="headerlink" title="一. Java类的定义"></a>一. Java类的定义</h3><blockquote>
+<p>使用 <strong>class</strong> 关键字定义一个类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 成员变量(属性)定义</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">//方法定义</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> age; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        age = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量:"></a>成员变量:</h3><ul>
+<li>成员变量的作用范围为 <strong>整个类体</strong></li>
+<li>定义成员变量可以对其初始化, 如果 <strong>不对其初始化</strong> , Java <strong>使用默认的值</strong> 对其初始化(若不记得JAVA对成员变量默认的初始化是多少的话，定义一个成员变量，不给它初始化，然后直接打印这个成员变量,进行查看)</li>
+</ul>
+<blockquote>
+<p>在 <strong>JAVA</strong> 里面的任何变量首先应该要声明，然后再赋值，然后再使用</p>
+</blockquote>
+<p> <strong>成员变量和局部变量的区别:</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>成员变量</th>
+<th>局部变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">不进行初始化</td>
+<td>默认给初始化</td>
+<td>不默认给初始化, <strong>在方法里面声明一个局部变量如果不给它初始化时就会出错</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Java基本数据类型"><a href="#Java基本数据类型" class="headerlink" title="Java基本数据类型:"></a>Java基本数据类型:</h3><ul>
+<li></li>
+</ul>
+<h3 id="基本概念–引用"><a href="#基本概念–引用" class="headerlink" title="基本概念–引用:"></a>基本概念–引用:</h3><ul>
+<li>Java语言中除基本类型之外的变量类型都称之为引用类型</li>
+<li>Java中的对象是通过引用对其操作的</li>
+</ul>
+
       
     </div>
     
@@ -473,6 +542,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java基础知识/" rel="tag"><i class="fa fa-tag"></i> java基础知识</a>
+          
+        </div>
+      
 
       
       
@@ -482,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/Java基础知识---static关键字/" rel="next" title="Java基础知识_static关键字">
-                <i class="fa fa-chevron-left"></i> Java基础知识_static关键字
+              <a href="/2019/03/08/Java基础知识---static关键字/" rel="next" title="Java基础知识---static关键字">
+                <i class="fa fa-chevron-left"></i> Java基础知识---static关键字
               </a>
             
           </div>
@@ -491,6 +566,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/Java基础知识---基础语法(1)/" rel="prev" title="Java基础知识---基础语法(1)">
+                Java基础知识---基础语法(1) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -547,8 +626,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -565,7 +653,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -576,7 +664,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -634,6 +722,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Java类的定义"><span class="nav-number">1.</span> <span class="nav-text">一. Java类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java基本数据类型"><span class="nav-number">3.</span> <span class="nav-text">Java基本数据类型:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念–引用"><span class="nav-number">4.</span> <span class="nav-text">基本概念–引用:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -661,7 +765,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.4k</span>
+    <span title="Site words total count">4.9k</span>
   
 </div>
 
