@@ -479,8 +479,7 @@
 
       
         
-          
-            <h1 id="一-语句"><a href="#一-语句" class="headerlink" title="一. 语句"></a>一. 语句</h1><h3 id="1-1-条件语句"><a href="#1-1-条件语句" class="headerlink" title="1.1 条件语句"></a>1.1 条件语句</h3><ul>
+          <h1 id="一-语句"><a href="#一-语句" class="headerlink" title="一. 语句"></a>一. 语句</h1><h3 id="1-1-条件语句"><a href="#1-1-条件语句" class="headerlink" title="1.1 条件语句"></a>1.1 条件语句</h3><ul>
 <li>if 语句</li>
 <li>switch 语句</li>
 <li>循环语句<ul>
@@ -490,21 +489,13 @@
 </li>
 <li>break 和 continue 语句</li>
 </ul>
-<h1 id="二-方法"><a href="#二-方法" class="headerlink" title="二. 方法"></a>二. 方法</h1><ul>
-<li>一段用来完成特定功能的代码片段</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[修饰符<span class="number">1</span> 修饰符<span class="number">2</span> ...] 返回值类型 方法名(形式参数列表) &#123;</span><br><span class="line">	java 语句;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>方法可以有返回值，但可以不用这个返回值</strong>。方法首先要定义，然后才能调用</p>
-</blockquote>
-<h1 id="三、变量的作用域"><a href="#三、变量的作用域" class="headerlink" title="三、变量的作用域"></a>三、<strong>变量的作用域</strong></h1><p>　　变量的作用域只在“{  }”有效，出了这个“{  }”就没有作用了</p>
-<h1 id="四、递归调用"><a href="#四、递归调用" class="headerlink" title="四、递归调用"></a>四、<strong>递归调用</strong></h1><p>　　递归：<strong>在一个方法内部对自身的调用就称为递归</strong></p>
-<blockquote>
-<p>具体的参考 <strong>孤傲苍狼</strong> 博客</p>
-</blockquote>
-<h1 id="五、程序的执行过程"><a href="#五、程序的执行过程" class="headerlink" title="五、程序的执行过程"></a>五、<strong>程序的执行过程</strong></h1><p>参考博文: 孤傲苍狼  <a href="https://www.cnblogs.com/xdp-gacl/p/3627241.html" target="_blank" rel="noopener">java基础学习总结——基础语法2</a> </p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/08/Java基础知识---基础语法(2)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -689,71 +680,17 @@
 
       
         
-          
-            <h1 id="一-标识符"><a href="#一-标识符" class="headerlink" title="一.标识符"></a>一.标识符</h1><p>​    对于各种变量, 方法和类等要素 <strong>命名时使用的字符序列</strong> 成为标识符</p>
+          <h1 id="一-标识符"><a href="#一-标识符" class="headerlink" title="一.标识符"></a>一.标识符</h1><p>​    对于各种变量, 方法和类等要素 <strong>命名时使用的字符序列</strong> 成为标识符</p>
 <blockquote>
 <p>凡事自己可以命名的地方都叫标识符,都遵循标识符的规则</p>
 </blockquote>
-<h1 id="二-关键字"><a href="#二-关键字" class="headerlink" title="二.关键字"></a>二.关键字</h1><p>​    一些赋以特定的含义, <strong>用作专门用途的字符串</strong> 成为关键字</p>
-<blockquote>
-<p>大部分编辑会将关键字用特殊方式标出</p>
-<p>所有Java关键字都是小写英文</p>
-</blockquote>
-<h3 id="三-java基础数据类型"><a href="#三-java基础数据类型" class="headerlink" title="三.  java基础数据类型"></a>三.  java基础数据类型</h3><h4 id="Java常量"><a href="#Java常量" class="headerlink" title="Java常量"></a>Java常量</h4><p>​    eg: 整型常量: 123, 字符常量: ‘a’</p>
-<blockquote>
-<p>注意: 区分字符常量和字符串常量</p>
-<p>注意: “常量”这个名词还会用在另外其它语境中表示 <strong>值不可变的变量</strong> </p>
-</blockquote>
-<h4 id="Java变量"><a href="#Java变量" class="headerlink" title="Java变量"></a>Java变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.14</span>;</span><br><span class="line">String s = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>变量是 <strong>内存</strong> 中的一小块区域, 使用 <strong>变量名</strong> 来访问这块区域</p>
-<p>因此,每一个变量使用前必须要先 <strong>声明</strong>, 然后必须进行 <strong>赋值</strong> (填充内容), 才能使用</p>
-</blockquote>
-<h5 id="补充-本质上理解"><a href="#补充-本质上理解" class="headerlink" title="补充(本质上理解):"></a>补充(本质上理解):</h5><blockquote>
-<ul>
-<li><p>一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 <strong>存放在硬盘上是无法运行的</strong> ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 <strong>整个.exe文件被放在了在内存里面</strong> ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，<strong>会不断地在内存里面分配一些区域</strong> </p>
-</li>
-<li><p>变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值</p>
-<p>即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，<strong>变量的本质就是一小块内存区域</strong> 。就变量来说，该在内存里面分配多大的存储空间呢？不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。</p>
-</li>
-</ul>
-</blockquote>
-<h4 id="Java变量的分类"><a href="#Java变量的分类" class="headerlink" title="Java变量的分类:"></a>Java变量的分类:</h4><p>按被声明的 <strong>位置</strong> 划分:</p>
-<ul>
-<li>局部变量: 方法或语句块内部定义的变量</li>
-<li>成员变量: 方法外部, 累的内部定义的变量</li>
-</ul>
-<blockquote>
-<p>类外面不能有变量的声明</p>
-</blockquote>
-<p>按所属数据的 <strong>数据类型</strong> 划分:</p>
-<ul>
-<li>基本数据类型变量</li>
-<li>引用数据类型变量</li>
-</ul>
-<h3 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h3><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><ul>
-<li><strong>整数型:</strong> byte, short, int, long,</li>
-<li><strong>浮动型:</strong> float, double</li>
-<li><strong>布尔型:</strong> bool</li>
-<li><strong>字符型:</strong> char</li>
-</ul>
-<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><ul>
-<li>类(class)</li>
-<li>接口(interface)</li>
-<li>数组</li>
-</ul>
-<h4 id="基本数据类型的转换"><a href="#基本数据类型的转换" class="headerlink" title="基本数据类型的转换"></a>基本数据类型的转换</h4><ul>
-<li><p>boolean 类型不可以转换为其他的数据类型</p>
-</li>
-<li><p>容量小的类型自动转换为容量大的数据类型</p>
-</li>
-<li>容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出</li>
-<li>有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 <strong>容量最大</strong> 的那一种数据类型,然后在进行计算</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestConvert</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i1 = <span class="number">123</span>; </span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">456</span>;</span><br><span class="line">        <span class="keyword">double</span> d1 = (i1+i2)*<span class="number">1.2</span>;<span class="comment">//系统将转换为double型运算</span></span><br><span class="line">        <span class="keyword">float</span> f1 = (<span class="keyword">float</span>)((i1+i2)*<span class="number">1.2</span>);<span class="comment">//需要加强制转换符</span></span><br><span class="line">        <span class="keyword">byte</span> b1 = <span class="number">67</span>; </span><br><span class="line">        <span class="keyword">byte</span> b2 = <span class="number">89</span>;</span><br><span class="line">        <span class="keyword">byte</span> b3 = (<span class="keyword">byte</span>)(b1+b2);<span class="comment">//系统将转换为int型运算，需要强制转换符</span></span><br><span class="line">        System.out.println(b3);</span><br><span class="line">        <span class="keyword">double</span> d2 = <span class="number">1e200</span>;</span><br><span class="line">        <span class="keyword">float</span> f2 = (<span class="keyword">float</span>)d2;<span class="comment">//会产生溢出</span></span><br><span class="line">        System.out.println(f2);</span><br><span class="line">        <span class="keyword">float</span> f3 = <span class="number">1.23f</span>;<span class="comment">//必须加f</span></span><br><span class="line">        <span class="keyword">long</span> l1 = <span class="number">123</span>;</span><br><span class="line">        <span class="keyword">long</span> l2 = <span class="number">30000000000L</span>;<span class="comment">//必须加l</span></span><br><span class="line">        <span class="keyword">float</span> f = l1+l2+f3;<span class="comment">//系统将转换为float型计算</span></span><br><span class="line">        <span class="keyword">long</span> l = (<span class="keyword">long</span>)f;<span class="comment">//强制转换会舍去小数部分（不是四舍五入）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考博文: <a href="https://www.cnblogs.com/xdp-gacl/p/3624567.html" target="_blank" rel="noopener">java基础学习总结——基础语法1</a> 孤傲苍狼</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/08/Java基础知识---基础语法(1)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -938,44 +875,17 @@
 
       
         
-          
-            <h3 id="一-Java类的定义"><a href="#一-Java类的定义" class="headerlink" title="一. Java类的定义"></a>一. Java类的定义</h3><blockquote>
+          <h3 id="一-Java类的定义"><a href="#一-Java类的定义" class="headerlink" title="一. Java类的定义"></a>一. Java类的定义</h3><blockquote>
 <p>使用 <strong>class</strong> 关键字定义一个类</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 成员变量(属性)定义</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">//方法定义</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> age; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        age = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量:"></a>成员变量:</h3><ul>
-<li>成员变量的作用范围为 <strong>整个类体</strong></li>
-<li>定义成员变量可以对其初始化, 如果 <strong>不对其初始化</strong> , Java <strong>使用默认的值</strong> 对其初始化(若不记得JAVA对成员变量默认的初始化是多少的话，定义一个成员变量，不给它初始化，然后直接打印这个成员变量,进行查看)</li>
-</ul>
-<blockquote>
-<p>在 <strong>JAVA</strong> 里面的任何变量首先应该要声明，然后再赋值，然后再使用</p>
-</blockquote>
-<p> <strong>成员变量和局部变量的区别:</strong> </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th>成员变量</th>
-<th>局部变量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">不进行初始化</td>
-<td>默认给初始化</td>
-<td>不默认给初始化, <strong>在方法里面声明一个局部变量如果不给它初始化时就会出错</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="Java基本数据类型"><a href="#Java基本数据类型" class="headerlink" title="Java基本数据类型:"></a>Java基本数据类型:</h3><ul>
-<li></li>
-</ul>
-<h3 id="基本概念–引用"><a href="#基本概念–引用" class="headerlink" title="基本概念–引用:"></a>基本概念–引用:</h3><ul>
-<li>Java语言中除基本类型之外的变量类型都称之为引用类型</li>
-<li>Java中的对象是通过引用对其操作的</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/08/Java基础知识---引用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
