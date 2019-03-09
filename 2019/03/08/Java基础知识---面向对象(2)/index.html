@@ -126,15 +126,17 @@
 <meta name="description" content="一. Java类的定义 使用 class 关键字定义一个类  12345678910class Person &amp;#123;    // 成员变量(属性)定义    private int id;    private int age = 10;    //方法定义    public int getAge() &amp;#123; return age; &amp;#125;    public void set">
 <meta name="keywords" content="java基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础知识---引用">
-<meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---引用/index.html">
+<meta property="og:title" content="Java基础知识---面向对象(2)">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---面向对象(2)/index.html">
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. Java类的定义 使用 class 关键字定义一个类  12345678910class Person &amp;#123;    // 成员变量(属性)定义    private int id;    private int age = 10;    //方法定义    public int getAge() &amp;#123; return age; &amp;#125;    public void set">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T14:40:50.695Z">
+<meta property="og:image" content="e:/blog/source/images/java基础知识/java面向对象__引用.png">
+<meta property="og:updated_time" content="2019-03-09T14:19:09.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础知识---引用">
+<meta name="twitter:title" content="Java基础知识---面向对象(2)">
 <meta name="twitter:description" content="一. Java类的定义 使用 class 关键字定义一个类  12345678910class Person &amp;#123;    // 成员变量(属性)定义    private int id;    private int age = 10;    //方法定义    public int getAge() &amp;#123; return age; &amp;#125;    public void set">
+<meta name="twitter:image" content="e:/blog/source/images/java基础知识/java面向对象__引用.png">
 
 
 
@@ -164,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/08/Java基础知识---引用/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/Java基础知识---面向对象(2)/">
 
 
 
 
 
-  <title>Java基础知识---引用 | sladning</title>
+  <title>Java基础知识---面向对象(2) | sladning</title>
   
 
 
@@ -346,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Java基础知识---引用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Java基础知识---面向对象(2)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -363,7 +365,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java基础知识---引用</h1>
+          <h1 class="post-title" itemprop="name headline">Java基础知识---面向对象(2)</h1>
         
 
         <div class="post-meta">
@@ -445,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  301
+                  952
                 </span>
               
 
@@ -461,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -487,7 +489,7 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 成员变量(属性)定义</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">//方法定义</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> age; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        age = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量:"></a>成员变量:</h3><ul>
+<h3 id="二-成员变量"><a href="#二-成员变量" class="headerlink" title="二. 成员变量"></a>二. 成员变量</h3><ul>
 <li>成员变量的作用范围为 <strong>整个类体</strong></li>
 <li>定义成员变量可以对其初始化, 如果 <strong>不对其初始化</strong> , Java <strong>使用默认的值</strong> 对其初始化(若不记得JAVA对成员变量默认的初始化是多少的话，定义一个成员变量，不给它初始化，然后直接打印这个成员变量,进行查看)</li>
 </ul>
@@ -511,13 +513,54 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Java基本数据类型"><a href="#Java基本数据类型" class="headerlink" title="Java基本数据类型:"></a>Java基本数据类型:</h3><ul>
-<li></li>
-</ul>
-<h3 id="基本概念–引用"><a href="#基本概念–引用" class="headerlink" title="基本概念–引用:"></a>基本概念–引用:</h3><ul>
-<li>Java语言中除基本类型之外的变量类型都称之为引用类型</li>
+<h3 id="三-基本概念-—-引用"><a href="#三-基本概念-—-引用" class="headerlink" title="三. 基本概念 — 引用"></a>三. 基本概念 — 引用</h3><p>​    Java语言中 <strong>除基本类型之外</strong> 的变量类型都称之为引用类型</p>
+<ul>
 <li>Java中的对象是通过引用对其操作的</li>
 </ul>
+<h4 id="基本类型与引用类型的区别"><a href="#基本类型与引用类型的区别" class="headerlink" title="基本类型与引用类型的区别:"></a>基本类型与引用类型的区别:</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>基本类型</th>
+<th>引用类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实现</td>
+<td>当声明一个int  i=0时，系统会马上给这个i分配一个内存空间（在 <strong>栈内存</strong> 里面分配一小块区域用来装数字0），里面装着一个值为0，以后使用i这个名字马上就可以访问这个内存空间里面的值</td>
+<td>定义好这个类之后，需要使用new关键字把这个类的对象实例化出来，也就是真真正正造出一个对象出来才能使用这个对象</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>占 <strong>一块</strong> 内存</td>
+<td>占 <strong>两块</strong> 内存</td>
+</tr>
+<tr>
+<td>存放位置</td>
+<td>栈内存</td>
+<td>栈内存: 引用对象   堆内存: 真正的内容(new出来的东西)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>不论是基本数据类型还是引用类型，<strong>都会先在栈中分配一块内存</strong> ，对于基本类型来说，这块区域包含的是 <strong>基本类型的内容</strong>；而对于引用类型来说，这块区域包含的是 <strong>指向真正内容的指针(存放真正内容的地址)</strong> ，真正的内容被手动的分配在堆上。</p>
+</blockquote>
+<h4 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例:"></a>代码实例:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">float</span> hp; <span class="comment">//血量</span></span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//代表创建了一个Hero对象</span></span><br><span class="line">		<span class="comment">//但是也仅仅是创建了一个对象，没有办法访问它</span></span><br><span class="line">		<span class="comment">//为了访问这个对象，会使用引用来代表这个对象</span></span><br><span class="line">        <span class="keyword">new</span> Hero();</span><br><span class="line">         </span><br><span class="line">        <span class="comment">//"h"这个变量是Hero类型，叫做引用(也叫 引用对象,对象的引用)</span></span><br><span class="line">		<span class="comment">//"="的意思指的h这个引用代表右侧创建的对象</span></span><br><span class="line">		<span class="comment">//“代表” 在面向对象里，又叫做“指向” </span></span><br><span class="line">        <span class="comment">//引用h指向了新建的Hero对象</span></span><br><span class="line">        Hero h = <span class="keyword">new</span> Hero();  </span><br><span class="line">    &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="多个引用，一个对象，一个引用，多个对象区别："><a href="#多个引用，一个对象，一个引用，多个对象区别：" class="headerlink" title="多个引用，一个对象，一个引用，多个对象区别："></a>多个引用，一个对象，一个引用，多个对象<strong>区别：</strong></h4><ul>
+<li>多个引用指向一个对象，操作的都是同一个对象</li>
+<li>一个引用多个对象，之前的对象就没有办法访问了, 这个引用就指向了另一个对象</li>
+</ul>
+<h2 id="四-类和对象的关系"><a href="#四-类和对象的关系" class="headerlink" title="四. 类和对象的关系"></a>四. 类和对象的关系</h2><h4 id="如何在内存中区分类和对象"><a href="#如何在内存中区分类和对象" class="headerlink" title="如何在内存中区分类和对象"></a>如何在内存中区分类和对象</h4><ul>
+<li><p>类是 <strong>静态</strong> 的概念, 在<strong>代码区</strong> </p>
+</li>
+<li><p>对象是new出来的, 位于 <strong>堆内存</strong> , <strong>类的每个成员变量在不同的对象中都有不同的值</strong> (除了静态变量,static),<strong>而方法只有一分,执行的时候才占用内存</strong> .</p>
+</li>
+</ul>
+<p><img src="E:\blog\source\images\java基础知识\java面向对象__引用.png" alt="java面向对象__引用"></p>
+<h2 id="五-构造方法"><a href="#五-构造方法" class="headerlink" title="五. 构造方法"></a>五. 构造方法</h2><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文:"></a>参考博文:</h5><p>how2J <a href="http://how2j.cn/k/class-object/class-object-reference/307.html" target="_blank" rel="noopener">类和对象</a></p>
+<p>孤傲苍狼 <a href="https://www.cnblogs.com/xdp-gacl/p/3628880.html" target="_blank" rel="noopener">java基础学习总结——面向对象2</a></p>
+<p><a href="https://blog.csdn.net/weixin_43896747/article/details/85105144" target="_blank" rel="noopener">Java基本数据类型与引用数据类型 及在堆栈中内存的存储原理</a></p>
 
       
     </div>
@@ -654,7 +697,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -665,7 +708,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -676,7 +719,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -732,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Java类的定义"><span class="nav-number">1.</span> <span class="nav-text">一. Java类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java基本数据类型"><span class="nav-number">3.</span> <span class="nav-text">Java基本数据类型:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念–引用"><span class="nav-number">4.</span> <span class="nav-text">基本概念–引用:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Java类的定义"><span class="nav-number">1.</span> <span class="nav-text">一. Java类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-成员变量"><span class="nav-number">2.</span> <span class="nav-text">二. 成员变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-基本概念-—-引用"><span class="nav-number">3.</span> <span class="nav-text">三. 基本概念 — 引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本类型与引用类型的区别"><span class="nav-number">3.1.</span> <span class="nav-text">基本类型与引用类型的区别:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实例"><span class="nav-number">3.2.</span> <span class="nav-text">代码实例:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个引用，一个对象，一个引用，多个对象区别："><span class="nav-number">3.3.</span> <span class="nav-text">多个引用，一个对象，一个引用，多个对象区别：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#四-类和对象的关系"><span class="nav-number"></span> <span class="nav-text">四. 类和对象的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何在内存中区分类和对象"><span class="nav-number">0.1.</span> <span class="nav-text">如何在内存中区分类和对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-构造方法"><span class="nav-number"></span> <span class="nav-text">五. 构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">0.0.1.</span> <span class="nav-text">参考博文:</span></a></li></ol></li></div>
             
 
           </div>
@@ -766,7 +809,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.9k</span>
+    <span title="Site words total count">6.3k</span>
   
 </div>
 
