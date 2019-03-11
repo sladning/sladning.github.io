@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 可以通过对象引用或 类名 (不需要实例化)访问静态成员">
+<meta name="description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员">
 <meta name="keywords" content="java基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础知识---static关键字">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---static关键字/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 可以通过对象引用或 类名 (不需要实例化)访问静态成员">
+<meta property="og:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T14:37:18.303Z">
+<meta property="og:updated_time" content="2019-03-11T05:28:10.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识---static关键字">
-<meta name="twitter:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 可以通过对象引用或 类名 (不需要实例化)访问静态成员">
+<meta name="twitter:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员">
 
 
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  156
+                  295
                 </span>
               
 
@@ -484,11 +484,16 @@
       
         <h1 id="Static-关键字"><a href="#Static-关键字" class="headerlink" title="Static 关键字"></a>Static 关键字</h1><h3 id="理解"><a href="#理解" class="headerlink" title="理解:"></a>理解:</h3><ul>
 <li>在类中用static声明的成员变量为 <strong>静态成员变量</strong> , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享。</li>
-<li>在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong></li>
-<li>可以通过对象引用或 <strong>类名</strong> (不需要实例化)访问静态成员</li>
+<li>在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong> (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)</li>
+<li>可以通过对象引用或 <strong>类名</strong> (不需要实例化)访问静态成员 (静态的变量可以通过对象名去访问，也可以通过类名去访问，两者访问的都是同一块内存)</li>
 </ul>
 <a id="more"></a>
-<p>参考博文: <a href="https://www.cnblogs.com/xdp-gacl/p/3635948.html" target="_blank" rel="noopener">java基础学习总结——super关键字</a></p>
+<blockquote>
+<p>字符串常量是分配在数据区里面的</p>
+<p>静态成员变量是属于整个类的，它不属于专门的某个对象</p>
+<p>非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问</p>
+</blockquote>
+<p>参考博文: <a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a></p>
 
       
     </div>
@@ -625,7 +630,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -737,7 +742,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.4k</span>
+    <span title="Site words total count">8.7k</span>
   
 </div>
 
