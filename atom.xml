@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-11T05:28:18.500Z</updated>
+  <updated>2019-03-11T07:56:12.499Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Java基础知识---public、private、protected区别</title>
-    <link href="http://yoursite.com/2019/03/11/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---private%E7%AD%89%E7%9A%84%E5%8C%BA%E5%88%86/"/>
-    <id>http://yoursite.com/2019/03/11/Java基础知识---private等的区分/</id>
+    <title>Java基础知识---方法的重载和覆盖</title>
+    <link href="http://yoursite.com/2019/03/11/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E8%A6%86%E7%9B%96/"/>
+    <id>http://yoursite.com/2019/03/11/Java基础知识---方法的重载和覆盖/</id>
     <published>2019-03-11T05:38:55.000Z</published>
-    <updated>2019-03-11T05:28:18.500Z</updated>
+    <updated>2019-03-11T07:56:12.499Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><ol><li>public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用</li><li>private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。</li><li>protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private</li><li>不写时默认为friendly ，也即是“包访问权限”</li></ol><h3 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h3><table><thead><tr><th style="text-align:center">作用域</th><th style="text-align:center">当前类</th><th style="text-align:center">同一package</th><th style="text-align:center">子孙类</th><th style="text-align:center">其他package</th></tr></thead><tbody><tr><td style="text-align:center">public</td><td style="text-align:center">√</td><td style="text-align:center">√</td><td style="text-align:center">√</td><td style="text-align:center">√</td></tr><tr><td style="text-align:center">protected</td><td style="text-align:center">√</td><td style="text-align:center">√</td><td style="text-align:center">√</td><td style="text-align:center">×</td></tr><tr><td style="text-align:center">friendly</td><td style="text-align:center">√</td><td style="text-align:center">√</td><td style="text-align:center">×</td><td style="text-align:center">×</td></tr><tr><td style="text-align:center">private</td><td style="text-align:center">√</td><td style="text-align:center">×</td><td style="text-align:center">×</td><td style="text-align:center">×</td></tr></tbody></table><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote><p>如果一个成员需要被外部包所访问，则必须使用public修饰符；<br>如果一个成员需要被定义在不同包下的子类所访问，则可以使用public或protected修饰符；<br>如果一个成员需要被本包下的其他类所访问，则可以不用写任何的修饰符，使用public或者protected也行</p><p>若一个成员想使用同类中其他成员，则使用任意一个修饰符即可；若一个成员不想被任何一个外部的类所访问，则使用private关键字比较恰当。</p></blockquote><p>参考博客:</p><p><a href="https://blog.csdn.net/k_young1997/article/details/81109965" target="_blank" rel="noopener">Java中private、public、default、protected的区别</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一-方法的重载-overload"><a href="#一-方法的重载-overload" class="headerlink" title="一. 方法的重载(overload)"></a>一. 方法的重载(overload)</h1><p>指一个类中可以定义有 <strong>相同的名字</strong> ,但 <strong>参数不同</strong> 的多个方法. 调用时, 会根据 <strong>不同的参数表</strong> 选择对应的方法</p><a id="more"></a><h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><ul><li>构造方法</li></ul><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol><li>方法名一样, 但参数不一样,就是重载(overload)</li><li>参数不一样 (1.参数的个数不一样  2. 参数的类型不一样, 只要有一个就可以)</li><li>方法名一样，参数类型一样，只有返回值不一样，这个不构成重载</li></ol><p><strong>理解:</strong> 多重加载，不同样式的加载</p><h1 id="二-方法的覆盖-override"><a href="#二-方法的覆盖-override" class="headerlink" title="二. 方法的覆盖(override)"></a>二. 方法的覆盖(override)</h1><p>指覆盖了一个方法并且对其重写，以求达到不同的作用,也可以叫做 <strong>重写</strong> </p><h3 id="范例-1"><a href="#范例-1" class="headerlink" title="范例"></a>范例</h3><ul><li><p>对 <strong>接口方法</strong> 的实现</p></li><li><p>在 <strong>继承</strong> 中也可能会在 <strong>子类覆盖父类</strong> 中的方法</p></li></ul><h3 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h3><ol><li>覆盖的方法的标志必须要和被覆盖的方法的 <strong>标志</strong> (相同的名字和相同的参数)完全匹配，才能达到覆盖的效果；</li><li>覆盖的方法的返回值必须和被覆盖的方法的返回一致；</li><li>覆盖的方法所抛出的异常必须和被覆盖方法的所抛出的异常一致，或者是其子类；</li><li>被覆盖的方法不能为private，否则在其子类中只是新定义了一个方法，并没有对其进行覆盖</li></ol><p><strong>参考博文</strong></p><p><a href="https://www.cnblogs.com/fanvfan/p/7563307.html" target="_blank" rel="noopener">java中的方法覆盖（Overriding）和方法重载（Overloading）是什么意思？重写跟重载的区别？</a></p><p><a href="https://zhidao.baidu.com/question/1996221.html" target="_blank" rel="noopener">对比Java语言中的覆盖和重载</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;&lt;/a&gt;区别&lt;/h1&gt;&lt;ol&gt;
+      &lt;h1 id=&quot;一-方法的重载-overload&quot;&gt;&lt;a href=&quot;#一-方法的重载-overload&quot; class=&quot;headerlink&quot; title=&quot;一. 方法的重载(overload)&quot;&gt;&lt;/a&gt;一. 方法的重载(overload)&lt;/h1&gt;&lt;p&gt;指一个类中可以定义有 &lt;strong&gt;相同的名字&lt;/strong&gt; ,但 &lt;strong&gt;参数不同&lt;/strong&gt; 的多个方法. 调用时, 会根据 &lt;strong&gt;不同的参数表&lt;/strong&gt; 选择对应的方法&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础知识---Java基础知识---访问修饰符</title>
+    <link href="http://yoursite.com/2019/03/11/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    <id>http://yoursite.com/2019/03/11/Java基础知识---访问修饰符/</id>
+    <published>2019-03-11T05:38:55.000Z</published>
+    <updated>2019-03-11T07:55:55.963Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><ol><li>public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用</li><li>private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。</li><li>protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private</li><li>不写时默认为friendly ，也即是“包访问权限”</li></ol><a id="more"></a><h3 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h3><table><thead><tr><th style="text-align:center">作用域</th><th style="text-align:center">自身</th><th style="text-align:center">同包子类</th><th style="text-align:center">不同包子类</th><th style="text-align:center">同包类</th><th>其他类</th></tr></thead><tbody><tr><td style="text-align:center">private</td><td style="text-align:center">访问(√)</td><td style="text-align:center">继承(×)</td><td style="text-align:center">继承(×)</td><td style="text-align:center">访问(×)</td><td>访问(×)</td></tr><tr><td style="text-align:center">package</td><td style="text-align:center">访问(√)</td><td style="text-align:center">继承(√)</td><td style="text-align:center">继承(×)</td><td style="text-align:center">访问(√)</td><td>访问(×)</td></tr><tr><td style="text-align:center">protected</td><td style="text-align:center">访问(√)</td><td style="text-align:center">继承(√)</td><td style="text-align:center">继承(√)</td><td style="text-align:center">访问(√)</td><td>访问(×)</td></tr><tr><td style="text-align:center">public</td><td style="text-align:center">访问(√)</td><td style="text-align:center">继承(√)</td><td style="text-align:center">继承(√)</td><td style="text-align:center">访问(√)</td><td>访问(√)</td></tr></tbody></table><h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><ol><li><strong>属性</strong> 通常使用private封装起来</li><li><strong>方法</strong> 一般使用public用于被调用</li><li>会 <strong>被子类继承</strong> 的方法，通常使用protected</li><li>package用的不多，一般新手会用package,因为还不知道有修饰符这个东西</li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote><p>如果一个成员需要被外部包所访问，则必须使用public修饰符；<br>如果一个成员需要被定义在不同包下的子类所访问，则可以使用public或protected修饰符；<br>如果一个成员需要被本包下的其他类所访问，则可以不用写任何的修饰符，使用public或者protected也行</p><p>若一个成员想使用同类中其他成员，则使用任意一个修饰符即可；若一个成员不想被任何一个外部的类所访问，则使用private关键字比较恰当。</p></blockquote><p>参考博客:</p><p><a href="https://blog.csdn.net/k_young1997/article/details/81109965" target="_blank" rel="noopener">Java中private、public、default、protected的区别</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;&lt;/a&gt;区别&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用&lt;/li&gt;
-&lt;li&gt;privat
-      
+&lt;li&gt;private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。&lt;/li&gt;
+&lt;li&gt;protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private&lt;/li&gt;
+&lt;li&gt;不写时默认为friendly ，也即是“包访问权限”&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -40,6 +60,29 @@
     
     
       <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人间词话---ZJ</title>
+    <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ/"/>
+    <id>http://yoursite.com/2019/03/09/人间词话---ZJ/</id>
+    <published>2019-03-09T14:57:13.000Z</published>
+    <updated>2019-03-09T15:05:31.903Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>没有人会拒绝微笑, 也没有人会拒绝真诚.</li><li>逢山开路, 遇水架桥.</li></ul><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;没有人会拒绝微笑, 也没有人会拒绝真诚.&lt;/li&gt;
+&lt;li&gt;逢山开路, 遇水架桥.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
   </entry>
   
@@ -90,29 +133,6 @@
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
       <category term="网易云评论" scheme="http://yoursite.com/tags/%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人间词话---ZJ</title>
-    <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ/"/>
-    <id>http://yoursite.com/2019/03/09/人间词话---ZJ/</id>
-    <published>2019-03-09T14:57:13.000Z</published>
-    <updated>2019-03-09T15:05:31.903Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>没有人会拒绝微笑, 也没有人会拒绝真诚.</li><li>逢山开路, 遇水架桥.</li></ul><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;没有人会拒绝微笑, 也没有人会拒绝真诚.&lt;/li&gt;
-&lt;li&gt;逢山开路, 遇水架桥.&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
   </entry>
   
@@ -236,15 +256,15 @@
     <link href="http://yoursite.com/2019/03/08/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     <id>http://yoursite.com/2019/03/08/Java基础知识---static关键字/</id>
     <published>2019-03-08T03:29:27.000Z</published>
-    <updated>2019-03-11T05:28:10.992Z</updated>
+    <updated>2019-03-11T07:42:16.321Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Static-关键字"><a href="#Static-关键字" class="headerlink" title="Static 关键字"></a>Static 关键字</h1><h3 id="理解"><a href="#理解" class="headerlink" title="理解:"></a>理解:</h3><ul><li>在类中用static声明的成员变量为 <strong>静态成员变量</strong> , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享。</li><li>在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong> (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)</li><li>可以通过对象引用或 <strong>类名</strong> (不需要实例化)访问静态成员 (静态的变量可以通过对象名去访问，也可以通过类名去访问，两者访问的都是同一块内存)</li></ul><a id="more"></a><blockquote><p>字符串常量是分配在数据区里面的</p><p>静态成员变量是属于整个类的，它不属于专门的某个对象</p><p>非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问</p></blockquote><p>参考博文: <a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Static-关键字"><a href="#Static-关键字" class="headerlink" title="Static 关键字"></a>Static 关键字</h1><h3 id="理解"><a href="#理解" class="headerlink" title="理解:"></a>理解:</h3><ul><li>在类中用static声明的成员变量为 <strong>静态成员变量</strong> (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享。</li><li>在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong> (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)</li><li>可以通过对象引用或 <strong>类名</strong> (不需要实例化)访问静态成员 (静态的变量可以通过对象名去访问，也可以通过类名去访问，两者访问的都是同一块内存)</li></ul><a id="more"></a><blockquote><p>被static修饰的变量被称为类变量，被其修饰的方法成为类方法，其随着类的加载而被加载</p></blockquote><blockquote><p>字符串常量是分配在数据区里面的</p><p>静态成员变量是属于整个类的，它不属于专门的某个对象</p><p>非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问</p></blockquote><p>①static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。</p><p>②static修饰方法， static 方法就是没有 this 的方法。在 static 方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用 static 方法。这实际上正是 static 方法的主要用途。 方便在没有创建对象的情况下来进行调用（方法/变量）。</p><p>最常见的static方法就是main,因为所有对象都是在该方法里面实例化的，而main是程序入口，所以要通过类名来调用。还有就是main中需要经常访问随类加载的成员变量。</p><p>③static修饰变量，就变成了静态变量，随类加载一次，可以被多个对象共享。</p><p>④static修饰代码块，形成静态代码块，用来优化程序性能，将需要加载一次的代码设置成随类加载，静态代码块可以有多个。</p><p>参考博文:<br><a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a><br><a href="https://www.nowcoder.com/questionTerminal/6f66f55a1f844e21b580e73d36223cf7" target="_blank" rel="noopener">优质答案</a></p>]]></content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;Static-关键字&quot;&gt;&lt;a href=&quot;#Static-关键字&quot; class=&quot;headerlink&quot; title=&quot;Static 关键字&quot;&gt;&lt;/a&gt;Static 关键字&lt;/h1&gt;&lt;h3 id=&quot;理解&quot;&gt;&lt;a href=&quot;#理解&quot; class=&quot;headerlink&quot; title=&quot;理解:&quot;&gt;&lt;/a&gt;理解:&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;在类中用static声明的成员变量为 &lt;strong&gt;静态成员变量&lt;/strong&gt; , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 &lt;strong&gt;只有一份&lt;/strong&gt; ，而且这一份是这个类 &lt;strong&gt;所有的对象&lt;/strong&gt; 共享。&lt;/li&gt;
-&lt;li&gt;在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 &lt;strong&gt;不可以访问非static的成员&lt;/strong&gt; (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)&lt;/li&gt;
+&lt;li&gt;在类中用static声明的成员变量为 &lt;strong&gt;静态成员变量&lt;/strong&gt; (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 &lt;strong&gt;只有一份&lt;/strong&gt; ，而且这一份是这个类 &lt;strong&gt;所有的对象&lt;/strong&gt; 共享。&lt;/li&gt;
+&lt;li&gt;在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 &lt;strong&gt;不可以访问非static的成员&lt;/strong&gt; (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)&lt;/li&gt;
 &lt;li&gt;可以通过对象引用或 &lt;strong&gt;类名&lt;/strong&gt; (不需要实例化)访问静态成员 (静态的变量可以通过对象名去访问，也可以通过类名去访问，两者访问的都是同一块内存)&lt;/li&gt;
 &lt;/ul&gt;
     
@@ -308,39 +328,6 @@
   </entry>
   
   <entry>
-    <title>陈果老师语录</title>
-    <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C/"/>
-    <id>http://yoursite.com/2019/03/07/人间词话---自我成长---陈果/</id>
-    <published>2019-03-07T14:54:18.000Z</published>
-    <updated>2019-03-09T15:06:00.612Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>只有心灵才能洞察一切，世界上真正重要的东西要用心去看</li><li>你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋</li><li>选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安</li><li>回忆是一种重逢, 忘记是一份自由.</li></ul><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;只有心灵才能洞察一切，世界上真正重要的东西要用心去看&lt;/li&gt;
-&lt;li&gt;你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋&lt;/li&gt;
-&lt;li&gt;选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安&lt;/li&gt;
-&lt;li&gt;回忆是一种重逢, 忘记是一份自由.&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="陈果老师" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E9%99%88%E6%9E%9C%E8%80%81%E5%B8%88/"/>
-    
-    
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
-    
-      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>涂磊老师语录</title>
     <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E6%B6%82%E7%A3%8A/"/>
     <id>http://yoursite.com/2019/03/07/人间词话---自我成长---涂磊/</id>
@@ -368,6 +355,39 @@
       <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
     
       <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
+    
+      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>陈果老师语录</title>
+    <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C/"/>
+    <id>http://yoursite.com/2019/03/07/人间词话---自我成长---陈果/</id>
+    <published>2019-03-07T14:54:18.000Z</published>
+    <updated>2019-03-09T15:06:00.612Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>只有心灵才能洞察一切，世界上真正重要的东西要用心去看</li><li>你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋</li><li>选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安</li><li>回忆是一种重逢, 忘记是一份自由.</li></ul><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;只有心灵才能洞察一切，世界上真正重要的东西要用心去看&lt;/li&gt;
+&lt;li&gt;你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋&lt;/li&gt;
+&lt;li&gt;选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安&lt;/li&gt;
+&lt;li&gt;回忆是一种重逢, 忘记是一份自由.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="陈果老师" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E9%99%88%E6%9E%9C%E8%80%81%E5%B8%88/"/>
+    
+    
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
     
       <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
     
@@ -415,13 +435,13 @@
     <link href="http://yoursite.com/2019/03/07/java%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE%EF%BC%881-6%E9%A2%98%EF%BC%89/"/>
     <id>http://yoursite.com/2019/03/07/java面试经典题目（1-6题）/</id>
     <published>2019-03-07T02:00:00.000Z</published>
-    <updated>2019-03-08T00:54:14.379Z</updated>
+    <updated>2019-03-11T07:53:42.451Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"><a href="#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？" class="headerlink" title="1.什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"></a>1.什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？</h3><p>答案：</p><blockquote><p>运行原理：java源程序经过<code>javac</code> 编译器编译成二进制的<code>xx.class</code> 字节码文件, <code>xx.class</code> 在<strong>jvm</strong>（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将<strong>相同的字节码</strong>解释成对应平台的机器码，进而执行。</p></blockquote><a id="more"></a><p>知识：</p><blockquote><p>一份 <code>xx.class</code> 文件(不会变化）被 <strong>不同的jvm</strong> 解释成 <strong>相对应的机器码</strong> </p><p><strong>机器码:</strong> 依附于硬件，根本不存在跨平台行，不同型号的CPU给相同的指令（eg：10011110）,解析成不同的结果</p></blockquote><p>题外知识：</p><blockquote><p><strong>JDK</strong> (Java Development Kit): Java开发工具包，针对于<strong>Java开发员的产品</strong>，JDK是整个Java的核心，包括了JRE, Java工具（javac【编译java源码的编译器】，java程序调试和分析的工具）和Java基础的类库（即Java API)</p><p><strong>JRE</strong> (Java runtime environment)：Java运行环境 ,针对于<strong>使用Java程序的用户</strong>，java程序运行做需要的软件环境，不是一个开发环境, 包含jvm，java基础类库, 不包含任何开发工具（如编译器和调试器）。</p><p><strong>JVM</strong> (Java Virtual Machine): Java虚拟机，实现java跨平台的最核心的部分，JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行</p></blockquote><h3 id="2-JDK和JRE的区别是什么？"><a href="#2-JDK和JRE的区别是什么？" class="headerlink" title="2.JDK和JRE的区别是什么？"></a>2.JDK和JRE的区别是什么？</h3><p>答案：</p><blockquote><p>详细区别见第一题</p><p>如果需要运行Java程序，只需要安装JRE（JRE根据不同操作系统有很多不同的版本）</p><p>如果需要编写Java程序，需要安装JDK</p></blockquote><p>补充知识：</p><blockquote><p>JRE和JVM的区别是什么？</p><p>JRE包括JVM和lib（Jvm所需要的类库），JRE里有运行<code>xx.class</code> 的<code>java.exe</code> </p><p>只有JVM还不能成class的执行，因为在解释class的时候JVM需要调用解释所需要的类库lib，而jre包含lib类库</p></blockquote><p>时间：2019.3.7</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"><a href="#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？" class="headerlink" title="1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"></a>1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？</h1><p>答案：</p><blockquote><p>运行原理：java源程序经过<code>javac</code> 编译器编译成二进制的<code>xx.class</code> 字节码文件, <code>xx.class</code> 在<strong>jvm</strong>（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将<strong>相同的字节码</strong>解释成对应平台的机器码，进而执行。</p></blockquote><a id="more"></a><p>知识：</p><blockquote><p>一份 <code>xx.class</code> 文件(不会变化）被 <strong>不同的jvm</strong> 解释成 <strong>相对应的机器码</strong> </p><p><strong>机器码:</strong> 依附于硬件，根本不存在跨平台行，不同型号的CPU给相同的指令（eg：10011110）,解析成不同的结果</p></blockquote><p>题外知识：</p><blockquote><p><strong>JDK</strong> (Java Development Kit): Java开发工具包，针对于<strong>Java开发员的产品</strong>，JDK是整个Java的核心，包括了JRE, Java工具（javac【编译java源码的编译器】，java程序调试和分析的工具）和Java基础的类库（即Java API)</p><p><strong>JRE</strong> (Java runtime environment)：Java运行环境 ,针对于<strong>使用Java程序的用户</strong>，java程序运行做需要的软件环境，不是一个开发环境, 包含jvm，java基础类库, 不包含任何开发工具（如编译器和调试器）。</p><p><strong>JVM</strong> (Java Virtual Machine): Java虚拟机，实现java跨平台的最核心的部分，JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行</p></blockquote><h1 id="2-JDK和JRE的区别是什么？"><a href="#2-JDK和JRE的区别是什么？" class="headerlink" title="2. JDK和JRE的区别是什么？"></a>2. JDK和JRE的区别是什么？</h1><p>答案：</p><blockquote><p>详细区别见第一题</p><p>如果需要运行Java程序，只需要安装JRE（JRE根据不同操作系统有很多不同的版本）</p><p>如果需要编写Java程序，需要安装JDK</p></blockquote><p>补充知识：</p><blockquote><p>JRE和JVM的区别是什么？</p><p>JRE包括JVM和lib（Jvm所需要的类库），JRE里有运行<code>xx.class</code> 的<code>java.exe</code> </p><p>只有JVM还不能成class的执行，因为在解释class的时候JVM需要调用解释所需要的类库lib，而jre包含lib类库</p></blockquote><p>时间：2019.3.7</p><h1 id="3-”static”关键字是什么意思？Java中是否可以覆盖-override-一个private或者是static的方法？"><a href="#3-”static”关键字是什么意思？Java中是否可以覆盖-override-一个private或者是static的方法？" class="headerlink" title="3. ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？"></a>3. ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？</h1><p>答案:</p><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p> 表示静态的意思, 可用于修饰 <strong>成员变量</strong>和 <strong>方法</strong> , 静态是随着类的加载而加载, 因此可以直接用类进行访问</p><h3 id="private"><a href="#private" class="headerlink" title="private"></a>private</h3><p>私有的方法不能被继承，子类就没有访问权限</p><h3 id="覆盖"><a href="#覆盖" class="headerlink" title="覆盖"></a>覆盖</h3><ul><li><p>覆盖基于运动时动态绑定的</p></li><li><p>指覆盖了一个方法并且对其重写，以求达到不同的作用,，但是子类中的访问权限要不低于父类中的访问权限,重写的前提是必须要继承.</p></li></ul><p>Java中static方法不能被覆盖，因为方法覆盖是基于运行时动态绑定的，而static方法是编译时静态绑定的。 </p><p>私有的方法不能被继承，子类就没有访问权限，肯定也是不能别覆盖的。 </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Super</span></span>&#123;</span><br><span class="line">   <span class="comment">// 静态方法</span></span><br><span class="line">   <span class="function"><span class="keyword">static</span> String <span class="title">greeting</span><span class="params">()</span></span>&#123;   </span><br><span class="line">      <span class="keyword">return</span> <span class="string">"Good night"</span>;   </span><br><span class="line">  &#125;   </span><br><span class="line">  <span class="function">String <span class="title">name</span><span class="params">()</span></span>&#123;   </span><br><span class="line">     <span class="keyword">return</span> <span class="string">"Richard"</span>;   </span><br><span class="line">  &#125;   </span><br><span class="line">&#125;   </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sub</span> <span class="keyword">extends</span> <span class="title">Super</span></span>&#123;   <span class="comment">//子方法,继承Super</span></span><br><span class="line">   <span class="comment">//重写(覆盖)父类当中的静态方法</span></span><br><span class="line">   <span class="function"><span class="keyword">static</span> String <span class="title">greeting</span><span class="params">()</span></span>&#123;   </span><br><span class="line">     <span class="keyword">return</span> <span class="string">"Hello"</span>;   </span><br><span class="line">  &#125;   </span><br><span class="line">  <span class="function">String <span class="title">name</span><span class="params">()</span></span>&#123;   </span><br><span class="line">     <span class="keyword">return</span> <span class="string">"Dick"</span>;   </span><br><span class="line">  &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;   </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;   </span><br><span class="line">    Super s = <span class="keyword">new</span> Sub();   </span><br><span class="line">    System.out.println(s.greeting()+<span class="string">","</span>+s.name());   </span><br><span class="line"></span><br><span class="line">  &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//运行结果：Good night,Dick (静态方法打印的是父类中的)</span></span><br><span class="line"><span class="comment">//这个例子说明“实例方法被覆盖，静态方法被隐藏”</span></span><br></pre></td></tr></table></figure><h1 id="4-是否可以在static环境中访问非static变量？"><a href="#4-是否可以在static环境中访问非static变量？" class="headerlink" title="4. 是否可以在static环境中访问非static变量？"></a>4. 是否可以在static环境中访问非static变量？</h1><p>答案:</p><p>不可以</p><blockquote><p><strong>因为静态的成员属于类，随着类的加载而加载到静态方法区内存，当类加载时，此时不一定有实例创建，没有实例，就不可以访问非静态的成员。</strong></p><p>静态变量属于类变量，随着类的加载而加载，当调用类变量时java虚拟机会对类的静态变量，静态方法进行初始化，此时如果静态方法中有非静态变量，由于非静态变量是随着实例的创建而创建，此时还没有实例创建，所以非静态变量还没有创建，所以会出现编译错误。  </p></blockquote><p>参考博文: </p><p><a href="https://www.nowcoder.com/questionTerminal/129a7ff6cfeb45ae9d456d9efed69acd" target="_blank" rel="noopener">牛客网优质答案</a></p><p>时间: 2019.3.11</p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&quot;&gt;&lt;a href=&quot;#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&quot; class=&quot;headerlink&quot; title=&quot;1.什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&quot;&gt;&lt;/a&gt;1.什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&lt;/h3&gt;&lt;p&gt;答案：&lt;/p&gt;
+      &lt;h1 id=&quot;1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&quot;&gt;&lt;a href=&quot;#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&quot;&gt;&lt;/a&gt;1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？&lt;/h1&gt;&lt;p&gt;答案：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;运行原理：java源程序经过&lt;code&gt;javac&lt;/code&gt; 编译器编译成二进制的&lt;code&gt;xx.class&lt;/code&gt; 字节码文件, &lt;code&gt;xx.class&lt;/code&gt; 在&lt;strong&gt;jvm&lt;/strong&gt;（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将&lt;strong&gt;相同的字节码&lt;/strong&gt;解释成对应平台的机器码，进而执行。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -438,6 +458,32 @@
       <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
       <category term="java面试经典题目" scheme="http://yoursite.com/tags/java%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人间词话---惊艳的文字</title>
+    <link href="http://yoursite.com/2019/03/06/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%83%8A%E8%89%B3%E7%9A%84%E6%96%87%E5%AD%97/"/>
+    <id>http://yoursite.com/2019/03/06/人间词话---惊艳的文字/</id>
+    <published>2019-03-06T13:57:13.000Z</published>
+    <updated>2019-03-09T15:05:04.393Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="现代诗"><a href="#现代诗" class="headerlink" title="现代诗"></a>现代诗</h3><ul><li>酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。   —余光中《寻李白》</li></ul><a id="more"></a><h3 id="古诗"><a href="#古诗" class="headerlink" title="古诗"></a>古诗</h3><ul><li>少年不知愁滋味,爱上层楼,爱上层楼.为赋新词强说愁.而今识尽愁滋味,欲说还休,欲说还休,却道天凉好个秋.  —辛弃疾《丑奴儿》</li><li>十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。    —苏轼</li></ul><h3 id="古文"><a href="#古文" class="headerlink" title="古文"></a>古文</h3><ul><li>斯是陋室,惟吾德馨.   —刘禹锡《陋室铭》</li><li>夏虫不可语冰   —孔子</li></ul><h3 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h3><ul><li>我知道我很大胆冒昧, 听说你朋友很多, 我不配高攀, 可是很想在你的朋友里凑个数目.   —钱钟书《围城》</li><li>别客气,我求你明天来.我想去吃,对自己没有好借口,借你的名义,自己享受一下,你就体贴下情,答应了吧.   —钱钟书《围城》</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;现代诗&quot;&gt;&lt;a href=&quot;#现代诗&quot; class=&quot;headerlink&quot; title=&quot;现代诗&quot;&gt;&lt;/a&gt;现代诗&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。   —余光中《寻李白》&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
+    
+      <category term="现代诗" scheme="http://yoursite.com/tags/%E7%8E%B0%E4%BB%A3%E8%AF%97/"/>
+    
+      <category term="古诗" scheme="http://yoursite.com/tags/%E5%8F%A4%E8%AF%97/"/>
     
   </entry>
   
@@ -465,32 +511,6 @@
     
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人间词话---惊艳的文字</title>
-    <link href="http://yoursite.com/2019/03/06/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%83%8A%E8%89%B3%E7%9A%84%E6%96%87%E5%AD%97/"/>
-    <id>http://yoursite.com/2019/03/06/人间词话---惊艳的文字/</id>
-    <published>2019-03-06T13:57:13.000Z</published>
-    <updated>2019-03-09T15:05:04.393Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="现代诗"><a href="#现代诗" class="headerlink" title="现代诗"></a>现代诗</h3><ul><li>酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。   —余光中《寻李白》</li></ul><a id="more"></a><h3 id="古诗"><a href="#古诗" class="headerlink" title="古诗"></a>古诗</h3><ul><li>少年不知愁滋味,爱上层楼,爱上层楼.为赋新词强说愁.而今识尽愁滋味,欲说还休,欲说还休,却道天凉好个秋.  —辛弃疾《丑奴儿》</li><li>十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。    —苏轼</li></ul><h3 id="古文"><a href="#古文" class="headerlink" title="古文"></a>古文</h3><ul><li>斯是陋室,惟吾德馨.   —刘禹锡《陋室铭》</li><li>夏虫不可语冰   —孔子</li></ul><h3 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h3><ul><li>我知道我很大胆冒昧, 听说你朋友很多, 我不配高攀, 可是很想在你的朋友里凑个数目.   —钱钟书《围城》</li><li>别客气,我求你明天来.我想去吃,对自己没有好借口,借你的名义,自己享受一下,你就体贴下情,答应了吧.   —钱钟书《围城》</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;现代诗&quot;&gt;&lt;a href=&quot;#现代诗&quot; class=&quot;headerlink&quot; title=&quot;现代诗&quot;&gt;&lt;/a&gt;现代诗&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。   —余光中《寻李白》&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
-    
-      <category term="现代诗" scheme="http://yoursite.com/tags/%E7%8E%B0%E4%BB%A3%E8%AF%97/"/>
-    
-      <category term="古诗" scheme="http://yoursite.com/tags/%E5%8F%A4%E8%AF%97/"/>
     
   </entry>
   

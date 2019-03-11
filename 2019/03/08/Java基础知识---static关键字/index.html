@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员">
+<meta name="description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用">
 <meta name="keywords" content="java基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础知识---static关键字">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---static关键字/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员">
+<meta property="og:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T05:28:10.992Z">
+<meta property="og:updated_time" content="2019-03-11T07:42:16.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识---static关键字">
-<meta name="twitter:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员">
+<meta name="twitter:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用">
 
 
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  295
+                  629
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -483,17 +483,25 @@
 
       
         <h1 id="Static-关键字"><a href="#Static-关键字" class="headerlink" title="Static 关键字"></a>Static 关键字</h1><h3 id="理解"><a href="#理解" class="headerlink" title="理解:"></a>理解:</h3><ul>
-<li>在类中用static声明的成员变量为 <strong>静态成员变量</strong> , 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享。</li>
-<li>在static声明的方法为静态方法 ,在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong> (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)</li>
+<li>在类中用static声明的成员变量为 <strong>静态成员变量</strong> (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享。</li>
+<li>在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong> (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)</li>
 <li>可以通过对象引用或 <strong>类名</strong> (不需要实例化)访问静态成员 (静态的变量可以通过对象名去访问，也可以通过类名去访问，两者访问的都是同一块内存)</li>
 </ul>
 <a id="more"></a>
+<blockquote>
+<p>被static修饰的变量被称为类变量，被其修饰的方法成为类方法，其随着类的加载而被加载</p>
+</blockquote>
 <blockquote>
 <p>字符串常量是分配在数据区里面的</p>
 <p>静态成员变量是属于整个类的，它不属于专门的某个对象</p>
 <p>非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问</p>
 </blockquote>
-<p>参考博文: <a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a></p>
+<p>①static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。</p>
+<p>②static修饰方法， static 方法就是没有 this 的方法。在 static 方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用 static 方法。这实际上正是 static 方法的主要用途。 方便在没有创建对象的情况下来进行调用（方法/变量）。</p>
+<p>最常见的static方法就是main,因为所有对象都是在该方法里面实例化的，而main是程序入口，所以要通过类名来调用。还有就是main中需要经常访问随类加载的成员变量。</p>
+<p>③static修饰变量，就变成了静态变量，随类加载一次，可以被多个对象共享。</p>
+<p>④static修饰代码块，形成静态代码块，用来优化程序性能，将需要加载一次的代码设置成随类加载，静态代码块可以有多个。</p>
+<p>参考博文:<br><a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a><br><a href="https://www.nowcoder.com/questionTerminal/6f66f55a1f844e21b580e73d36223cf7" target="_blank" rel="noopener">优质答案</a></p>
 
       
     </div>
@@ -630,7 +638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -742,7 +750,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.7k</span>
+    <span title="Site words total count">10.1k</span>
   
 </div>
 

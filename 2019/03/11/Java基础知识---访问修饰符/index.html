@@ -126,14 +126,14 @@
 <meta name="description" content="区别 public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用 private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。 protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，p">
 <meta name="keywords" content="java基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础知识---public、private、protected区别">
-<meta property="og:url" content="http://yoursite.com/2019/03/11/Java基础知识---private等的区分/index.html">
+<meta property="og:title" content="Java基础知识---Java基础知识---访问修饰符">
+<meta property="og:url" content="http://yoursite.com/2019/03/11/Java基础知识---访问修饰符/index.html">
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="区别 public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用 private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。 protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T05:28:18.500Z">
+<meta property="og:updated_time" content="2019-03-11T07:55:55.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础知识---public、private、protected区别">
+<meta name="twitter:title" content="Java基础知识---Java基础知识---访问修饰符">
 <meta name="twitter:description" content="区别 public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用 private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。 protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，p">
 
 
@@ -164,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/11/Java基础知识---private等的区分/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/11/Java基础知识---访问修饰符/">
 
 
 
 
 
-  <title>Java基础知识---public、private、protected区别 | sladning</title>
+  <title>Java基础知识---Java基础知识---访问修饰符 | sladning</title>
   
 
 
@@ -346,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/Java基础知识---private等的区分/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/Java基础知识---访问修饰符/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -363,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java基础知识---public、private、protected区别</h1>
+          <h1 class="post-title" itemprop="name headline">Java基础知识---Java基础知识---访问修饰符</h1>
         
 
         <div class="post-meta">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  332
+                  444
                 </span>
               
 
@@ -477,47 +477,59 @@
 <li>protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private</li>
 <li>不写时默认为friendly ，也即是“包访问权限”</li>
 </ol>
+<a id="more"></a>
 <h3 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h3><table>
 <thead>
 <tr>
 <th style="text-align:center">作用域</th>
-<th style="text-align:center">当前类</th>
-<th style="text-align:center">同一package</th>
-<th style="text-align:center">子孙类</th>
-<th style="text-align:center">其他package</th>
+<th style="text-align:center">自身</th>
+<th style="text-align:center">同包子类</th>
+<th style="text-align:center">不同包子类</th>
+<th style="text-align:center">同包类</th>
+<th>其他类</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">public</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
+<td style="text-align:center">private</td>
+<td style="text-align:center">访问(√)</td>
+<td style="text-align:center">继承(×)</td>
+<td style="text-align:center">继承(×)</td>
+<td style="text-align:center">访问(×)</td>
+<td>访问(×)</td>
+</tr>
+<tr>
+<td style="text-align:center">package</td>
+<td style="text-align:center">访问(√)</td>
+<td style="text-align:center">继承(√)</td>
+<td style="text-align:center">继承(×)</td>
+<td style="text-align:center">访问(√)</td>
+<td>访问(×)</td>
 </tr>
 <tr>
 <td style="text-align:center">protected</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">×</td>
+<td style="text-align:center">访问(√)</td>
+<td style="text-align:center">继承(√)</td>
+<td style="text-align:center">继承(√)</td>
+<td style="text-align:center">访问(√)</td>
+<td>访问(×)</td>
 </tr>
 <tr>
-<td style="text-align:center">friendly</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">×</td>
-</tr>
-<tr>
-<td style="text-align:center">private</td>
-<td style="text-align:center">√</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">×</td>
-<td style="text-align:center">×</td>
+<td style="text-align:center">public</td>
+<td style="text-align:center">访问(√)</td>
+<td style="text-align:center">继承(√)</td>
+<td style="text-align:center">继承(√)</td>
+<td style="text-align:center">访问(√)</td>
+<td>访问(√)</td>
 </tr>
 </tbody>
 </table>
+<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><ol>
+<li><strong>属性</strong> 通常使用private封装起来</li>
+<li><strong>方法</strong> 一般使用public用于被调用</li>
+<li>会 <strong>被子类继承</strong> 的方法，通常使用protected</li>
+<li>package用的不多，一般新手会用package,因为还不知道有修饰符这个东西</li>
+</ol>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
 <p>如果一个成员需要被外部包所访问，则必须使用public修饰符；<br>如果一个成员需要被定义在不同包下的子类所访问，则可以使用public或protected修饰符；<br>如果一个成员需要被本包下的其他类所访问，则可以不用写任何的修饰符，使用public或者protected也行</p>
 <p>若一个成员想使用同类中其他成员，则使用任意一个修饰符即可；若一个成员不想被任何一个外部的类所访问，则使用private关键字比较恰当。</p>
@@ -564,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/09/人间词话---自己/" rel="next" title="人间词话---送给自己">
-                <i class="fa fa-chevron-left"></i> 人间词话---送给自己
+              <a href="/2019/03/09/人间词话---ZJ/" rel="next" title="人间词话---ZJ">
+                <i class="fa fa-chevron-left"></i> 人间词话---ZJ
               </a>
             
           </div>
@@ -573,6 +585,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/11/Java基础知识---方法的重载和覆盖/" rel="prev" title="Java基础知识---方法的重载和覆盖">
+                Java基础知识---方法的重载和覆盖 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -656,7 +672,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -734,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#详细"><span class="nav-number">1.0.1.</span> <span class="nav-text">详细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.0.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#详细"><span class="nav-number">1.0.1.</span> <span class="nav-text">详细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用"><span class="nav-number">1.0.2.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.0.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -768,7 +784,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.7k</span>
+    <span title="Site words total count">10.1k</span>
   
 </div>
 
