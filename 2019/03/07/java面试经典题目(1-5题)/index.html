@@ -127,11 +127,11 @@
 <meta name="keywords" content="java,java基础知识,java面试经典题目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java面试经典题目（1-5题）">
-<meta property="og:url" content="http://yoursite.com/2019/03/07/java面试经典题目（1-6题）/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/07/java面试经典题目(1-5题)/index.html">
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？答案：  运行原理：java源程序经过javac 编译器编译成二进制的xx.class 字节码文件, xx.class 在jvm（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将相同的字节码解释成对应平台的机器码，进而执行。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T13:16:51.970Z">
+<meta property="og:updated_time" content="2019-03-12T14:12:18.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java面试经典题目（1-5题）">
 <meta name="twitter:description" content="1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？答案：  运行原理：java源程序经过javac 编译器编译成二进制的xx.class 字节码文件, xx.class 在jvm（各平台装有不同的jvm）上运行，java解释器（jvm的一部分）会将相同的字节码解释成对应平台的机器码，进而执行。">
@@ -164,7 +164,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/07/java面试经典题目（1-6题）/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/07/java面试经典题目(1-5题)/">
 
 
 
@@ -346,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/java面试经典题目（1-6题）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/java面试经典题目(1-5题)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.3k
                 </span>
               
 
@@ -529,9 +529,33 @@
 <p><strong>因为静态的成员属于类，随着类的加载而加载到静态方法区内存，当类加载时，此时不一定有实例创建，没有实例，就不可以访问非静态的成员。</strong></p>
 <p>静态变量属于类变量，随着类的加载而加载，当调用类变量时java虚拟机会对类的静态变量，静态方法进行初始化，此时如果静态方法中有非静态变量，由于非静态变量是随着实例的创建而创建，此时还没有实例创建，所以非静态变量还没有创建，所以会出现编译错误。  </p>
 </blockquote>
-<p>参考博文: </p>
-<p><a href="https://www.nowcoder.com/questionTerminal/129a7ff6cfeb45ae9d456d9efed69acd" target="_blank" rel="noopener">牛客网优质答案</a></p>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文:"></a>参考博文:</h5><p>​    <a href="https://www.nowcoder.com/questionTerminal/129a7ff6cfeb45ae9d456d9efed69acd" target="_blank" rel="noopener">牛客网优质答案</a></p>
 <p>时间: 2019.3.11</p>
+<h1 id="5-Java支持的数据类型有哪些？什么是自动拆装箱？"><a href="#5-Java支持的数据类型有哪些？什么是自动拆装箱？" class="headerlink" title="5. Java支持的数据类型有哪些？什么是自动拆装箱？"></a>5. Java支持的数据类型有哪些？什么是自动拆装箱？</h1><p>答案:</p>
+<h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><ul>
+<li><strong>整数型:</strong> byte, short, int, long,</li>
+<li><strong>浮动型:</strong> float, double</li>
+<li><strong>布尔型:</strong> bool</li>
+<li><strong>字符型:</strong> char</li>
+</ul>
+<blockquote>
+<p>整数默认int型，小数默认是double型。Float和long类型的必须加后缀。</p>
+</blockquote>
+<h4 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h4><ul>
+<li>引用类型也就是我们常说的对象，在java中每个基础类型的数据都有其包装类，对应上面分别是：<br><strong>Byte, Short, Int, Long, Float, Double, Char, Boolean</strong></li>
+<li>引用类型包括类、数组、接口, String等</li>
+</ul>
+<h4 id="自动装箱和拆箱就是基本类型和引用类型之间的转换"><a href="#自动装箱和拆箱就是基本类型和引用类型之间的转换" class="headerlink" title="自动装箱和拆箱就是基本类型和引用类型之间的转换"></a>自动装箱和拆箱就是基本类型和引用类型之间的转换</h4><ul>
+<li><p>装箱：将基本类型转换成引用类型，如 <code>Integer i = 10;</code></p>
+</li>
+<li><p>拆箱：将引用类型转换成基础类型，如 <code>Integer i = 10;  int j = i;</code></p>
+</li>
+</ul>
+<blockquote>
+<p>转化为引用类型之后，就可以new一个对象，从而就可以调用包装类型中的封装好的方法，方便使用</p>
+</blockquote>
+<h5 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h5><p>​    <a href="https://www.nowcoder.com/questionTerminal/a5eb239111024d1b90cf00f24cfee36f" target="_blank" rel="noopener">牛客网优质答案</a></p>
+<p>时间: 2019.3.12</p>
 
       
     </div>
@@ -576,8 +600,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/06/人间词话---文章/" rel="next" title="人间词话---文章">
-                <i class="fa fa-chevron-left"></i> 人间词话---文章
+              <a href="/2019/03/07/java面试经典题目(6-10题)/" rel="next" title="java面试经典题目(6-10题)">
+                <i class="fa fa-chevron-left"></i> java面试经典题目(6-10题)
               </a>
             
           </div>
@@ -586,8 +610,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/07/Hexo---常用命令/" rel="prev" title="Hexo 常用命令">
-                Hexo 常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/07/java面试经典题目（1-5题）/" rel="prev" title="java面试经典题目（1-5题）">
+                java面试经典题目（1-5题） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -672,7 +696,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -750,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-JDK和JRE的区别是什么？"><span class="nav-number">2.</span> <span class="nav-text">2. JDK和JRE的区别是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-”static”关键字是什么意思？Java中是否可以覆盖-override-一个private或者是static的方法？"><span class="nav-number">3.</span> <span class="nav-text">3. ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">3.0.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#private"><span class="nav-number">3.0.2.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖"><span class="nav-number">3.0.3.</span> <span class="nav-text">覆盖</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#4-是否可以在static环境中访问非static变量？"><span class="nav-number">4.</span> <span class="nav-text">4. 是否可以在static环境中访问非static变量？</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-JDK和JRE的区别是什么？"><span class="nav-number">2.</span> <span class="nav-text">2. JDK和JRE的区别是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-”static”关键字是什么意思？Java中是否可以覆盖-override-一个private或者是static的方法？"><span class="nav-number">3.</span> <span class="nav-text">3. ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">3.0.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#private"><span class="nav-number">3.0.2.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖"><span class="nav-number">3.0.3.</span> <span class="nav-text">覆盖</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#4-是否可以在static环境中访问非static变量？"><span class="nav-number">4.</span> <span class="nav-text">4. 是否可以在static环境中访问非static变量？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">参考博文:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Java支持的数据类型有哪些？什么是自动拆装箱？"><span class="nav-number">5.</span> <span class="nav-text">5. Java支持的数据类型有哪些？什么是自动拆装箱？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用类型"><span class="nav-number">5.0.0.2.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动装箱和拆箱就是基本类型和引用类型之间的转换"><span class="nav-number">5.0.0.3.</span> <span class="nav-text">自动装箱和拆箱就是基本类型和引用类型之间的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博客"><span class="nav-number">5.0.0.3.1.</span> <span class="nav-text">参考博客</span></a></li></ol></li></ol></li></div>
             
 
           </div>
@@ -784,7 +808,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.3k</span>
+    <span title="Site words total count">16.3k</span>
   
 </div>
 
