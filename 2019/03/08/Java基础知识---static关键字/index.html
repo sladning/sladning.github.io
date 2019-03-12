@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="java基础知识,">
+  <meta name="keywords" content="java,java基础知识,">
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用">
-<meta name="keywords" content="java基础知识">
+<meta name="description" content="Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途  基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访">
+<meta name="keywords" content="java,java基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础知识---static关键字">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---static关键字/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用">
+<meta property="og:description" content="Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途  基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T07:42:16.321Z">
+<meta property="og:updated_time" content="2019-03-12T13:15:43.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识---static关键字">
-<meta name="twitter:description" content="Static 关键字理解: 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享。 在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 不可以访问非static的成员 (静态方法不再是针对某一个对象来调用">
+<meta name="twitter:description" content="Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途  基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访">
 
 
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  629
+                  842
                 </span>
               
 
@@ -482,26 +482,51 @@
       
 
       
-        <h1 id="Static-关键字"><a href="#Static-关键字" class="headerlink" title="Static 关键字"></a>Static 关键字</h1><h3 id="理解"><a href="#理解" class="headerlink" title="理解:"></a>理解:</h3><ul>
-<li>在类中用static声明的成员变量为 <strong>静态成员变量</strong> (也叫类变量), 为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享。</li>
-<li>在static声明的方法为静态方法(也叫类方法),在调用该方法时, 不会将对象的引用传递给他, 所以在static方法中 <strong>不可以访问非static的成员</strong> (静态方法不再是针对某一个对象来调用，所以不能访问非静态的成员)</li>
-<li>可以通过对象引用或 <strong>类名</strong> (不需要实例化)访问静态成员 (静态的变量可以通过对象名去访问，也可以通过类名去访问，两者访问的都是同一块内存)</li>
-</ul>
-<a id="more"></a>
-<blockquote>
-<p>被static修饰的变量被称为类变量，被其修饰的方法成为类方法，其随着类的加载而被加载</p>
+        <h1 id="Static-关键字"><a href="#Static-关键字" class="headerlink" title="Static 关键字"></a>Static 关键字</h1><blockquote>
+<p>static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途</p>
 </blockquote>
+<p><strong>基本作用:</strong> 方便在 <strong>没有创建对象</strong> 的情况下来进行调用(方法/变量),被static修饰的变量和方法其<strong>随着类的加载而被加载</strong> . 只要类被加载了，就可以通过类名去进行访问.</p>
+<a id="more"></a>
+<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><ul>
+<li><p>在类中用static声明的成员变量为 <strong>静态成员变量</strong> (也叫<strong>类变量</strong>),</p>
+</li>
+<li><p>其为该类的公共变量,  在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享, 属于整个类的，它不属于专门的某个对象</p>
 <blockquote>
-<p>字符串常量是分配在数据区里面的</p>
-<p>静态成员变量是属于整个类的，它不属于专门的某个对象</p>
 <p>非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问</p>
 </blockquote>
-<p>①static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。</p>
-<p>②static修饰方法， static 方法就是没有 this 的方法。在 static 方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用 static 方法。这实际上正是 static 方法的主要用途。 方便在没有创建对象的情况下来进行调用（方法/变量）。</p>
-<p>最常见的static方法就是main,因为所有对象都是在该方法里面实例化的，而main是程序入口，所以要通过类名来调用。还有就是main中需要经常访问随类加载的成员变量。</p>
-<p>③static修饰变量，就变成了静态变量，随类加载一次，可以被多个对象共享。</p>
-<p>④static修饰代码块，形成静态代码块，用来优化程序性能，将需要加载一次的代码设置成随类加载，静态代码块可以有多个。</p>
-<p>参考博文:<br><a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a><br><a href="https://www.nowcoder.com/questionTerminal/6f66f55a1f844e21b580e73d36223cf7" target="_blank" rel="noopener">优质答案</a></p>
+</li>
+<li><p>static成员变量的初始化顺序按照定义的顺序进行初始化</p>
+</li>
+</ul>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><ul>
+<li>注意不能把 <strong>任何方法体内的变量声明为静态</strong> </li>
+</ul>
+<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><ul>
+<li><p>用<strong>static</strong> 声明的方法为静态方法(也叫<strong>类方法</strong>)</p>
+</li>
+<li><p>在静态方法里只能直接调用同类中其他的静态成员（包括变量和方法），而<strong>不能直接访问类中的非静态成员</strong> 。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。</p>
+<blockquote>
+<p>对于非静态成员方法，它访问静态成员方法/变量显然是毫无限制的</p>
+</blockquote>
+</li>
+<li><p>静态方法不能以任何方式引用this和super关键字</p>
+<ul>
+<li>因为静态方法在使用前不用创建任何实例对象，当静态方法调用时，this所引用的对象根本没有产生。</li>
+<li>由于静态方法不依赖于任何对象就可以进行访问，因此对于静态方法来说，是没有this的，因为它不依附于任何对象，既然都没有对象，就谈不上this了</li>
+</ul>
+</li>
+</ul>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><p>​    想在不创建对象的情况下调用某个方法，就可以将这个方法设置为static。</p>
+<p>​    最常见的static方法就是main方法。因为程序在执行main方法的时候没有创建任何对象，因此只有通过类名来访问。</p>
+<h4 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h4><blockquote>
+<p>用来形成静态代码块以优化程序性能。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。</p>
+</blockquote>
+<h5 id="为什么说static块可以用来优化程序性能"><a href="#为什么说static块可以用来优化程序性能" class="headerlink" title="为什么说static块可以用来优化程序性能"></a>为什么说static块可以用来优化程序性能</h5><p>​    是因为它的特性:只会在类加载的时候执行一次。</p>
+<h3 id="杂"><a href="#杂" class="headerlink" title="杂:"></a>杂:</h3><p>​    static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。</p>
+<p>参考博文:<br>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a></p>
+<p>​    <a href="https://www.nowcoder.com/questionTerminal/6f66f55a1f844e21b580e73d36223cf7" target="_blank" rel="noopener">优质答案</a></p>
+<p>​    <a href="https://www.cnblogs.com/tiantianxiangshangg/articles/5080112.html" target="_blank" rel="noopener">java中静态代码块的用法 static用法详解</a></p>
+<p>​    <a href="https://www.cnblogs.com/dolphin0520/p/3799052.html" target="_blank" rel="noopener">Java中的static关键字解析</a></p>
 
       
     </div>
@@ -528,6 +553,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
             <a href="/tags/java基础知识/" rel="tag"><i class="fa fa-tag"></i> java基础知识</a>
           
@@ -638,7 +665,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -649,7 +676,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -660,7 +687,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -716,7 +743,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Static-关键字"><span class="nav-number">1.</span> <span class="nav-text">Static 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解"><span class="nav-number">1.0.1.</span> <span class="nav-text">理解:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Static-关键字"><span class="nav-number">1.</span> <span class="nav-text">Static 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态变量"><span class="nav-number">1.0.1.</span> <span class="nav-text">静态变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">注意:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">静态方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">范例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态代码块"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">静态代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么说static块可以用来优化程序性能"><span class="nav-number">1.0.2.2.1.</span> <span class="nav-text">为什么说static块可以用来优化程序性能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#杂"><span class="nav-number">1.0.3.</span> <span class="nav-text">杂:</span></a></li></ol></div>
             
 
           </div>
@@ -750,7 +777,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.1k</span>
+    <span title="Site words total count">13.3k</span>
   
 </div>
 
