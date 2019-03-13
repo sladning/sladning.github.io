@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Java基础知识---抽象类]]></title>
-    <url>%2F2019%2F03%2F13%2Fjava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
-    <content type="text"><![CDATA[Java 抽象类1. 抽象方法​ 一种特殊的方法：它只有声明，而没有具体的实现 123// 声明格式// 抽象方法必须用abstract关键字进行修饰abstract void fun(); 抽象方法必须定义在抽象类中。 2. 抽象类概念​ 抽象方法的类(一个类含有抽象方法，则称这个类为抽象类), 抽象类必须在类前用 abstract关键字 修饰。 一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。 特点 子类继承父类时，如果这个父类里面有抽象方法，并且子类觉得可以去实现父类的所有抽象方法，那么子类必须去实现父类的所有抽象方法, 父类里面的抽象方法，子类如果觉得实现不了，那么把就子类也声明成一个抽象类 因为抽象类中含有无具体实现的方法，所以不能用抽象类创建对象。父类里面的方法是抽象的，那么对于整个类来说，它就有一个没有实现的方法，这个方法不知道怎么去实现，那么这个类是就是残缺不全的，因此这个类应该被定义为一个抽象类 含有抽象方法的类必须被声明为抽象类 不意味着抽象类中只能有抽象方法，它和普通类一样，同样可以拥有成员变量和普通的成员方法 抽象类必须被继承 抽象类就是为了继承而存在的，如果你定义了一个抽象类，却不去继承它，那么等于白白创建了这个抽象类，因为你不能用它来做任何事情 抽象方法必须被重写 从某种意义上来说，抽象方法就是被用来重写的，所以在父类声明的抽象方法一定要在子类里面重写 范例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091package javastudy.summary;/** * 父类Animal * 在class的前面加上abstract，即声明成这样：abstract class Animal * 这样Animal类就成了一个抽象类了 */abstract class Animal &#123; public String name; public Animal(String name) &#123; this.name = name; &#125; /** * 抽象方法 * 这里只有方法的定义，没有方法的实现。 */ public abstract void enjoy(); &#125;/** * 这里的子类Cat从抽象类Animal继承下来，自然也继承了Animal类里面声明的抽象方法enjoy()， * 但子类Cat觉得自己去实现这个enjoy()方法也不合适，因此它把它自己也声明成一个抽象的类， * 那么，谁去实现这个抽象的enjoy方法，谁继承了子类，那谁就去实现这个抽象方法enjoy()。 */abstract class Cat extends Animal &#123; // Cat添加自己独有的属性 public String eyeColor; public Cat(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.eyeColor = c; &#125;&#125;/** * 子类BlueCat继承抽象类Cat，并且实现了从父类Cat继承下来的抽象方法enjoy */class BlueCat extends Cat &#123; public BlueCat(String n, String c) &#123; super(n, c); &#125; // 实现了抽象方法enjoy @Override public void enjoy() &#123; System.out.println("蓝猫叫..."); &#125; &#125;/** * 子类Dog继承抽象类Animal，并且实现了抽象方法enjoy */class Dog extends Animal &#123; // Dog类添加自己特有的属性 public String furColor; public Dog(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.furColor = c; &#125; @Override public void enjoy() &#123; System.out.println("狗叫...."); &#125;&#125;public class TestAbstract &#123; public static void main(String[] args) &#123; /** * 把Cat类声明成一个抽象类以后，就不能再对Cat类进行实例化了， * 因为抽象类是残缺不全的，缺胳膊少腿的，因此抽象类不能被实例化。 */ //Cat c = new Cat("Catname","blue"); Dog d = new Dog("dogname","black"); d.enjoy();//调用自己实现了的enjoy方法 BlueCat c = new BlueCat("BlueCatname","blue"); c.enjoy();//调用自己实现了的enjoy方法 &#125;&#125; 杂抽象类和普通类的主要有三点区别： 抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。 抽象类不能用来创建对象。 如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。 参考博文​ Java抽象类与接口的区别 ​ java基础学习总结——抽象类 ​ 深入理解Java的接口和抽象类]]></content>
+    <title><![CDATA[JavaWeb---Servlet开发(二)]]></title>
+    <url>%2F2019%2F03%2F13%2FJavaWeb---Servlet%E5%BC%80%E5%8F%91(%E4%BA%8C)%2F</url>
+    <content type="text"><![CDATA[一. ServletConfig讲解1.1. 配置Servlet初始化参数 在Servlet的配置文件web.xml中，可以使用一个或多个标签为servlet配置一些初始化参数。 参考博文: ​ javaweb学习总结(六)——Servlet开发(二)]]></content>
       <categories>
-        <category>java基础知识</category>
-        <category>抽象类</category>
+        <category>Java</category>
+        <category>JavaWeb</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>java基础知识</tag>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---接口]]></title>
-    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3%2F</url>
-    <content type="text"><![CDATA[Java基础知识—接口一. 概念 官方解释: Java接口是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能） 通俗理解: 接口可以理解为一种特殊的抽象类(100%的抽象类, 所有的方法都是抽象方法)，里面全部是由全局常量和公共的抽象方法(方法的定义)所组成,而没有变量和方法的实现 范例123456789101112131415/** * java中定义接口 * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可 */public interface JavaInterfaces &#123; // 常量的声明格式, 都是公共的、静态的，不能改变的 // 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的 public static final int id=10; int id=10; //方法的声明 // 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉 // 在接口里面声明的抽象方法默认是“public(公共的) public void start();&#125; 二. 特点 接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图 接口可以继承其他的接口,并添加新的属性和抽象方法. 抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类 接口是解决Java无法使用多继承的一种手段,, 实际中更多的作用是制定标准的。 一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承 见范例 接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口 三. 重点 一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。 不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的. 但是，我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法(Java多态的特性). 四. 接口的进一步理解​ 如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。interface USB &#123; void read(); void write();&#125;// 一个USB类实现USB接口。（实现其中的方法）class YouPan implements USB &#123; @Override public void read() &#123; System.out.println("U盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("U盘正在通过USB功能写入数据"); &#125;&#125;// 一个键盘类实现USB接口。（实现其中的方法）class JianPan implements USB &#123; @Override public void read() &#123; System.out.println("键盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("键盘正在通过USB功能写入数据"); &#125;&#125;// 测试public class Main &#123; public static void main(String[] args) &#123; // 生成一个实现可USB接口（标准）的U盘对象 YouPan youPan = new YouPan(); // 调用U盘的read( )方法读取数据 youPan.read(); // 调用U盘的write( )方法写入数据 youPan.write(); // 生成一个实现可USB接口（标准）的键盘对象 JianPan jianPan = new JianPan(); // 调用键盘的read( )方法读取数据 jianPan.read(); // 调用键盘的write( )方法写入数据 jianPan.write(); &#125;&#125; 参考博文​ java基础学习总结——接口 ​ JAVA基础——接口（全网最详细教程）]]></content>
+    <title><![CDATA[JavaWeb---Servlet开发(一)]]></title>
+    <url>%2F2019%2F03%2F13%2FJavaWeb---Servlet%E5%BC%80%E5%8F%91(%E4%B8%80)%2F</url>
+    <content type="text"><![CDATA[一. Servlet简介Servlet是sun公司提供的一门用于开发动态web资源的技术 若想用发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤： 编写一个Java类，实现servlet接口。 把开发好的Java类部署到web服务器中。 按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet 二. Servlet的运行过程Servlet程序是由WEB服务器调用，web服务器收到客户端的Servlet访问请求后： ①Web服务器首先检查是否已经装载并创建了该Servlet的实例对象。如果是，则直接执行第④步，否则，执行第②步。 ②装载并创建该Servlet的一个实例对象。 ③调用Servlet实例对象的init()方法。 ④创建一个用于封装HTTP请求消息的HttpServletRequest对象和一个代表HTTP响应消息的HttpServletResponse对象，然后调用Servlet的service()方法并将请求和响应对象作为参数传递进去。 ⑤WEB应用程序被停止或重新启动之前，Servlet引擎将卸载Servlet，并在卸载之前调用Servlet的destroy()方法。 三. Servlet接口实现类 Servlet接口SUN公司定义了两个默认实现类，分别为：GenericServlet、HttpServlet。 ==HttpServlet==指能够处理HTTP请求的servlet，它在原有Servlet接口上添加了一些与HTTP协议处理方法，它比Servlet接口的功能更为强大。因此开发人员在编写Servlet时，通常应继承这个类，而避免直接去实现Servlet接口。 HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会自动判断用户的请求方式，如为GET请求，则调用HttpServlet的doGet方法，如为Post请求，则调用doPost方法。因此，开发人员在编写Servlet时，通常只需要覆写doGet或doPost方法，而不要去覆写service方法 四. Servlet开发注意细节4.1 Servlet访问URL映射配置 由于客户端是通过URL地址访问web服务器中的资源，所以Servlet程序若想被外界访问，必须把servlet程序映射到一个URL地址上，这个工作在==web.xml文件==中使用&lt;servlet&gt;元素和&lt;servlet-mapping&gt;元素完成。 &lt;servlet&gt;元素用于注册Servlet，它包含有两个主要的子元素：&lt;servlet-name&gt;和&lt;servlet-class&gt;，分别用于设置Servlet的注册名称和Servlet的完整类名。 &lt;servlet-mapping&gt;元素用于映射一个已注册的Servlet的一个对外访问路径，它包含有两个子元素：&lt;servlet-name&gt;和&lt;url-pattern&gt;，分别用于指定Servlet的注册名称和Servlet的对外访问路径。 范例123456789&lt;servlet&gt; &lt;servlet-name&gt;ServletDemo1&lt;/servlet-name&gt; &lt;servlet-class&gt;gacl.servlet.study.ServletDemo1&lt;/servlet-class&gt;&lt;/servlet&gt;&lt;servlet-mapping&gt; &lt;servlet-name&gt;ServletDemo1&lt;/servlet-name&gt; &lt;url-pattern&gt;/servlet/ServletDemo1&lt;/url-pattern&gt;&lt;/servlet-mapping&gt; 同一个Servlet可以被映射到多个URL上，即多个元素的子元素的设置值可以是同一个Servlet的注册名。 4.2 Servlet与普通Java类的区别 Servlet是一个供其他Java程序（Servlet引擎）调用的Java类，不能独立运行，它的运行完全由Servlet引擎来控制和调度。 针对客户端的多次Servlet请求，通常情况下，服务器只会创建一个Servlet实例对象，也就是说Servlet实例对象一旦创建，它就会驻留在内存中，为后续的其它请求服务，直至web容器退出，servlet实例对象才会销毁。 在Servlet的整个生命周期内，Servlet的init()方法只被调用一次。而对一个Servlet的每次访问请求都导致Servlet引擎调用一次servlet的service()方法。对于每次访问请求，Servlet引擎都会创建一个新的HttpServletRequest请求对象和一个新的HttpServletResponse响应对象，然后将这两个对象作为参数传递给它调用的Servlet的service()方法，service方法再根据请求方式分别调用doXXX方法。 参考博文​ javaweb学习总结(五)——Servlet开发(一)]]></content>
       <categories>
-        <category>java基础知识</category>
-        <category>接口</category>
+        <category>Java</category>
+        <category>JavaWeb</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>java基础知识</tag>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -35,8 +33,34 @@
         <category>继承</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>java基础知识</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---抽象类]]></title>
+    <url>%2F2019%2F03%2F13%2Fjava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[Java 抽象类1. 抽象方法​ 一种特殊的方法：它只有声明，而没有具体的实现 123// 声明格式// 抽象方法必须用abstract关键字进行修饰abstract void fun(); 抽象方法必须定义在抽象类中。 2. 抽象类概念​ 抽象方法的类(一个类含有抽象方法，则称这个类为抽象类), 抽象类必须在类前用 abstract关键字 修饰。 一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。 特点 子类继承父类时，如果这个父类里面有抽象方法，并且子类觉得可以去实现父类的所有抽象方法，那么子类必须去实现父类的所有抽象方法, 父类里面的抽象方法，子类如果觉得实现不了，那么把就子类也声明成一个抽象类 因为抽象类中含有无具体实现的方法，所以不能用抽象类创建对象。父类里面的方法是抽象的，那么对于整个类来说，它就有一个没有实现的方法，这个方法不知道怎么去实现，那么这个类是就是残缺不全的，因此这个类应该被定义为一个抽象类 含有抽象方法的类必须被声明为抽象类 不意味着抽象类中只能有抽象方法，它和普通类一样，同样可以拥有成员变量和普通的成员方法 抽象类必须被继承 抽象类就是为了继承而存在的，如果你定义了一个抽象类，却不去继承它，那么等于白白创建了这个抽象类，因为你不能用它来做任何事情 抽象方法必须被重写 从某种意义上来说，抽象方法就是被用来重写的，所以在父类声明的抽象方法一定要在子类里面重写 范例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091package javastudy.summary;/** * 父类Animal * 在class的前面加上abstract，即声明成这样：abstract class Animal * 这样Animal类就成了一个抽象类了 */abstract class Animal &#123; public String name; public Animal(String name) &#123; this.name = name; &#125; /** * 抽象方法 * 这里只有方法的定义，没有方法的实现。 */ public abstract void enjoy(); &#125;/** * 这里的子类Cat从抽象类Animal继承下来，自然也继承了Animal类里面声明的抽象方法enjoy()， * 但子类Cat觉得自己去实现这个enjoy()方法也不合适，因此它把它自己也声明成一个抽象的类， * 那么，谁去实现这个抽象的enjoy方法，谁继承了子类，那谁就去实现这个抽象方法enjoy()。 */abstract class Cat extends Animal &#123; // Cat添加自己独有的属性 public String eyeColor; public Cat(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.eyeColor = c; &#125;&#125;/** * 子类BlueCat继承抽象类Cat，并且实现了从父类Cat继承下来的抽象方法enjoy */class BlueCat extends Cat &#123; public BlueCat(String n, String c) &#123; super(n, c); &#125; // 实现了抽象方法enjoy @Override public void enjoy() &#123; System.out.println("蓝猫叫..."); &#125; &#125;/** * 子类Dog继承抽象类Animal，并且实现了抽象方法enjoy */class Dog extends Animal &#123; // Dog类添加自己特有的属性 public String furColor; public Dog(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.furColor = c; &#125; @Override public void enjoy() &#123; System.out.println("狗叫...."); &#125;&#125;public class TestAbstract &#123; public static void main(String[] args) &#123; /** * 把Cat类声明成一个抽象类以后，就不能再对Cat类进行实例化了， * 因为抽象类是残缺不全的，缺胳膊少腿的，因此抽象类不能被实例化。 */ //Cat c = new Cat("Catname","blue"); Dog d = new Dog("dogname","black"); d.enjoy();//调用自己实现了的enjoy方法 BlueCat c = new BlueCat("BlueCatname","blue"); c.enjoy();//调用自己实现了的enjoy方法 &#125;&#125; 杂抽象类和普通类的主要有三点区别： 抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。 抽象类不能用来创建对象。 如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。 参考博文​ Java抽象类与接口的区别 ​ java基础学习总结——抽象类 ​ 深入理解Java的接口和抽象类]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>抽象类</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---接口]]></title>
+    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[Java基础知识—接口一. 概念 官方解释: Java接口是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能） 通俗理解: 接口可以理解为一种特殊的抽象类(100%的抽象类, 所有的方法都是抽象方法)，里面全部是由全局常量和公共的抽象方法(方法的定义)所组成,而没有变量和方法的实现 范例123456789101112131415/** * java中定义接口 * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可 */public interface JavaInterfaces &#123; // 常量的声明格式, 都是公共的、静态的，不能改变的 // 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的 public static final int id=10; int id=10; //方法的声明 // 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉 // 在接口里面声明的抽象方法默认是“public(公共的) public void start();&#125; 二. 特点 接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图 接口可以继承其他的接口,并添加新的属性和抽象方法. 抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类 接口是解决Java无法使用多继承的一种手段,, 实际中更多的作用是制定标准的。 一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承 见范例 接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口 三. 重点 一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。 不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的. 但是，我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法(Java多态的特性). 四. 接口的进一步理解​ 如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。interface USB &#123; void read(); void write();&#125;// 一个USB类实现USB接口。（实现其中的方法）class YouPan implements USB &#123; @Override public void read() &#123; System.out.println("U盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("U盘正在通过USB功能写入数据"); &#125;&#125;// 一个键盘类实现USB接口。（实现其中的方法）class JianPan implements USB &#123; @Override public void read() &#123; System.out.println("键盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("键盘正在通过USB功能写入数据"); &#125;&#125;// 测试public class Main &#123; public static void main(String[] args) &#123; // 生成一个实现可USB接口（标准）的U盘对象 YouPan youPan = new YouPan(); // 调用U盘的read( )方法读取数据 youPan.read(); // 调用U盘的write( )方法写入数据 youPan.write(); // 生成一个实现可USB接口（标准）的键盘对象 JianPan jianPan = new JianPan(); // 调用键盘的read( )方法读取数据 jianPan.read(); // 调用键盘的write( )方法写入数据 jianPan.write(); &#125;&#125; 参考博文​ java基础学习总结——接口 ​ JAVA基础——接口（全网最详细教程）]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>接口</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -48,8 +72,8 @@
         <category>java面试经典题目</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>java基础知识</tag>
+        <tag>java</tag>
         <tag>java面试经典题目</tag>
       </tags>
   </entry>
@@ -98,10 +122,20 @@
       <categories>
         <category>Java</category>
         <category>JavaWeb</category>
-        <category>JavaBean</category>
       </categories>
       <tags>
         <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[how2J天猫整站---笔记]]></title>
+    <url>%2F2019%2F03%2F12%2Fhow2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[一.关于表表与表之间的关系，基本上是3种 一对一 一对多 多对一 表的杂谈 修改表结构是代价最大的改动 在建表过程中，会设置外键约束，所以表和表之间有依赖关系。 因此会先建立被外键指向的表 一般说来，对于一个新项目，建表的时候，会把sql语句都准备好，一次性执行]]></content>
+      <categories>
+        <category>how2J</category>
+      </categories>
+      <tags>
+        <tag>how2J</tag>
       </tags>
   </entry>
   <entry>
@@ -118,30 +152,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[how2J天猫整站---笔记]]></title>
-    <url>%2F2019%2F03%2F12%2Fhow2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[一.关于表表与表之间的关系，基本上是3种 一对一 一对多 多对一 表的杂谈 修改表结构是代价最大的改动 在建表过程中，会设置外键约束，所以表和表之间有依赖关系。 因此会先建立被外键指向的表 一般说来，对于一个新项目，建表的时候，会把sql语句都准备好，一次性执行]]></content>
-      <categories>
-        <category>how2J</category>
-      </categories>
-      <tags>
-        <tag>how2J</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[sql语句]]></title>
     <url>%2F2019%2F03%2F11%2Fsql%E8%AF%AD%E5%8F%A5%2F</url>
     <content type="text"><![CDATA[参考博文: 一. 基础 创建数据库 1CREATE DATABASE database-name 删除数据库 1DROP DATABASE database-name 创建新表 1CEEATE DATABASE database-name 1CEEATE DATABASE database-name 1CEEATE DATABASE database-name 1CEEATE DATABASE database-name 参考博文: 经典SQL语句大全(绝对的经典) how2J]]></content>
       <tags>
         <tag>sql语句</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java基础知识---方法的重载和覆盖]]></title>
-    <url>%2F2019%2F03%2F11%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E8%A6%86%E7%9B%96%2F</url>
-    <content type="text"><![CDATA[一. 方法的重载(overload)指一个类中可以定义有 相同的名字 ,但 参数不同 的多个方法. 调用时, 会根据 不同的参数表 选择对应的方法 范例 构造方法 注意 方法名一样, 但参数不一样,就是重载(overload) 参数不一样 (1.参数的个数不一样 2. 参数的类型不一样, 只要有一个就可以) 方法名一样，参数类型一样，只有返回值不一样，这个不构成重载 理解: 多重加载，不同样式的加载 二. 方法的覆盖(override)指覆盖了一个方法并且对其重写，以求达到不同的作用,也可以叫做 重写 范例 对 接口方法 的实现 在 继承 中也可能会在 子类覆盖父类 中的方法 注意 覆盖的方法的标志必须要和被覆盖的方法的 标志 (相同的名字和相同的参数)完全匹配，才能达到覆盖的效果； 覆盖的方法的返回值必须和被覆盖的方法的返回一致； 覆盖的方法所抛出的异常必须和被覆盖方法的所抛出的异常一致，或者是其子类； 被覆盖的方法不能为private，否则在其子类中只是新定义了一个方法，并没有对其进行覆盖 参考博文 java中的方法覆盖（Overriding）和方法重载（Overloading）是什么意思？重写跟重载的区别？ 对比Java语言中的覆盖和重载]]></content>
-      <tags>
-        <tag>java基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -156,20 +171,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---网易云评论]]></title>
-    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA%2F</url>
-    <content type="text"><![CDATA[卿卿我我 写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己. 校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影. 情怀 愿走出半生, 归来仍是少年.]]></content>
+    <title><![CDATA[Java基础知识---方法的重载和覆盖]]></title>
+    <url>%2F2019%2F03%2F11%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E8%A6%86%E7%9B%96%2F</url>
+    <content type="text"><![CDATA[一. 方法的重载(overload)指一个类中可以定义有 相同的名字 ,但 参数不同 的多个方法. 调用时, 会根据 不同的参数表 选择对应的方法 范例 构造方法 注意 方法名一样, 但参数不一样,就是重载(overload) 参数不一样 (1.参数的个数不一样 2. 参数的类型不一样, 只要有一个就可以) 方法名一样，参数类型一样，只有返回值不一样，这个不构成重载 理解: 多重加载，不同样式的加载 二. 方法的覆盖(override)指覆盖了一个方法并且对其重写，以求达到不同的作用,也可以叫做 重写 范例 对 接口方法 的实现 在 继承 中也可能会在 子类覆盖父类 中的方法 注意 覆盖的方法的标志必须要和被覆盖的方法的 标志 (相同的名字和相同的参数)完全匹配，才能达到覆盖的效果； 覆盖的方法的返回值必须和被覆盖的方法的返回一致； 覆盖的方法所抛出的异常必须和被覆盖方法的所抛出的异常一致，或者是其子类； 被覆盖的方法不能为private，否则在其子类中只是新定义了一个方法，并没有对其进行覆盖 参考博文 java中的方法覆盖（Overriding）和方法重载（Overloading）是什么意思？重写跟重载的区别？ 对比Java语言中的覆盖和重载]]></content>
       <tags>
-        <tag>人间词话</tag>
-        <tag>网易云评论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[人间词话---ZJ]]></title>
-    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ%2F</url>
-    <content type="text"><![CDATA[没有人会拒绝微笑, 也没有人会拒绝真诚. 逢山开路, 遇水架桥.]]></content>
-      <tags>
-        <tag>人间词话</tag>
+        <tag>java基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -181,36 +187,41 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---面向对象(1)]]></title>
-    <url>%2F2019%2F03%2F09%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(1)%2F</url>
-    <content type="text"><![CDATA[一. 面向过程的思想和面向对象的思想面向过程 自顶向下,逐步细化 ​ 面向解决问题的过程进行编程 ​ 按照步骤化解决问题.(一个问题,分析这个问题如何去解决,第一步做什么, 第二步什么…), 当我们用面向过程的思想去编程或解决问题时，首先一定要把详细的实现过程弄清楚。一旦过程设计清楚，代码的实现简直轻而易举。 面向对象 万物皆对象, 人在思考的时候，首先眼睛里看到的是一个一个的对象。，实体(对象)就是动作的支配者，没有实体，就肯定没有动作发生！ ​ 在编程的时候尽可能的去模拟真实的现实世界，按照现实世界中的逻辑去处理一个问题，分析问题中参与其中的有哪些实体，这些实体应该有什么属性和方法，我们如何通过调用这些实体的属性和方法去解决问题。 拿到一个问题,应该分析 : 这个问题里面有哪些类和对象 在分析这些类和对象应该具有哪些属性和方法 分析类和类之间具有什么关系 设计思维: 合适的方法应该出现在合适的类里面 二. 类和对象类一类事物的抽象包括属性(静态)和方法(动态) 属性: 比如一个人的属性有身高，肤色，体重等等，用来描述这一个对象（类）的特征 方法: 方法就像是动作，可以完成一个特定的功能，比如人可以吃饭，跑步，学习，都可以是方法 Java中属性或者成员变量是一回事,方法就是函数, 不同的叫法属性描述特征，方法完成特定功能，而方法中可能会需要用到属性，比如输出，做运算等等 对象一类事物的具体的某一个东西(符合这类事物的具体特征) 在Java中, 对象就是类的实例化 随笔: 对象和类是分不开的，必须首先定义类才能有对象类和对象的关系，类就是一个模板，里面定义着属性和方法，而对象就是一个个的实例，通过类来创建（new）对象，叫类的实例化，对象是实体 三. 面向过程与面向对象的特点总结: 都可以实现代码重用和模块化编程，但是面对对象的模块化更深，数据更封闭，也更安全！因为面向对象的封装性更强！ 面对对象的思维方式更加贴近于现实生活，更容易解决大型的复杂的业务逻辑 从前期开发角度上来看，面对对象远比面向过程要复杂，但是从维护和扩展功能的角度上来看，面对对象远比面向过程要简单！ 当我们的业务逻辑比较简单时，使用面向过程能更快的实现 当我们的业务逻辑比较简单时，使用面向过程能更快的实现]]></content>
-      <categories>
-        <category>java基础知识</category>
-        <category>面向对象</category>
-      </categories>
+    <title><![CDATA[人间词话---ZJ]]></title>
+    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ%2F</url>
+    <content type="text"><![CDATA[没有人会拒绝微笑, 也没有人会拒绝真诚. 逢山开路, 遇水架桥.]]></content>
       <tags>
-        <tag>java基础知识</tag>
+        <tag>人间词话</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---基础语法(1)]]></title>
-    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(1)%2F</url>
-    <content type="text"><![CDATA[一.标识符​ 对于各种变量, 方法和类等要素 命名时使用的字符序列 成为标识符 凡事自己可以命名的地方都叫标识符,都遵循标识符的规则 二.关键字​ 一些赋以特定的含义, 用作专门用途的字符串 成为关键字 大部分编辑会将关键字用特殊方式标出 所有Java关键字都是小写英文 三. java基础数据类型Java常量​ eg: 整型常量: 123, 字符常量: ‘a’ 注意: 区分字符常量和字符串常量 注意: “常量”这个名词还会用在另外其它语境中表示 值不可变的变量 Java变量12345//变量i(变量的名字)中存放常量100(变量的值)int i = 100; float f = 3.14;String s = &quot;hello&quot;; 变量是 内存 中的一小块区域, 使用 变量名 来访问这块区域 因此,每一个变量使用前必须要先 声明, 然后必须进行 赋值 (填充内容), 才能使用 补充(本质上理解): 一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 存放在硬盘上是无法运行的 ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 整个.exe文件被放在了在内存里面 ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，会不断地在内存里面分配一些区域 变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值 即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，变量的本质就是一小块内存区域 。就变量来说，该在内存里面分配多大的存储空间呢？不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。 Java变量的分类:按被声明的 位置 划分: 局部变量: 方法或语句块内部定义的变量 成员变量: 方法外部, 累的内部定义的变量 类外面不能有变量的声明 按所属数据的 数据类型 划分: 基本数据类型变量 引用数据类型变量 Java数据类型基本数据类型 整数型: byte, short, int, long, 浮动型: float, double 布尔型: bool 字符型: char 引用数据类型 类(class) 接口(interface) 数组 基本数据类型的转换 boolean 类型不可以转换为其他的数据类型 容量小的类型自动转换为容量大的数据类型 容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出 有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 容量最大 的那一种数据类型,然后在进行计算 范例1234567891011121314151617181920public class TestConvert &#123; public static void main(String arg[]) &#123; int i1 = 123; int i2 = 456; double d1 = (i1+i2)*1.2;//系统将转换为double型运算 float f1 = (float)((i1+i2)*1.2);//需要加强制转换符 byte b1 = 67; byte b2 = 89; byte b3 = (byte)(b1+b2);//系统将转换为int型运算，需要强制转换符 System.out.println(b3); double d2 = 1e200; float f2 = (float)d2;//会产生溢出 System.out.println(f2); float f3 = 1.23f;//必须加f long l1 = 123; long l2 = 30000000000L;//必须加l float f = l1+l2+f3;//系统将转换为float型计算 long l = (long)f;//强制转换会舍去小数部分（不是四舍五入） &#125;&#125; 参考博文: ​ 孤傲苍狼 java基础学习总结——基础语法1]]></content>
-      <categories>
-        <category>java基础知识</category>
-        <category>基础语法</category>
-      </categories>
+    <title><![CDATA[人间词话---网易云评论]]></title>
+    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[卿卿我我 写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己. 校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影. 情怀 愿走出半生, 归来仍是少年.]]></content>
       <tags>
-        <tag>java基础知识</tag>
+        <tag>人间词话</tag>
+        <tag>网易云评论</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Java基础知识---基础语法(2)]]></title>
     <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(2)%2F</url>
-    <content type="text"><![CDATA[一. 语句1.1 条件语句 if 语句 switch 语句 循环语句 for 循环语句 while 循环与do while 循环 break 和 continue 语句 二. 方法 一段用来完成特定功能的代码片段 1234[修饰符1 修饰符2 ...] 返回值类型 方法名(形式参数列表) &#123; java 语句; ...&#125; 方法可以有返回值，但可以不用这个返回值。方法首先要定义，然后才能调用 三、变量的作用域 变量的作用域只在“{ }”有效，出了这个“{ }”就没有作用了 四、递归调用 递归：在一个方法内部对自身的调用就称为递归 具体的参考 孤傲苍狼 博客 五、程序的执行过程 参考博文: 孤傲苍狼 java基础学习总结——基础语法2]]></content>
+    <content type="text"><![CDATA[一. 语句1.1 条件语句 if 语句 switch 语句 循环语句 for 循环语句 while 循环与do while 循环 break 和 continue 语句 二. 方法一段用来完成特定功能的代码片段 1234[修饰符1 修饰符2 ...] 返回值类型 方法名(形式参数列表) &#123; java 语句; ...&#125; 方法可以有返回值，但可以不用这个返回值。方法首先要定义，然后才能调用 三、变量的作用域变量的作用域只在“{ }”有效，出了这个“{ }”就没有作用了四、递归调用 递归：在一个方法内部对自身的调用就称为递归 具体的参考 孤傲苍狼 博客 五、程序的执行过程 参考博文:​ java基础学习总结——基础语法2]]></content>
       <categories>
         <category>java基础知识</category>
         <category>基础语法</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---Filter(一)]]></title>
+    <url>%2F2019%2F03%2F08%2FJavaWeb---Filter(%E4%B8%80)%2F</url>
+    <content type="text"><![CDATA[一、Filter简介 Filter也称之为过滤器，WEB开发人员通过Filter技术，对web服务器管理的所有web资源：例如Jsp, Servlet, 静态图片文件或静态 html 文件等进行拦截，从而实现一些特殊的功能。例如实现URL级别的权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。 Servlet API中提供了一个Filter接口，开发web应用时，如果编写的Java类实现了这个接口，则把这个java类称之为过滤器Filter。通过Filter技术，开发人员可以实现用户在访问某个目标资源之前，对访问的请求和响应进行拦截. 二、Filter是如何实现拦截的？ Filter接口中有一个doFilter方法，当我们编写好Filter，并配置对哪个web资源进行拦截后，WEB服务器每次在调用web资源的service方法之前，都会先调用一下filter的doFilter方法，因此，在该方法内编写代码可达到如下目的： 调用目标资源之前，让一段代码执行。 是否调用目标资源（即是否让用户访问web资源）。 调用目标资源之后，让一段代码执行。 web服务器在调用doFilter方法时，会传递一个filterChain对象进来，filterChain对象是filter接口中最重要的一个对 象，它也提供了一个doFilter方法，开发人员可以根据需求决定是否调用此方法，调用该方法，则web服务器就会调用web资源的service方 法，即web资源就会被访问，否则web资源不会被访问。 三、Filter开发入门3.1、Filter开发步骤Filter开发分为二个步骤： 编写java类实现Filter接口，并实现其doFilter方法。 在 web.xml 文件中使用&lt;filter&gt;和&lt;filter-mapping&gt;元素对编写的filter类进行注册，并设置它所能拦截的资源。 过滤器范例123456789101112131415161718192021222324252627282930313233/*** @Description:filter的三种典型应用：* 1、可以在filter中根据条件决定是否调用chain.doFilter(request, response)方法，即是否让目标资源执行* 2、在让目标资源执行之前，可以对request\response作预处理，再让目标资源执行* 3、在目标资源执行之后，可以捕获目标资源的执行结果，从而实现一些特殊的功能*/ public class FilterDemo01 implements Filter &#123; @Override public void init(FilterConfig filterConfig) throws ServletException &#123; System.out.println("----过滤器初始化----"); &#125; @Override public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123; //对request和response进行一些预处理 request.setCharacterEncoding("UTF-8"); response.setCharacterEncoding("UTF-8"); response.setContentType("text/html;charset=UTF-8"); System.out.println("FilterDemo01执行前！！！"); chain.doFilter(request, response); //让目标资源执行，放行 System.out.println("FilterDemo01执行后！！！"); &#125; @Override public void destroy() &#123; System.out.println("----过滤器销毁----"); &#125;&#125; 在web. xml中配置过滤器123456789101112&lt;!--配置过滤器--&gt;&lt;filter&gt; &lt;filter-name&gt;FilterDemo01&lt;/filter-name&gt; &lt;filter-class&gt;me.gacl.web.filter.FilterDemo01&lt;/filter-class&gt;&lt;/filter&gt;&lt;!--映射过滤器--&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;FilterDemo01&lt;/filter-name&gt; &lt;!--“/*”表示拦截所有的请求 --&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt; 参考博文​ javaweb学习总结(四十二)——Filter(过滤器)学习]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>Filter</category>
       </categories>
       <tags>
         <tag>java基础知识</tag>
@@ -222,7 +233,7 @@
     <content type="text"><![CDATA[一. Java类的定义 使用 class 关键字定义一个类 12345678910class Person &#123; // 成员变量(属性)定义 private int id; private int age = 10; //方法定义 public int getAge() &#123; return age; &#125; public void setAge(int i) &#123; age = i; &#125;&#125; 二. 成员变量 成员变量的作用范围为 整个类体 定义成员变量可以对其初始化, 如果 不对其初始化 , Java 使用默认的值 对其初始化(若不记得JAVA对成员变量默认的初始化是多少的话，定义一个成员变量，不给它初始化，然后直接打印这个成员变量,进行查看) 在 JAVA 里面的任何变量首先应该要声明，然后再赋值，然后再使用 成员变量和局部变量的区别: 成员变量 局部变量 不进行初始化 默认给初始化 不默认给初始化, 在方法里面声明一个局部变量如果不给它初始化时就会出错 三. 基本概念 — 引用​ Java语言中 除基本类型之外 的变量类型都称之为引用类型 Java中的对象是通过引用对其操作的 基本类型与引用类型的区别: 基本类型 引用类型 实现 当声明一个int i=0时，系统会马上给这个i分配一个内存空间（在 栈内存 里面分配一小块区域用来装数字0），里面装着一个值为0，以后使用i这个名字马上就可以访问这个内存空间里面的值 定义好这个类之后，需要使用new关键字把这个类的对象实例化出来，也就是真真正正造出一个对象出来才能使用这个对象 内存 占 一块 内存 占 两块 内存 存放位置 栈内存 栈内存: 引用对象 堆内存: 真正的内容(new出来的东西) 不论是基本数据类型还是引用类型，都会先在栈中分配一块内存 ，对于基本类型来说，这块区域包含的是 基本类型的内容；而对于引用类型来说，这块区域包含的是 指向真正内容的指针(存放真正内容的地址) ，真正的内容被手动的分配在堆上。 代码实例:123456789101112131415161718public class Hero &#123; String name; //姓名 float hp; //血量 public static void main(String[] args) &#123; //代表创建了一个Hero对象 //但是也仅仅是创建了一个对象，没有办法访问它 //为了访问这个对象，会使用引用来代表这个对象 new Hero(); //"h"这个变量是Hero类型，叫做引用(也叫 引用对象,对象的引用) //"="的意思指的h这个引用代表右侧创建的对象 //“代表” 在面向对象里，又叫做“指向” //引用h指向了新建的Hero对象 Hero h = new Hero(); &#125; &#125; 多个引用，一个对象，一个引用，多个对象区别： 多个引用指向一个对象，操作的都是同一个对象 一个引用多个对象，之前的对象就没有办法访问了, 这个引用就指向了另一个对象 四. 类和对象的关系如何在内存中区分类和对象 类是 静态 的概念, 在代码区 对象是new出来的, 位于 堆内存 , 类的每个成员变量在不同的对象中都有不同的值 (除了静态变量,static),而方法只有一分,执行的时候才占用内存 . 五. 构造方法(函数) 主要作用 :完成对象的初始化工作，(如果写的类里面没有构造函数,那么编译器会默认加上一个无参数且方法体为空的构造函数) 特点 使用 new + 构造方法创建一个新的对象 构造函数是定义在 Java类中的一个用来 初始化对象 的函数,(new一个东西的时候，实际上你调用的是一个构造方法，构造方法就是把自己构造成一个新的对象，所以叫构造方法，构造一个新对象用的方法叫构造方法) 构造函数与类同名, 且没有返回值(构造方法的名字必须和类的名字完全一模一样，包括大小写,这个方法的名字和类名完全相同，并且没有返回值，也就是在这个方法前面不能写任何的方法的返回类型修饰符，连void都不可以写) 范例12345678910111213141516public class Person &#123; int id; //在person这类里面定义两个成员变量id和age, int age=20; //给成员变量age赋了初值为20 /**这里就是person这个类的一个构造方法 * 构造方法的规则很简单，和类名要完全一样，一点都不能错，包括大小写。 * 并且没有返回值，不能写void在它前面修饰 * @param _id * @param _age */ public Person(int _id,int _age ) &#123; id = _id; age = _age; &#125;&#125;//内存分析见 孤傲苍狼博客 注意 如果类已经有了一个有参数有方法体的构造函数,这时编译器就不会再给它默认加上一个无参且方法体为空的构造函数.可以理解为无参的构造函数被覆盖了.这种情况称为没有默认构造函数 随笔数据区、代码区、栈区、堆区 区别: 栈区(stack)：由系统的编译器自动的释放， 主要用来存放方法中的参数，一些临时的局部变量等 ，并且方法中的参数一般在操作完后，会由编译器自动的释放掉。 堆区(heap):由程序员决定，在Java中，如果程序员不释放的话，一般会由垃圾回收机制自动的清理掉。此区域主要用来 存放我们经常创建的对象、动态的申请的临时空间等 。 数据区(data seg):也称全局区或者静态区，根据名称我们就应该知道用来存放一些全局的东西，比如我们经常用到的 静态变量、全局变量等 都会存放到数据区，此区域上的东西都被全局所共享。比如我们可以采取类名.的方式就可以访问到方法，这就是所谓的静态方法，存放到数据区的。 代码区：存放 程序编译后可以执行代码的地方 。比如执行代码时写的While语句、if条件语句等，都会存放到此 理解了内存，就理解了一切，就理解了各种各样的语言。所有的语言无非都是这样：局部变量分配内存永远在栈里面，new出来的东西分配内存永远是在堆里，静态的东西分配内存永远是在数据区。剩下的代码肯定是在代码区 参考博文:how2J 类和对象 孤傲苍狼 java基础学习总结——面向对象2 Java基本数据类型与引用数据类型 及在堆栈中内存的存储原理 数据区、代码区、栈区、堆区]]></content>
       <categories>
         <category>java基础知识</category>
-        <category>java面向对象</category>
+        <category>面向对象</category>
       </categories>
       <tags>
         <tag>java基础知识</tag>
@@ -237,20 +248,20 @@
         <category>Static关键字</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>java基础知识</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[C语言基础知识]]></title>
-    <url>%2F2019%2F03%2F08%2FC%E8%AF%AD%E8%A8%80---%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
-    <content type="text"><![CDATA[C语言基础知识:结构体:定义: 将一些已知的数据类型放在一起来定义的一种数据类型 结构体并没有创造出新的数据类型，这点要搞清楚。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。 代码中的定义: 1234567891011121314151617struct 结构名 // 结构名是结构的标识符不是变量名&#123; 类型 变量名; 类型 变量名;&#125; 结构变量;// 例子:struct student &#123; char name[8]; int age; char sex[2]; char depart[20]; float wage1, wage2, wage3, wage4, wage5; &#125; Mike, Marry;struct student John; // struct student:类型说明符, John 变量名// 定义了两个 struct student 类型的变量 Mike, Marry typedef: 使用 typedef 关键字来定义自己习惯的数据类型名称，来替代系统默认的基本类型名称、数组类型名称、指针类型名称与用户自定义的结构型名称、共用型名称、枚举型名称等。 基本用法 1. 为基本类型数据定义新的类型名1234567typedef int COUNT; // 为基本类型数据定义新的类型名int main() &#123; COUNT a = 88; printf("结果为: %d", a); return 0;&#125;// 打印结果: 结果为: 88 2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称12345678910111213141516// 以结构体为例，下面我们定义一个名为 Point 的结构体struct Point&#123; double x; double y; double z;&#125;;// 在调用这个结构体时，我们必须像下面的代码这样来调用这个结构体int main() &#123; struct Point oPoint2; oPoint2.x = 3.3; printf("%f", oPoint2.x); return 0;&#125;// 打印结果: 3.300000 解析123456789typedef struct tagPoint&#123; double x; double y; double z;&#125; Point;// 1.相当于把 x = struct tagPoint &#123; …&#125;// 2.typedef x Point;// 可以看做是简写 参考文章: ​ typedef的用法，C语言typedef详解]]></content>
+    <title><![CDATA[Java基础知识---面向对象(1)]]></title>
+    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(1)%2F</url>
+    <content type="text"><![CDATA[一. 面向过程的思想和面向对象的思想面向过程 自顶向下,逐步细化 ​ 面向解决问题的过程进行编程​ 按照步骤化解决问题.(一个问题,分析这个问题如何去解决,第一步做什么, 第二步什么…), 当我们用面向过程的思想去编程或解决问题时，首先一定要把详细的实现过程弄清楚。一旦过程设计清楚，代码的实现简直轻而易举。 面向对象 Java 中万物皆对象，模拟真实的现实世界 ​ 在编程的时候尽可能的去模拟真实的现实世界，按照现实世界中的逻辑去处理一个问题，分析问题中参与其中的有哪些实体，这些实体应该有什么属性和方法，我们如何通过调用这些实体的属性和方法去解决问题。拿到一个问题,应该分析: 这个问题里面有哪些类和对象 在分析这些类和对象应该具有哪些属性和方法 分析类和类之间具有什么关系 设计思维: 合适的方法应该出现在合适的类里面 二. 类和对象类一类事物的抽象包括属性(静态)和方法(动态) 属性: 用来描述这一个对象（类）的特征 ,比如一个人的属性有身高，肤色，体重等等， 方法: 可以完成一个特定的功能，方法就像是动作, 比如人可以吃饭，跑步，学习，都可以是方法 Java中属性就是成员变量,方法就是函数, 不同的叫法 对象一类事物的具体的某一个东西(符合这类事物的具体特征) 在Java中, 对象就是类的实例化 随笔: 对象和类是分不开的，必须首先定义类才能有对象类和对象的关系，类就是模板，里面定义着属性和方法，而对象就是实例，通过类来创建（new）对象，叫类的实例化 三. 面向过程与面向对象的比较 都可以实现代码重用和模块化编程，但是面对对象的模块化更深，数据更封闭，也更安全！因为面向对象的封装性更强！ 面对对象的思维方式更加贴近于现实生活，更容易解决大型的复杂的业务逻辑 从前期开发角度上来看，面对对象远比面向过程要复杂，但是从维护和扩展功能的角度上来看，面对对象远比面向过程要简单！ 当我们的业务逻辑比较简单时，使用面向过程能更快的实现当我们的业务逻辑比较复杂时，为了将来的维护和扩展，还是面向对象更为靠谱 参考博文​ 编程思想：面向对象和面向过程]]></content>
       <categories>
-        <category>C语言</category>
-        <category>基础知识</category>
+        <category>java基础知识</category>
+        <category>面向对象</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
+        <tag>java基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -260,6 +271,18 @@
       <categories>
         <category>C语言</category>
         <category>指针</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C语言基础知识]]></title>
+    <url>%2F2019%2F03%2F08%2FC%E8%AF%AD%E8%A8%80---%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[C语言基础知识:结构体:定义: 将一些已知的数据类型放在一起来定义的一种数据类型 结构体并没有创造出新的数据类型，这点要搞清楚。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。 代码中的定义: 1234567891011121314151617struct 结构名 // 结构名是结构的标识符不是变量名&#123; 类型 变量名; 类型 变量名;&#125; 结构变量;// 例子:struct student &#123; char name[8]; int age; char sex[2]; char depart[20]; float wage1, wage2, wage3, wage4, wage5; &#125; Mike, Marry;struct student John; // struct student:类型说明符, John 变量名// 定义了两个 struct student 类型的变量 Mike, Marry typedef: 使用 typedef 关键字来定义自己习惯的数据类型名称，来替代系统默认的基本类型名称、数组类型名称、指针类型名称与用户自定义的结构型名称、共用型名称、枚举型名称等。 基本用法 1. 为基本类型数据定义新的类型名1234567typedef int COUNT; // 为基本类型数据定义新的类型名int main() &#123; COUNT a = 88; printf("结果为: %d", a); return 0;&#125;// 打印结果: 结果为: 88 2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称12345678910111213141516// 以结构体为例，下面我们定义一个名为 Point 的结构体struct Point&#123; double x; double y; double z;&#125;;// 在调用这个结构体时，我们必须像下面的代码这样来调用这个结构体int main() &#123; struct Point oPoint2; oPoint2.x = 3.3; printf("%f", oPoint2.x); return 0;&#125;// 打印结果: 3.300000 解析123456789typedef struct tagPoint&#123; double x; double y; double z;&#125; Point;// 1.相当于把 x = struct tagPoint &#123; …&#125;// 2.typedef x Point;// 可以看做是简写 参考文章: ​ typedef的用法，C语言typedef详解]]></content>
+      <categories>
+        <category>C语言</category>
+        <category>基础知识</category>
       </categories>
       <tags>
         <tag>C语言</tag>
@@ -319,6 +342,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Java基础知识---基础语法(1)]]></title>
+    <url>%2F2019%2F03%2F07%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(1)%2F</url>
+    <content type="text"><![CDATA[一.标识符​ 对于各种变量, 方法和类等要素 命名时使用的字符序列 成为标识符 凡事自己可以命名的地方都叫标识符,都遵循标识符的规则 二.关键字​ 一些赋以特定的含义, 用作专门用途的字符串 成为关键字 大部分编辑会将关键字用特殊方式标出所有Java关键字都是小写英文 三. java基础数据类型3.1 Java常量​ eg: 整型常量: 123, 字符常量: ‘a’ 注意: 区分字符常量和字符串常量注意: “常量”这个名词还会用在另外其它语境中表示 值不可变的变量 3.2 Java变量1234// 变量i(变量的名字)中存放常量100(变量的值)int i = 100; float f = 3.14;String s = &quot;hello&quot;; 变量是 内存 中的一小块区域, 使用 变量名 来访问这块区域因此,每一个变量使用前必须要先 声明, 然后必须进行 赋值 (填充内容), 才能使用 补充(本质上理解): 一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 存放在硬盘上是无法运行的 ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 整个.exe文件被放在了在内存里面 ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，会不断地在内存里面分配一些区域 变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，变量的本质就是一小块内存区域 。就变量来说，该在内存里面分配多大的存储空间呢？不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。 Java变量的分类:按被声明的 位置 划分: 局部变量: 方法或语句块内部定义的变量 成员变量: 方法外部, 累的内部定义的变量 类外面不能有变量的声明 按所属数据的 数据类型 划分: 基本数据类型变量 引用数据类型变量3.3 Java数据类型3.3.1 基本数据类型 整数型: byte, short, int, long, 浮动型: float, double 布尔型: bool 字符型: char基本数据类型的转换 boolean 类型不可以转换为其他的数据类型 容量小的类型自动转换为容量大的数据类型 容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出 有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 容量最大 的那一种数据类型,然后在进行计算范例1234567891011121314151617181920public class TestConvert &#123; public static void main(String arg[]) &#123; int i1 = 123; int i2 = 456; double d1 = (i1+i2)*1.2;//系统将转换为double型运算 float f1 = (float)((i1+i2)*1.2);//需要加强制转换符 byte b1 = 67; byte b2 = 89; byte b3 = (byte)(b1+b2);//系统将转换为int型运算，需要强制转换符 System.out.println(b3); double d2 = 1e200; float f2 = (float)d2;//会产生溢出 System.out.println(f2); float f3 = 1.23f;//必须加f long l1 = 123; long l2 = 30000000000L;//必须加l float f = l1+l2+f3;//系统将转换为float型计算 long l = (long)f;//强制转换会舍去小数部分（不是四舍五入） &#125;&#125; 3.3.2 引用数据类型 类(class) 接口(interface) 数组 参考博文:​ java基础学习总结——基础语法1]]></content>
+      <categories>
+        <category>java基础知识</category>
+        <category>基础语法</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo 常用命令]]></title>
     <url>%2F2019%2F03%2F07%2FHexo---%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[1. 写文章 写文章 你可以执行下列命令来创建一篇新文章。 hexo new #新建文章，可以改成中文的，如“新文章”，如果标题包含空格的话，请使用引号括起来。 删除文章 先删除目标文章，然后重新运行 hexo clean # 清除缓存文件 (db.json) 和已生成的静态文件 (public) hexo g -d # 文件生成后立即部署网站 写完文章后，你可以使用 hexo g # 全称hexo generate , 生成静态文件（generate：产生） hexo s # 全称hexo server , 启动服务器，默认情况下，访问网址为http://localhost:4000/在本地预览效果 hexo d # 全称hexo deploy, 部署网站，同步到github上（deploy：部署） 2. 分类和标签 Front-matter 是文件最上方以 --- 分隔的区域，用于指定个别文件的变量，举例来说： 12title: Hello Worlddate: 2013/7/13 20:46:25 以下是预先定义的参数，您可在模板中使用这些参数值并加以利用 参数 描述 默认值 layout 布局 title 标题 date 建立日期 文件建立日期 updated 更新日期 文件更新日期 comments 开启文章的评论功能 true tags 标签（不适用于分页） categories 分类（不适用于分页） permalink 覆盖文章网址 分类和标签 只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 Foo, Bar 不等于 Bar, Foo；而标签没有顺序和层次。 123456categories:- Diarytags:- PS3- Games# 会使分类Games成为PS3的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类]]></content>
@@ -340,8 +375,8 @@
         <category>java面试经典题目</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>java基础知识</tag>
+        <tag>java</tag>
         <tag>java面试经典题目</tag>
       </tags>
   </entry>
