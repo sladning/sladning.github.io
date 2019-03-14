@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-13T13:41:16.196Z</updated>
+  <updated>2019-03-14T01:04:14.311Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础知识(2)-基础语法(2)</title>
+    <link href="http://yoursite.com/2019/03/14/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-2-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95-2/"/>
+    <id>http://yoursite.com/2019/03/14/Java基础知识-2-基础语法-2/</id>
+    <published>2019-03-14T01:01:23.000Z</published>
+    <updated>2019-03-14T01:04:14.311Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-语句"><a href="#一-语句" class="headerlink" title="一. 语句"></a>一. 语句</h1><h2 id="1-1-条件语句"><a href="#1-1-条件语句" class="headerlink" title="1.1 条件语句"></a>1.1 条件语句</h2><ul><li>if 语句</li><li>switch 语句</li></ul><h2 id="1-2-循环语句"><a href="#1-2-循环语句" class="headerlink" title="1.2 循环语句"></a>1.2 循环语句</h2><ul><li>for 循环语句</li><li>while 循环与do while 循环</li></ul><h2 id="1-3-break-和-continue-语句"><a href="#1-3-break-和-continue-语句" class="headerlink" title="1.3 break 和 continue 语句"></a>1.3 break 和 continue 语句</h2>  <a id="more"></a><h1 id="二-方法"><a href="#二-方法" class="headerlink" title="二. 方法"></a>二. 方法</h1><p>​    一段用来<strong>完成特定功能</strong>的代码片段</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[修饰符<span class="number">1</span> 修饰符<span class="number">2</span> ...] 返回值类型 方法名(形式参数列表) &#123;</span><br><span class="line">java 语句;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>方法可以有返回值，但可以不用这个返回值</strong>。方法首先要定义，然后才能调用</p></blockquote><h1 id="三、变量的作用域"><a href="#三、变量的作用域" class="headerlink" title="三、变量的作用域"></a>三、<strong>变量的作用域</strong></h1><p>​    变量的作用域只在“{  }”有效，出了这个“{  }”就没有作用了</p><h1 id="四、递归调用"><a href="#四、递归调用" class="headerlink" title="四、递归调用"></a>四、<strong>递归调用</strong></h1><p>　　递归：<strong>在一个方法内部对自身的调用就称为递归</strong></p><blockquote><p>具体的参考 <strong>孤傲苍狼</strong> 博客</p></blockquote><h1 id="五、程序的执行过程"><a href="#五、程序的执行过程" class="headerlink" title="五、程序的执行过程"></a>五、<strong>程序的执行过程</strong></h1><p><img src="/2019/03/14/Java基础知识-2-基础语法-2/chengxu.png" alt="chengxu"></p><p>参考博文:<br>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3627241.html" target="_blank" rel="noopener">java基础学习总结——基础语法2</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一-语句&quot;&gt;&lt;a href=&quot;#一-语句&quot; class=&quot;headerlink&quot; title=&quot;一. 语句&quot;&gt;&lt;/a&gt;一. 语句&lt;/h1&gt;&lt;h2 id=&quot;1-1-条件语句&quot;&gt;&lt;a href=&quot;#1-1-条件语句&quot; class=&quot;headerlink&quot; title=&quot;1.1 条件语句&quot;&gt;&lt;/a&gt;1.1 条件语句&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;if 语句&lt;/li&gt;
+&lt;li&gt;switch 语句&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;1-2-循环语句&quot;&gt;&lt;a href=&quot;#1-2-循环语句&quot; class=&quot;headerlink&quot; title=&quot;1.2 循环语句&quot;&gt;&lt;/a&gt;1.2 循环语句&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;for 循环语句&lt;/li&gt;
+&lt;li&gt;while 循环与do while 循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;1-3-break-和-continue-语句&quot;&gt;&lt;a href=&quot;#1-3-break-和-continue-语句&quot; class=&quot;headerlink&quot; title=&quot;1.3 break 和 continue 语句&quot;&gt;&lt;/a&gt;1.3 break 和 continue 语句&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="基础语法" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    
+    
+      <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2019/03/14/test/"/>
+    <id>http://yoursite.com/2019/03/14/test/</id>
+    <published>2019-03-14T00:43:00.000Z</published>
+    <updated>2019-03-14T00:44:18.250Z</updated>
+    
+    <content type="html"><![CDATA[<p>测试图片</p><p><img src="/2019/03/14/test/chengxu.png" alt="chengxu"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;测试图片&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/14/test/chengxu.png&quot; alt=&quot;chengxu&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaWeb---Servlet开发(二)</title>
@@ -98,6 +153,34 @@
   </entry>
   
   <entry>
+    <title>Java基础知识---接口</title>
+    <link href="http://yoursite.com/2019/03/13/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://yoursite.com/2019/03/13/Java基础知识---接口/</id>
+    <published>2019-03-13T00:17:27.000Z</published>
+    <updated>2019-03-13T02:09:12.842Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java基础知识—接口"><a href="#Java基础知识—接口" class="headerlink" title="Java基础知识—接口"></a>Java基础知识—接口</h1><h2 id="一-概念"><a href="#一-概念" class="headerlink" title="一. 概念"></a>一. 概念</h2><ul><li><strong>官方解释:</strong> Java接口是一系列方法的声明，是一些方法特征的集合，<strong>一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）</strong></li></ul><a id="more"></a><ul><li><strong>通俗理解:</strong> 接口可以理解为一种特殊的抽象类(<strong>100%的抽象类, 所有的方法都是抽象方法</strong>)，里面全部是由<strong>全局常量</strong>和<strong>公共的抽象方法(方法的定义)</strong>所组成,<strong>而没有变量和方法的实现</strong></li></ul><h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * java中定义接口</span></span><br><span class="line"><span class="comment"> * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">JavaInterfaces</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 常量的声明格式, 都是公共的、静态的，不能改变的</span></span><br><span class="line">    <span class="comment">// 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> id=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> id=<span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//方法的声明</span></span><br><span class="line">    <span class="comment">// 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉</span></span><br><span class="line">    <span class="comment">// 在接口里面声明的抽象方法默认是“public(公共的)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="二-特点"><a href="#二-特点" class="headerlink" title="二. 特点"></a>二. 特点</h2><ul><li><p>接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图</p></li><li><p>接口可以继承其他的接口,并添加新的属性和抽象方法.</p></li><li><p><strong>抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类</strong></p></li><li><p>接口是解决<strong>Java无法使用多继承</strong>的一种手段,, 实际中更多的作用是<strong>制定标准</strong>的。</p><blockquote><p><strong>一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承</strong></p></blockquote></li><li><p>见范例</p></li><li><p><strong>接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口</strong></p></li></ul><h1 id="三-重点"><a href="#三-重点" class="headerlink" title="三. 重点"></a>三. 重点</h1><ul><li>一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。</li><li><strong>不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的</strong>. 但是，<strong>我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法</strong>(Java多态的特性).</li></ul><h1 id="四-接口的进一步理解"><a href="#四-接口的进一步理解" class="headerlink" title="四. 接口的进一步理解"></a>四. 接口的进一步理解</h1><p>​    如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法）</p><h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">USB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 一个USB类实现USB接口。（实现其中的方法）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">YouPan</span> <span class="keyword">implements</span> <span class="title">USB</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"U盘正在通过USB功能读取数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"U盘正在通过USB功能写入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 一个键盘类实现USB接口。（实现其中的方法）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JianPan</span> <span class="keyword">implements</span> <span class="title">USB</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"键盘正在通过USB功能读取数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"键盘正在通过USB功能写入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 生成一个实现可USB接口（标准）的U盘对象</span></span><br><span class="line">        YouPan youPan = <span class="keyword">new</span> YouPan();</span><br><span class="line">        <span class="comment">// 调用U盘的read( )方法读取数据</span></span><br><span class="line">        youPan.read();</span><br><span class="line">        <span class="comment">// 调用U盘的write( )方法写入数据</span></span><br><span class="line">        youPan.write();</span><br><span class="line">        <span class="comment">// 生成一个实现可USB接口（标准）的键盘对象</span></span><br><span class="line">        JianPan jianPan = <span class="keyword">new</span> JianPan();</span><br><span class="line">        <span class="comment">// 调用键盘的read( )方法读取数据</span></span><br><span class="line">        jianPan.read();</span><br><span class="line">        <span class="comment">// 调用键盘的write( )方法写入数据</span></span><br><span class="line">        jianPan.write();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3651121.html" target="_blank" rel="noopener">java基础学习总结——接口</a></p><p>​    <a href="https://blog.csdn.net/qq_19782019/article/details/80259836" target="_blank" rel="noopener">JAVA基础——接口（全网最详细教程）</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Java基础知识—接口&quot;&gt;&lt;a href=&quot;#Java基础知识—接口&quot; class=&quot;headerlink&quot; title=&quot;Java基础知识—接口&quot;&gt;&lt;/a&gt;Java基础知识—接口&lt;/h1&gt;&lt;h2 id=&quot;一-概念&quot;&gt;&lt;a href=&quot;#一-概念&quot; class=&quot;headerlink&quot; title=&quot;一. 概念&quot;&gt;&lt;/a&gt;一. 概念&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;官方解释:&lt;/strong&gt; Java接口是一系列方法的声明，是一些方法特征的集合，&lt;strong&gt;一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="接口" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%8E%A5%E5%8F%A3/"/>
+    
+    
+      <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java基础知识---继承</title>
     <link href="http://yoursite.com/2019/03/13/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF/"/>
     <id>http://yoursite.com/2019/03/13/Java基础知识---继承/</id>
@@ -118,34 +201,6 @@
       <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
       <category term="继承" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E7%BB%A7%E6%89%BF/"/>
-    
-    
-      <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础知识---接口</title>
-    <link href="http://yoursite.com/2019/03/13/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3/"/>
-    <id>http://yoursite.com/2019/03/13/Java基础知识---接口/</id>
-    <published>2019-03-13T00:17:27.000Z</published>
-    <updated>2019-03-13T02:09:12.842Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Java基础知识—接口"><a href="#Java基础知识—接口" class="headerlink" title="Java基础知识—接口"></a>Java基础知识—接口</h1><h2 id="一-概念"><a href="#一-概念" class="headerlink" title="一. 概念"></a>一. 概念</h2><ul><li><strong>官方解释:</strong> Java接口是一系列方法的声明，是一些方法特征的集合，<strong>一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）</strong></li></ul><a id="more"></a><ul><li><strong>通俗理解:</strong> 接口可以理解为一种特殊的抽象类(<strong>100%的抽象类, 所有的方法都是抽象方法</strong>)，里面全部是由<strong>全局常量</strong>和<strong>公共的抽象方法(方法的定义)</strong>所组成,<strong>而没有变量和方法的实现</strong></li></ul><h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * java中定义接口</span></span><br><span class="line"><span class="comment"> * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">JavaInterfaces</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 常量的声明格式, 都是公共的、静态的，不能改变的</span></span><br><span class="line">    <span class="comment">// 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> id=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> id=<span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//方法的声明</span></span><br><span class="line">    <span class="comment">// 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉</span></span><br><span class="line">    <span class="comment">// 在接口里面声明的抽象方法默认是“public(公共的)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="二-特点"><a href="#二-特点" class="headerlink" title="二. 特点"></a>二. 特点</h2><ul><li><p>接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图</p></li><li><p>接口可以继承其他的接口,并添加新的属性和抽象方法.</p></li><li><p><strong>抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类</strong></p></li><li><p>接口是解决<strong>Java无法使用多继承</strong>的一种手段,, 实际中更多的作用是<strong>制定标准</strong>的。</p><blockquote><p><strong>一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承</strong></p></blockquote></li><li><p>见范例</p></li><li><p><strong>接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口</strong></p></li></ul><h1 id="三-重点"><a href="#三-重点" class="headerlink" title="三. 重点"></a>三. 重点</h1><ul><li>一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。</li><li><strong>不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的</strong>. 但是，<strong>我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法</strong>(Java多态的特性).</li></ul><h1 id="四-接口的进一步理解"><a href="#四-接口的进一步理解" class="headerlink" title="四. 接口的进一步理解"></a>四. 接口的进一步理解</h1><p>​    如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法）</p><h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">USB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 一个USB类实现USB接口。（实现其中的方法）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">YouPan</span> <span class="keyword">implements</span> <span class="title">USB</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"U盘正在通过USB功能读取数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"U盘正在通过USB功能写入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 一个键盘类实现USB接口。（实现其中的方法）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JianPan</span> <span class="keyword">implements</span> <span class="title">USB</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"键盘正在通过USB功能读取数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"键盘正在通过USB功能写入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 生成一个实现可USB接口（标准）的U盘对象</span></span><br><span class="line">        YouPan youPan = <span class="keyword">new</span> YouPan();</span><br><span class="line">        <span class="comment">// 调用U盘的read( )方法读取数据</span></span><br><span class="line">        youPan.read();</span><br><span class="line">        <span class="comment">// 调用U盘的write( )方法写入数据</span></span><br><span class="line">        youPan.write();</span><br><span class="line">        <span class="comment">// 生成一个实现可USB接口（标准）的键盘对象</span></span><br><span class="line">        JianPan jianPan = <span class="keyword">new</span> JianPan();</span><br><span class="line">        <span class="comment">// 调用键盘的read( )方法读取数据</span></span><br><span class="line">        jianPan.read();</span><br><span class="line">        <span class="comment">// 调用键盘的write( )方法写入数据</span></span><br><span class="line">        jianPan.write();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3651121.html" target="_blank" rel="noopener">java基础学习总结——接口</a></p><p>​    <a href="https://blog.csdn.net/qq_19782019/article/details/80259836" target="_blank" rel="noopener">JAVA基础——接口（全网最详细教程）</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Java基础知识—接口&quot;&gt;&lt;a href=&quot;#Java基础知识—接口&quot; class=&quot;headerlink&quot; title=&quot;Java基础知识—接口&quot;&gt;&lt;/a&gt;Java基础知识—接口&lt;/h1&gt;&lt;h2 id=&quot;一-概念&quot;&gt;&lt;a href=&quot;#一-概念&quot; class=&quot;headerlink&quot; title=&quot;一. 概念&quot;&gt;&lt;/a&gt;一. 概念&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;官方解释:&lt;/strong&gt; Java接口是一系列方法的声明，是一些方法特征的集合，&lt;strong&gt;一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-      <category term="接口" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%8E%A5%E5%8F%A3/"/>
     
     
       <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
@@ -288,6 +343,32 @@
   </entry>
   
   <entry>
+    <title>eclipse---快捷键</title>
+    <link href="http://yoursite.com/2019/03/12/eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/03/12/eclipse快捷键/</id>
+    <published>2019-03-12T04:23:51.000Z</published>
+    <updated>2019-03-12T13:11:42.387Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="eclipse快捷键"><a href="#eclipse快捷键" class="headerlink" title="eclipse快捷键"></a>eclipse快捷键</h1><h4 id="eclipse配置折叠-展开代码快捷键"><a href="#eclipse配置折叠-展开代码快捷键" class="headerlink" title="eclipse配置折叠/展开代码快捷键"></a>eclipse配置折叠/展开代码快捷键</h4><p>​    <a href="https://blog.csdn.net/HFUTLXM/article/details/78916599" target="_blank" rel="noopener">https://blog.csdn.net/HFUTLXM/article/details/78916599</a></p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;eclipse快捷键&quot;&gt;&lt;a href=&quot;#eclipse快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse快捷键&quot;&gt;&lt;/a&gt;eclipse快捷键&lt;/h1&gt;&lt;h4 id=&quot;eclipse配置折叠-展开代码快捷键&quot;&gt;&lt;a href=&quot;#eclipse配置折叠-展开代码快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse配置折叠/展开代码快捷键&quot;&gt;&lt;/a&gt;eclipse配置折叠/展开代码快捷键&lt;/h4&gt;&lt;p&gt;​    &lt;a href=&quot;https://blog.csdn.net/HFUTLXM/article/details/78916599&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blog.csdn.net/HFUTLXM/article/details/78916599&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="eclipse" scheme="http://yoursite.com/categories/eclipse/"/>
+    
+      <category term="快捷键" scheme="http://yoursite.com/categories/eclipse/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+    
+      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
+    
+      <category term="快捷键" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>how2J天猫整站---笔记</title>
     <link href="http://yoursite.com/2019/03/12/how2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/03/12/how2J天猫整站J2EE---笔记/</id>
@@ -315,32 +396,6 @@
     
     
       <category term="how2J" scheme="http://yoursite.com/tags/how2J/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eclipse---快捷键</title>
-    <link href="http://yoursite.com/2019/03/12/eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://yoursite.com/2019/03/12/eclipse快捷键/</id>
-    <published>2019-03-12T04:23:51.000Z</published>
-    <updated>2019-03-12T13:11:42.387Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="eclipse快捷键"><a href="#eclipse快捷键" class="headerlink" title="eclipse快捷键"></a>eclipse快捷键</h1><h4 id="eclipse配置折叠-展开代码快捷键"><a href="#eclipse配置折叠-展开代码快捷键" class="headerlink" title="eclipse配置折叠/展开代码快捷键"></a>eclipse配置折叠/展开代码快捷键</h4><p>​    <a href="https://blog.csdn.net/HFUTLXM/article/details/78916599" target="_blank" rel="noopener">https://blog.csdn.net/HFUTLXM/article/details/78916599</a></p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;eclipse快捷键&quot;&gt;&lt;a href=&quot;#eclipse快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse快捷键&quot;&gt;&lt;/a&gt;eclipse快捷键&lt;/h1&gt;&lt;h4 id=&quot;eclipse配置折叠-展开代码快捷键&quot;&gt;&lt;a href=&quot;#eclipse配置折叠-展开代码快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse配置折叠/展开代码快捷键&quot;&gt;&lt;/a&gt;eclipse配置折叠/展开代码快捷键&lt;/h4&gt;&lt;p&gt;​    &lt;a href=&quot;https://blog.csdn.net/HFUTLXM/article/details/78916599&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blog.csdn.net/HFUTLXM/article/details/78916599&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="eclipse" scheme="http://yoursite.com/categories/eclipse/"/>
-    
-      <category term="快捷键" scheme="http://yoursite.com/categories/eclipse/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
-    
-      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
-    
-      <category term="快捷键" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
@@ -489,31 +544,26 @@
   </entry>
   
   <entry>
-    <title>Java基础知识(2)---基础语法(2)</title>
-    <link href="http://yoursite.com/2019/03/08/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(2)---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(2)/"/>
-    <id>http://yoursite.com/2019/03/08/Java基础知识(2)---基础语法(2)/</id>
-    <published>2019-03-08T14:27:03.000Z</published>
-    <updated>2019-03-14T00:40:19.808Z</updated>
+    <title>Java基础知识---Filter(一)</title>
+    <link href="http://yoursite.com/2019/03/08/JavaWeb---Filter(%E4%B8%80)/"/>
+    <id>http://yoursite.com/2019/03/08/JavaWeb---Filter(一)/</id>
+    <published>2019-03-08T03:38:55.000Z</published>
+    <updated>2019-03-13T13:56:20.351Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一-语句"><a href="#一-语句" class="headerlink" title="一. 语句"></a>一. 语句</h1><h2 id="1-1-条件语句"><a href="#1-1-条件语句" class="headerlink" title="1.1 条件语句"></a>1.1 条件语句</h2><ul><li>if 语句</li><li>switch 语句</li></ul><h2 id="1-2-循环语句"><a href="#1-2-循环语句" class="headerlink" title="1.2 循环语句"></a>1.2 循环语句</h2><ul><li>for 循环语句</li><li>while 循环与do while 循环</li></ul><h2 id="1-3-break-和-continue-语句"><a href="#1-3-break-和-continue-语句" class="headerlink" title="1.3 break 和 continue 语句"></a>1.3 break 和 continue 语句</h2>  <a id="more"></a><h1 id="二-方法"><a href="#二-方法" class="headerlink" title="二. 方法"></a>二. 方法</h1><p>​    一段用来<strong>完成特定功能</strong>的代码片段</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[修饰符<span class="number">1</span> 修饰符<span class="number">2</span> ...] 返回值类型 方法名(形式参数列表) &#123;</span><br><span class="line">java 语句;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>方法可以有返回值，但可以不用这个返回值</strong>。方法首先要定义，然后才能调用</p></blockquote><h1 id="三、变量的作用域"><a href="#三、变量的作用域" class="headerlink" title="三、变量的作用域"></a>三、<strong>变量的作用域</strong></h1><p>​    变量的作用域只在“{  }”有效，出了这个“{  }”就没有作用了</p><h1 id="四、递归调用"><a href="#四、递归调用" class="headerlink" title="四、递归调用"></a>四、<strong>递归调用</strong></h1><p>　　递归：<strong>在一个方法内部对自身的调用就称为递归</strong></p><blockquote><p>具体的参考 <strong>孤傲苍狼</strong> 博客</p></blockquote><h1 id="五、程序的执行过程"><a href="#五、程序的执行过程" class="headerlink" title="五、程序的执行过程"></a>五、<strong>程序的执行过程</strong></h1><p><img src="/2019/03/08/Java基础知识(2)---基础语法(2)/chengxu.png" alt="chengxu"></p><p>参考博文:<br>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3627241.html" target="_blank" rel="noopener">java基础学习总结——基础语法2</a> </p>]]></content>
+    <content type="html"><![CDATA[<h2 id="一、Filter简介"><a href="#一、Filter简介" class="headerlink" title="一、Filter简介"></a>一、Filter简介</h2><p>　　Filter也称之为<strong>过滤器</strong>，WEB开发人员通过Filter技术，对web服务器<strong>管理的所有web资源</strong>：例如Jsp,  Servlet, 静态图片文件或静态 html  文件等<strong>进行拦截</strong>，从而实现一些特殊的功能。例如实现URL级别的权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。<br>　　Servlet  API中提供了一个<strong>Filter接口</strong>，开发web应用时，如果编写的Java类实现了这个接口，则<strong>把这个java类称之为过滤器Filter</strong>。通过Filter技术，开发人员可以实现用户在访问某个目标资源之前，对访问的请求和响应进行拦截.</p><h2 id="二、Filter是如何实现拦截的？"><a href="#二、Filter是如何实现拦截的？" class="headerlink" title="二、Filter是如何实现拦截的？"></a>二、Filter是如何实现拦截的？</h2><p>　　Filter接口中有一个doFilter方法，当我们编写好Filter，并配置对哪个web资源进行拦截后，WEB服务器每次在调用web资源的service方法之前，都会先调用一下filter的doFilter方法，因此，在该方法内编写代码可达到如下目的：</p><ol><li>调用目标资源之前，让一段代码执行。</li><li>是否调用目标资源（即是否让用户访问web资源）。</li><li>调用目标资源之后，让一段代码执行。</li></ol><p>　　web服务器在调用doFilter方法时，会传递一个filterChain对象进来，filterChain对象是filter接口中最重要的一个对  象，它也提供了一个doFilter方法，开发人员可以根据需求决定是否调用此方法，调用该方法，则web服务器就会调用web资源的service方  法，即web资源就会被访问，否则web资源不会被访问。</p><h2 id="三、Filter开发入门"><a href="#三、Filter开发入门" class="headerlink" title="三、Filter开发入门"></a>三、Filter开发入门</h2><h3 id="3-1、Filter开发步骤"><a href="#3-1、Filter开发步骤" class="headerlink" title="3.1、Filter开发步骤"></a>3.1、Filter开发步骤</h3><p>Filter开发分为二个步骤：</p><ol><li>编写java类实现Filter接口，并实现其doFilter方法。</li><li>在 web.xml 文件中使用<code>&lt;filter&gt;</code>和<code>&lt;filter-mapping&gt;</code>元素对编写的filter类进行注册，并设置它所能拦截的资源。</li></ol><h5 id="过滤器范例"><a href="#过滤器范例" class="headerlink" title="过滤器范例"></a>过滤器范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">* <span class="doctag">@Description</span>:filter的三种典型应用：</span></span><br><span class="line"><span class="comment">*  1、可以在filter中根据条件决定是否调用chain.doFilter(request, response)方法，即是否让目标资源执行</span></span><br><span class="line"><span class="comment">* 2、在让目标资源执行之前，可以对request\response作预处理，再让目标资源执行</span></span><br><span class="line"><span class="comment">* 3、在目标资源执行之后，可以捕获目标资源的执行结果，从而实现一些特殊的功能</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FilterDemo01</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"----过滤器初始化----"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response,</span></span></span><br><span class="line"><span class="function"><span class="params">            FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//对request和response进行一些预处理</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        response.setContentType(<span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">"FilterDemo01执行前！！！"</span>);</span><br><span class="line">        chain.doFilter(request, response);  <span class="comment">//让目标资源执行，放行</span></span><br><span class="line">        System.out.println(<span class="string">"FilterDemo01执行后！！！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"----过滤器销毁----"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="在web-xml中配置过滤器"><a href="#在web-xml中配置过滤器" class="headerlink" title="在web. xml中配置过滤器"></a>在web. xml中配置过滤器</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>FilterDemo01<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>me.gacl.web.filter.FilterDemo01<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--映射过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>FilterDemo01<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--“/*”表示拦截所有的请求 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3948353.html" target="_blank" rel="noopener">javaweb学习总结(四十二)——Filter(过滤器)学习</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;一-语句&quot;&gt;&lt;a href=&quot;#一-语句&quot; class=&quot;headerlink&quot; title=&quot;一. 语句&quot;&gt;&lt;/a&gt;一. 语句&lt;/h1&gt;&lt;h2 id=&quot;1-1-条件语句&quot;&gt;&lt;a href=&quot;#1-1-条件语句&quot; class=&quot;headerlink&quot; title=&quot;1.1 条件语句&quot;&gt;&lt;/a&gt;1.1 条件语句&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;if 语句&lt;/li&gt;
-&lt;li&gt;switch 语句&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;1-2-循环语句&quot;&gt;&lt;a href=&quot;#1-2-循环语句&quot; class=&quot;headerlink&quot; title=&quot;1.2 循环语句&quot;&gt;&lt;/a&gt;1.2 循环语句&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;for 循环语句&lt;/li&gt;
-&lt;li&gt;while 循环与do while 循环&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;1-3-break-和-continue-语句&quot;&gt;&lt;a href=&quot;#1-3-break-和-continue-语句&quot; class=&quot;headerlink&quot; title=&quot;1.3 break 和 continue 语句&quot;&gt;&lt;/a&gt;1.3 break 和 continue 语句&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;一、Filter简介&quot;&gt;&lt;a href=&quot;#一、Filter简介&quot; class=&quot;headerlink&quot; title=&quot;一、Filter简介&quot;&gt;&lt;/a&gt;一、Filter简介&lt;/h2&gt;&lt;p&gt;　　Filter也称之为&lt;strong&gt;过滤器&lt;/strong&gt;，WEB开发
+      
     
     </summary>
     
       <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
-      <category term="基础语法" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+      <category term="Filter" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Filter/"/>
     
     
       <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
@@ -541,33 +591,6 @@
       <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
       <category term="面向对象" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-    
-      <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础知识---Filter(一)</title>
-    <link href="http://yoursite.com/2019/03/08/JavaWeb---Filter(%E4%B8%80)/"/>
-    <id>http://yoursite.com/2019/03/08/JavaWeb---Filter(一)/</id>
-    <published>2019-03-08T03:38:55.000Z</published>
-    <updated>2019-03-13T13:56:20.351Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、Filter简介"><a href="#一、Filter简介" class="headerlink" title="一、Filter简介"></a>一、Filter简介</h2><p>　　Filter也称之为<strong>过滤器</strong>，WEB开发人员通过Filter技术，对web服务器<strong>管理的所有web资源</strong>：例如Jsp,  Servlet, 静态图片文件或静态 html  文件等<strong>进行拦截</strong>，从而实现一些特殊的功能。例如实现URL级别的权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。<br>　　Servlet  API中提供了一个<strong>Filter接口</strong>，开发web应用时，如果编写的Java类实现了这个接口，则<strong>把这个java类称之为过滤器Filter</strong>。通过Filter技术，开发人员可以实现用户在访问某个目标资源之前，对访问的请求和响应进行拦截.</p><h2 id="二、Filter是如何实现拦截的？"><a href="#二、Filter是如何实现拦截的？" class="headerlink" title="二、Filter是如何实现拦截的？"></a>二、Filter是如何实现拦截的？</h2><p>　　Filter接口中有一个doFilter方法，当我们编写好Filter，并配置对哪个web资源进行拦截后，WEB服务器每次在调用web资源的service方法之前，都会先调用一下filter的doFilter方法，因此，在该方法内编写代码可达到如下目的：</p><ol><li>调用目标资源之前，让一段代码执行。</li><li>是否调用目标资源（即是否让用户访问web资源）。</li><li>调用目标资源之后，让一段代码执行。</li></ol><p>　　web服务器在调用doFilter方法时，会传递一个filterChain对象进来，filterChain对象是filter接口中最重要的一个对  象，它也提供了一个doFilter方法，开发人员可以根据需求决定是否调用此方法，调用该方法，则web服务器就会调用web资源的service方  法，即web资源就会被访问，否则web资源不会被访问。</p><h2 id="三、Filter开发入门"><a href="#三、Filter开发入门" class="headerlink" title="三、Filter开发入门"></a>三、Filter开发入门</h2><h3 id="3-1、Filter开发步骤"><a href="#3-1、Filter开发步骤" class="headerlink" title="3.1、Filter开发步骤"></a>3.1、Filter开发步骤</h3><p>Filter开发分为二个步骤：</p><ol><li>编写java类实现Filter接口，并实现其doFilter方法。</li><li>在 web.xml 文件中使用<code>&lt;filter&gt;</code>和<code>&lt;filter-mapping&gt;</code>元素对编写的filter类进行注册，并设置它所能拦截的资源。</li></ol><h5 id="过滤器范例"><a href="#过滤器范例" class="headerlink" title="过滤器范例"></a>过滤器范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">* <span class="doctag">@Description</span>:filter的三种典型应用：</span></span><br><span class="line"><span class="comment">*  1、可以在filter中根据条件决定是否调用chain.doFilter(request, response)方法，即是否让目标资源执行</span></span><br><span class="line"><span class="comment">* 2、在让目标资源执行之前，可以对request\response作预处理，再让目标资源执行</span></span><br><span class="line"><span class="comment">* 3、在目标资源执行之后，可以捕获目标资源的执行结果，从而实现一些特殊的功能</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FilterDemo01</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"----过滤器初始化----"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response,</span></span></span><br><span class="line"><span class="function"><span class="params">            FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//对request和response进行一些预处理</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        response.setContentType(<span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">"FilterDemo01执行前！！！"</span>);</span><br><span class="line">        chain.doFilter(request, response);  <span class="comment">//让目标资源执行，放行</span></span><br><span class="line">        System.out.println(<span class="string">"FilterDemo01执行后！！！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"----过滤器销毁----"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="在web-xml中配置过滤器"><a href="#在web-xml中配置过滤器" class="headerlink" title="在web. xml中配置过滤器"></a>在web. xml中配置过滤器</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>FilterDemo01<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>me.gacl.web.filter.FilterDemo01<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--映射过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>FilterDemo01<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--“/*”表示拦截所有的请求 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3948353.html" target="_blank" rel="noopener">javaweb学习总结(四十二)——Filter(过滤器)学习</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;一、Filter简介&quot;&gt;&lt;a href=&quot;#一、Filter简介&quot; class=&quot;headerlink&quot; title=&quot;一、Filter简介&quot;&gt;&lt;/a&gt;一、Filter简介&lt;/h2&gt;&lt;p&gt;　　Filter也称之为&lt;strong&gt;过滤器&lt;/strong&gt;，WEB开发
-      
-    
-    </summary>
-    
-      <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-      <category term="Filter" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Filter/"/>
     
     
       <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
@@ -682,30 +705,6 @@
   </entry>
   
   <entry>
-    <title>数据结构---线性表</title>
-    <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    <id>http://yoursite.com/2019/03/08/数据结构---线性表/</id>
-    <published>2019-03-08T00:24:53.000Z</published>
-    <updated>2019-03-13T02:49:19.072Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><p>​    由 n(n≥0) 个数据特性相同的元素构成的 <strong>有限序列</strong> </p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h4><ul><li>存在唯一的一个被称为”第一个”的数据元素</li><li>存在唯一的一个被称为”最后一个”的数据元素</li><li>除第一个之外, 结构中的每个数据元素均只有一个前驱元素</li><li>除最后一个之外, 结构中的每个数据元素均只有一个后继元素</li></ul><h4 id="存储结构及运算"><a href="#存储结构及运算" class="headerlink" title="存储结构及运算:"></a>存储结构及运算:</h4><ul><li><strong>存储结构方式:</strong>  顺序存储方式(顺序表), 链接存储方式(链表)</li><li><strong>运算:</strong> <ol><li>线性表的初始化 </li><li>求表的长度 </li><li>取出表的元素 </li><li>查找运算</li></ol></li></ul><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul><li>空表: 线性表的长度 n=0</li><li>前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素</li><li>后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素</li></ul><h4 id="随笔"><a href="#随笔" class="headerlink" title="随笔:"></a>随笔:</h4><ul><li>线性表中的数据元素之间的逻辑关系就是其相互位置上的 <strong>邻接关系</strong> ,该关系是线性的,因此,线性表是一种<strong>线性结构</strong> </li><li><strong>常见例子:</strong> 学生成绩表, 列车时刻表, 英文字母表</li></ul><p>​    </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;线性表：&quot;&gt;&lt;a href=&quot;#线性表：&quot; class=&quot;headerlink&quot; title=&quot;线性表：&quot;&gt;&lt;/a&gt;线性表：&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义:&quot;&gt;&lt;/a&gt;定义:&lt;/h3&gt;&lt;p&gt;​    由 n(n≥0) 个数据特性相同的元素构成的 &lt;strong&gt;有限序列&lt;/strong&gt; &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="线性表" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据结构---链表的概念及实现</title>
     <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
     <id>http://yoursite.com/2019/03/08/数据结构---单链表的概念及实现/</id>
@@ -736,35 +735,26 @@
   </entry>
   
   <entry>
-    <title>陈果老师语录</title>
-    <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C/"/>
-    <id>http://yoursite.com/2019/03/07/人间词话---自我成长---陈果/</id>
-    <published>2019-03-07T14:54:18.000Z</published>
-    <updated>2019-03-09T15:06:00.612Z</updated>
+    <title>数据结构---线性表</title>
+    <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    <id>http://yoursite.com/2019/03/08/数据结构---线性表/</id>
+    <published>2019-03-08T00:24:53.000Z</published>
+    <updated>2019-03-13T02:49:19.072Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>只有心灵才能洞察一切，世界上真正重要的东西要用心去看</li><li>你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋</li><li>选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安</li><li>回忆是一种重逢, 忘记是一份自由.</li></ul><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h1 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><p>​    由 n(n≥0) 个数据特性相同的元素构成的 <strong>有限序列</strong> </p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h4><ul><li>存在唯一的一个被称为”第一个”的数据元素</li><li>存在唯一的一个被称为”最后一个”的数据元素</li><li>除第一个之外, 结构中的每个数据元素均只有一个前驱元素</li><li>除最后一个之外, 结构中的每个数据元素均只有一个后继元素</li></ul><h4 id="存储结构及运算"><a href="#存储结构及运算" class="headerlink" title="存储结构及运算:"></a>存储结构及运算:</h4><ul><li><strong>存储结构方式:</strong>  顺序存储方式(顺序表), 链接存储方式(链表)</li><li><strong>运算:</strong> <ol><li>线性表的初始化 </li><li>求表的长度 </li><li>取出表的元素 </li><li>查找运算</li></ol></li></ul><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul><li>空表: 线性表的长度 n=0</li><li>前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素</li><li>后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素</li></ul><h4 id="随笔"><a href="#随笔" class="headerlink" title="随笔:"></a>随笔:</h4><ul><li>线性表中的数据元素之间的逻辑关系就是其相互位置上的 <strong>邻接关系</strong> ,该关系是线性的,因此,线性表是一种<strong>线性结构</strong> </li><li><strong>常见例子:</strong> 学生成绩表, 列车时刻表, 英文字母表</li></ul><p>​    </p>]]></content>
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;只有心灵才能洞察一切，世界上真正重要的东西要用心去看&lt;/li&gt;
-&lt;li&gt;你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋&lt;/li&gt;
-&lt;li&gt;选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安&lt;/li&gt;
-&lt;li&gt;回忆是一种重逢, 忘记是一份自由.&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;h1 id=&quot;线性表：&quot;&gt;&lt;a href=&quot;#线性表：&quot; class=&quot;headerlink&quot; title=&quot;线性表：&quot;&gt;&lt;/a&gt;线性表：&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义:&quot;&gt;&lt;/a&gt;定义:&lt;/h3&gt;&lt;p&gt;​    由 n(n≥0) 个数据特性相同的元素构成的 &lt;strong&gt;有限序列&lt;/strong&gt; &lt;/p&gt;
     
     </summary>
     
-      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="陈果老师" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E9%99%88%E6%9E%9C%E8%80%81%E5%B8%88/"/>
+      <category term="线性表" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
     
     
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
-    
-      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -802,11 +792,71 @@
   </entry>
   
   <entry>
+    <title>陈果老师语录</title>
+    <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C/"/>
+    <id>http://yoursite.com/2019/03/07/人间词话---自我成长---陈果/</id>
+    <published>2019-03-07T14:54:18.000Z</published>
+    <updated>2019-03-09T15:06:00.612Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>只有心灵才能洞察一切，世界上真正重要的东西要用心去看</li><li>你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋</li><li>选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安</li><li>回忆是一种重逢, 忘记是一份自由.</li></ul><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;只有心灵才能洞察一切，世界上真正重要的东西要用心去看&lt;/li&gt;
+&lt;li&gt;你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋&lt;/li&gt;
+&lt;li&gt;选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安&lt;/li&gt;
+&lt;li&gt;回忆是一种重逢, 忘记是一份自由.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="陈果老师" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E9%99%88%E6%9E%9C%E8%80%81%E5%B8%88/"/>
+    
+    
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
+    
+      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java基础知识(1)---基础语法(1)</title>
     <link href="http://yoursite.com/2019/03/07/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(1)---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(1)/"/>
     <id>http://yoursite.com/2019/03/07/Java基础知识(1)---基础语法(1)/</id>
     <published>2019-03-07T14:27:03.000Z</published>
     <updated>2019-03-14T00:10:18.929Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-标识符"><a href="#一-标识符" class="headerlink" title="一.标识符"></a>一.标识符</h1><p>​    对于各种变量, 方法和类等要素 <strong>命名时使用的字符序列</strong> 称为标识符</p><blockquote><p>凡是自己可以命名的地方都叫标识符, 都遵循标识符的规则</p></blockquote><h1 id="二-关键字"><a href="#二-关键字" class="headerlink" title="二.关键字"></a>二.关键字</h1><p>​    一些赋以特定的含义, <strong>用作专门用途的字符串</strong> 成为关键字</p><blockquote><p>大部分编辑会将关键字用特殊方式标出<br>所有Java关键字都是小写英文</p></blockquote><h1 id="三-java基础数据类型"><a href="#三-java基础数据类型" class="headerlink" title="三.  java基础数据类型"></a>三.  java基础数据类型</h1><h2 id="3-1-Java常量"><a href="#3-1-Java常量" class="headerlink" title="3.1 Java常量"></a>3.1 Java常量</h2><p>​    eg: 整型常量: 123, 字符常量: ‘a’</p><blockquote><p>注意: 区分字符常量和字符串常量<br>注意: “常量”这个名词还会用在另外其它语境中表示 <strong>值不可变的变量</strong> </p></blockquote><h2 id="3-2-Java变量"><a href="#3-2-Java变量" class="headerlink" title="3.2 Java变量"></a>3.2 Java变量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量i(变量的名字)中存放常量100(变量的值)</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">100</span>; </span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.14</span>;</span><br><span class="line">String s = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure><blockquote><p>变量是 <strong>内存</strong> 中的一小块区域, 使用 <strong>变量名</strong> 来访问这块区域<br>因此,每一个变量使用前必须要先 <strong>声明</strong>, 然后必须进行 <strong>赋值</strong> (填充内容), 才能使用</p></blockquote><h3 id="补充-本质上理解"><a href="#补充-本质上理解" class="headerlink" title="补充(本质上理解):"></a>补充(本质上理解):</h3><blockquote><ul><li>一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 <strong>存放在硬盘上是无法运行的</strong> ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 <strong>整个.exe文件被放在了在内存里面</strong> ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，<strong>会不断地在内存里面分配一些区域</strong> </li><li>变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值<br>即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，<strong>变量的本质就是一小块内存区域</strong> 。<br><strong>变量在内存里面分配多大的存储空间呢？</strong> 答: 不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。</li></ul></blockquote><h3 id="Java变量的分类"><a href="#Java变量的分类" class="headerlink" title="Java变量的分类:"></a>Java变量的分类:</h3><p>按被声明的 <strong>位置</strong> 划分:</p><ul><li>局部变量: <strong>方法或语句块内部</strong>定义的变量</li><li>成员变量: <strong>方法外部, 类的内部</strong>定义的变量</li></ul><blockquote><p>类外面不能有变量的声明</p></blockquote><p>按所属数据的 <strong>数据类型</strong> 划分:</p><ul><li><strong>基本</strong>数据类型变量</li><li><strong>引用</strong>数据类型变量</li></ul><h2 id="3-3-Java数据类型"><a href="#3-3-Java数据类型" class="headerlink" title="3.3 Java数据类型"></a>3.3 Java数据类型</h2><h3 id="3-3-1-基本数据类型"><a href="#3-3-1-基本数据类型" class="headerlink" title="3.3.1 基本数据类型"></a>3.3.1 基本数据类型</h3><ul><li><strong>整数型:</strong> byte, short, int, long,</li><li><strong>浮动型:</strong> float, double</li><li><strong>布尔型:</strong> bool</li><li><strong>字符型:</strong> char</li></ul><h3 id="3-3-2-基本数据类型的转换"><a href="#3-3-2-基本数据类型的转换" class="headerlink" title="3.3.2 基本数据类型的转换"></a>3.3.2 基本数据类型的转换</h3><ul><li>boolean 类型不可以转换为其他的数据类型</li><li>容量小的类型自动转换为容量大的数据类型</li><li>容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出</li><li>有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 <strong>容量最大</strong> 的那一种数据类型,然后在进行计算</li></ul><h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestConvert</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i1 = <span class="number">123</span>; </span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">456</span>;</span><br><span class="line">        <span class="keyword">double</span> d1 = (i1+i2)*<span class="number">1.2</span>;<span class="comment">//系统将转换为double型运算</span></span><br><span class="line">        <span class="keyword">float</span> f1 = (<span class="keyword">float</span>)((i1+i2)*<span class="number">1.2</span>);<span class="comment">//需要加强制转换符</span></span><br><span class="line">        <span class="keyword">byte</span> b1 = <span class="number">67</span>; </span><br><span class="line">        <span class="keyword">byte</span> b2 = <span class="number">89</span>;</span><br><span class="line">        <span class="keyword">byte</span> b3 = (<span class="keyword">byte</span>)(b1+b2);<span class="comment">//系统将转换为int型运算，需要强制转换符</span></span><br><span class="line">        System.out.println(b3);</span><br><span class="line">        <span class="keyword">double</span> d2 = <span class="number">1e200</span>;</span><br><span class="line">        <span class="keyword">float</span> f2 = (<span class="keyword">float</span>)d2;<span class="comment">//会产生溢出</span></span><br><span class="line">        System.out.println(f2);</span><br><span class="line">        <span class="keyword">float</span> f3 = <span class="number">1.23f</span>;<span class="comment">//必须加f</span></span><br><span class="line">        <span class="keyword">long</span> l1 = <span class="number">123</span>;</span><br><span class="line">        <span class="keyword">long</span> l2 = <span class="number">30000000000L</span>;<span class="comment">//必须加l</span></span><br><span class="line">        <span class="keyword">float</span> f = l1+l2+f3;<span class="comment">//系统将转换为float型计算</span></span><br><span class="line">        <span class="keyword">long</span> l = (<span class="keyword">long</span>)f;<span class="comment">//强制转换会舍去小数部分（不是四舍五入）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-3-3-引用数据类型"><a href="#3-3-3-引用数据类型" class="headerlink" title="3.3.3 引用数据类型"></a>3.3.3 引用数据类型</h3><ul><li>类(class)</li><li>接口(interface)</li><li>数组</li></ul><p>参考博文:<br>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3624567.html" target="_blank" rel="noopener">java基础学习总结——基础语法1</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一-标识符&quot;&gt;&lt;a href=&quot;#一-标识符&quot; class=&quot;headerlink&quot; title=&quot;一.标识符&quot;&gt;&lt;/a&gt;一.标识符&lt;/h1&gt;&lt;p&gt;​    对于各种变量, 方法和类等要素 &lt;strong&gt;命名时使用的字符序列&lt;/strong&gt; 称为标识符&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="java基础知识" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="基础语法" scheme="http://yoursite.com/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    
+    
+      <category term="java基础知识" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础知识(1)---基础语法(1)</title>
+    <link href="http://yoursite.com/2019/03/07/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(1)/"/>
+    <id>http://yoursite.com/2019/03/07/Java基础知识---基础语法(1)/</id>
+    <published>2019-03-07T14:27:03.000Z</published>
+    <updated>2019-03-14T00:52:56.625Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-标识符"><a href="#一-标识符" class="headerlink" title="一.标识符"></a>一.标识符</h1><p>​    对于各种变量, 方法和类等要素 <strong>命名时使用的字符序列</strong> 称为标识符</p><blockquote><p>凡是自己可以命名的地方都叫标识符, 都遵循标识符的规则</p></blockquote><h1 id="二-关键字"><a href="#二-关键字" class="headerlink" title="二.关键字"></a>二.关键字</h1><p>​    一些赋以特定的含义, <strong>用作专门用途的字符串</strong> 成为关键字</p><blockquote><p>大部分编辑会将关键字用特殊方式标出<br>所有Java关键字都是小写英文</p></blockquote><h1 id="三-java基础数据类型"><a href="#三-java基础数据类型" class="headerlink" title="三.  java基础数据类型"></a>三.  java基础数据类型</h1><h2 id="3-1-Java常量"><a href="#3-1-Java常量" class="headerlink" title="3.1 Java常量"></a>3.1 Java常量</h2><p>​    eg: 整型常量: 123, 字符常量: ‘a’</p><blockquote><p>注意: 区分字符常量和字符串常量<br>注意: “常量”这个名词还会用在另外其它语境中表示 <strong>值不可变的变量</strong> </p></blockquote><h2 id="3-2-Java变量"><a href="#3-2-Java变量" class="headerlink" title="3.2 Java变量"></a>3.2 Java变量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量i(变量的名字)中存放常量100(变量的值)</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">100</span>; </span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.14</span>;</span><br><span class="line">String s = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure><blockquote><p>变量是 <strong>内存</strong> 中的一小块区域, 使用 <strong>变量名</strong> 来访问这块区域<br>因此,每一个变量使用前必须要先 <strong>声明</strong>, 然后必须进行 <strong>赋值</strong> (填充内容), 才能使用</p></blockquote><h3 id="补充-本质上理解"><a href="#补充-本质上理解" class="headerlink" title="补充(本质上理解):"></a>补充(本质上理解):</h3><blockquote><ul><li>一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 <strong>存放在硬盘上是无法运行的</strong> ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 <strong>整个.exe文件被放在了在内存里面</strong> ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，<strong>会不断地在内存里面分配一些区域</strong> </li><li>变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值<br>即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，<strong>变量的本质就是一小块内存区域</strong> 。<br><strong>变量在内存里面分配多大的存储空间呢？</strong> 答: 不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。</li></ul></blockquote><h3 id="Java变量的分类"><a href="#Java变量的分类" class="headerlink" title="Java变量的分类:"></a>Java变量的分类:</h3><p>按被声明的 <strong>位置</strong> 划分:</p><ul><li>局部变量: <strong>方法或语句块内部</strong>定义的变量</li><li>成员变量: <strong>方法外部, 类的内部</strong>定义的变量</li></ul><blockquote><p>类外面不能有变量的声明</p></blockquote><p>按所属数据的 <strong>数据类型</strong> 划分:</p><ul><li><strong>基本</strong>数据类型变量</li><li><strong>引用</strong>数据类型变量</li></ul><h2 id="3-3-Java数据类型"><a href="#3-3-Java数据类型" class="headerlink" title="3.3 Java数据类型"></a>3.3 Java数据类型</h2><h3 id="3-3-1-基本数据类型"><a href="#3-3-1-基本数据类型" class="headerlink" title="3.3.1 基本数据类型"></a>3.3.1 基本数据类型</h3><ul><li><strong>整数型:</strong> byte, short, int, long,</li><li><strong>浮动型:</strong> float, double</li><li><strong>布尔型:</strong> bool</li><li><strong>字符型:</strong> char</li></ul><h3 id="3-3-2-基本数据类型的转换"><a href="#3-3-2-基本数据类型的转换" class="headerlink" title="3.3.2 基本数据类型的转换"></a>3.3.2 基本数据类型的转换</h3><ul><li>boolean 类型不可以转换为其他的数据类型</li><li>容量小的类型自动转换为容量大的数据类型</li><li>容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出</li><li>有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 <strong>容量最大</strong> 的那一种数据类型,然后在进行计算</li></ul><h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestConvert</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i1 = <span class="number">123</span>; </span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">456</span>;</span><br><span class="line">        <span class="keyword">double</span> d1 = (i1+i2)*<span class="number">1.2</span>;<span class="comment">//系统将转换为double型运算</span></span><br><span class="line">        <span class="keyword">float</span> f1 = (<span class="keyword">float</span>)((i1+i2)*<span class="number">1.2</span>);<span class="comment">//需要加强制转换符</span></span><br><span class="line">        <span class="keyword">byte</span> b1 = <span class="number">67</span>; </span><br><span class="line">        <span class="keyword">byte</span> b2 = <span class="number">89</span>;</span><br><span class="line">        <span class="keyword">byte</span> b3 = (<span class="keyword">byte</span>)(b1+b2);<span class="comment">//系统将转换为int型运算，需要强制转换符</span></span><br><span class="line">        System.out.println(b3);</span><br><span class="line">        <span class="keyword">double</span> d2 = <span class="number">1e200</span>;</span><br><span class="line">        <span class="keyword">float</span> f2 = (<span class="keyword">float</span>)d2;<span class="comment">//会产生溢出</span></span><br><span class="line">        System.out.println(f2);</span><br><span class="line">        <span class="keyword">float</span> f3 = <span class="number">1.23f</span>;<span class="comment">//必须加f</span></span><br><span class="line">        <span class="keyword">long</span> l1 = <span class="number">123</span>;</span><br><span class="line">        <span class="keyword">long</span> l2 = <span class="number">30000000000L</span>;<span class="comment">//必须加l</span></span><br><span class="line">        <span class="keyword">float</span> f = l1+l2+f3;<span class="comment">//系统将转换为float型计算</span></span><br><span class="line">        <span class="keyword">long</span> l = (<span class="keyword">long</span>)f;<span class="comment">//强制转换会舍去小数部分（不是四舍五入）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-3-3-引用数据类型"><a href="#3-3-3-引用数据类型" class="headerlink" title="3.3.3 引用数据类型"></a>3.3.3 引用数据类型</h3><ul><li>类(class)</li><li>接口(interface)</li><li>数组</li></ul><p>参考博文:<br>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3624567.html" target="_blank" rel="noopener">java基础学习总结——基础语法1</a></p>]]></content>
     
