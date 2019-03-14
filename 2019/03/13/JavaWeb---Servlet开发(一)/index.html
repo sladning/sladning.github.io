@@ -123,18 +123,20 @@
 
 
 
-<meta name="description" content="一. Servlet简介Servlet是sun公司提供的一门用于开发动态web资源的技术 若想用发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：  编写一个Java类，实现servlet接口。  把开发好的Java类部署到web服务器中。   按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet 二. Servl">
+<meta name="description" content="一. Servlet简介Servlet是sun公司提供的一门用于 开发动态web资源的技术 若想开发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：  编写一个 Java 类，实现 servlet 接口。  把开发好的 Java类部署到 web 服务器中。   按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet">
 <meta name="keywords" content="JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb---Servlet开发(一)">
 <meta property="og:url" content="http://yoursite.com/2019/03/13/JavaWeb---Servlet开发(一)/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="一. Servlet简介Servlet是sun公司提供的一门用于开发动态web资源的技术 若想用发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：  编写一个Java类，实现servlet接口。  把开发好的Java类部署到web服务器中。   按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet 二. Servl">
+<meta property="og:description" content="一. Servlet简介Servlet是sun公司提供的一门用于 开发动态web资源的技术 若想开发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：  编写一个 Java 类，实现 servlet 接口。  把开发好的 Java类部署到 web 服务器中。   按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-13T13:34:59.485Z">
+<meta property="og:image" content="https://images0.cnblogs.com/i/289233/201405/311054556978749.png">
+<meta property="og:updated_time" content="2019-03-14T11:54:23.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---Servlet开发(一)">
-<meta name="twitter:description" content="一. Servlet简介Servlet是sun公司提供的一门用于开发动态web资源的技术 若想用发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：  编写一个Java类，实现servlet接口。  把开发好的Java类部署到web服务器中。   按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet 二. Servl">
+<meta name="twitter:description" content="一. Servlet简介Servlet是sun公司提供的一门用于 开发动态web资源的技术 若想开发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：  编写一个 Java 类，实现 servlet 接口。  把开发好的 Java类部署到 web 服务器中。   按照一种约定俗成的称呼习惯，通常我们也把实现了servlet接口的java程序，称之为Servlet">
+<meta name="twitter:image" content="https://images0.cnblogs.com/i/289233/201405/311054556978749.png">
 
 
 
@@ -445,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  1.2k
                 </span>
               
 
@@ -461,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -482,22 +484,37 @@
       
 
       
-        <h1 id="一-Servlet简介"><a href="#一-Servlet简介" class="headerlink" title="一. Servlet简介"></a>一. Servlet简介</h1><p>Servlet是sun公司提供的一门用于<strong>开发动态web资源的技术</strong></p>
-<p>若想用发一个动态web资源(即开发一个Java程序向浏览器输出数据)，需要完成以下2个步骤：</p>
+        <h1 id="一-Servlet简介"><a href="#一-Servlet简介" class="headerlink" title="一. Servlet简介"></a>一. Servlet简介</h1><p>Servlet是sun公司提供的一门用于 <strong>开发动态web资源的技术</strong></p>
+<p>若想开发一个动态web资源(即开发<strong>一个Java程序向浏览器输出数据</strong>)，需要完成以下2个步骤：</p>
 <ol>
-<li><p>编写一个Java类，<strong>实现servlet接口</strong>。</p>
+<li><p>编写一个 Java 类，<strong>实现 servlet 接口</strong>。</p>
 </li>
-<li><p>把开发好的Java类<strong>部署到web服务器</strong>中。</p>
+<li><p>把开发好的 Java类<strong>部署到 web 服务器</strong>中。</p>
 </li>
 </ol>
 <p>按照一种约定俗成的称呼习惯，通常我们也把实现了<strong>servlet接口的java程序</strong>，称之为<strong>Servlet</strong></p>
-<h2 id="二-Servlet的运行过程"><a href="#二-Servlet的运行过程" class="headerlink" title="二. Servlet的运行过程"></a>二. Servlet的运行过程</h2><p>Servlet程序是由<strong>WEB服务器</strong>调用，web服务器<strong>收到客户端的Servlet访问请求</strong>后：<br>　　①Web服务器首先<strong>检查是否已经装载并创建</strong>了该Servlet的<strong>实例对象</strong>。如果是，则直接执行第④步，否则，执行第②步。<br>　　②装载并创建该Servlet的一个实例对象。<br>　　③调用Servlet实例对象的<strong>init()方法</strong>。<br>　　④创建一个用于封装<strong>HTTP请求消息的HttpServletRequest对象</strong>和一个<strong>代表HTTP响应消息的HttpServletResponse对象</strong>，然后调用Servlet的<strong>service()方法</strong>并将<strong>请求和响应对象</strong>作为参数传递进去。<br>　　⑤WEB应用程序被<strong>停止或重新启动之前</strong>，Servlet引擎将<strong>卸载Servlet</strong>，并在卸载之前调用Servlet的destroy()方法。</p>
-<h1 id="三-Servlet接口实现类"><a href="#三-Servlet接口实现类" class="headerlink" title="三. Servlet接口实现类"></a>三. Servlet接口实现类</h1><p>　　Servlet接口SUN公司定义了两个默认实现类，分别为：<strong>GenericServlet、HttpServlet</strong>。</p>
-<p>　　<strong>==HttpServlet==</strong>指能够处理HTTP请求的servlet，它在原有Servlet接口上添加了一些与HTTP协议处理方法，它比Servlet接口的功能更为强大。因此开发人员在编写Servlet时，<strong>通常应继承这个类</strong>，而避免直接去实现Servlet接口。<br>　　HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会<strong>自动判断用户的请求方式</strong>，如为GET请求，则调用HttpServlet的doGet方法，如为Post请求，则调用doPost方法。因此，开发人员在编写Servlet时，<strong>通常只需要覆写doGet或doPost方法，而不要去覆写service方法</strong></p>
-<h1 id="四-Servlet开发注意细节"><a href="#四-Servlet开发注意细节" class="headerlink" title="四. Servlet开发注意细节"></a>四. Servlet开发注意细节</h1><h2 id="4-1-Servlet访问URL映射配置"><a href="#4-1-Servlet访问URL映射配置" class="headerlink" title="4.1 Servlet访问URL映射配置"></a>4.1 Servlet访问URL映射配置</h2><p>　　由于客户端是通过<strong>URL地址访问web服务器中的资源</strong>，所以Servlet程序若想被外界访问，必须把servlet程序映射到一个URL地址上，这个工作在==<strong>web.xml文件</strong>==中使用<code>&lt;servlet&gt;</code>元素和<code>&lt;servlet-mapping&gt;</code>元素完成。</p>
+<h1 id="二-Servlet的运行过程"><a href="#二-Servlet的运行过程" class="headerlink" title="二. Servlet的运行过程"></a>二. Servlet的运行过程</h1><p>Servlet程序是由 <strong>WEB服务器</strong> 调用，web服务器 <strong>收到客户端的 Servlet 访问请求后:</strong> </p>
+<p>​    ① Web服务器首先 <strong>检查是否已经装载并创建</strong>了该Servlet的<strong>实例对象</strong>。如果是，则直接执行第④步，否则，执行第②步。</p>
+<p>​    ② 装载并创建该Servlet的一个实例对象。 </p>
+<p>​    ③ 调用Servlet实例对象的 <strong>init()方法</strong>。</p>
+<p>​    ④ 创建一个用于封装 <strong>HTTP请求消息的 <code>HttpServletRequest</code> 对象</strong> 和一个 <strong>代表HTTP响应消息的 <code>HttpServletResponse</code> 对象</strong> ，然后调用Servlet的<strong>service()方法</strong>并将 <strong>请求和响应对象</strong> 作为参数传递进去</p>
+<p>​    ⑤ WEB应用程序被 <strong>停止或重新启动之前</strong>，Servlet引擎将 <strong>卸载Servlet</strong> ，并在卸载之前调用Servlet的<code>destroy()</code>方法。</p>
+<h1 id="三-Servlet调用图"><a href="#三-Servlet调用图" class="headerlink" title="三. Servlet调用图"></a>三. Servlet调用图</h1><p><img src="https://images0.cnblogs.com/i/289233/201405/311054556978749.png" alt="Servlet调用图"></p>
+<h1 id="四-Servlet接口实现类"><a href="#四-Servlet接口实现类" class="headerlink" title="四. Servlet接口实现类"></a>四. Servlet接口实现类</h1><p>　　Servlet接口SUN公司定义了两个默认实现类，分别为：<strong>GenericServlet、HttpServlet</strong>。</p>
+<p>　　<strong>==HttpServlet==</strong> 指能够<strong>处理HTTP请求的servlet</strong>，它在原有Servlet接口上添加了一些与HTTP协议处理方法，它比Servlet接口的功能更为强大。因此开发人员在编写Servlet时，<strong>通常应继承这个类</strong>，而避免直接去实现Servlet接口。<br>　　HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会<strong>自动判断用户的请求方式</strong>，如为GET请求，则调用HttpServlet的doGet方法，如为Post请求，则调用doPost方法。因此，开发人员在编写Servlet时，<strong>通常只需要覆写doGet或doPost方法，而不要去覆写service方法</strong></p>
+<h1 id="五-Servlet开发注意细节"><a href="#五-Servlet开发注意细节" class="headerlink" title="五. Servlet开发注意细节"></a>五. Servlet开发注意细节</h1><h2 id="4-1-Servlet访问URL映射配置"><a href="#4-1-Servlet访问URL映射配置" class="headerlink" title="4.1 Servlet访问URL映射配置"></a>4.1 Servlet访问URL映射配置</h2><p>　　由于客户端是通过<strong>URL地址访问web服务器中的资源</strong>，所以Servlet程序若想被外界访问，必须把servlet程序映射到一个URL地址上，这个工作在==<strong>web.xml文件</strong>==中使用<code>&lt;servlet&gt;</code>元素和<code>&lt;servlet-mapping&gt;</code>元素完成。</p>
 <ul>
 <li><code>&lt;servlet&gt;</code>元素用于<strong>注册Servlet</strong>，它包含有两个主要的子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;servlet-class&gt;</code>，分别用于设置<strong>Servlet的注册名称</strong>和<strong>Servlet的完整类名</strong>。 </li>
-<li><code>&lt;servlet-mapping&gt;</code>元素用于<strong>映射</strong>一个已注册的Servlet的<strong>一个对外访问路径</strong>，它包含有两个子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;url-pattern&gt;</code>，分别用于指定<strong>Servlet的注册名称</strong>和<strong>Servlet的对外访问路径</strong>。</li>
+<li><code>&lt;servlet-mapping&gt;</code>元素用于<strong>映射</strong>一个<strong>已注册</strong>的Servlet的<strong>一个对外访问路径</strong>，它包含有两个子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;url-pattern&gt;</code>，分别用于指定<strong>Servlet的注册名称</strong>和<strong>Servlet的对外访问路径</strong>。</li>
+</ul>
+<blockquote>
+<p>都是成对出现的 <strong>有注册,有映射</strong></p>
+</blockquote>
+<h3 id="web-xml-是什么"><a href="#web-xml-是什么" class="headerlink" title="web.xml 是什么"></a>web.xml 是什么</h3><ul>
+<li><p>web.xml文件用来<strong>初始化配置信息</strong>：比如Welcome页面、servlet、servlet-mapping、filter、listener、启动加载级别等</p>
+</li>
+<li><p>每个xml文件都有定义它书写规则的Schema文件，也就是说javaEE的定义 web.xml 所对应的 xml Schema 文件中定义了多少种标签元素，web.xml中就可以出现它所定义的标签元素，也就具备哪些特定的功能。</p>
+</li>
 </ul>
 <h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletDemo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>gacl.servlet.study.ServletDemo1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletDemo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/ServletDemo1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -505,6 +522,7 @@
 </blockquote>
 <h2 id="4-2-Servlet与普通Java类的区别"><a href="#4-2-Servlet与普通Java类的区别" class="headerlink" title="4.2 Servlet与普通Java类的区别　　"></a>4.2 Servlet与普通Java类的区别　　</h2><p>　　Servlet是一个供其他Java程序（Servlet引擎）调用的Java类，<strong>不能独立运行</strong>，它的运行完全由<strong>Servlet引擎来控制和调度</strong>。<br>　　针对客户端的多次Servlet请求，通常情况下，<strong>服务器只会创建一个Servlet实例对象</strong>，也就是说Servlet实例对象一旦创建，它就会驻留在内存中，为后续的其它请求服务，直至<strong>web容器退出</strong>，servlet实例对象才会销毁。<br>　　在Servlet的整个生命周期内，Servlet的<strong><code>init()</code>方法只被调用一次</strong>。而对一个Servlet的每次访问请求都导致Servlet引擎调用一次servlet的<code>service()</code>方法。对于每次访问请求，Servlet引擎都会创建一个新的<code>HttpServletRequest</code>请求对象和一个新的<code>HttpServletResponse</code>响应对象，然后将这两个对象作为参数传递给它调用的Servlet的service()方法，service方法再根据请求方式分别调用doXXX方法。  </p>
 <h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3760336.html" target="_blank" rel="noopener">javaweb学习总结(五)——Servlet开发(一)</a></p>
+<p>​    <a href="https://www.cnblogs.com/yqskj/articles/2233061.html" target="_blank" rel="noopener">web.xml文件的作用</a></p>
 
       
     </div>
@@ -641,7 +659,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -652,7 +670,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -663,7 +681,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -719,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Servlet简介"><span class="nav-number">1.</span> <span class="nav-text">一. Servlet简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Servlet的运行过程"><span class="nav-number">1.1.</span> <span class="nav-text">二. Servlet的运行过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-Servlet接口实现类"><span class="nav-number">2.</span> <span class="nav-text">三. Servlet接口实现类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-Servlet开发注意细节"><span class="nav-number">3.</span> <span class="nav-text">四. Servlet开发注意细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Servlet访问URL映射配置"><span class="nav-number">3.1.</span> <span class="nav-text">4.1 Servlet访问URL映射配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#范例"><span class="nav-number">3.1.1.</span> <span class="nav-text">范例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Servlet与普通Java类的区别"><span class="nav-number">3.2.</span> <span class="nav-text">4.2 Servlet与普通Java类的区别　　</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">3.2.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Servlet简介"><span class="nav-number">1.</span> <span class="nav-text">一. Servlet简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-Servlet的运行过程"><span class="nav-number">2.</span> <span class="nav-text">二. Servlet的运行过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-Servlet调用图"><span class="nav-number">3.</span> <span class="nav-text">三. Servlet调用图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-Servlet接口实现类"><span class="nav-number">4.</span> <span class="nav-text">四. Servlet接口实现类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-Servlet开发注意细节"><span class="nav-number">5.</span> <span class="nav-text">五. Servlet开发注意细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Servlet访问URL映射配置"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 Servlet访问URL映射配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web-xml-是什么"><span class="nav-number">5.1.1.</span> <span class="nav-text">web.xml 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范例"><span class="nav-number">5.1.2.</span> <span class="nav-text">范例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Servlet与普通Java类的区别"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 Servlet与普通Java类的区别　　</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">5.2.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -753,7 +771,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">24.7k</span>
+    <span title="Site words total count">29.6k</span>
   
 </div>
 
