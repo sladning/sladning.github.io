@@ -126,7 +126,7 @@
 <meta name="description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
 <meta property="og:type" content="website">
 <meta property="og:title" content="sladning">
-<meta property="og:url" content="http://yoursite.com/categories/Java/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/java/index.html">
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
 <meta property="og:locale" content="zh-Hans">
@@ -162,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Java/">
+  <link rel="canonical" href="http://yoursite.com/categories/java/">
 
 
 
 
 
-  <title>分类: Java | sladning</title>
+  <title>分类: java | sladning</title>
   
 
 
@@ -337,7 +337,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Java<small>分类</small>
+        <h1>java<small>分类</small>
         </h1>
       </div>
 
@@ -349,68 +349,16 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/03/13/JavaWeb---Servlet开发(二)/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/12/java面试经典题目(6-10题)/" itemprop="url">
               
-                <span itemprop="name">JavaWeb---Servlet开发(二)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-13T21:41:51+08:00" content="2019-03-13">
-          03-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/13/JavaWeb---Servlet开发(一)/" itemprop="url">
-              
-                <span itemprop="name">JavaWeb---Servlet开发(一)</span>
+                <span itemprop="name">java面试经典题目(6-10题)</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-13T21:23:51+08:00" content="2019-03-13">
-          03-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/12/JavaWeb---JDBC(1)/" itemprop="url">
-              
-                <span itemprop="name">JavaWeb---JDBC相关概念介绍</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-12T17:23:51+08:00" content="2019-03-12">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-12T22:40:00+08:00" content="2019-03-12">
           03-12
         </time>
       </div>
@@ -427,17 +375,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/03/12/JavaWeb---JavaBean/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/07/java面试经典题目(1-5题)/" itemprop="url">
               
-                <span itemprop="name">JavaWeb---JavaBean</span>
+                <span itemprop="name">java面试经典题目（1-5题）</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-12T16:23:51+08:00" content="2019-03-12">
-          03-12
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-07T10:00:00+08:00" content="2019-03-07">
+          03-07
         </time>
       </div>
 
@@ -1062,6 +1010,75 @@
           } else {
             $('.search-icon').click(inputEventFunction);
             input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+  input.addEventListener('keypress', function (event) {
               if (event.keyCode === 13) {
                 inputEventFunction();
               }
