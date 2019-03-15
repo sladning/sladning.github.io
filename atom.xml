@@ -375,7 +375,7 @@
     <link href="http://yoursite.com/2019/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
     <id>http://yoursite.com/2019/03/12/数据结构---顺序表的概念及实现/</id>
     <published>2019-03-12T12:50:53.000Z</published>
-    <updated>2019-03-15T08:33:05.595Z</updated>
+    <updated>2019-03-15T09:15:53.653Z</updated>
     
     <content type="html"><![CDATA[<h1 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h1><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>​    逻辑关系相邻的两个结点在 <strong>物理位置</strong> 上也相邻, 结点的逻辑次序和物理次序一致</p><a id="more"></a><h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><p>​    <strong>数组</strong></p><h3 id="数组的优缺点"><a href="#数组的优缺点" class="headerlink" title="数组的优缺点"></a>数组的优缺点</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li><strong>存取速度快</strong> O(1) 可以直接根据下标找到内存位置</li></ul><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul><li>浪费存储空间. 要求实现估计容量,比较困难,需要的空间过大,造成浪费,过小将导致溢出</li><li><strong>插入和删除</strong> 运算不方便,效率低,时间复杂度为O(n)</li><li>顺序表的存储空间不容易扩充.</li></ul><h3 id="基本操作的实现"><a href="#基本操作的实现" class="headerlink" title="基本操作的实现"></a>基本操作的实现</h3><ol><li>初始化数组</li><li>判断数组是否为空</li><li>判断数组是否满</li><li>显示数组内容</li><li>向数组中追加元素</li><li>向数组中指定的位置插入元素</li><li>删除指定元素</li><li>数组进行倒置</li></ol><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先定义结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Arr</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> len; <span class="comment">// 数组能存取的最大元素个数</span></span><br><span class="line"><span class="keyword">int</span> currentNum;<span class="comment">// 当前元素的个数</span></span><br><span class="line"><span class="keyword">int</span> * pBase;<span class="comment">// 存储指向数组元素的指针 </span></span><br><span class="line">&#125; Arr;</span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 初始化数组</span></span><br><span class="line"><span class="comment">* 所需要的参数: 结构体, 数组长度 </span></span><br><span class="line"><span class="comment">* 让指针指向分配的数组</span></span><br><span class="line"><span class="comment">*  判断判断内存是否分配失败,如果没有失败,其他两个参数进行赋值 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initArr</span><span class="params">(Arr * pArr, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 分配4*len字节长度的内存,这是pBase可以指向数组中的第一个元素，可以作为数组变量名称使用。</span></span><br><span class="line">pArr-&gt;pBase = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*len);</span><br><span class="line"><span class="comment">// 判断内存是否分配失败 </span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">NULL</span> == pArr-&gt;pBase)&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"动态内存分配失败!"</span>) ;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">// pArray 中的值进行初始化</span></span><br><span class="line">pArr-&gt;len = len;</span><br><span class="line">pArr-&gt;currentNum = <span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 判断数组是否为空</span></span><br><span class="line"><span class="comment">* 判断条件应该是当前数组中的元素是不是 0 个 </span></span><br><span class="line"><span class="comment">* 参数: 数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isEmpty</span><span class="params">(Arr * pArr)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(<span class="number">0</span> == pArr-&gt;currentNum)&#123;</span><br><span class="line"><span class="comment">// 若数组为空,返回true </span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 判断数组是否满了</span></span><br><span class="line"><span class="comment">* 判断条件应该是 len 和 currentNum 是否相等</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isFull</span><span class="params">(Arr * pArr)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 如果满了,返回 true </span></span><br><span class="line"><span class="keyword">if</span>(pArr-&gt;len == pArr-&gt;currentNum) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 显示数组内容</span></span><br><span class="line"><span class="comment">* 先判断数组是否为空,若为空,打印数组为空</span></span><br><span class="line"><span class="comment">* 若不为空,则利用指针循环遍历,全部打印出来 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">showArr</span><span class="params">(Arr * pArr)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(isEmpty(pArr)) &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"数组为空!\n"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"\t\t此时数组中的所有元素为: \n"</span>); </span><br><span class="line"><span class="comment">// 注意应该是 i &lt; pArr-&gt;currentNum</span></span><br><span class="line"><span class="comment">// 不是  i &lt; pArr-&gt;len</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pArr-&gt;currentNum; i++) &#123;</span><br><span class="line"><span class="comment">// 是数组,所以是 pArr-&gt;pBase[i]</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d \t"</span>, pArr-&gt;pBase[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"\n------------------------------------------------\n"</span>); </span><br><span class="line">&#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 向数组中追加元素</span></span><br><span class="line"><span class="comment">* 参数:数组, 追加的值 </span></span><br><span class="line"><span class="comment">* 先判断数组是否已经满了</span></span><br><span class="line"><span class="comment">* 如果满了,则不可以追加元素,打印追加失败</span></span><br><span class="line"><span class="comment">* 如果未满,进行追加 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">append</span><span class="params">(Arr * pArr, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>( isFull(pArr) ) &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"数组已经满了,无法添加!\n"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"添加元素为 %d\t"</span>, val);</span><br><span class="line"></span><br><span class="line">pArr-&gt;pBase[pArr-&gt;currentNum] = val;</span><br><span class="line"><span class="comment">// 当前个数+1</span></span><br><span class="line">pArr-&gt;currentNum++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 向数组中指定的位置插入元素</span></span><br><span class="line"><span class="comment">* 参数: 数组地址, 位置, 值</span></span><br><span class="line"><span class="comment">* 首先判断数组是否满 </span></span><br><span class="line"><span class="comment">* 再判断插入的位置是否合法 </span></span><br><span class="line"><span class="comment">* 将插入位置后面的元素向后移动一个 </span></span><br><span class="line"><span class="comment">* 再插入到相应的位置 </span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(Arr * pArr, <span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>( isFull(pArr) ) &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"数组已经满了,无法插入!\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 插入的位置不能小于1，同时不能比最后一个元素位置大一</span></span><br><span class="line"><span class="comment">// 注意是 pos &gt; pArr-&gt;len+1</span></span><br><span class="line"><span class="keyword">if</span>  (pos &lt; <span class="number">1</span> || pos &gt; pArr-&gt;len+<span class="number">1</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">// 移动范围是从第pos个到底cnu个 </span></span><br><span class="line"><span class="comment">// 注意判断条件 i = pArr-&gt;currentlen</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = pArr-&gt;currentNum; i &gt; pos; i--) &#123;</span><br><span class="line"><span class="comment">// 若以i表示要移动元素的位置，从一开始的。右边都是i-1,若左移，左边是i-2,右移，左边是i</span></span><br><span class="line">pArr-&gt;pBase[<span class="number">1</span>] = pArr-&gt;pBase[i<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行插入的值的赋值</span></span><br><span class="line">pArr-&gt;pBase[pos<span class="number">-1</span>] = val;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"在第%d的位置插入元素: %d"</span>, pos, val);</span><br><span class="line">pArr-&gt;currentNum++;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 向数组中指定的位置插入元素</span></span><br><span class="line"><span class="comment">* 参数: 数组地址, 位置, 值(地址,将返回去) </span></span><br><span class="line"><span class="comment">* 先判断位置是否合法</span></span><br><span class="line"><span class="comment">* 在进行删除 </span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">delete_</span><span class="params">(Arr * pArr, <span class="keyword">int</span> pos, <span class="keyword">int</span> *val)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(pos&lt;<span class="number">1</span> || pos&gt;pArr-&gt;currentNum) &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"删除失败，位置不合法\n"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">// 获取删除元素的值 </span></span><br><span class="line">*val = pArr-&gt;pBase[pos<span class="number">-1</span>];</span><br><span class="line"><span class="comment">// 注意循环条件 </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=pos; i&lt;pArr-&gt;currentNum; i++)&#123;</span><br><span class="line">pArr-&gt;pBase[i<span class="number">-1</span>] = pArr-&gt;pBase[i];</span><br><span class="line">&#125; </span><br><span class="line">pArr-&gt;currentNum--;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 数组元素进行倒置</span></span><br><span class="line"><span class="comment">* 首先判断数组是否为空 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">inverse</span><span class="params">(Arr * pArr)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>( isEmpty(pArr) ) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"倒置失败，因数组为空"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> start = <span class="number">0</span>;<span class="comment">// 数组的第一个元素</span></span><br><span class="line"><span class="keyword">int</span> end = pArr-&gt;currentNum<span class="number">-1</span>;<span class="comment">// 数组的最后一个元素</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"数组元素进行倒置"</span>); </span><br><span class="line"><span class="keyword">while</span>(start &lt; end)&#123;</span><br><span class="line"><span class="comment">// 利用一个 temp 临时数据进行数据交换 </span></span><br><span class="line"><span class="keyword">int</span> temp = pArr-&gt;pBase[start];</span><br><span class="line">pArr-&gt;pBase[start] = pArr-&gt;pBase[end];</span><br><span class="line">pArr-&gt;pBase[end] = temp;</span><br><span class="line"><span class="comment">// 下一组 </span></span><br><span class="line">start++;</span><br><span class="line">end--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 代码测试 </span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">Arr arr;</span><br><span class="line"><span class="comment">// 将结构体的地址作为实参，这样才能修改结构体中的值</span></span><br><span class="line"><span class="comment">// 如果传的是结构体变量，那么将进行拷贝，不会改变值</span></span><br><span class="line">initArr(&amp;arr, <span class="number">6</span>);</span><br><span class="line"><span class="comment">// 进行追加</span></span><br><span class="line">append(&amp;arr, <span class="number">1</span>);</span><br><span class="line">append(&amp;arr, <span class="number">2</span>);</span><br><span class="line">append(&amp;arr, <span class="number">3</span>);</span><br><span class="line">append(&amp;arr, <span class="number">4</span>);</span><br><span class="line"><span class="comment">// 进行显示 </span></span><br><span class="line">showArr(&amp;arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入元素 </span></span><br><span class="line">insert(&amp;arr, <span class="number">5</span>, <span class="number">88</span>);</span><br><span class="line">showArr(&amp;arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除元素</span></span><br><span class="line"><span class="keyword">int</span> val;</span><br><span class="line">delete_(&amp;arr, <span class="number">1</span>, &amp;val);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"删除了元素 %d"</span>, val);</span><br><span class="line">showArr(&amp;arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 进行倒置 </span></span><br><span class="line">inverse(&amp;arr);</span><br><span class="line">    showArr(&amp;arr);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文:"></a>参考博文:</h5><p>​    <a href="https://blog.csdn.net/Davidluo001/article/details/46447817" target="_blank" rel="noopener">数据结构基础（1）–数组C语言实现–动态内存分配</a></p>]]></content>
     
@@ -386,10 +386,6 @@
     </summary>
     
       <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="线性表" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    
-      <category term="顺序表" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/%E9%A1%BA%E5%BA%8F%E8%A1%A8/"/>
     
     
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
@@ -631,7 +627,7 @@
     <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ/"/>
     <id>http://yoursite.com/2019/03/09/人间词话---ZJ/</id>
     <published>2019-03-09T14:57:13.000Z</published>
-    <updated>2019-03-09T15:05:31.903Z</updated>
+    <updated>2019-03-15T09:15:02.200Z</updated>
     
     <content type="html"><![CDATA[<ul><li>没有人会拒绝微笑, 也没有人会拒绝真诚.</li><li>逢山开路, 遇水架桥.</li></ul><a id="more"></a>]]></content>
     
@@ -644,6 +640,8 @@
     
     </summary>
     
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
+    
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
@@ -654,7 +652,7 @@
     <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1/"/>
     <id>http://yoursite.com/2019/03/09/人间词话---送给自己/</id>
     <published>2019-03-09T14:57:13.000Z</published>
-    <updated>2019-03-15T08:32:05.218Z</updated>
+    <updated>2019-03-15T09:14:53.161Z</updated>
     
     <content type="html"><![CDATA[<ul><li>勇者愤怒, 抽刃向更强者.怯者愤怒, 却抽刀向更弱者</li><li>扬在脸上的微笑, 长在心里的善良,融进血液的骨气, 刻在生命里的坚强.</li><li>礼仪最重要的是在昭告自我,真正的宣誓是对自己说的话.   —陈果</li><li>对一切人,一切西乡都保持一种开放二友善的胸襟和气度的时候,才真正成为名副其实的大学生.   —陈果</li></ul><a id="more"></a><ul><li>挫折能使强者更强,弱者更弱,强者在面对中锻炼了自己,弱者在逃避中越发脆弱</li><li>最善言谈者就是最善于倾听的人</li></ul>]]></content>
     
@@ -669,6 +667,8 @@
     
     </summary>
     
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
+    
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
@@ -681,7 +681,7 @@
     <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/"/>
     <id>http://yoursite.com/2019/03/09/人间词话---网易云评论/</id>
     <published>2019-03-09T14:57:13.000Z</published>
-    <updated>2019-03-09T15:06:12.831Z</updated>
+    <updated>2019-03-15T09:15:29.741Z</updated>
     
     <content type="html"><![CDATA[<h3 id="卿卿我我"><a href="#卿卿我我" class="headerlink" title="卿卿我我"></a>卿卿我我</h3><ul><li>写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己.</li><li>校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影.</li></ul><a id="more"></a><h3 id="情怀"><a href="#情怀" class="headerlink" title="情怀"></a>情怀</h3><ul><li>愿走出半生, 归来仍是少年.</li></ul>]]></content>
     
@@ -694,10 +694,10 @@
     
     </summary>
     
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
+    
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
-    
-      <category term="网易云评论" scheme="http://yoursite.com/tags/%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/"/>
     
   </entry>
   
@@ -917,7 +917,7 @@
     <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
     <id>http://yoursite.com/2019/03/08/数据结构---单链表的概念及实现/</id>
     <published>2019-03-08T00:24:53.000Z</published>
-    <updated>2019-03-15T08:32:25.571Z</updated>
+    <updated>2019-03-15T09:16:27.746Z</updated>
     
     <content type="html"><![CDATA[<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><p>线性表的<strong>链接存储结构</strong>成为链表</p><p>常见的链表: </p><ol><li>单链表(每个节点有一个指针域的链表)</li><li>循环链表</li><li>双链表(每个节点有两个指针域的链表)</li></ol><a id="more"></a><p>特点: </p><ul><li>用一组任意的存储单元存储线性表的数据结构(存储单元可以是连续的,也可以是不连续的</li><li>数据元素的逻辑次序和物理次序 <strong>==不一定一致==</strong></li></ul><h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><ul><li><p><strong>结点:</strong> 基本单元,由两部分组成</p><ul><li>数据域: 用来存放节点本身的信息</li><li>指针域:用来存放本节点的直接后继节点的地址</li></ul></li><li><p><strong>空指针:</strong> 链表中最后一个节点的指针域不指向任何节点(通常用”∧”或者”NULL”表示</p></li><li><p><strong>头指针:</strong> 指向单链表第一个节点的指针(head)</p></li><li><p><strong>空表:</strong> 之神 head 为空指针,即 head=NULL</p></li><li><p><strong>表头结点:</strong> 第一个节点之前再增加一个类型相同的结点(为了便于实现链表的各种运算, 其他节点成为表结点)</p></li><li><p><strong>表结点:</strong>  除了表头结点其他的结点</p><blockquote><p>在表结点中,第一个节点称为<strong>首结点</strong> ,最后一个节点称为 <strong>尾节点</strong></p></blockquote></li></ul>]]></content>
     
@@ -935,8 +935,6 @@
     
       <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="单链表" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
-    
     
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
@@ -947,7 +945,7 @@
     <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
     <id>http://yoursite.com/2019/03/08/数据结构---线性表/</id>
     <published>2019-03-08T00:24:53.000Z</published>
-    <updated>2019-03-15T08:32:35.515Z</updated>
+    <updated>2019-03-15T09:16:23.037Z</updated>
     
     <content type="html"><![CDATA[<h1 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><p>​    由 n(n≥0) 个数据特性相同的元素构成的 <strong>有限序列</strong> </p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h4><ul><li>存在唯一的一个被称为”第一个”的数据元素</li><li>存在唯一的一个被称为”最后一个”的数据元素</li><li>除第一个之外, 结构中的每个数据元素均只有一个前驱元素</li><li>除最后一个之外, 结构中的每个数据元素均只有一个后继元素</li></ul><h4 id="存储结构及运算"><a href="#存储结构及运算" class="headerlink" title="存储结构及运算:"></a>存储结构及运算:</h4><ul><li><strong>存储结构方式:</strong>  顺序存储方式(顺序表), 链接存储方式(链表)</li><li><strong>运算:</strong> <ol><li>线性表的初始化 </li><li>求表的长度 </li><li>取出表的元素 </li><li>查找运算</li></ol></li></ul><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul><li>空表: 线性表的长度 n=0</li><li>前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素</li><li>后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素</li></ul><h4 id="随笔"><a href="#随笔" class="headerlink" title="随笔:"></a>随笔:</h4><ul><li>线性表中的数据元素之间的逻辑关系就是其相互位置上的 <strong>邻接关系</strong> ,该关系是线性的,因此,线性表是一种<strong>线性结构</strong> </li><li><strong>常见例子:</strong> 学生成绩表, 列车时刻表, 英文字母表</li></ul><p>​    </p>]]></content>
     
@@ -959,8 +957,6 @@
     
       <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="线性表" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    
     
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
@@ -971,7 +967,7 @@
     <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E6%B6%82%E7%A3%8A/"/>
     <id>http://yoursite.com/2019/03/07/人间词话---自我成长---涂磊/</id>
     <published>2019-03-07T14:54:18.000Z</published>
-    <updated>2019-03-08T05:25:49.954Z</updated>
+    <updated>2019-03-15T09:14:33.079Z</updated>
     
     <content type="html"><![CDATA[<ul><li>我们总是善于去伤害那些爱我们的人， 因为我们根本伤害不了那些不爱我们的人;我们总是甘愿被那些我们爱的人伤害，那是因为我爱他们</li><li>喜欢可以心动，而爱一定会心痛；喜欢可以舍得，但爱一定舍不得；喜欢一个人，冬天不过是冬天，不过是漂亮一点而已；但是爱一个人，冬天可以变成春天；爱一个人，她落泪你就会跟着她一起落泪；而喜欢一个人，她落泪你只不过是安慰；喜欢是可以变成爱的，但如果爱了就说不出喜欢；喜欢是不排她的，而爱一定是排她的，唯一的；喜欢与责任无关，而爱一定要负责任，这就是喜欢和爱的区别</li></ul><a id="more"></a><ul><li>春风得意的浪子回头最珍贵，穷途末路的认错悔改最虚伪</li><li>你曾经买了一件很喜欢的衣裳却舍不得穿，郑重地供奉在衣柜里；许久之后，当你再看见它的时候，却发现它已经过时了。所以，你就这样与它错过了。你也曾经买了一块漂亮的蛋糕却舍不得吃，郑重地供奉在冰箱里；许久之后，当你再看见它的时候，却发现它已经过期了。所以，你也这样与它错过了。没有在最喜欢的时候上身的衣裳，没有在最可口的时候品尝的蛋糕，就像没有在最想做的时候去做的事情，都是遗憾。生命也有保存期限，想做的事该趁早去做。如果你只是把你的心愿郑重地供奉在心里，却未曾去实行，那么唯一的结果，就是与它错过，一如那件过时的衣裳，一如那块过期的蛋糕</li><li>有些人注定是你生命中的过客，却总是成为你记忆中的常客，但永远也仅止于做客</li><li>你以为责任是什么？你以为责任就是终身相守，扔几个钱在家里。真正的责任是要在乎你所爱的人的每一分每一秒的感受</li><li>男人无事献殷勤非奸即盗，女人对爱来者不拒不是欺就是爱</li><li>人最伟大的力量不是创造，而是自省！如果不能自我反省，不能看到自身的错误和不足，即使有非凡的力量，创造出的一切都只是埋没自己的坟墓！</li><li>越是嘴上说自己有原则的人，越是圆滑，因为他们的原则便是永远不说负责任的话，永远模棱两可！狡猾的眼神中永远透露的是欺骗，向下的嘴角代表的永远是严肃。</li><li>在我看来，绝大多数现代人的虚荣来自于虚伪，虚伪来自于自卑！在日常生活中衣着光鲜、牛逼哄哄的家伙其实内心很恐慌！</li></ul>]]></content>
     
@@ -984,18 +980,14 @@
     
     </summary>
     
-      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="涂磊老师" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E6%B6%82%E7%A3%8A%E8%80%81%E5%B8%88/"/>
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
     
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
+      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
       <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
     
-      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+      <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
     
   </entry>
   
@@ -1004,7 +996,7 @@
     <link href="http://yoursite.com/2019/03/07/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C/"/>
     <id>http://yoursite.com/2019/03/07/人间词话---自我成长---陈果/</id>
     <published>2019-03-07T14:54:18.000Z</published>
-    <updated>2019-03-09T15:06:00.612Z</updated>
+    <updated>2019-03-15T09:14:22.390Z</updated>
     
     <content type="html"><![CDATA[<ul><li>只有心灵才能洞察一切，世界上真正重要的东西要用心去看</li><li>你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋</li><li>选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安</li><li>回忆是一种重逢, 忘记是一份自由.</li></ul><a id="more"></a>]]></content>
     
@@ -1019,16 +1011,14 @@
     
     </summary>
     
-      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="陈果老师" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E9%99%88%E6%9E%9C%E8%80%81%E5%B8%88/"/>
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
     
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
-      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
+      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
     
-      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+      <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
     
   </entry>
   
@@ -1124,7 +1114,7 @@
     <link href="http://yoursite.com/2019/03/06/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%96%87%E7%AB%A0/"/>
     <id>http://yoursite.com/2019/03/06/人间词话---文章/</id>
     <published>2019-03-06T13:57:13.000Z</published>
-    <updated>2019-03-15T08:31:29.213Z</updated>
+    <updated>2019-03-15T09:15:20.101Z</updated>
     
     <content type="html"><![CDATA[<h1 id="感谢困难"><a href="#感谢困难" class="headerlink" title="感谢困难"></a>感谢困难</h1><p>​                                                                                林清玄<br>​    我做了一个梦。</p><p>　　梦见我在街上问人：“请问您可不可以给我一些困难、一些挫折，一些痛苦?”</p><p>　　所有的人都拒绝我，我着急地恳求别人：“那么，我雇用您，每小时五百元，请您给我一些折磨!”</p><p>　　那些陌生人摇摇头，沉默地离开，我因找不到愿意折磨我的人而惊醒。</p><p>　　我坐在床上发呆，是呀!困难，折磨，痛苦是多么珍贵!如果一切平顺，谁会静下来沉思，谁会生起智慧，谁又能在平凡安逸的日子中超越自我、登上高峰呢?</p><p>　　如果没有困难，谁又会谦卑地跪下来祈祷?谁又能相信有无边的宇宙?谁又能寄情于来生呢?</p><p>　　我深深地感谢着困难、挫折与痛苦。</p><p>　　也深深地感恩那些曾经折磨过我的人，他们是多么慈悲呀!我并未花钱聘雇他们，他们却以宝贵的时间来考验我、提升我，为了增长我的智慧。</p><a id="more"></a><h1 id="真正的高贵"><a href="#真正的高贵" class="headerlink" title="真正的高贵"></a>真正的高贵</h1><p>​                                                                                海明威</p><p>​    在风平浪静的大海，每个人都是领航员。</p><p>​    但是，只有阳光而无阴影，只有欢乐而无痛苦，那就不是人生。以最幸福的人的生活为例.他的生活也是一团缠结在一起的乱麻。痛苦与幸福交替出现,使得我们一会悲伤，一会高兴，甚至死亡本身也会使生命更加可爱。在人生的清醒的时刻，在悲伤与失落的阴影之下，人们与真实的自我最接近。</p><p>​    在生活和事业的种种事物中，性格比才智更能指导我们, 心灵比头脑更能引导我们,而由判断获得的克制, 耐心和教养比天分更能让我们受益。</p><p>​    我始终相信，内心生活开始更为严谨的人，他的外在生活也会变得更为简朴。在一个物欲横流的年代，但愿我能向世人表明，人类真正需求少得多么可怜。</p><p>​    反思自己的过错不至于重蹈覆辙才是真正的悔悟, 高人一等并没有什么值得夸耀的。真正的高贵是优于过去的自己。</p>]]></content>
     
@@ -1141,10 +1131,10 @@
     
     </summary>
     
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
+    
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
-    
-      <category term="文章" scheme="http://yoursite.com/tags/%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
@@ -1153,7 +1143,7 @@
     <link href="http://yoursite.com/2019/03/06/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%83%8A%E8%89%B3%E7%9A%84%E6%96%87%E5%AD%97/"/>
     <id>http://yoursite.com/2019/03/06/人间词话---惊艳的文字/</id>
     <published>2019-03-06T13:57:13.000Z</published>
-    <updated>2019-03-15T08:42:18.144Z</updated>
+    <updated>2019-03-15T09:15:11.482Z</updated>
     
     <content type="html"><![CDATA[<h3 id="现代诗"><a href="#现代诗" class="headerlink" title="现代诗"></a>现代诗</h3><ul><li>酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。   —余光中《寻李白》</li></ul><a id="more"></a><h3 id="古诗"><a href="#古诗" class="headerlink" title="古诗"></a>古诗</h3><ul><li>少年不知愁滋味,爱上层楼,爱上层楼.为赋新词强说愁.而今识尽愁滋味,欲说还休,欲说还休,却道天凉好个秋.  —辛弃疾《丑奴儿》</li><li>十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。    —苏轼</li></ul><h3 id="古文"><a href="#古文" class="headerlink" title="古文"></a>古文</h3><ul><li>斯是陋室,惟吾德馨.   —刘禹锡《陋室铭》</li><li>夏虫不可语冰   —孔子</li></ul><h3 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h3><ul><li>我知道我很大胆冒昧, 听说你朋友很多, 我不配高攀, 可是很想在你的朋友里凑个数目.   —钱钟书《围城》</li><li>别客气,我求你明天来.我想去吃,对自己没有好借口,借你的名义,自己享受一下,你就体贴下情,答应了吧.   —钱钟书《围城》</li></ul>]]></content>
     
@@ -1165,10 +1155,8 @@
     
     </summary>
     
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
-      <category term="现代诗" scheme="http://yoursite.com/tags/%E7%8E%B0%E4%BB%A3%E8%AF%97/"/>
-    
-      <category term="古诗" scheme="http://yoursite.com/tags/%E5%8F%A4%E8%AF%97/"/>
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
@@ -1204,7 +1192,7 @@
     <link href="http://yoursite.com/2019/01/10/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E6%9B%BE%E4%BB%95%E5%BC%BA/"/>
     <id>http://yoursite.com/2019/01/10/人间词话---自我成长---曾仕强/</id>
     <published>2019-01-10T14:19:18.000Z</published>
-    <updated>2019-03-07T15:05:27.788Z</updated>
+    <updated>2019-03-15T09:14:38.862Z</updated>
     
     <content type="html"><![CDATA[<ul><li>很多事情，从不同的角度看，才能体会到其中的奥妙</li><li>做一个领导者，一定要充分了解下属的特性是什么，及时的下达合理的命令，而且效果要非常的良好，此为将才</li><li>事事都透露着一个人的能力</li><li>顾全大局，大局的前提底下，很多细小的事情，不用太过于考虑</li></ul><a id="more"></a><ul><li>一件事，从不同的角度看，都有道理，怎么讲都对，不是对不对的事，是价值观的体现</li><li>得意勿忘形，人在得意时，千万不能忘形，做事情随他爱怎样怎样，变为得意忘形，当一个人处于逆境的时候，他还会谨慎一点，当一个人处顺境的时候，他就开始沉不住气</li><li>形势比人强</li><li>人生的理想在于不断提升自己的层次</li><li>有智慧没知识容易陷入空想，一事无成。有知识没智慧，就不要埋怨被人当做工具使用，用毕即弃。要善用智慧来运用知识，以求合理的表现</li><li>处逆境容易，正因留意，处顺境很难，正因大意</li><li>你要很谨慎地去保留你独特的地方，这个独特之处就是你之所以为人的地方。能够自我成全，才是人最伟大的地方</li></ul>]]></content>
     
@@ -1219,18 +1207,14 @@
     
     </summary>
     
-      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="曾仕强教授" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/%E6%9B%BE%E4%BB%95%E5%BC%BA%E6%95%99%E6%8E%88/"/>
+      <category term="人间词话" scheme="http://yoursite.com/categories/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
     
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-      <category term="人生方向" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%96%B9%E5%90%91/"/>
+      <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
       <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
     
-      <category term="成长" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF/"/>
+      <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
     
   </entry>
   
