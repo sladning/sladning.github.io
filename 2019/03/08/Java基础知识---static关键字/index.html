@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="java基础知识,java,">
+  <meta name="keywords" content="Java,Java基础知识,">
 
 
 
@@ -124,14 +124,14 @@
 
 
 <meta name="description" content="Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途  基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访">
-<meta name="keywords" content="java基础知识,java">
+<meta name="keywords" content="Java,Java基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础知识---static关键字">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/Java基础知识---static关键字/index.html">
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途  基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T13:15:43.435Z">
+<meta property="og:updated_time" content="2019-03-15T08:25:07.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识---static关键字">
 <meta name="twitter:description" content="Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途  基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访">
@@ -398,8 +398,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础知识</span>
+                  <a href="/categories/Java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础知识</span>
                   </a>
                 </span>
 
@@ -409,7 +409,7 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/Static关键字/" itemprop="url" rel="index">
+                  <a href="/categories/Java基础知识/Static关键字/" itemprop="url" rel="index">
                     <span itemprop="name">Static关键字</span>
                   </a>
                 </span>
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  842
+                  1.1k
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -487,7 +487,7 @@
 </blockquote>
 <p><strong>基本作用:</strong> 方便在 <strong>没有创建对象</strong> 的情况下来进行调用(方法/变量),被static修饰的变量和方法其<strong>随着类的加载而被加载</strong> . 只要类被加载了，就可以通过类名去进行访问.</p>
 <a id="more"></a>
-<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><ul>
+<h1 id="1-静态变量"><a href="#1-静态变量" class="headerlink" title="1. 静态变量"></a>1. 静态变量</h1><ul>
 <li><p>在类中用static声明的成员变量为 <strong>静态成员变量</strong> (也叫<strong>类变量</strong>),</p>
 </li>
 <li><p>其为该类的公共变量,  在第一次使用时被初始化, 这个成员变量 <strong>只有一份</strong> ，而且这一份是这个类 <strong>所有的对象</strong> 共享, 属于整个类的，它不属于专门的某个对象</p>
@@ -501,7 +501,7 @@
 <h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><ul>
 <li>注意不能把 <strong>任何方法体内的变量声明为静态</strong> </li>
 </ul>
-<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><ul>
+<h1 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2. 静态方法"></a>2. 静态方法</h1><ul>
 <li><p>用<strong>static</strong> 声明的方法为静态方法(也叫<strong>类方法</strong>)</p>
 </li>
 <li><p>在静态方法里只能直接调用同类中其他的静态成员（包括变量和方法），而<strong>不能直接访问类中的非静态成员</strong> 。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。</p>
@@ -518,10 +518,24 @@
 </ul>
 <h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><p>​    想在不创建对象的情况下调用某个方法，就可以将这个方法设置为static。</p>
 <p>​    最常见的static方法就是main方法。因为程序在执行main方法的时候没有创建任何对象，因此只有通过类名来访问。</p>
-<h4 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h4><blockquote>
+<h1 id="3-静态代码块"><a href="#3-静态代码块" class="headerlink" title="3. 静态代码块"></a>3. 静态代码块</h1><blockquote>
 <p>用来形成静态代码块以优化程序性能。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。</p>
 </blockquote>
 <h5 id="为什么说static块可以用来优化程序性能"><a href="#为什么说static块可以用来优化程序性能" class="headerlink" title="为什么说static块可以用来优化程序性能"></a>为什么说static块可以用来优化程序性能</h5><p>​    是因为它的特性:只会在类加载的时候执行一次。</p>
+<h2 id="初始化的顺序"><a href="#初始化的顺序" class="headerlink" title="初始化的顺序"></a>初始化的顺序</h2><p> 对象属性的初始化有三种方式</p>
+<ul>
+<li>声明时初始化</li>
+<li>静态代码块初始化</li>
+<li>构造函数初始化</li>
+</ul>
+<p>故意<strong>把初始化块，放在构造方法下面</strong>，</p>
+<p><strong>问题：</strong>这三种方式，谁先执行？谁后执行？  </p>
+<h5 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticOrder</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 声明时初始化</span></span><br><span class="line">	<span class="keyword">public</span> String name = StaticOrder.getName(<span class="string">"属性声明"</span>);</span><br><span class="line">	<span class="comment">// 构造函数初始化</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StaticOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		name = StaticOrder.getName(<span class="string">"构造方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 静态代码块初始化</span></span><br><span class="line">	&#123;</span><br><span class="line">		name = StaticOrder.getName(<span class="string">"初始化块"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// 被调用的 getName() 方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"初始化:  "</span> + name);</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">new</span> StaticOrder();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果:</span></span><br><span class="line"><span class="comment">//		初始化:  属性声明</span></span><br><span class="line"><span class="comment">//		初始化:  初始化块</span></span><br><span class="line"><span class="comment">// 		初始化:  构造方法</span></span><br></pre></td></tr></table></figure>
+<h4 id="所以顺序为"><a href="#所以顺序为" class="headerlink" title="所以顺序为:"></a>所以顺序为:</h4><ol>
+<li>声明时初始化</li>
+<li>静态代码块初始化</li>
+<li>构造函数初始化</li>
+</ol>
 <h3 id="杂"><a href="#杂" class="headerlink" title="杂:"></a>杂:</h3><p>​    static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。</p>
 <p>参考博文:<br>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3637407.html" target="_blank" rel="noopener">java基础学习总结——static关键字</a></p>
 <p>​    <a href="https://www.nowcoder.com/questionTerminal/6f66f55a1f844e21b580e73d36223cf7" target="_blank" rel="noopener">优质答案</a></p>
@@ -554,9 +568,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java基础知识/" rel="tag"><i class="fa fa-tag"></i> java基础知识</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+            <a href="/tags/Java基础知识/" rel="tag"><i class="fa fa-tag"></i> Java基础知识</a>
           
         </div>
       
@@ -569,8 +583,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/Java基础知识---面向对象(1)/" rel="next" title="Java基础知识---面向对象(1)">
-                <i class="fa fa-chevron-left"></i> Java基础知识---面向对象(1)
+              <a href="/2019/03/08/JavaWeb---HttpResponse对象/" rel="next" title="JavaWeb---HttpResponse对象">
+                <i class="fa fa-chevron-left"></i> JavaWeb---HttpResponse对象
               </a>
             
           </div>
@@ -579,8 +593,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/JavaWeb---Filter(一)/" rel="prev" title="Java基础知识---Filter(一)">
-                Java基础知识---Filter(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/JavaWeb---Filter(1)/" rel="prev" title="JavaWeb---Filter(1)">
+                JavaWeb---Filter(1) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -665,7 +679,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -676,7 +690,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -687,7 +701,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -743,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Static-关键字"><span class="nav-number">1.</span> <span class="nav-text">Static 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态变量"><span class="nav-number">1.0.1.</span> <span class="nav-text">静态变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">注意:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">静态方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">范例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态代码块"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">静态代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么说static块可以用来优化程序性能"><span class="nav-number">1.0.2.2.1.</span> <span class="nav-text">为什么说static块可以用来优化程序性能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#杂"><span class="nav-number">1.0.3.</span> <span class="nav-text">杂:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Static-关键字"><span class="nav-number">1.</span> <span class="nav-text">Static 关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-静态变量"><span class="nav-number">2.</span> <span class="nav-text">1. 静态变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">注意:</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#2-静态方法"><span class="nav-number">3.</span> <span class="nav-text">2. 静态方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-静态代码块"><span class="nav-number">4.</span> <span class="nav-text">3. 静态代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么说static块可以用来优化程序性能"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">为什么说static块可以用来优化程序性能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化的顺序"><span class="nav-number">4.1.</span> <span class="nav-text">初始化的顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码演示"><span class="nav-number">4.1.0.0.1.</span> <span class="nav-text">代码演示</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#所以顺序为"><span class="nav-number">4.1.0.1.</span> <span class="nav-text">所以顺序为:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#杂"><span class="nav-number">4.1.1.</span> <span class="nav-text">杂:</span></a></li></div>
             
 
           </div>
@@ -777,7 +791,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.6k</span>
+    <span title="Site words total count">31.9k</span>
   
 </div>
 

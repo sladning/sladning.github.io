@@ -410,8 +410,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/基础语法/" itemprop="url" rel="index">
-                    <span itemprop="name">基础语法</span>
+                  <a href="/categories/java基础知识/Java线程/" itemprop="url" rel="index">
+                    <span itemprop="name">Java线程</span>
                   </a>
                 </span>
 
@@ -479,41 +479,15 @@
 
       
         
-          
-            <h1 id="一-线程的基本概念"><a href="#一-线程的基本概念" class="headerlink" title="一. 线程的基本概念"></a>一. 线程的基本概念</h1><p>线程是一个程序里面不同的执行路径</p>
+          <h1 id="一-线程的基本概念"><a href="#一-线程的基本概念" class="headerlink" title="一. 线程的基本概念"></a>一. 线程的基本概念</h1><p>线程是一个程序里面不同的执行路径</p>
 <p>每一个分支都叫做一个线程，main()叫做主分支，也叫主线程</p>
-<h3 id="程序的执行过程都是这样的"><a href="#程序的执行过程都是这样的" class="headerlink" title="程序的执行过程都是这样的"></a>程序的执行过程都是这样的</h3><p>​    首先把程序的代码放到<strong>内存的代码区</strong>里面，代码放到代码区后并<strong>没有马上开始执行</strong>，但这时候说明了一个进程准备开始，<strong>进程已经产生了，但还没有开始执行</strong>，这就是进程，所以<strong>进程其实是一个静态的概念</strong>，它本身就不能动。</p>
-<p><strong>进程:</strong> 机器上的一个.class文件，机器上的一个.exe文件，这个叫做一个进程</p>
-<blockquote>
-<p>平常所说的进程的执行指的是<strong>进程里面主线程</strong>开始执行了，也就是<strong>main()方法</strong>开始执行了。</p>
-<p>==<strong>进程是一个静态的概念，在我们机器里面实际上运行的都是线程。</strong>==</p>
-</blockquote>
-<h4 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充:"></a>知识补充:</h4><blockquote>
-<p>CPU难道真的很神通广大，能够同时执行那么多程序吗？</p>
-<p><strong>不是的</strong>，CPU的执行是这样的：CPU的速度很快，一秒钟可以算好几亿次，因此CPU把自己的时间分成一个个小时间片，我这个时间片执行你一会，下一个时间片执行他一会，再下一个时间片又执行其他人一会，虽然有几十个线程，但一样可以在<strong>很短的时间内</strong>把他们通通都执行一遍，但对我们人来说，<strong>CPU的执行速度太快了，因此看起来就像是在同时执行一样</strong>，但<strong>实际上在一个时间点上，CPU只有一个线程在运行</strong>。</p>
-</blockquote>
-<h2 id="小总结-学习线程首先要理清楚三个概念"><a href="#小总结-学习线程首先要理清楚三个概念" class="headerlink" title="小总结(学习线程首先要理清楚三个概念):"></a>小总结(学习线程首先要理清楚三个概念):</h2><ol>
-<li>进程：进程是一个<strong>静态的概念</strong></li>
-<li>线程：一个进程里面有<strong>一个主线程叫main()方法</strong>，是一个程序里面的，<strong>一个进程里面不同的执行路径</strong>。</li>
-<li><strong>在同一个时间点上，一个CPU只能支持一个线程在执行</strong>。因为CPU运行的速度很快，因此我们看起来的感觉就像是多线程一样。</li>
-</ol>
-<blockquote>
-<p>什么才是真正的多线程？如果你的机器是双CPU，或者是双核，这确确实实是多线程。</p>
-</blockquote>
-<h2 id="二-线程的创建和启动"><a href="#二-线程的创建和启动" class="headerlink" title="二. 线程的创建和启动"></a>二. 线程的创建和启动</h2><p>在 JAVA 里面，JAVA的线程是通过<code>java.lang.Thread</code>类来实现的，<strong>每一个Thread对象代表一个新的线程</strong>。</p>
-<p>创建一个新线程出来有两种方法：</p>
-<ol>
-<li>从Thread类继承</li>
-<li>实现接口</li>
-</ol>
-<h2 id="2-1-使用实现Runnable接口创建和启动新线程"><a href="#2-1-使用实现Runnable接口创建和启动新线程" class="headerlink" title="2.1 使用实现Runnable接口创建和启动新线程"></a>2.1 使用实现<strong>Runnable接口</strong>创建和启动新线程</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 开辟一个新的线程来调用run方法</span></span><br><span class="line"><span class="comment"> * 程序执行到 t.start() 后开辟了一条新的线程,主线程继续向下执行</span></span><br><span class="line"><span class="comment"> * t.start() 这条线程是 run() 方法执行的线程,</span></span><br><span class="line"><span class="comment"> * run() 方法和 main() 方法再在交替进行,或者说叫并行执行</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zn</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 这里new了一个线程类的对象出来</span></span><br><span class="line">		Runner1 r1 = <span class="keyword">new</span> Runner1();</span><br><span class="line">		<span class="comment">// r1.run();</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 这里使用的是Thread(Runnable target) 这构造方法</span></span><br><span class="line">		Thread t = <span class="keyword">new</span> Thread(r1); <span class="comment">// 要启动一个新的线程就必须new一个Thread对象出来</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 启动新开辟的线程，新线程执行的是run()方法，新线程与主线程会一起并行执行</span></span><br><span class="line">		t.start();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"maintheod："</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个类用来实现 Runnable 接口，实现Runnable接口就表示这个类是一个线程类 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runner1</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 每个线程都是方法run()来完成其操作的，方法run()称为线程体</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Runner1："</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*打印结果:</span></span><br><span class="line"><span class="comment">    maintheod：0</span></span><br><span class="line"><span class="comment">    maintheod：1</span></span><br><span class="line"><span class="comment">    Runner1：0</span></span><br><span class="line"><span class="comment">    maintheod：2</span></span><br><span class="line"><span class="comment">    Runner1：1</span></span><br><span class="line"><span class="comment">    maintheod：3</span></span><br><span class="line"><span class="comment">    Runner1：2</span></span><br><span class="line"><span class="comment">    Runner1：3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h4 id="不开辟新线程直接调用run方法"><a href="#不开辟新线程直接调用run方法" class="headerlink" title="不开辟新线程直接调用run方法"></a>不开辟新线程直接调用run方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 不开辟新线程直接调用run方法</span></span><br><span class="line"><span class="comment"> * 首先进入主程序, 子程序 r2 执行完之后主程序 main() 在继续执行</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zn</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 这里new了一个线程类的对象出来</span></span><br><span class="line">		Runner2 r2 = <span class="keyword">new</span> Runner2();</span><br><span class="line">		</span><br><span class="line">        <span class="comment">// 这个称为方法调用，方法调用的执行是等run()方法执行完之后才会继续执行main()方法</span></span><br><span class="line">		r2.run();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Thread t = new Thread(r2);</span></span><br><span class="line">		<span class="comment">// t.start();</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"maintheod："</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个类用来实现 Runnable 接口，实现Runnable接口就表示这个类是一个线程类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runner2</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 每个线程都是方法run()来完成其操作的，方法run()称为线程体</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Runner2："</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*打印结果:</span></span><br><span class="line"><span class="comment">    Runner2：0</span></span><br><span class="line"><span class="comment">    Runner2：1</span></span><br><span class="line"><span class="comment">    Runner2：2</span></span><br><span class="line"><span class="comment">    Runner2：3</span></span><br><span class="line"><span class="comment">    maintheod：0</span></span><br><span class="line"><span class="comment">    maintheod：1</span></span><br><span class="line"><span class="comment">    maintheod：2</span></span><br><span class="line"><span class="comment">    maintheod：3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-2-继承Thread类，并重写其run-方法创建和启动新的线程"><a href="#2-2-继承Thread类，并重写其run-方法创建和启动新的线程" class="headerlink" title="2.2 继承Thread类，并重写其run()方法创建和启动新的线程"></a>2.2 继承Thread类，并重写其run()方法创建和启动新的线程</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 线程创建与启动的第二种方法：定义Thread的子类并实现run()方法</span></span><br><span class="line"><span class="comment"> * 这里也是并发进行</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zn</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		Runner3 r3 = <span class="keyword">new</span> Runner3();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 调用start()方法启动新开辟的线程</span></span><br><span class="line">		r3.start();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">4</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"mainMethod："</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Runner2类从Thread类继承 通过实例化Runner2类的一个对象就可以开辟一个新的线程</span></span><br><span class="line"><span class="comment"> * 调用从Thread类继承来的start()方法就可以启动新开辟的线程</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runner3</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 重写run()方法的实现</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">4</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Runner3："</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*打印结果:</span></span><br><span class="line"><span class="comment">    mainMethod：0</span></span><br><span class="line"><span class="comment">    Runner3：0</span></span><br><span class="line"><span class="comment">    mainMethod：1</span></span><br><span class="line"><span class="comment">    Runner3：1</span></span><br><span class="line"><span class="comment">    Runner3：2</span></span><br><span class="line"><span class="comment">    Runner3：3</span></span><br><span class="line"><span class="comment">    Runner3：4</span></span><br><span class="line"><span class="comment">    mainMethod：2</span></span><br><span class="line"><span class="comment">    mainMethod：3</span></span><br><span class="line"><span class="comment">    mainMethod：4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-3-两种方法的选择"><a href="#2-3-两种方法的选择" class="headerlink" title="2.3 两种方法的选择"></a>2.3 两种方法的选择</h2><p><strong>优先选择实现Runnable接口</strong> 的这种方式去开辟一个新的线程。</p>
-<p>因为接口的实现可以<strong>实现多个</strong>，而类的继承只能是<strong>单继承</strong>。因此在开辟新线程时能够使用Runnable接口就尽量不要使用从Thread类继承的方式来开辟新的线程。</p>
-<h2 id="三-线程状态转换"><a href="#三-线程状态转换" class="headerlink" title="三. 线程状态转换"></a>三. 线程状态转换</h2><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3633936.html" target="_blank" rel="noopener">java基础学习总结——线程(一)</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/18/Java基础知识---线程(1)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -606,6 +580,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -665,11 +661,195 @@
 
       
         
-          
-            <h2 id="1-MVC-模式"><a href="#1-MVC-模式" class="headerlink" title="1. MVC 模式"></a>1. MVC 模式</h2><p><img src="/2019/03/14/JavaWeb-框架图解/MVC模式.png" alt="MVC模式"></p>
-<h2 id="2-sevlet"><a href="#2-sevlet" class="headerlink" title="2. sevlet"></a>2. sevlet</h2><p><img src="/2019/03/14/JavaWeb-框架图解/servlet.png" alt="servlet"></p>
+          <h2 id="1-MVC-模式"><a href="#1-MVC-模式" class="headerlink" title="1. MVC 模式"></a>1. MVC 模式</h2><p><img src="/2019/03/14/JavaWeb-框架图解/MVC模式.png" alt="MVC模式"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/JavaWeb-框架图解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/Java基础知识---反射/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/14/Java基础知识---反射/" itemprop="url">Java基础知识---反射</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T20:41:51+08:00">
+                2019-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一-什么是反射"><a href="#一-什么是反射" class="headerlink" title="一. 什么是反射"></a>一. 什么是反射</h1><p>​    反射之中包含了一个<strong>「反」</strong>字，所以想要解释反射就必须先从<strong>「正」</strong>开始解释。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/Java基础知识---反射/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -774,18 +954,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -854,8 +1023,7 @@
 
       
         
-          
-            <h2 id="一、JSP指令简介"><a href="#一、JSP指令简介" class="headerlink" title="一、JSP指令简介"></a>一、JSP指令简介</h2><p>　　JSP指令（directive）是为JSP引擎而设计的，它们并<strong>不直接产生任何可见输出</strong>，而只是告诉引擎<strong>如何处理JSP页面中的其余部分</strong>。</p>
+          <h2 id="一、JSP指令简介"><a href="#一、JSP指令简介" class="headerlink" title="一、JSP指令简介"></a>一、JSP指令简介</h2><p>　　JSP指令（directive）是为JSP引擎而设计的，它们并<strong>不直接产生任何可见输出</strong>，而只是告诉引擎<strong>如何处理JSP页面中的其余部分</strong>。</p>
 <p>在JSP 2.0规范中共定义了三个指令：</p>
 <ul>
 <li>page指令</li>
@@ -865,39 +1033,13 @@
 <blockquote>
 <p>JSP指令的基本语法格式：<strong>&lt;%@ 指令 属性名=”值” %&gt;</strong></p>
 </blockquote>
-<h5 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=gb2312"</span>%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--如果一个指令有多个属性，这多个属性可以写在一个指令中，也可以分开写--&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=gb2312"</span>%&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--也可以写作--&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=gb2312"</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="二、Page指令"><a href="#二、Page指令" class="headerlink" title="二、Page指令"></a>二、Page指令</h1><p>​    page指令 <strong>用于定义 JSP 页面的==各种属性==</strong> ，无论page指令出现在JSP页面中的什么地方，它作用的都是<strong>整个JSP页面</strong>，为了保持程序的可读性和遵循良好的编程习惯，page指令最好是放在<strong>整个JSP页面的起始位置</strong>。</p>
-<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--指令完整语法--&gt;</span><br><span class="line">&lt;%@ page </span><br><span class="line">    [ language=<span class="string">"java"</span> ] </span><br><span class="line">    [ extends=<span class="string">"package.class"</span> ] </span><br><span class="line">    [ <span class="keyword">import</span>=<span class="string">"&#123;package.class | package.*&#125;, ..."</span> ] </span><br><span class="line">    [ session=<span class="string">"true | false"</span> ] </span><br><span class="line">    [ buffer=<span class="string">"none | 8kb | sizekb"</span> ] </span><br><span class="line">    [ autoFlush=<span class="string">"true | false"</span> ] </span><br><span class="line">    [ isThreadSafe=<span class="string">"true | false"</span> ] </span><br><span class="line">    [ info=<span class="string">"text"</span> ] </span><br><span class="line">    [ errorPage=<span class="string">"relative_url"</span> ] </span><br><span class="line">    [ isErrorPage=<span class="string">"true | false"</span> ] </span><br><span class="line">    [ contentType=<span class="string">"mimeType [ ;charset=characterSet ]"</span> | <span class="string">"text/html ; charset=ISO-8859-1"</span> ] </span><br><span class="line">    [ pageEncoding=<span class="string">"characterSet | ISO-8859-1"</span> ] </span><br><span class="line">    [ isELIgnored=<span class="string">"true | false"</span> ] </span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="三-include指令"><a href="#三-include指令" class="headerlink" title="三. include指令"></a>三. include指令</h1><p>在JSP中对于包含有<strong>两种语句形式</strong>：</p>
-<ol>
-<li><code>@include</code> 指令</li>
-<li><code>&lt;jsp:include&gt;</code> 指令</li>
-</ol>
-<h2 id="3-1-include指令"><a href="#3-1-include指令" class="headerlink" title="3.1 @include指令"></a>3.1 @include指令</h2><ul>
-<li><p>@include可以<strong>包含任意的文件</strong>，当然，只是把文件的内容包含进来。</p>
-</li>
-<li><p>include指令用于引入其它JSP页面，如果使用include指令引入了其它JSP页面，那么<strong>JSP引擎将把这两个JSP翻译成一个servlet</strong>。所以include指令引入通常也称之<strong>为静态引入</strong>。</p>
-</li>
-</ul>
-<p>语法：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--其中的file属性用于指定被引入文件的路径。路径以“/”开头，表示代表当前web应用。--&gt;</span><br><span class="line">&lt;%@ include file=<span class="string">"relativeURL"</span>%&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="include指令细节注意问题："><a href="#include指令细节注意问题：" class="headerlink" title="include指令细节注意问题："></a>include指令细节注意问题：</h4><ol>
-<li>被引入的文件必须遵循 JSP 语法。</li>
-<li>被引入的文件<strong>可以使用任意的扩展名</strong>，即使其扩展名是html，JSP引擎也会按照处理jsp页面的方式处理它里面的内容，为了见明知意，JSP规范建议使用 .jspf（JSP fragments(片段)）作为静态引入文件的扩展名。</li>
-<li>由于使用include指令将会涉及到2个JSP页面，并会把2个JSP翻译成一个servlet，所以这2个JSP页面的指令不能冲突(除了pageEncoding和导包除外)。</li>
-</ol>
-<h5 id="范例-1"><a href="#范例-1" class="headerlink" title="范例"></a>范例</h5><p>　　新建head.jspf页面和foot.jspf页面，分别作为jsp页面的头部和尾部，存放于<strong>WebRoot下的jspfragments文件夹中</strong>，代码如下：</p>
-<p><strong>head.jspf代码：</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;h1 style="color:red;"&gt;网页头部&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>foot.jspf代码：</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;h1 style="color:blue;"&gt;网页尾部&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-<p>　　在<strong>WebRoot文件夹下</strong>创建一个IncludeTagTest.jsp页面，在IncludeTagTest.jsp页面中使用<strong>@include</strong>指令<strong>引入</strong>head.jspf页面和foot.jspf页面，代码如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;jsp的Include指令测试&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">  &lt;%--使用include标签引入引入其它JSP页面--%&gt;</span><br><span class="line">    &lt;%<span class="meta">@include</span> file=<span class="string">"/jspfragments/head.jspf"</span> %&gt;</span><br><span class="line">    &lt;h1&gt;网页主体内容&lt;/h1&gt;</span><br><span class="line">    &lt;%<span class="meta">@include</span> file=<span class="string">"/jspfragments/foot.jspf"</span> %&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-总结-include指令"><a href="#3-2-总结-include指令" class="headerlink" title="3.2 总结@include指令"></a>3.2 总结@include指令</h2><p>　　使用@include<strong>可以包含任意的内容</strong>，文件的后缀是什么都无所谓。这种<strong>把别的文件内容包含到自身页面的@include语句就叫作静态包含</strong>，作用只是把别的页面内容包含进来，属于静态包含</p>
-<h2 id="3-3-jsp-include指令"><a href="#3-3-jsp-include指令" class="headerlink" title="3.3 jsp:include指令"></a>3.3 jsp:include指令</h2><p>　　<strong>jsp:include指令</strong>为动态包含，如果被包含的页面是JSP，则先处理之后再将结果包含，而如果包含的是非*.jsp文件，则只是把文件内容静态包含进来，功能与@include类似。后面再具体介绍</p>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3778993.html" target="_blank" rel="noopener">javaweb学习总结(十六)——JSP指令</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/JavaWeb---JSP指令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1002,18 +1144,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -1082,42 +1213,18 @@
 
       
         
-          
-            <p>​    任何语言都有自己的语法，JAVA 中有，JS P虽然是在JAVA上的一种应用，但是依然有其<strong>自己扩充的语法</strong>，而且在 JSP 中，<strong>所有的 JAVA 语句都可以使用</strong>。</p>
+          <p>​    任何语言都有自己的语法，JAVA 中有，JS P虽然是在JAVA上的一种应用，但是依然有其<strong>自己扩充的语法</strong>，而且在 JSP 中，<strong>所有的 JAVA 语句都可以使用</strong>。</p>
 <h1 id="一-JSP-模版元素"><a href="#一-JSP-模版元素" class="headerlink" title="一. JSP 模版元素"></a>一. JSP 模版元素</h1><ul>
 <li>JSP 页面中的 <strong>HTML 内容</strong> 称之为 <strong>JSP 模版元素</strong> 。 </li>
 <li>JSP 模版元素定义了网页的 <strong>基本骨架</strong> ，即定义了页面的结构和外观。</li>
 </ul>
-<h1 id="二、JSP表达式"><a href="#二、JSP表达式" class="headerlink" title="二、JSP表达式"></a>二、JSP表达式</h1><p>　　JSP 脚本表达式（expression）用于将程序数据输出到客户端</p>
-<p>​    语法：<strong>&lt;%= 变量或表达式 %&gt;</strong></p>
-<p>举例：输出当前系统时间:</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= <span class="keyword">new</span> java.util.Date() %&gt;</span><br></pre></td></tr></table></figure>
-<p>　　JSP引擎在翻译脚本表达式时，会将<strong>程序数据转成字符串</strong>，然后在<strong>相应位置用out.print(…) 将数据输给客户端</strong>。<br>　　JSP脚本表达式中的变量或表达式后面<strong>不能有分号（;）</strong>。</p>
-<h1 id="三、JSP脚本片断"><a href="#三、JSP脚本片断" class="headerlink" title="三、JSP脚本片断"></a>三、JSP脚本片断</h1><p>　　JSP脚本片断(scriptlet)用于在JSP页面中编写多行Java代码。</p>
-<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在&lt;% %&gt;中可以定义变量、编写语句，不能定义方法--&gt;</span><br><span class="line">&lt;% </span><br><span class="line">	多行java代码 </span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>范例:</strong> 在Scriptlet中<strong>定义变量、编写语句</strong></p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;<span class="comment">//声明变量</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*编写语句*/</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)&#123;</span><br><span class="line">        sum+=i;</span><br><span class="line">    &#125;</span><br><span class="line">    out.println(<span class="string">"&lt;h1&gt;Sum="</span>+sum+<span class="string">"&lt;/h1&gt;"</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
-<li>JSP脚本片断中<strong>只能</strong>出现java代码，不能出现其它模板元素， JSP引擎在翻译JSP页面中，会将JSP脚本片断中的Java代码将被原封不动地放到Servlet的_jspService方法中。</li>
-<li>JSP脚本片断中的Java代码必须严格遵循Java语法，例如，每执行语句后面必须<strong>用分号（;）结束</strong>。</li>
-<li>在一个 JSP 页面中可以有多个脚本片断，在两个或多个脚本片断之间可以嵌入文本、HTML标记和其他JSP元素。</li>
-</ul>
-<h1 id="四、JSP声明"><a href="#四、JSP声明" class="headerlink" title="四、JSP声明"></a>四、JSP声明</h1><p>JSP页面中编写的所有代码，默认会翻译到 servlet 的 service 方法中， 而 JSP <strong>声明</strong>中的 java代码 被翻译到 <strong><code>_jspService</code>方法的外面</strong>。</p>
-<h5 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%！ </span><br><span class="line">	java代码</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<p>​    所以，JSP声明可用于<strong>定义JSP页面转换成的Servlet程序的静态代码块、成员变量和方法</strong> 。 多个静态代码块、变量和函数可以定义在一个JSP声明中，也可以分别单独定义在多个JSP声明中。JSP隐式对象的作用范围仅限于Servlet的 <code>_jspService</code> 方法，所以在 JSP 声明中不能使用这些隐式对象。</p>
-<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!</span><br><span class="line">    <span class="keyword">static</span> &#123; </span><br><span class="line">        System.out.println(<span class="string">"loading Servlet!"</span>); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> globalVar = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspInit</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"initializing jsp!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%!</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspDestroy</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"destroying jsp!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="五-JSP注释"><a href="#五-JSP注释" class="headerlink" title="五. JSP注释"></a>五. JSP注释</h1><p>在 JSP 中，注释有两大类：</p>
-<ul>
-<li>显式注释：直接使用<strong>HTML</strong>风格的注释：<strong>&lt;!- -</strong> <strong>注释内容**</strong>- -&gt;</li>
-<li>隐式注释：直接使用<strong>JAVA</strong>的注释：<strong>//</strong>、<strong>/*……***</strong>/**</li>
-<li>JSP<strong>自己的注释：</strong>&lt;%- -注释内容- -%&gt;</li>
-</ul>
-<h5 id="范例-1"><a href="#范例-1" class="headerlink" title="范例"></a>范例</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--这个注释可以看见--&gt;</span><br><span class="line"></span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//JAVA中的单行注释</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        JAVA中的多行注释</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%--JSP自己的注释--%&gt;</span><br></pre></td></tr></table></figure>
-<p>区别</p>
-<p>​    HTML的注释在浏览器中查看源文件的时候是<strong>可以看得到</strong>的，而JAVA注释和JSP注释在浏览器中查看源文件时是<strong>看不到注释的内容</strong></p>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3776512.html" target="_blank" rel="noopener">javaweb学习总结(十五)——JSP基础语法</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/JavaWeb---JSP基础语法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1222,18 +1329,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -1302,30 +1398,21 @@
 
       
         
-          
-            <h1 id="一-基本概念"><a href="#一-基本概念" class="headerlink" title="一. 基本概念"></a>一. 基本概念</h1><h2 id="1-1-WEB-开发的相关知识"><a href="#1-1-WEB-开发的相关知识" class="headerlink" title="1.1 WEB 开发的相关知识"></a>1.1 WEB 开发的相关知识</h2><blockquote>
+          <h1 id="一-基本概念"><a href="#一-基本概念" class="headerlink" title="一. 基本概念"></a>一. 基本概念</h1><h2 id="1-1-WEB-开发的相关知识"><a href="#1-1-WEB-开发的相关知识" class="headerlink" title="1.1 WEB 开发的相关知识"></a>1.1 WEB 开发的相关知识</h2><blockquote>
 <p>WEB，在英语中web即<strong>表示网页</strong>的意思，它用于表示<strong>Internet主机上供外界访问的资源</strong>。</p>
 </blockquote>
 <p>Internet上供外界访问的Web资源分为：</p>
 <ol>
 <li><strong>静态web资源</strong>（如html 页面）：指web页面中供人们<strong>浏览的数据始终是不变的</strong>。</li>
-<li><strong>动态web资源</strong>：指web页面中供人们浏览的数据是<strong>由程序产生的，不同时间点访问web页面看到的内容各不相同</strong>。</li>
+<li><strong>动态web资源</strong>：指web页面中供人们浏览的数据是**</li>
 </ol>
-<p>　　静态web资源开发技术：Html<br>　　常用动态web资源开发技术：JSP/Servlet、ASP、PHP等<br>　　在 Java 中，动态web资源开发技术统称为 <strong>==Javaweb==</strong>。</p>
-<h2 id="1-2-WEB应用程序"><a href="#1-2-WEB应用程序" class="headerlink" title="1.2 WEB应用程序"></a>1.2 WEB应用程序</h2><p>　　WEB应用程序指<strong>供浏览器访问的程序</strong>，通常也<strong>简称为web应用</strong>。例如有a.html 、b.html…..多个web资源，这多个web资源用于对外提供服务，此时应把这多个web资源放在一个目录中，以组成一个web应用（或web应用程序）<br>　　<strong>一个web应用由多个静态web资源和动态web资源组成</strong>，如:html、css、js文件，Jsp文件、java程序、支持jar包、配置文件等等。<br>　　Web应用开发好后，若想供外界访问，需要<strong>把web应用所在目录交给web服务器管理</strong>，这个过程称之为<strong>虚似目录的映射</strong></p>
-<h1 id="二-WEB服务器"><a href="#二-WEB服务器" class="headerlink" title="二. WEB服务器"></a>二. WEB服务器</h1><h2 id="2-1-WEB服务器简介"><a href="#2-1-WEB服务器简介" class="headerlink" title="2.1 WEB服务器简介"></a>2.1 WEB服务器简介</h2><p>　　1. Web服务器是指<strong>驻留于因特网上某种类型计算机的程序</strong>，是可以向发出请求的浏览器提供文档的<strong>程序</strong>。当Web浏览器（客户端）连到服务器上并请求文件时，服务器将处理该请求并将文件反馈到该浏览器上，附带的信息会告诉浏览器如何查看该文件（即文件类型）。</p>
-<p><img src="https://images0.cnblogs.com/i/289233/201405/152304507501851.jpg" alt="img"></p>
-<p>　　2、服务器是一种<strong>被动程序</strong>：只有当Internet上运行在其他计算机中的浏览器发出请求时，服务器才会响应。</p>
-<p><img src="https://images0.cnblogs.com/i/289233/201405/152305257189334.png" alt="img"></p>
-<h2 id="2-2、常见的Web服务器介绍"><a href="#2-2、常见的Web服务器介绍" class="headerlink" title="2.2、常见的Web服务器介绍"></a>2.2、常见的Web服务器介绍</h2><h4 id="1-WebLogic"><a href="#1-WebLogic" class="headerlink" title="1. WebLogic"></a>1. WebLogic</h4><h4 id="2-WebSphere"><a href="#2-WebSphere" class="headerlink" title="2. WebSphere"></a>2. WebSphere</h4><h4 id="3-Tomcat"><a href="#3-Tomcat" class="headerlink" title="3. Tomcat"></a>3. Tomcat</h4><p>　　TomcatTomcat是一个<strong>实现了JAVA EE标准的最小的WEB服务器</strong>，是Apache 软件基金会的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。因为Tomcat 技术先进、性能稳定，而且开源免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。<strong>学习JavaWeb开发一般都使用Tomcat服务器</strong>，该服务器支持全部JSP以及Servlet规范，启动界面如图：</p>
-<p><img src="https://images0.cnblogs.com/i/289233/201405/152327264213217.png" alt="img"></p>
-<h4 id="4-IIS"><a href="#4-IIS" class="headerlink" title="4. IIS"></a>4. IIS</h4><blockquote>
-<p>学习web开发，需要先安装一台web服务器，然后再在web服务器中开发相应的web资源，供用户使用浏览器访问。</p>
-</blockquote>
-<h1 id="三-搭建JavaWeb应用开发环境——Tomcat服务器"><a href="#三-搭建JavaWeb应用开发环境——Tomcat服务器" class="headerlink" title="三. 搭建JavaWeb应用开发环境——Tomcat服务器"></a>三. 搭建JavaWeb应用开发环境——Tomcat服务器</h1><h2 id="3-1-疑问：学习web开发，为什么必须要先装一个WEB服务器？"><a href="#3-1-疑问：学习web开发，为什么必须要先装一个WEB服务器？" class="headerlink" title="3.1 疑问：学习web开发，为什么必须要先装一个WEB服务器？"></a>3.1 疑问：学习web开发，为什么必须要先装一个WEB服务器？</h2><p>　　在本地计算机上随便创建一个 web 页面，用户是<strong>无法访问到的</strong>，但是如果启动 tomcat 服务器，把 web 页面放在 tomcat 服务器中，用户就可以访问了。这说明什么问题？<br>  　　1. 不管什么 web 资源，<strong>想被远程计算机访问</strong>，都必须有<strong>一个与之对应的网络通信程序</strong>，当用户来访问时，这个网络通信程序读取 web 资源数据，并把数据发送给来访者。<br>  　　2. WEB 服务器就是这样一个程序，它用于<strong>完成底层网络通迅</strong>。使用这些服务器，We应用的开发者<strong>只需要关注web资源怎么编写</strong>，而<strong>不需要关心资源如何发送到客户端手中</strong>，从而极大的减轻了开发者的开发工作量。</p>
-<h3 id="3-2、下载和安装Tomcat服务器"><a href="#3-2、下载和安装Tomcat服务器" class="headerlink" title="3.2、下载和安装Tomcat服务器"></a>3.2、下载和安装Tomcat服务器</h3><h5 id="见参考博客"><a href="#见参考博客" class="headerlink" title="见参考博客"></a>见参考博客</h5><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3729033.html" target="_blank" rel="noopener">JavaWeb学习总结(一)——JavaWeb开发入门</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/JavaWeb---JavaWeb开发入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1430,18 +1517,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -1510,22 +1586,14 @@
 
       
         
-          
-            <h2 id="一-什么是-JSP？"><a href="#一-什么是-JSP？" class="headerlink" title="一. 什么是 JSP？"></a>一. 什么是 JSP？</h2><p>　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于<strong>开发动态web资源的技术</strong>。<br>　　JSP 这门技术的最大的特点在于，<strong>写 jsp 就像在写 html </strong>，但它相比 html 而言，html 只能为用户提供静态数据，而 <strong>Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据</strong>。</p>
-<h2 id="二-JSP原理"><a href="#二-JSP原理" class="headerlink" title="二. JSP原理"></a>二. JSP原理</h2><h2 id="2-1-Web服务器是如何调用并执行一个jsp页面的？"><a href="#2-1-Web服务器是如何调用并执行一个jsp页面的？" class="headerlink" title="2.1 Web服务器是如何调用并执行一个jsp页面的？"></a>2.1 Web服务器是如何调用并执行一个jsp页面的？</h2><p>　　浏览器向服务器发请求，<strong>不管访问的是什么资源，其实都是在访问Servlet</strong>，所以<strong>当访问一个jsp页面时，其实也是在访问一个Servlet</strong></p>
-<p>​    服务器在执行jsp的时候，首先<strong>==把jsp翻译成一个Servlet==</strong>，所以我们访问 jsp 时，其实不是在访问 jsp，而是<strong>在访问 jsp 翻译过后的那个Servlet</strong></p>
-<ol>
-<li><p>当我们通过浏览器访问index.jsp时，服务器首先将 <code>index.jsp</code> <strong>翻译成</strong>一个<strong><code>index_jsp.class</code></strong></p>
-</li>
-<li><p><code>index_jsp</code> 这个类是继承 <code>org.apache.jasper.runtime.HttpJspBase</code> 这个类的</p>
-</li>
-<li><p><code>HttpJspBase</code> 类是继承 <code>HttpServlet</code> 的，所以index_jsp类也是<strong>一个Servlet</strong>，所以当浏览器访问服务器上的 <code>index.jsp</code> 页面时，其实就是在访问<strong><code>index_jsp</code> 这个Servlet</strong>，<code>index_jsp</code> 这个 Servlet 使用<code>_jspService</code> 这个方法处理请求。</p>
-</li>
-</ol>
-<h2 id="2-2-Jsp页面中的java代码服务器是如何执行的？"><a href="#2-2-Jsp页面中的java代码服务器是如何执行的？" class="headerlink" title="2.2 Jsp页面中的java代码服务器是如何执行的？"></a>2.2 Jsp页面中的java代码服务器是如何执行的？</h2><p>　　在 jsp 中编写的 java 代码会被翻译到 <code>_jspService</code> 方法中去，当执行 <code>_jspService</code>方法处理请求时，就会执行在jsp编写的java代码了，所以Jsp页面中的java代码服务器是通过调用_jspService方法处理请求时执行的。</p>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3764991.html" target="_blank" rel="noopener">javaweb学习总结(十四)——JSP原理</a></p>
-
-          
+          <h2 id="一-什么是-JSP？"><a href="#一-什么是-JSP？" class="headerlink" title="一. 什么是 JSP？"></a>一. 什么是 JSP？</h2><p>　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于<strong>开发动态web资源的技术</strong>。<br>　　JSP 这门技术的最大的特点在于，<strong>写 jsp 就像在写 html </strong>，但它相比 html 而言，html 只能为用户提供静态数据，而 <strong>Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据</strong>。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/JavaWeb---JSP原理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1576,7 +1644,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/java面试经典题目(11-15题)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/Java面试经典题目(11-15题)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -1595,7 +1663,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/14/java面试经典题目(11-15题)/" itemprop="url">java面试经典题目(11-15题)</a></h1>
+                <a class="post-title-link" href="/2019/03/14/Java面试经典题目(11-15题)/" itemprop="url">Java面试经典题目(11-15题)</a></h1>
         
 
         <div class="post-meta">
@@ -1630,8 +1698,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java面试经典题目/" itemprop="url" rel="index">
-                    <span itemprop="name">java面试经典题目</span>
+                  <a href="/categories/Java面试经典题目/" itemprop="url" rel="index">
+                    <span itemprop="name">Java面试经典题目</span>
                   </a>
                 </span>
 
@@ -1699,61 +1767,20 @@
 
       
         
-          
-            <h1 id="11-进程和线程的区别是什么？"><a href="#11-进程和线程的区别是什么？" class="headerlink" title="11. 进程和线程的区别是什么？"></a>11. 进程和线程的区别是什么？</h1><p>答案:</p>
+          <h1 id="11-进程和线程的区别是什么？"><a href="#11-进程和线程的区别是什么？" class="headerlink" title="11. 进程和线程的区别是什么？"></a>11. 进程和线程的区别是什么？</h1><p>答案:</p>
 <h4 id="通俗解释什么是进程和线程"><a href="#通俗解释什么是进程和线程" class="headerlink" title="通俗解释什么是进程和线程:"></a>通俗解释什么是进程和线程:</h4><ol>
 <li>开个QQ，开了一个进程；开了迅雷，开了一个进程。  </li>
 <li>在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。</li>
 <li>所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”就是多个线程。 </li>
 <li><strong>所以一个进程管着多个线程。</strong></li>
 </ol>
-<h4 id="专业解释"><a href="#专业解释" class="headerlink" title="专业解释"></a>专业解释</h4><pre><code>1. 进程是执行着的应用程序
-2. 线程是进程内部的一个执行序列。
-3. 一个进程可以有多个线程。线程又叫做轻量级进程。 
-</code></pre><h4 id="线程与进程的区别归纳"><a href="#线程与进程的区别归纳" class="headerlink" title="线程与进程的区别归纳"></a>线程与进程的区别归纳</h4><h5 id="优质答案一"><a href="#优质答案一" class="headerlink" title="优质答案一"></a>优质答案一</h5><ul>
-<li><p>进程是运行中的程序，线程是进程的内部的一个执行序列 </p>
-</li>
-<li><p>进程是资源分配的单元，线程是执行行单元(进程是资源分配的基本单位, 线程是调度的基本单位)</p>
-</li>
-<li><p>进程间切换代价大，线程间切换代价小 </p>
-</li>
-<li><p>进程拥有资源多，线程拥有资源少 </p>
-</li>
-<li><p>多个线程共享进程的资源 </p>
-</li>
-</ul>
-<h5 id="优质答案二"><a href="#优质答案二" class="headerlink" title="优质答案二"></a>优质答案二</h5><p>   <strong>a.地址空间和其它资源</strong>：进程间相互独立，同一进程的各线程间共享。某进程内的线程在其它进程不可见。  </p>
-<p>   <strong>b.通信：</strong>进程间通信IPC，线程间可以直接读写进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。  </p>
-<p>   <strong>c.调度和切换</strong>：线程上下文切换比进程上下文切换要快得多。  </p>
-<p>   d.在多线程OS中，进程不是一个可执行的实体。  </p>
-<h5 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h5><blockquote>
-<h4 id="进程是什么？"><a href="#进程是什么？" class="headerlink" title="进程是什么？"></a>进程是什么？</h4><p>程序并不能单独运行，只有将程序装载到内存中，系统为它分配资源才能运行，而这种执行的程序就称之为进程。程序和进程的区别就在于：程序是指令的集合，它是进程运行的静态描述文本；进程是程序的一次执行活动，属于动态概念。</p>
-</blockquote>
-<blockquote>
-<p>进程和线程的并发层次不同：进程属于在处理器这一层上提供的抽象；线程则属于在进程这个层次上再提供了一层并发的抽象。</p>
-</blockquote>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html" target="_blank" rel="noopener">进程与线程的一个简单解释</a></p>
-<p>​    <a href="https://blog.csdn.net/zsl091125/article/details/52540348" target="_blank" rel="noopener">进程篇：进程和线程的本质和区别</a></p>
-<p>​    <a href="https://www.cnblogs.com/tiankong101/p/4229584.html" target="_blank" rel="noopener">深入理解进程和线程</a></p>
-<p>​    <a href="https://blog.csdn.net/zheng548/article/details/54669908" target="_blank" rel="noopener">线程与进程的区别</a></p>
-<h1 id="12-创建线程有几种不同的方式？你喜欢哪一种？为什么？"><a href="#12-创建线程有几种不同的方式？你喜欢哪一种？为什么？" class="headerlink" title="12. 创建线程有几种不同的方式？你喜欢哪一种？为什么？"></a>12. 创建线程有几种不同的方式？你喜欢哪一种？为什么？</h1><h4 id="1-方式"><a href="#1-方式" class="headerlink" title="1. 方式"></a>1. 方式</h4><ol>
-<li>继承Thread类，重写run方法；</li>
-<li>实现Runnable接口，重写run方法，但是比继承Thread类好用，实现接口还可以继承类，避免了单继承带来的局限性；</li>
-<li>实现callable接口，重写call方法，有返回值。</li>
-<li>使用实现了Executor接口的ThreadPoolExecutor来创建线程池。  </li>
-</ol>
-<h4 id="2-选择"><a href="#2-选择" class="headerlink" title="2. 选择"></a>2. 选择</h4><p>   一般情况下，常见的是第二种。 <strong>Runnable接口</strong>有如下好处： </p>
-<ol>
-<li>避免点继承的局限，一个类可以继承多个接口。 </li>
-<li>适合于资源的共享 </li>
-</ol>
-<blockquote>
-<p>线程详细见: xxxxxx</p>
-</blockquote>
-<h5 id="参考博文-1"><a href="#参考博文-1" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.nowcoder.com/questionTerminal/e33c72bceb4343879948342e2b6e3bca" target="_blank" rel="noopener">牛客网优质答案</a></p>
-<p>时间: 2019.3.14</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/14/Java面试经典题目(11-15题)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1804,7 +1831,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/JavaWeb---Servlet开发(二)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/JavaWeb---Servlet开发(2)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -1823,7 +1850,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/13/JavaWeb---Servlet开发(二)/" itemprop="url">JavaWeb---Servlet开发(二)</a></h1>
+                <a class="post-title-link" href="/2019/03/13/JavaWeb---Servlet开发(2)/" itemprop="url">JavaWeb---Servlet开发(2)</a></h1>
         
 
         <div class="post-meta">
@@ -1858,18 +1885,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -1938,12 +1954,14 @@
 
       
         
-          
-            <h2 id="一-ServletConfig讲解"><a href="#一-ServletConfig讲解" class="headerlink" title="一. ServletConfig讲解"></a>一. ServletConfig讲解</h2><h3 id="1-1-配置Servlet初始化参数"><a href="#1-1-配置Servlet初始化参数" class="headerlink" title="1.1. 配置Servlet初始化参数"></a>1.1. 配置Servlet初始化参数</h3><p>　　在Servlet的配置文件web.xml中，可以使用一个或多个<init-param>标签为servlet配置一些初始化参数。</init-param></p>
-<p>参考博文:</p>
-<p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3763559.html" target="_blank" rel="noopener">javaweb学习总结(六)——Servlet开发(二)</a></p>
-
-          
+          <h2 id="一-ServletConfig讲解"><a href="#一-ServletConfig讲解" class="headerlink" title="一. ServletConfig讲解"></a>一. ServletConfig讲解</h2><h3 id="1-1-配置Servlet初始化参数"><a href="#1-1-配置Servlet初始化参数" class="headerlink" title="1.1. 配置Servlet初始化参数"></a>1.1. 配置Servlet初始化参数</h3><p>　　在Servlet的配置文件web.xml中，可以使用一个或多个<init-param>标签为servlet配置一些初始化参数。</init-param></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/13/JavaWeb---Servlet开发(2)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1994,7 +2012,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/JavaWeb---Servlet开发(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/JavaWeb---Servlet开发(1)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -2013,7 +2031,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/13/JavaWeb---Servlet开发(一)/" itemprop="url">JavaWeb---Servlet开发(一)</a></h1>
+                <a class="post-title-link" href="/2019/03/13/JavaWeb---Servlet开发(1)/" itemprop="url">JavaWeb---Servlet开发(1)</a></h1>
         
 
         <div class="post-meta">
@@ -2048,18 +2066,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -2128,8 +2135,7 @@
 
       
         
-          
-            <h1 id="一-Servlet简介"><a href="#一-Servlet简介" class="headerlink" title="一. Servlet简介"></a>一. Servlet简介</h1><p>Servlet是sun公司提供的一门用于 <strong>开发动态web资源的技术</strong></p>
+          <h1 id="一-Servlet简介"><a href="#一-Servlet简介" class="headerlink" title="一. Servlet简介"></a>一. Servlet简介</h1><p>Servlet是sun公司提供的一门用于 <strong>开发动态web资源的技术</strong></p>
 <p>若想开发一个动态web资源(即开发<strong>一个Java程序向浏览器输出数据</strong>)，需要完成以下2个步骤：</p>
 <ol>
 <li><p>编写一个 Java 类，<strong>实现 servlet 接口</strong>。</p>
@@ -2138,227 +2144,9 @@
 </li>
 </ol>
 <p>按照一种约定俗成的称呼习惯，通常我们也把实现了<strong>servlet接口的java程序</strong>，称之为<strong>Servlet</strong></p>
-<h1 id="二-Servlet的运行过程"><a href="#二-Servlet的运行过程" class="headerlink" title="二. Servlet的运行过程"></a>二. Servlet的运行过程</h1><p>Servlet程序是由 <strong>WEB服务器</strong> 调用，web服务器 <strong>收到客户端的 Servlet 访问请求后:</strong> </p>
-<p>​    ① Web服务器首先 <strong>检查是否已经装载并创建</strong>了该Servlet的<strong>实例对象</strong>。如果是，则直接执行第④步，否则，执行第②步。</p>
-<p>​    ② 装载并创建该Servlet的一个实例对象。 </p>
-<p>​    ③ 调用Servlet实例对象的 <strong>init()方法</strong>。</p>
-<p>​    ④ 创建一个用于封装 <strong>HTTP请求消息的 <code>HttpServletRequest</code> 对象</strong> 和一个 <strong>代表HTTP响应消息的 <code>HttpServletResponse</code> 对象</strong> ，然后调用Servlet的<strong>service()方法</strong>并将 <strong>请求和响应对象</strong> 作为参数传递进去</p>
-<p>​    ⑤ WEB应用程序被 <strong>停止或重新启动之前</strong>，Servlet引擎将 <strong>卸载Servlet</strong> ，并在卸载之前调用Servlet的<code>destroy()</code>方法。</p>
-<h1 id="三-Servlet调用图"><a href="#三-Servlet调用图" class="headerlink" title="三. Servlet调用图"></a>三. Servlet调用图</h1><p><img src="https://images0.cnblogs.com/i/289233/201405/311054556978749.png" alt="Servlet调用图"></p>
-<h1 id="四-Servlet接口实现类"><a href="#四-Servlet接口实现类" class="headerlink" title="四. Servlet接口实现类"></a>四. Servlet接口实现类</h1><p>　　Servlet接口SUN公司定义了两个默认实现类，分别为：<strong>GenericServlet、HttpServlet</strong>。</p>
-<p>　　<strong>==HttpServlet==</strong> 指能够<strong>处理HTTP请求的servlet</strong>，它在原有Servlet接口上添加了一些与HTTP协议处理方法，它比Servlet接口的功能更为强大。因此开发人员在编写Servlet时，<strong>通常应继承这个类</strong>，而避免直接去实现Servlet接口。<br>　　HttpServlet在实现Servlet接口时，覆写了service方法，该方法体内的代码会<strong>自动判断用户的请求方式</strong>，如为GET请求，则调用HttpServlet的doGet方法，如为Post请求，则调用doPost方法。因此，开发人员在编写Servlet时，<strong>通常只需要覆写doGet或doPost方法，而不要去覆写service方法</strong></p>
-<h1 id="五-Servlet开发注意细节"><a href="#五-Servlet开发注意细节" class="headerlink" title="五. Servlet开发注意细节"></a>五. Servlet开发注意细节</h1><h2 id="4-1-Servlet访问URL映射配置"><a href="#4-1-Servlet访问URL映射配置" class="headerlink" title="4.1 Servlet访问URL映射配置"></a>4.1 Servlet访问URL映射配置</h2><p>　　由于客户端是通过<strong>URL地址访问web服务器中的资源</strong>，所以Servlet程序若想被外界访问，必须把servlet程序映射到一个URL地址上，这个工作在==<strong>web.xml文件</strong>==中使用<code>&lt;servlet&gt;</code>元素和<code>&lt;servlet-mapping&gt;</code>元素完成。</p>
-<ul>
-<li><code>&lt;servlet&gt;</code>元素用于<strong>注册Servlet</strong>，它包含有两个主要的子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;servlet-class&gt;</code>，分别用于设置<strong>Servlet的注册名称</strong>和<strong>Servlet的完整类名</strong>。 </li>
-<li><code>&lt;servlet-mapping&gt;</code>元素用于<strong>映射</strong>一个<strong>已注册</strong>的Servlet的<strong>一个对外访问路径</strong>，它包含有两个子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;url-pattern&gt;</code>，分别用于指定<strong>Servlet的注册名称</strong>和<strong>Servlet的对外访问路径</strong>。</li>
-</ul>
-<blockquote>
-<p>都是成对出现的 <strong>有注册,有映射</strong></p>
-</blockquote>
-<h3 id="web-xml-是什么"><a href="#web-xml-是什么" class="headerlink" title="web.xml 是什么"></a>web.xml 是什么</h3><ul>
-<li><p>web.xml文件用来<strong>初始化配置信息</strong>：比如Welcome页面、servlet、servlet-mapping、filter、listener、启动加载级别等</p>
-</li>
-<li><p>每个xml文件都有定义它书写规则的Schema文件，也就是说javaEE的定义 web.xml 所对应的 xml Schema 文件中定义了多少种标签元素，web.xml中就可以出现它所定义的标签元素，也就具备哪些特定的功能。</p>
-</li>
-</ul>
-<h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletDemo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>gacl.servlet.study.ServletDemo1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletDemo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/ServletDemo1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>同一个Servlet可以被映射到多个URL上，即<strong>多个<servlet-mapping>元素的<servlet-name>子元素</servlet-name></servlet-mapping></strong>的设置值可以是<strong>同一个Servlet的注册名<servlet-name></servlet-name></strong>。</p>
-</blockquote>
-<h2 id="4-2-Servlet与普通Java类的区别"><a href="#4-2-Servlet与普通Java类的区别" class="headerlink" title="4.2 Servlet与普通Java类的区别　　"></a>4.2 Servlet与普通Java类的区别　　</h2><p>　　Servlet是一个供其他Java程序（Servlet引擎）调用的Java类，<strong>不能独立运行</strong>，它的运行完全由<strong>Servlet引擎来控制和调度</strong>。<br>　　针对客户端的多次Servlet请求，通常情况下，<strong>服务器只会创建一个Servlet实例对象</strong>，也就是说Servlet实例对象一旦创建，它就会驻留在内存中，为后续的其它请求服务，直至<strong>web容器退出</strong>，servlet实例对象才会销毁。<br>　　在Servlet的整个生命周期内，Servlet的<strong><code>init()</code>方法只被调用一次</strong>。而对一个Servlet的每次访问请求都导致Servlet引擎调用一次servlet的<code>service()</code>方法。对于每次访问请求，Servlet引擎都会创建一个新的<code>HttpServletRequest</code>请求对象和一个新的<code>HttpServletResponse</code>响应对象，然后将这两个对象作为参数传递给它调用的Servlet的service()方法，service方法再根据请求方式分别调用doXXX方法。  </p>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3760336.html" target="_blank" rel="noopener">javaweb学习总结(五)——Servlet开发(一)</a></p>
-<p>​    <a href="https://www.cnblogs.com/yqskj/articles/2233061.html" target="_blank" rel="noopener">web.xml文件的作用</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/13/java基础知识---抽象类/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/13/java基础知识---抽象类/" itemprop="url">Java基础知识---抽象类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T08:17:27+08:00">
-                2019-03-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/抽象类/" itemprop="url" rel="index">
-                    <span itemprop="name">抽象类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.1k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Java-抽象类"><a href="#Java-抽象类" class="headerlink" title="Java 抽象类"></a>Java 抽象类</h1><h2 id="1-抽象方法"><a href="#1-抽象方法" class="headerlink" title="1. 抽象方法"></a>1. 抽象方法</h2><p>​    <strong>一种特殊的方法：它只有声明，而没有具体的实现</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明格式</span></span><br><span class="line"><span class="comment">// 抽象方法必须用abstract关键字进行修饰</span></span><br><span class="line"><span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/03/13/java基础知识---抽象类/#more" rel="contents">
+            <a class="btn" href="/2019/03/13/JavaWeb---Servlet开发(1)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2452,7 +2240,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2463,7 +2251,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2474,7 +2262,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2548,7 +2336,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.6k</span>
+    <span title="Site words total count">31.9k</span>
   
 </div>
 

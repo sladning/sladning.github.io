@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,Java基础知识,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sladning" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一. 什么是反射​    反射之中包含了一个「反」字，所以想要解释反射就必须先从「正」开始解释。">
+<meta name="keywords" content="Java,Java基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识---反射">
+<meta property="og:url" content="http://yoursite.com/2019/03/14/Java基础知识---反射/index.html">
+<meta property="og:site_name" content="sladning">
+<meta property="og:description" content="一. 什么是反射​    反射之中包含了一个「反」字，所以想要解释反射就必须先从「正」开始解释。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-15T08:25:20.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础知识---反射">
+<meta name="twitter:description" content="一. 什么是反射​    反射之中包含了一个「反」字，所以想要解释反射就必须先从「正」开始解释。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/14/Java基础知识---反射/">
+
+
+
+
+
+  <title>Java基础知识---反射 | sladning</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+  <!-- 更改动态背景-->
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <!-- 添加自己的github账号的进入 -->
+      <a href="https://github.com/sladning"><img style="position: absolute; top: 0; left: 0; border: 0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sladning</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/Java基础知识---反射/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java基础知识---反射</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T20:41:51+08:00">
+                2019-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-什么是反射"><a href="#一-什么是反射" class="headerlink" title="一. 什么是反射"></a>一. 什么是反射</h1><p>​    反射之中包含了一个<strong>「反」</strong>字，所以想要解释反射就必须先从<strong>「正」</strong>开始解释。</p>
+<a id="more"></a>
+<h2 id="1-1-正射"><a href="#1-1-正射" class="headerlink" title="1.1 正射"></a>1.1 正射</h2><p>​    一般情况下，我们使用某个类时<strong>必定知道</strong>它是什么类，是用来做什么的。于是我们<strong>直接对这个类进行实例化</strong>，之后使用这个类对象进行操作。</p>
+<h4 id="正射范例"><a href="#正射范例" class="headerlink" title="正射范例"></a>正射范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 进行类对象的初始化，可以理解为「正」。</span></span><br><span class="line">Apple apple = <span class="keyword">new</span> Apple(); <span class="comment">//直接初始化，「正射」</span></span><br><span class="line">apple.setPrice(<span class="number">5</span>);</span><br><span class="line">System.out.println(<span class="string">"Apple Price:"</span> + apple.getPrice());</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-反射"><a href="#1-2-反射" class="headerlink" title="1.2 反射"></a>1.2 反射</h2><p>​    反射则是<strong>一开始并不知道我要初始化的类对象是什么</strong>，自然也无法使用 new 关键字来创建对象了。</p>
+<p>这时候，我们<strong>使用 JDK 提供的反射 API 进行反射调用</strong> </p>
+<h4 id="反射范例"><a href="#反射范例" class="headerlink" title="反射范例"></a>反射范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用反射获取一个对象的步骤：</span></span><br><span class="line"><span class="comment">// 1. 获取类的 Class 对象, 类对象</span></span><br><span class="line">Class clz = Class.forName(<span class="string">"how2j10.Apple"</span>);</span><br><span class="line"><span class="comment">// 2. 根据 Class 对象实例获取 Constructor 对象, 构造器</span></span><br><span class="line">Constructor appleConstructor = clz.getConstructor();</span><br><span class="line"><span class="comment">// 3. 使用 Constructor 对象的 newInstance 方法获取反射类对象, 通过构造器实例化</span></span><br><span class="line">Object appleObj = appleConstructor.newInstance();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果要调用某一个方法，则需要经过下面的步骤</span></span><br><span class="line"><span class="comment">// 1. 获取方法的 Method 对象</span></span><br><span class="line">Method setPriceMethod = clz.getMethod(<span class="string">"setPrice"</span>, <span class="keyword">int</span>.class);</span><br><span class="line"><span class="comment">// 2. 利用 invoke 方法调用方法</span></span><br><span class="line">setPriceMethod.invoke(appleObj, <span class="number">14</span>);</span><br><span class="line">Method getPriceMethod = clz.getMethod(<span class="string">"getPrice"</span>);</span><br><span class="line">System.out.println(<span class="string">"Apple Price:"</span> + getPriceMethod.invoke(appleObj));</span><br></pre></td></tr></table></figure>
+<p>​    上面两段代码的执行结果，其实是完全一样的。</p>
+<p>​    但是其思路完全不一样，第一段代码在<strong>未运行时就已经确定了要运行的类（Apple）</strong>，而第二段代码则是在<strong>运行时通过字符串值才得知要运行的类（com.chenshuyi.reflect.Apple）</strong>。</p>
+<h4 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h4><blockquote>
+<p><strong>反射就是在运行时才知道要操作的类是什么，并且可以在运行时获取类的完整构造，并调用对应的方法。</strong></p>
+</blockquote>
+<h1 id="二-获取反射中的-Class-对象-类对象"><a href="#二-获取反射中的-Class-对象-类对象" class="headerlink" title="二. 获取反射中的 Class 对象(类对象)"></a>二. 获取反射中的 Class 对象(类对象)</h1><h2 id="2-1-类对象"><a href="#2-1-类对象" class="headerlink" title="2.1 类对象"></a>2.1 类对象</h2><p>​    <strong>概念:</strong> 类对象用于<strong>提供类本身的信息</strong>，比如有几种构造方法， 有多少属性，有哪些普通方法</p>
+<h4 id="什么是类对象"><a href="#什么是类对象" class="headerlink" title="什么是类对象"></a>什么是类对象</h4><ul>
+<li><p><strong>对象之间的区别: </strong>garen和teemo都是Hero对象，他们的区别在于，各自有不同的名称，血量，伤害值。</p>
+</li>
+<li><p><strong>类之间的区别:</strong> Hero和Item都是类，他们的区别在于<strong>有不同的方法，不同的属性</strong>。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>==类对象，就是用于描述这种类，都有什么属性，什么方法的==</strong></p>
+</blockquote>
+<p>在反射中，要获取一个类或调用一个类的方法，我们<strong>首先需要获取到该类的 Class 对象</strong>。</p>
+<h2 id="2-2-获取class对象-类对象"><a href="#2-2-获取class对象-类对象" class="headerlink" title="2.2 获取class对象(类对象)"></a>2.2 获取class对象(类对象)</h2><ol>
+<li>在 Java API 中，获取 Class 类对象有三种方法</li>
+<li>在一个JVM中，<strong>一种类，只会有一个类对象存在</strong>。所以三种方式取出来的<strong>class对象</strong>，<strong>都是一样的</strong>。</li>
+</ol>
+<h4 id="方法范例"><a href="#方法范例" class="headerlink" title="方法范例"></a>方法范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// how2j10 是包名, Apple 是类名</span></span><br><span class="line">String className = <span class="string">"how2j10.Apple"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 使用 Class.forName 静态方法。当你知道该类的全路径名时，你可以使用该方法获取 Class 类对象。</span></span><br><span class="line">Class clz = Class.forName(className);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 使用 .class 方法。 这种方法只适合在编译前就知道操作的 Class。</span></span><br><span class="line">Class clz = Apple.class;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 第三种，使用类对象的 getClass() 方法。</span></span><br><span class="line">Class clz = <span class="keyword">new</span> Apple().getClass();</span><br><span class="line">System.out.println(<span class="string">"clz的值为:"</span> + clz);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印结果: 	clz的值为:class how2j10.Apple</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-注意"><a href="#2-3-注意" class="headerlink" title="2.3 注意:"></a>2.3 注意:</h2><p>​    <strong>获取类对象的时候，会导致类属性被初始化</strong></p>
+<p>​    <strong>无论什么途径获取类对象，都会导致静态属性被初始化，而且只会执行一次</strong>。（除了直接使用 Class c = Hero.class 这种方式，这种方式不会导致静态属性被初始化）</p>
+<h1 id="三-通过反射获取构造方法并使用"><a href="#三-通过反射获取构造方法并使用" class="headerlink" title="三. 通过反射获取构造方法并使用"></a>三. 通过反射获取构造方法并使用</h1><h2 id="3-1-获取单个的构造方法，并调用："><a href="#3-1-获取单个的构造方法，并调用：" class="headerlink" title="3.1  获取单个的构造方法，并调用："></a>3.1  获取单个的构造方法，并调用：</h2><ul>
+<li><code>public Constructor getConstructor(Class... parameterTypes)</code> : 获取<strong>单个的”公有的”构造方法</strong>：</li>
+<li><code>public Constructor getDeclaredConstructor(Class... parameterTypes)</code>: 获取<strong>“某个构造方法”可以是私有的，或受保护、默认、公有</strong> </li>
+</ul>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取构造器</span></span><br><span class="line">Constructor appleConstructor = clz.getConstructor();</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-调用构造方法："><a href="#3-3-调用构造方法：" class="headerlink" title="3.3 调用构造方法："></a>3.3 调用构造方法：</h2><p>​    <strong>newInstance</strong>是 Constructor类的方法<strong>（管理构造函数的类）</strong></p>
+<h5 id="api的解释为："><a href="#api的解释为：" class="headerlink" title="api的解释为："></a>api的解释为：</h5><ul>
+<li><p><code>newInstance(Object... initargs)</code> : 使用此 Constructor 对象表示的构造方法来<strong>创建该构造方法的声明类的新实例，并用指定的初始化参数初始化该实例。</strong></p>
+</li>
+<li><p>它的返回值是T类型，所以newInstance是创建了一个<strong>构造方法的声明类的新实例对象</strong>。并为之调用</p>
+</li>
+</ul>
+<h5 id="范例-1"><a href="#范例-1" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  通过构造器实例化,使用 Constructor 对象的 newInstance 方法获取反射类对象</span></span><br><span class="line">Object appleObj = appleConstructor.newInstance();</span><br></pre></td></tr></table></figure>
+<h1 id="四-获取成员变量"><a href="#四-获取成员变量" class="headerlink" title="四. 获取成员变量"></a>四. 获取成员变量</h1><h3 id="4-1-获取成员变量并调用"><a href="#4-1-获取成员变量并调用" class="headerlink" title="4.1 获取成员变量并调用"></a>4.1 获取成员变量并调用</h3><ul>
+<li><h4 id="批量的"><a href="#批量的" class="headerlink" title="批量的"></a>批量的</h4><ul>
+<li><p><strong><code>Field[] getFields()</code></strong>: 获取所有的”公有字段”</p>
+</li>
+<li><p><strong><code>Field[] getDeclaredFields()</code></strong>: 获取所有字段，包括：私有、受保护、默认、公有</p>
+</li>
+</ul>
+</li>
+<li><h4 id="获取单个的"><a href="#获取单个的" class="headerlink" title="获取单个的"></a>获取单个的</h4><ul>
+<li><p><strong><code>public Field getField(String fieldName)</code></strong> : 获取某个”公有的”字段；</p>
+</li>
+<li><p><strong><code>public Field getDeclaredField(String fieldName)</code></strong> : 获取某个字段***(可以是私有的)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-设置字段的值"><a href="#4-2-设置字段的值" class="headerlink" title="4.2 设置字段的值"></a>4.2 设置字段的值</h3><p>​    <code>Field --&gt; public void set(Object obj,Object value)</code></p>
+<p>参数说明：</p>
+<ol>
+<li>obj : 要设置的字段所在的<strong>对象</strong>；</li>
+<li>value : 要为字段设置的<strong>值</strong>；</li>
+</ol>
+<h5 id="范例-2"><a href="#范例-2" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fields</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 1.获取Class对象</span></span><br><span class="line">        Class stuClass = Class.forName(<span class="string">"fanshe.field.Student"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2.获取字段</span></span><br><span class="line">        System.out.println(<span class="string">"********获取公有字段**并调用*********"</span>);</span><br><span class="line">        Field f = stuClass.getField(<span class="string">"name"</span>);</span><br><span class="line">        System.out.println(f);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.获取一个对象</span></span><br><span class="line">        <span class="comment">// 产生Student对象 --&gt; Student stu = new Student();</span></span><br><span class="line">        Object obj = stuClass.getConstructor().newInstance();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4.为字段设置值</span></span><br><span class="line">        <span class="comment">// 为Student对象中的name属性赋值 --&gt; stu.name = "刘德华"</span></span><br><span class="line">        f.set(obj, <span class="string">"刘德华"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五-获取成员方法并调用"><a href="#五-获取成员方法并调用" class="headerlink" title="五. 获取成员方法并调用"></a>五. 获取成员方法并调用</h1><h3 id="5-1-获取成员方法："><a href="#5-1-获取成员方法：" class="headerlink" title="5.1 获取成员方法："></a>5.1 获取成员方法：</h3><ul>
+<li><h4 id="批量的批量的"><a href="#批量的批量的" class="headerlink" title="批量的批量的"></a>批量的批量的</h4><ul>
+<li><p><strong><code>public Method[] getMethods()</code></strong> : 获取所有”公有方法”；（包含了父类的方法也包含Object类）</p>
+</li>
+<li><p><strong><code>public Method[] getDeclaredMethods()</code></strong> : 获取所有的成员方法，包括私有的(不包括继承的)</p>
+</li>
+</ul>
+</li>
+<li><h4 id="获取单个的："><a href="#获取单个的：" class="headerlink" title="获取单个的："></a>获取单个的：</h4><ol>
+<li><p><strong><code>public Method getMethod(String name,Class&lt;?&gt;... parameterTypes)</code></strong></p>
+<p>参数说明</p>
+<ul>
+<li><p>name : 方法名；</p>
+</li>
+<li><p>Class … : 形参的Class类型对象</p>
+</li>
+</ul>
+</li>
+<li><p><strong><code>public Method getDeclaredMethod(String name,Class&lt;?&gt;... parameterTypes)</code></strong></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-2-成员方法调用"><a href="#5-2-成员方法调用" class="headerlink" title="5.2 成员方法调用"></a>5.2 成员方法调用</h3><p>​    <strong><code>Method --&gt; public Object invoke(Object obj,Object... args)</code></strong></p>
+<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><ul>
+<li><p>obj : 要调用方法的对象；</p>
+<ul>
+<li>args : 调用方式时所传递的实参；</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodClass</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// 1.获取Class对象</span></span><br><span class="line">		Class stuClass = Class.forName(<span class="string">"fanshe.method.Student"</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"***************获取公有的show1()方法*******************"</span>);</span><br><span class="line">        <span class="comment">//2. 获取方法</span></span><br><span class="line">		Method m = stuClass.getMethod(<span class="string">"show1"</span>, String.class);</span><br><span class="line">		System.out.println(m);</span><br><span class="line">		<span class="comment">// 3.实例化一个Student对象</span></span><br><span class="line">		Object obj = stuClass.getConstructor().newInstance();</span><br><span class="line">        <span class="comment">// 4.方法的调用,一个是要调用的对象（获取有反射），一个是实参</span></span><br><span class="line">		m.invoke(obj, <span class="string">"刘德华"</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"***************获取私有的show4()方法******************"</span>);</span><br><span class="line">		m = stuClass.getDeclaredMethod(<span class="string">"show4"</span>, <span class="keyword">int</span>.class);</span><br><span class="line">		System.out.println(m);</span><br><span class="line">		m.setAccessible(<span class="keyword">true</span>);<span class="comment">//解除私有限定</span></span><br><span class="line">		Object result = m.invoke(obj, <span class="number">20</span>);<span class="comment">//需要两个参数，一个是要调用的对象（获取有反射），一个是实参</span></span><br><span class="line">		System.out.println(<span class="string">"返回值："</span> + result);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="六-反射方法的其它使用之—通过反射运行配置文件内容"><a href="#六-反射方法的其它使用之—通过反射运行配置文件内容" class="headerlink" title="六. 反射方法的其它使用之—通过反射运行配置文件内容"></a>六. 反射方法的其它使用之—通过反射运行配置文件内容</h1><h3 id="6-1-反射的作用"><a href="#6-1-反射的作用" class="headerlink" title="6.1 反射的作用"></a>6.1 反射的作用</h3><ol>
+<li><p>我们利用反射和配置文件，可以使：<strong>应用程序更新时，对源码无需进行任何修改</strong></p>
+</li>
+<li><p>我们只需要<strong>将新类发送给客户端，并修改配置文件即可</strong></p>
+</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h5 id="student类"><a href="#student类" class="headerlink" title="student类"></a>student类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"is show()"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>配置文件</strong>以 txt 文件为例子（<strong>pro.txt</strong>）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">className = cn.fanshe.Student</span><br><span class="line">methodName = show</span><br></pre></td></tr></table></figure>
+<h5 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="comment">// 1.通过反射获取Class对象</span></span><br><span class="line">		Class stuClass = Class.forName(getValue(<span class="string">"className"</span>)); <span class="comment">//"cn.fanshe.Student"</span></span><br><span class="line">		<span class="comment">// 2.获取 show()方法</span></span><br><span class="line">		Method m = stuClass.getMethod(getValue(<span class="string">"methodName"</span>)); <span class="comment">//show</span></span><br><span class="line">		<span class="comment">// 3.调用show()方法</span></span><br><span class="line">		m.invoke( stuClass.getConstructor().newInstance());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 此方法接收一个 key，在配置文件中获取相应的 value</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getValue</span><span class="params">(String key)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		Properties pro = <span class="keyword">new</span> Properties();<span class="comment">//获取配置文件的对象</span></span><br><span class="line">		FileReader in = <span class="keyword">new</span> FileReader(<span class="string">"pro.txt"</span>);<span class="comment">//获取输入流</span></span><br><span class="line">		pro.load(in);<span class="comment">//将流加载到配置文件对象中</span></span><br><span class="line">		in.close();</span><br><span class="line">		<span class="keyword">return</span> pro.getProperty(key);<span class="comment">//返回根据key获取的value值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果: is show()</span></span><br></pre></td></tr></table></figure>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>​    当我们升级这个系统时，<strong>不要Student类</strong>，而需要<strong>新写一个Student2的类时</strong>，这时<strong>只需要更改pro.txt</strong>的文件内容就可以了。<strong>代码就一点不用改动</strong></p>
+<h5 id="要替换的student2类"><a href="#要替换的student2类" class="headerlink" title="要替换的student2类"></a>要替换的student2类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"is show2()"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="配置文件更改为"><a href="#配置文件更改为" class="headerlink" title="配置文件更改为"></a>配置文件更改为</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">className = cn.fanshe.Student2</span><br><span class="line">methodName = show2</span><br></pre></td></tr></table></figure>
+<h5 id="控制台输出："><a href="#控制台输出：" class="headerlink" title="控制台输出："></a>控制台输出：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打印结果: is show2()</span></span><br></pre></td></tr></table></figure>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/chanshuyi/p/head_first_of_reflection.html" target="_blank" rel="noopener">大白话说Java反射：入门、使用、原理</a></p>
+<p>​    <a href="https://blog.csdn.net/sinat_38259539/article/details/71799078" target="_blank" rel="noopener">Java基础之—反射（非常重要）</a></p>
+<p>​    <a href="http://how2j.cn/k/reflection/reflection-method/109.html" target="_blank" rel="noopener">how2j</a></p>
+<p>​    <a href="https://blog.csdn.net/codejas/article/details/78635926" target="_blank" rel="noopener">Java 反射机制</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Java基础知识/" rel="tag"><i class="fa fa-tag"></i> Java基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/14/JavaWeb---JSP指令/" rel="next" title="JavaWeb---JSP指令">
+                <i class="fa fa-chevron-left"></i> JavaWeb---JSP指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/14/JavaWeb-框架图解/" rel="prev" title="JavaWeb---框架图解">
+                JavaWeb---框架图解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAyOS8xOTU3NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在心里的坚强">
+            
+              <p class="site-author-name" itemprop="name">刻在心里的坚强</p>
+              <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sladning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1353565771@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-什么是反射"><span class="nav-number">1.</span> <span class="nav-text">一. 什么是反射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-正射"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 正射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正射范例"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">正射范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-反射"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 反射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#反射范例"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">反射范例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是反射？"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">什么是反射？</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-获取反射中的-Class-对象-类对象"><span class="nav-number">2.</span> <span class="nav-text">二. 获取反射中的 Class 对象(类对象)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-类对象"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 类对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是类对象"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">什么是类对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-获取class对象-类对象"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 获取class对象(类对象)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法范例"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">方法范例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-注意"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 注意:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-通过反射获取构造方法并使用"><span class="nav-number">3.</span> <span class="nav-text">三. 通过反射获取构造方法并使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-获取单个的构造方法，并调用："><span class="nav-number">3.1.</span> <span class="nav-text">3.1  获取单个的构造方法，并调用：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-调用构造方法："><span class="nav-number">3.2.</span> <span class="nav-text">3.3 调用构造方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#api的解释为："><span class="nav-number">3.2.0.0.1.</span> <span class="nav-text">api的解释为：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#范例-1"><span class="nav-number">3.2.0.0.2.</span> <span class="nav-text">范例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-获取成员变量"><span class="nav-number">4.</span> <span class="nav-text">四. 获取成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-获取成员变量并调用"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 获取成员变量并调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#批量的"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">批量的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取单个的"><span class="nav-number">4.0.1.2.</span> <span class="nav-text">获取单个的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-设置字段的值"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 设置字段的值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例-2"><span class="nav-number">4.0.2.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-获取成员方法并调用"><span class="nav-number">5.</span> <span class="nav-text">五. 获取成员方法并调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-获取成员方法："><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 获取成员方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#批量的批量的"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">批量的批量的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取单个的："><span class="nav-number">5.0.1.2.</span> <span class="nav-text">获取单个的：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-成员方法调用"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2 成员方法调用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数说明"><span class="nav-number">5.0.2.0.1.</span> <span class="nav-text">参数说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六-反射方法的其它使用之—通过反射运行配置文件内容"><span class="nav-number">6.</span> <span class="nav-text">六. 反射方法的其它使用之—通过反射运行配置文件内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-反射的作用"><span class="nav-number">6.0.1.</span> <span class="nav-text">6.1 反射的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">6.0.2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#student类"><span class="nav-number">6.0.2.0.1.</span> <span class="nav-text">student类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试类"><span class="nav-number">6.0.2.0.2.</span> <span class="nav-text">测试类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">6.0.3.</span> <span class="nav-text">需求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#要替换的student2类"><span class="nav-number">6.0.3.0.1.</span> <span class="nav-text">要替换的student2类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置文件更改为"><span class="nav-number">6.0.3.0.2.</span> <span class="nav-text">配置文件更改为</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#控制台输出："><span class="nav-number">6.0.3.0.3.</span> <span class="nav-text">控制台输出：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">6.0.3.0.4.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刻在心里的坚强</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">31.9k</span>
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+ 

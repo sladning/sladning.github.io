@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="JavaWeb,">
+  <meta name="keywords" content="Java,JavaWeb,">
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="一. 什么是 JSP？　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于开发动态web资源的技术。　　JSP 这门技术的最大的特点在于，写 jsp 就像在写 html ，但它相比 html 而言，html 只能为用户提供静态数据，而 Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据。 二. JSP原理2.1 Web服务器是">
-<meta name="keywords" content="JavaWeb">
+<meta name="description" content="一. 什么是 JSP？　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于开发动态web资源的技术。　　JSP 这门技术的最大的特点在于，写 jsp 就像在写 html ，但它相比 html 而言，html 只能为用户提供静态数据，而 Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据。">
+<meta name="keywords" content="Java,JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb---JSP原理">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/JavaWeb---JSP原理/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="一. 什么是 JSP？　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于开发动态web资源的技术。　　JSP 这门技术的最大的特点在于，写 jsp 就像在写 html ，但它相比 html 而言，html 只能为用户提供静态数据，而 Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据。 二. JSP原理2.1 Web服务器是">
+<meta property="og:description" content="一. 什么是 JSP？　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于开发动态web资源的技术。　　JSP 这门技术的最大的特点在于，写 jsp 就像在写 html ，但它相比 html 而言，html 只能为用户提供静态数据，而 Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T12:19:03.833Z">
+<meta property="og:updated_time" content="2019-03-15T08:22:06.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---JSP原理">
-<meta name="twitter:description" content="一. 什么是 JSP？　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于开发动态web资源的技术。　　JSP 这门技术的最大的特点在于，写 jsp 就像在写 html ，但它相比 html 而言，html 只能为用户提供静态数据，而 Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据。 二. JSP原理2.1 Web服务器是">
+<meta name="twitter:description" content="一. 什么是 JSP？　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于开发动态web资源的技术。　　JSP 这门技术的最大的特点在于，写 jsp 就像在写 html ，但它相比 html 而言，html 只能为用户提供静态数据，而 Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据。">
 
 
 
@@ -398,18 +398,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/JavaWeb/" itemprop="url" rel="index">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
                     <span itemprop="name">JavaWeb</span>
                   </a>
                 </span>
@@ -483,6 +472,7 @@
 
       
         <h2 id="一-什么是-JSP？"><a href="#一-什么是-JSP？" class="headerlink" title="一. 什么是 JSP？"></a>一. 什么是 JSP？</h2><p>　　JSP全称是 Java Server Pages ，它和 servle 技术一样，都是SUN公司定义的一种用于<strong>开发动态web资源的技术</strong>。<br>　　JSP 这门技术的最大的特点在于，<strong>写 jsp 就像在写 html </strong>，但它相比 html 而言，html 只能为用户提供静态数据，而 <strong>Jsp 技术允许在页面中嵌套java代码，为用户提供动态数据</strong>。</p>
+<a id="more"></a>
 <h2 id="二-JSP原理"><a href="#二-JSP原理" class="headerlink" title="二. JSP原理"></a>二. JSP原理</h2><h2 id="2-1-Web服务器是如何调用并执行一个jsp页面的？"><a href="#2-1-Web服务器是如何调用并执行一个jsp页面的？" class="headerlink" title="2.1 Web服务器是如何调用并执行一个jsp页面的？"></a>2.1 Web服务器是如何调用并执行一个jsp页面的？</h2><p>　　浏览器向服务器发请求，<strong>不管访问的是什么资源，其实都是在访问Servlet</strong>，所以<strong>当访问一个jsp页面时，其实也是在访问一个Servlet</strong></p>
 <p>​    服务器在执行jsp的时候，首先<strong>==把jsp翻译成一个Servlet==</strong>，所以我们访问 jsp 时，其实不是在访问 jsp，而是<strong>在访问 jsp 翻译过后的那个Servlet</strong></p>
 <ol>
@@ -522,6 +512,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
             <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
           
         </div>
@@ -535,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/14/java面试经典题目(11-15题)/" rel="next" title="java面试经典题目(11-15题)">
-                <i class="fa fa-chevron-left"></i> java面试经典题目(11-15题)
+              <a href="/2019/03/14/Java面试经典题目(11-15题)/" rel="next" title="Java面试经典题目(11-15题)">
+                <i class="fa fa-chevron-left"></i> Java面试经典题目(11-15题)
               </a>
             
           </div>
@@ -631,7 +623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -642,7 +634,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -653,7 +645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -743,7 +735,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">29.6k</span>
+    <span title="Site words total count">31.9k</span>
   
 </div>
 
