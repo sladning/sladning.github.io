@@ -269,33 +269,6 @@
   </entry>
   
   <entry>
-    <title>Java基础知识---继承</title>
-    <link href="http://yoursite.com/2019/03/13/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF/"/>
-    <id>http://yoursite.com/2019/03/13/Java基础知识---继承/</id>
-    <published>2019-03-13T00:17:27.000Z</published>
-    <updated>2019-03-15T08:48:26.453Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Java-继承"><a href="#Java-继承" class="headerlink" title="Java 继承"></a>Java 继承</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul><li>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。</li><li>子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法</li></ul><a id="more"></a><h3 id="类的继承格式"><a href="#类的继承格式" class="headerlink" title="类的继承格式"></a>类的继承格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java继承的关键字是：extends</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">extends</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>需要注意的是 Java 不支持多继承，但支持多重继承。</p></blockquote><h2 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h2><ul><li>子类拥有父类非 private 的属性、方法。</li><li>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</li><li>子类可以用自己的方式实现父类的方法。</li><li>Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C  类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。</li><li>提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。</li></ul><h2 id="为什么需要继承"><a href="#为什么需要继承" class="headerlink" title="为什么需要继承"></a>为什么需要继承</h2><ol><li>提高代码的 <strong>复用性</strong> (复用性主要是可以多次使用，不用再多次写同样的代码）)。</li><li>提高程序的扩展性。</li></ol><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://blog.csdn.net/javaniuniu/article/details/70173727" target="_blank" rel="noopener">JAVA继承总结</a></p><p>​    <a href="http://www.runoob.com/java/java-inheritance.html" target="_blank" rel="noopener">菜鸟教程</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Java-继承&quot;&gt;&lt;a href=&quot;#Java-继承&quot; class=&quot;headerlink&quot; title=&quot;Java 继承&quot;&gt;&lt;/a&gt;Java 继承&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。&lt;/li&gt;
-&lt;li&gt;子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Java基础知识" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="Java基础知识" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java基础知识---抽象类</title>
     <link href="http://yoursite.com/2019/03/13/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
     <id>http://yoursite.com/2019/03/13/java基础知识---抽象类/</id>
@@ -333,6 +306,33 @@
     
       &lt;h2 id=&quot;一-概念&quot;&gt;&lt;a href=&quot;#一-概念&quot; class=&quot;headerlink&quot; title=&quot;一. 概念&quot;&gt;&lt;/a&gt;一. 概念&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;官方解释:&lt;/strong&gt; Java接口是一系列方法的声明，是一些方法特征的集合，&lt;strong&gt;一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Java基础知识" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="Java基础知识" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础知识---继承</title>
+    <link href="http://yoursite.com/2019/03/13/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF/"/>
+    <id>http://yoursite.com/2019/03/13/Java基础知识---继承/</id>
+    <published>2019-03-13T00:17:27.000Z</published>
+    <updated>2019-03-15T08:48:26.453Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java-继承"><a href="#Java-继承" class="headerlink" title="Java 继承"></a>Java 继承</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul><li>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。</li><li>子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法</li></ul><a id="more"></a><h3 id="类的继承格式"><a href="#类的继承格式" class="headerlink" title="类的继承格式"></a>类的继承格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java继承的关键字是：extends</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">extends</span> 父类 </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>需要注意的是 Java 不支持多继承，但支持多重继承。</p></blockquote><h2 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h2><ul><li>子类拥有父类非 private 的属性、方法。</li><li>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</li><li>子类可以用自己的方式实现父类的方法。</li><li>Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C  类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。</li><li>提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。</li></ul><h2 id="为什么需要继承"><a href="#为什么需要继承" class="headerlink" title="为什么需要继承"></a>为什么需要继承</h2><ol><li>提高代码的 <strong>复用性</strong> (复用性主要是可以多次使用，不用再多次写同样的代码）)。</li><li>提高程序的扩展性。</li></ol><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://blog.csdn.net/javaniuniu/article/details/70173727" target="_blank" rel="noopener">JAVA继承总结</a></p><p>​    <a href="http://www.runoob.com/java/java-inheritance.html" target="_blank" rel="noopener">菜鸟教程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Java-继承&quot;&gt;&lt;a href=&quot;#Java-继承&quot; class=&quot;headerlink&quot; title=&quot;Java 继承&quot;&gt;&lt;/a&gt;Java 继承&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。&lt;/li&gt;
+&lt;li&gt;子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -468,28 +468,6 @@
   </entry>
   
   <entry>
-    <title>eclipse---快捷键</title>
-    <link href="http://yoursite.com/2019/03/12/eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://yoursite.com/2019/03/12/eclipse快捷键/</id>
-    <published>2019-03-12T04:23:51.000Z</published>
-    <updated>2019-03-15T08:17:49.191Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="eclipse快捷键"><a href="#eclipse快捷键" class="headerlink" title="eclipse快捷键"></a>eclipse快捷键</h1><h4 id="eclipse配置折叠-展开代码快捷键"><a href="#eclipse配置折叠-展开代码快捷键" class="headerlink" title="eclipse配置折叠/展开代码快捷键"></a>eclipse配置折叠/展开代码快捷键</h4><p>​    <a href="https://blog.csdn.net/HFUTLXM/article/details/78916599" target="_blank" rel="noopener">如何设置</a></p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;eclipse快捷键&quot;&gt;&lt;a href=&quot;#eclipse快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse快捷键&quot;&gt;&lt;/a&gt;eclipse快捷键&lt;/h1&gt;&lt;h4 id=&quot;eclipse配置折叠-展开代码快捷键&quot;&gt;&lt;a href=&quot;#eclipse配置折叠-展开代码快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse配置折叠/展开代码快捷键&quot;&gt;&lt;/a&gt;eclipse配置折叠/展开代码快捷键&lt;/h4&gt;&lt;p&gt;​    &lt;a href=&quot;https://blog.csdn.net/HFUTLXM/article/details/78916599&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何设置&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="eclipse" scheme="http://yoursite.com/categories/eclipse/"/>
-    
-    
-      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
     <title>how2J天猫整站---笔记</title>
     <link href="http://yoursite.com/2019/03/12/how2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/03/12/how2J天猫整站J2EE---笔记/</id>
@@ -517,6 +495,28 @@
     
     
       <category term="how2J" scheme="http://yoursite.com/tags/how2J/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eclipse---快捷键</title>
+    <link href="http://yoursite.com/2019/03/12/eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/03/12/eclipse快捷键/</id>
+    <published>2019-03-12T04:23:51.000Z</published>
+    <updated>2019-03-15T08:17:49.191Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="eclipse快捷键"><a href="#eclipse快捷键" class="headerlink" title="eclipse快捷键"></a>eclipse快捷键</h1><h4 id="eclipse配置折叠-展开代码快捷键"><a href="#eclipse配置折叠-展开代码快捷键" class="headerlink" title="eclipse配置折叠/展开代码快捷键"></a>eclipse配置折叠/展开代码快捷键</h4><p>​    <a href="https://blog.csdn.net/HFUTLXM/article/details/78916599" target="_blank" rel="noopener">如何设置</a></p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;eclipse快捷键&quot;&gt;&lt;a href=&quot;#eclipse快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse快捷键&quot;&gt;&lt;/a&gt;eclipse快捷键&lt;/h1&gt;&lt;h4 id=&quot;eclipse配置折叠-展开代码快捷键&quot;&gt;&lt;a href=&quot;#eclipse配置折叠-展开代码快捷键&quot; class=&quot;headerlink&quot; title=&quot;eclipse配置折叠/展开代码快捷键&quot;&gt;&lt;/a&gt;eclipse配置折叠/展开代码快捷键&lt;/h4&gt;&lt;p&gt;​    &lt;a href=&quot;https://blog.csdn.net/HFUTLXM/article/details/78916599&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何设置&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="eclipse" scheme="http://yoursite.com/categories/eclipse/"/>
+    
+    
+      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
     
   </entry>
   
@@ -623,19 +623,19 @@
   </entry>
   
   <entry>
-    <title>人间词话---ZJ</title>
-    <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ/"/>
-    <id>http://yoursite.com/2019/03/09/人间词话---ZJ/</id>
+    <title>人间词话---网易云评论</title>
+    <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/"/>
+    <id>http://yoursite.com/2019/03/09/人间词话---网易云评论/</id>
     <published>2019-03-09T14:57:13.000Z</published>
-    <updated>2019-03-15T09:15:02.200Z</updated>
+    <updated>2019-03-15T09:15:29.741Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>没有人会拒绝微笑, 也没有人会拒绝真诚.</li><li>逢山开路, 遇水架桥.</li></ul><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h3 id="卿卿我我"><a href="#卿卿我我" class="headerlink" title="卿卿我我"></a>卿卿我我</h3><ul><li>写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己.</li><li>校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影.</li></ul><a id="more"></a><h3 id="情怀"><a href="#情怀" class="headerlink" title="情怀"></a>情怀</h3><ul><li>愿走出半生, 归来仍是少年.</li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;没有人会拒绝微笑, 也没有人会拒绝真诚.&lt;/li&gt;
-&lt;li&gt;逢山开路, 遇水架桥.&lt;/li&gt;
+      &lt;h3 id=&quot;卿卿我我&quot;&gt;&lt;a href=&quot;#卿卿我我&quot; class=&quot;headerlink&quot; title=&quot;卿卿我我&quot;&gt;&lt;/a&gt;卿卿我我&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己.&lt;/li&gt;
+&lt;li&gt;校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影.&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -677,19 +677,19 @@
   </entry>
   
   <entry>
-    <title>人间词话---网易云评论</title>
-    <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA/"/>
-    <id>http://yoursite.com/2019/03/09/人间词话---网易云评论/</id>
+    <title>人间词话---ZJ</title>
+    <link href="http://yoursite.com/2019/03/09/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ/"/>
+    <id>http://yoursite.com/2019/03/09/人间词话---ZJ/</id>
     <published>2019-03-09T14:57:13.000Z</published>
-    <updated>2019-03-15T09:15:29.741Z</updated>
+    <updated>2019-03-15T09:15:02.200Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="卿卿我我"><a href="#卿卿我我" class="headerlink" title="卿卿我我"></a>卿卿我我</h3><ul><li>写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己.</li><li>校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影.</li></ul><a id="more"></a><h3 id="情怀"><a href="#情怀" class="headerlink" title="情怀"></a>情怀</h3><ul><li>愿走出半生, 归来仍是少年.</li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li>没有人会拒绝微笑, 也没有人会拒绝真诚.</li><li>逢山开路, 遇水架桥.</li></ul><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;卿卿我我&quot;&gt;&lt;a href=&quot;#卿卿我我&quot; class=&quot;headerlink&quot; title=&quot;卿卿我我&quot;&gt;&lt;/a&gt;卿卿我我&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己.&lt;/li&gt;
-&lt;li&gt;校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影.&lt;/li&gt;
+      &lt;ul&gt;
+&lt;li&gt;没有人会拒绝微笑, 也没有人会拒绝真诚.&lt;/li&gt;
+&lt;li&gt;逢山开路, 遇水架桥.&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -757,15 +757,15 @@
     <link href="http://yoursite.com/2019/03/08/JavaWeb---HttpResponse%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2019/03/08/JavaWeb---HttpResponse对象/</id>
     <published>2019-03-08T03:29:27.000Z</published>
-    <updated>2019-03-15T08:39:54.240Z</updated>
+    <updated>2019-03-15T09:48:20.579Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一-HttpServletResponse对象介绍"><a href="#一-HttpServletResponse对象介绍" class="headerlink" title="一. HttpServletResponse对象介绍"></a>一. HttpServletResponse对象介绍</h1><p>​    <strong>HttpServletResponse对象</strong> 代表<strong>服务器的响应</strong>。这个对象中封装了<strong>向客户端发送数据、发送响应头，发送响应状态码的方法</strong>。查看 HttpServletResponse 的API，可以看到这些相关的方法。</p><h2 id="1-1-响应状态码的常量"><a href="#1-1-响应状态码的常量" class="headerlink" title="1.1 响应状态码的常量"></a>1.1 响应状态码的常量</h2><p>　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要<strong>向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字</strong>，常见的状态码对应的常量：</p><ul><li>状态码404对应的常量</li><li>状态码200对应的常量</li><li>状态码500对应的常量</li></ul><h1 id="二-HttpServletResponse对象常见应用"><a href="#二-HttpServletResponse对象常见应用" class="headerlink" title="二. HttpServletResponse对象常见应用"></a>二. HttpServletResponse对象常见应用</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="一-HttpServletResponse-对象介绍"><a href="#一-HttpServletResponse-对象介绍" class="headerlink" title="一. HttpServletResponse 对象介绍"></a>一. HttpServletResponse 对象介绍</h1><p>​    <strong>HttpServletResponse对象</strong> 代表<strong>服务器的响应</strong>。这个对象中封装了<strong>向客户端发送数据、发送响应头，发送响应状态码的方法</strong>。查看 HttpServletResponse 的API，可以看到这些相关的方法。</p><h2 id="1-1-响应状态码的常量"><a href="#1-1-响应状态码的常量" class="headerlink" title="1.1 响应状态码的常量"></a>1.1 响应状态码的常量</h2><p>　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要<strong>向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字</strong>，常见的状态码对应的常量：</p><ul><li>状态码404对应的常量</li><li>状态码200对应的常量</li><li>状态码500对应的常量</li></ul><h1 id="二-HttpServletResponse常见应用——设置响应头控制浏览器的行为"><a href="#二-HttpServletResponse常见应用——设置响应头控制浏览器的行为" class="headerlink" title="二. HttpServletResponse常见应用——设置响应头控制浏览器的行为"></a>二. HttpServletResponse常见应用——设置响应头控制浏览器的行为</h1><h3 id="通过response实现请求重定向"><a href="#通过response实现请求重定向" class="headerlink" title="通过response实现请求重定向"></a>通过response实现请求重定向</h3><p>　　<strong>请求重定向指：</strong>一个web资源收到客户端请求后，通知<strong>客户端</strong>去访问<strong>另外一个web资源</strong>，这称之为请求重定向。</p><p>　　<strong>应用场景：</strong>用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程</p><p>　　<strong>实现方式：</strong> <strong>==response.sendRedirect(String location)==</strong>，即调用response对象的<strong>sendRedirect</strong>方法实现请求重定向<br>　　sendRedirect内部的实现原理：使用response设置 <strong>302状态码和设置location响应头实现重定向</strong></p><h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResponseDemo04</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 方法: doGet</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了</span></span><br><span class="line"><span class="comment">* ① response.setHeader("Location",</span></span><br><span class="line"><span class="comment">* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">      response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br><span class="line">        </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向</span></span><br><span class="line"><span class="comment">* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* response.setStatus(HttpServletResponse.SC_FOUND);</span></span><br><span class="line"><span class="comment">* 设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span>      </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 方法: doPost</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="3-2-代表-webapps目录-的常见应用场景"><a href="#3-2-代表-webapps目录-的常见应用场景" class="headerlink" title="3.2 /代表 webapps目录 的常见应用场景"></a>3.2 <code>/</code>代表 webapps目录 的常见应用场景</h2><h3 id="使用sendRedirect实现请求重定向"><a href="#使用sendRedirect实现请求重定向" class="headerlink" title="使用sendRedirect实现请求重定向"></a>使用sendRedirect实现请求重定向</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure><p>　　服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以<strong>这个”/“是给浏览器使用的</strong>，此时 <code>/</code>代表的就是<strong>webapps目录</strong></p><p>​    <code>/JavaWeb_HttpServletResponse_Study_20140615/index.jsp</code>这个地址指的就是 <code>webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp</code></p><p>　　<strong>response.sendRedirect(“/项目名称/文件夹目录/页面”);</strong>这种写法是将项目名称 <strong>写死在程序中</strong> 的做法，<strong>不灵活</strong>，万一哪天项目名称变了，此时就得改程序，所以<strong>推荐使用下面的灵活写法</strong>：</p><p>将</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure><p><strong>这种写法改成</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(request.getContextPath()+<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure><p><code>request.getContextPath()</code> 获取到的内容就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code>，这样就比较灵活了，<strong>使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！</strong></p><h3 id="使用超链接跳转"><a href="#使用超链接跳转" class="headerlink" title="使用超链接跳转"></a>使用超链接跳转</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure><p>　　这是<strong>客户端浏览器</strong>使用的超链接跳转，这个 <code>/</code> 是给<strong>浏览器使用的</strong> ，此时 <code>/</code> 代表的就是<strong>webapps目录</strong>。</p><p>使用超链接访问web资源，<strong>绝对路径的写法推荐使用下面的写法改进</strong></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure><p>　　这样就可以避免在路径中出现项目的名称，使用 <strong>${pageContext.request.contextPath}</strong> 取代 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p><h3 id="Form表单提交"><a href="#Form表单提交" class="headerlink" title="Form表单提交"></a>Form表单提交</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;    </span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p>　　这是<strong>客户端浏览器将form表单提交到服务器</strong>，所以这个 <code>/</code> 是给<strong>浏览器使用的</strong>，此时 <code>/</code> 代表的就是webapps目录。</p><p> 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p><code>${pageContext.request.contextPath}</code> 得到的就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p><p><code>${pageContext.request.contextPath}</code>的效果等同于<code>request.getContextPath()</code>，两者获取到的都是<strong>“/项目名称”</strong></p><h3 id="js脚本和css样式文件的引用"><a href="#js脚本和css样式文件的引用" class="headerlink" title="js脚本和css样式文件的引用"></a>js脚本和css样式文件的引用</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--使用绝对路径的方式引用js脚本--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--使用绝对路径的方式引用css样式--%&gt;</span><br><span class="line"> &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/css/index.css"</span> type=<span class="string">"text/css"</span>/&gt;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    <strong>==只要是浏览器向服务器提交的, <code>/</code> 给浏览器使用, 都可以修改成推荐的方式==</strong></p><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3791993.html" target="_blank" rel="noopener">javaweb学习总结(八)——HttpServletResponse对象(二)</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;一-HttpServletResponse对象介绍&quot;&gt;&lt;a href=&quot;#一-HttpServletResponse对象介绍&quot; class=&quot;headerlink&quot; title=&quot;一. HttpServletResponse对象介绍&quot;&gt;&lt;/a&gt;一. HttpSer
+        &lt;h1 id=&quot;一-HttpServletResponse-对象介绍&quot;&gt;&lt;a href=&quot;#一-HttpServletResponse-对象介绍&quot; class=&quot;headerlink&quot; title=&quot;一. HttpServletResponse 对象介绍&quot;&gt;&lt;/a&gt;一. Http
       
     
     </summary>
@@ -913,6 +913,28 @@
   </entry>
   
   <entry>
+    <title>数据结构---线性表</title>
+    <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    <id>http://yoursite.com/2019/03/08/数据结构---线性表/</id>
+    <published>2019-03-08T00:24:53.000Z</published>
+    <updated>2019-03-15T09:16:23.037Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><p>​    由 n(n≥0) 个数据特性相同的元素构成的 <strong>有限序列</strong> </p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h4><ul><li>存在唯一的一个被称为”第一个”的数据元素</li><li>存在唯一的一个被称为”最后一个”的数据元素</li><li>除第一个之外, 结构中的每个数据元素均只有一个前驱元素</li><li>除最后一个之外, 结构中的每个数据元素均只有一个后继元素</li></ul><h4 id="存储结构及运算"><a href="#存储结构及运算" class="headerlink" title="存储结构及运算:"></a>存储结构及运算:</h4><ul><li><strong>存储结构方式:</strong>  顺序存储方式(顺序表), 链接存储方式(链表)</li><li><strong>运算:</strong> <ol><li>线性表的初始化 </li><li>求表的长度 </li><li>取出表的元素 </li><li>查找运算</li></ol></li></ul><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul><li>空表: 线性表的长度 n=0</li><li>前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素</li><li>后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素</li></ul><h4 id="随笔"><a href="#随笔" class="headerlink" title="随笔:"></a>随笔:</h4><ul><li>线性表中的数据元素之间的逻辑关系就是其相互位置上的 <strong>邻接关系</strong> ,该关系是线性的,因此,线性表是一种<strong>线性结构</strong> </li><li><strong>常见例子:</strong> 学生成绩表, 列车时刻表, 英文字母表</li></ul><p>​    </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;线性表：&quot;&gt;&lt;a href=&quot;#线性表：&quot; class=&quot;headerlink&quot; title=&quot;线性表：&quot;&gt;&lt;/a&gt;线性表：&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义:&quot;&gt;&lt;/a&gt;定义:&lt;/h3&gt;&lt;p&gt;​    由 n(n≥0) 个数据特性相同的元素构成的 &lt;strong&gt;有限序列&lt;/strong&gt; &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构---链表的概念及实现</title>
     <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
     <id>http://yoursite.com/2019/03/08/数据结构---单链表的概念及实现/</id>
@@ -930,28 +952,6 @@
 &lt;li&gt;循环链表&lt;/li&gt;
 &lt;li&gt;双链表(每个节点有两个指针域的链表)&lt;/li&gt;
 &lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构---线性表</title>
-    <link href="http://yoursite.com/2019/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-    <id>http://yoursite.com/2019/03/08/数据结构---线性表/</id>
-    <published>2019-03-08T00:24:53.000Z</published>
-    <updated>2019-03-15T09:16:23.037Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><p>​    由 n(n≥0) 个数据特性相同的元素构成的 <strong>有限序列</strong> </p><a id="more"></a><h4 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h4><ul><li>存在唯一的一个被称为”第一个”的数据元素</li><li>存在唯一的一个被称为”最后一个”的数据元素</li><li>除第一个之外, 结构中的每个数据元素均只有一个前驱元素</li><li>除最后一个之外, 结构中的每个数据元素均只有一个后继元素</li></ul><h4 id="存储结构及运算"><a href="#存储结构及运算" class="headerlink" title="存储结构及运算:"></a>存储结构及运算:</h4><ul><li><strong>存储结构方式:</strong>  顺序存储方式(顺序表), 链接存储方式(链表)</li><li><strong>运算:</strong> <ol><li>线性表的初始化 </li><li>求表的长度 </li><li>取出表的元素 </li><li>查找运算</li></ol></li></ul><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul><li>空表: 线性表的长度 n=0</li><li>前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素</li><li>后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素</li></ul><h4 id="随笔"><a href="#随笔" class="headerlink" title="随笔:"></a>随笔:</h4><ul><li>线性表中的数据元素之间的逻辑关系就是其相互位置上的 <strong>邻接关系</strong> ,该关系是线性的,因此,线性表是一种<strong>线性结构</strong> </li><li><strong>常见例子:</strong> 学生成绩表, 列车时刻表, 英文字母表</li></ul><p>​    </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;线性表：&quot;&gt;&lt;a href=&quot;#线性表：&quot; class=&quot;headerlink&quot; title=&quot;线性表：&quot;&gt;&lt;/a&gt;线性表：&lt;/h1&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义:&quot;&gt;&lt;/a&gt;定义:&lt;/h3&gt;&lt;p&gt;​    由 n(n≥0) 个数据特性相同的元素构成的 &lt;strong&gt;有限序列&lt;/strong&gt; &lt;/p&gt;
     
     </summary>
     
@@ -985,9 +985,9 @@
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
-      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
-    
       <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
+    
+      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
     
   </entry>
   
@@ -1016,9 +1016,9 @@
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
-      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
-    
       <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
+    
+      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
     
   </entry>
   
@@ -1212,9 +1212,9 @@
     
       <category term="人间词话" scheme="http://yoursite.com/tags/%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D/"/>
     
-      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
-    
       <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
+    
+      <category term="智慧" scheme="http://yoursite.com/tags/%E6%99%BA%E6%85%A7/"/>
     
   </entry>
   

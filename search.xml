@@ -110,18 +110,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---继承]]></title>
-    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF%2F</url>
-    <content type="text"><![CDATA[Java 继承概念 继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。 子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法 类的继承格式123456// Java继承的关键字是：extendsclass 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125; 需要注意的是 Java 不支持多继承，但支持多重继承。 继承的特性 子类拥有父类非 private 的属性、方法。 子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。 子类可以用自己的方式实现父类的方法。 Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。 为什么需要继承 提高代码的 复用性 (复用性主要是可以多次使用，不用再多次写同样的代码）)。 提高程序的扩展性。 参考博文​ JAVA继承总结 ​ 菜鸟教程]]></content>
-      <categories>
-        <category>Java基础知识</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java基础知识</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java基础知识---抽象类]]></title>
     <url>%2F2019%2F03%2F13%2Fjava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
     <content type="text"><![CDATA[Java 抽象类1. 抽象方法​ 一种特殊的方法：它只有声明，而没有具体的实现 123// 声明格式// 抽象方法必须用abstract关键字进行修饰abstract void fun(); 抽象方法必须定义在抽象类中。 2. 抽象类概念​ 抽象方法的类(一个类含有抽象方法，则称这个类为抽象类), 抽象类必须在类前用 abstract关键字 修饰。 一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。 特点 子类继承父类时，如果这个父类里面有抽象方法，并且子类觉得可以去实现父类的所有抽象方法，那么子类必须去实现父类的所有抽象方法, 父类里面的抽象方法，子类如果觉得实现不了，那么把就子类也声明成一个抽象类 因为抽象类中含有无具体实现的方法，所以不能用抽象类创建对象。父类里面的方法是抽象的，那么对于整个类来说，它就有一个没有实现的方法，这个方法不知道怎么去实现，那么这个类是就是残缺不全的，因此这个类应该被定义为一个抽象类 含有抽象方法的类必须被声明为抽象类 不意味着抽象类中只能有抽象方法，它和普通类一样，同样可以拥有成员变量和普通的成员方法 抽象类必须被继承 抽象类就是为了继承而存在的，如果你定义了一个抽象类，却不去继承它，那么等于白白创建了这个抽象类，因为你不能用它来做任何事情 抽象方法必须被重写 从某种意义上来说，抽象方法就是被用来重写的，所以在父类声明的抽象方法一定要在子类里面重写 范例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091package javastudy.summary;/** * 父类Animal * 在class的前面加上abstract，即声明成这样：abstract class Animal * 这样Animal类就成了一个抽象类了 */abstract class Animal &#123; public String name; public Animal(String name) &#123; this.name = name; &#125; /** * 抽象方法 * 这里只有方法的定义，没有方法的实现。 */ public abstract void enjoy(); &#125;/** * 这里的子类Cat从抽象类Animal继承下来，自然也继承了Animal类里面声明的抽象方法enjoy()， * 但子类Cat觉得自己去实现这个enjoy()方法也不合适，因此它把它自己也声明成一个抽象的类， * 那么，谁去实现这个抽象的enjoy方法，谁继承了子类，那谁就去实现这个抽象方法enjoy()。 */abstract class Cat extends Animal &#123; // Cat添加自己独有的属性 public String eyeColor; public Cat(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.eyeColor = c; &#125;&#125;/** * 子类BlueCat继承抽象类Cat，并且实现了从父类Cat继承下来的抽象方法enjoy */class BlueCat extends Cat &#123; public BlueCat(String n, String c) &#123; super(n, c); &#125; // 实现了抽象方法enjoy @Override public void enjoy() &#123; System.out.println("蓝猫叫..."); &#125; &#125;/** * 子类Dog继承抽象类Animal，并且实现了抽象方法enjoy */class Dog extends Animal &#123; // Dog类添加自己特有的属性 public String furColor; public Dog(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.furColor = c; &#125; @Override public void enjoy() &#123; System.out.println("狗叫...."); &#125;&#125;public class TestAbstract &#123; public static void main(String[] args) &#123; /** * 把Cat类声明成一个抽象类以后，就不能再对Cat类进行实例化了， * 因为抽象类是残缺不全的，缺胳膊少腿的，因此抽象类不能被实例化。 */ //Cat c = new Cat("Catname","blue"); Dog d = new Dog("dogname","black"); d.enjoy();//调用自己实现了的enjoy方法 BlueCat c = new BlueCat("BlueCatname","blue"); c.enjoy();//调用自己实现了的enjoy方法 &#125;&#125; 杂抽象类和普通类的主要有三点区别： 抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。 抽象类不能用来创建对象。 如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。 参考博文​ Java抽象类与接口的区别 ​ java基础学习总结——抽象类 ​ 深入理解Java的接口和抽象类]]></content>
@@ -137,6 +125,18 @@
     <title><![CDATA[Java基础知识---接口]]></title>
     <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3%2F</url>
     <content type="text"><![CDATA[一. 概念 官方解释: Java接口是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能） 通俗理解: 接口可以理解为一种特殊的抽象类(100%的抽象类, 所有的方法都是抽象方法)，里面全部是由全局常量和公共的抽象方法(方法的定义)所组成,而没有变量和方法的实现 范例123456789101112131415/** * java中定义接口 * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可 */public interface JavaInterfaces &#123; // 常量的声明格式, 都是公共的、静态的，不能改变的 // 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的 public static final int id=10; int id=10; //方法的声明 // 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉 // 在接口里面声明的抽象方法默认是“public(公共的) public void start();&#125; 二. 特点 接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图 接口可以继承其他的接口,并添加新的属性和抽象方法. 抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类 接口是解决Java无法使用多继承的一种手段,, 实际中更多的作用是制定标准的。 一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承 见范例 接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口 三. 重点 一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。 不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的. 但是，我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法(Java多态的特性). 四. 接口的进一步理解​ 如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。interface USB &#123; void read(); void write();&#125;// 一个USB类实现USB接口。（实现其中的方法）class YouPan implements USB &#123; @Override public void read() &#123; System.out.println("U盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("U盘正在通过USB功能写入数据"); &#125;&#125;// 一个键盘类实现USB接口。（实现其中的方法）class JianPan implements USB &#123; @Override public void read() &#123; System.out.println("键盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("键盘正在通过USB功能写入数据"); &#125;&#125;// 测试public class Main &#123; public static void main(String[] args) &#123; // 生成一个实现可USB接口（标准）的U盘对象 YouPan youPan = new YouPan(); // 调用U盘的read( )方法读取数据 youPan.read(); // 调用U盘的write( )方法写入数据 youPan.write(); // 生成一个实现可USB接口（标准）的键盘对象 JianPan jianPan = new JianPan(); // 调用键盘的read( )方法读取数据 jianPan.read(); // 调用键盘的write( )方法写入数据 jianPan.write(); &#125;&#125; 参考博文​ java基础学习总结——接口 ​ JAVA基础——接口（全网最详细教程）]]></content>
+      <categories>
+        <category>Java基础知识</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---继承]]></title>
+    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF%2F</url>
+    <content type="text"><![CDATA[Java 继承概念 继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。 子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法 类的继承格式123456// Java继承的关键字是：extendsclass 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125; 需要注意的是 Java 不支持多继承，但支持多重继承。 继承的特性 子类拥有父类非 private 的属性、方法。 子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。 子类可以用自己的方式实现父类的方法。 Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。 为什么需要继承 提高代码的 复用性 (复用性主要是可以多次使用，不用再多次写同样的代码）)。 提高程序的扩展性。 参考博文​ JAVA继承总结 ​ 菜鸟教程]]></content>
       <categories>
         <category>Java基础知识</category>
       </categories>
@@ -204,17 +204,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[eclipse---快捷键]]></title>
-    <url>%2F2019%2F03%2F12%2Feclipse%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
-    <content type="text"><![CDATA[eclipse快捷键eclipse配置折叠/展开代码快捷键​ 如何设置]]></content>
-      <categories>
-        <category>eclipse</category>
-      </categories>
-      <tags>
-        <tag>eclipse</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[how2J天猫整站---笔记]]></title>
     <url>%2F2019%2F03%2F12%2Fhow2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[一.关于表表与表之间的关系，基本上是3种 一对一 一对多 多对一 表的杂谈 修改表结构是代价最大的改动 在建表过程中，会设置外键约束，所以表和表之间有依赖关系。 因此会先建立被外键指向的表 一般说来，对于一个新项目，建表的时候，会把sql语句都准备好，一次性执行]]></content>
@@ -223,6 +212,17 @@
       </categories>
       <tags>
         <tag>how2J</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[eclipse---快捷键]]></title>
+    <url>%2F2019%2F03%2F12%2Feclipse%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[eclipse快捷键eclipse配置折叠/展开代码快捷键​ 如何设置]]></content>
+      <categories>
+        <category>eclipse</category>
+      </categories>
+      <tags>
+        <tag>eclipse</tag>
       </tags>
   </entry>
   <entry>
@@ -270,9 +270,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---ZJ]]></title>
-    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ%2F</url>
-    <content type="text"><![CDATA[没有人会拒绝微笑, 也没有人会拒绝真诚. 逢山开路, 遇水架桥.]]></content>
+    <title><![CDATA[人间词话---网易云评论]]></title>
+    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[卿卿我我 写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己. 校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影. 情怀 愿走出半生, 归来仍是少年.]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
@@ -293,9 +293,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---网易云评论]]></title>
-    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E7%BD%91%E6%98%93%E4%BA%91%E8%AF%84%E8%AE%BA%2F</url>
-    <content type="text"><![CDATA[卿卿我我 写歌的人假正经, 听歌的人最无情.人要是桥请起来,听什么都像在唱自己. 校服是我和她唯一穿过的情侣装, 毕业照是我和她唯一的合影. 情怀 愿走出半生, 归来仍是少年.]]></content>
+    <title><![CDATA[人间词话---ZJ]]></title>
+    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ%2F</url>
+    <content type="text"><![CDATA[没有人会拒绝微笑, 也没有人会拒绝真诚. 逢山开路, 遇水架桥.]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
@@ -330,7 +330,7 @@
   <entry>
     <title><![CDATA[JavaWeb---HttpResponse对象]]></title>
     <url>%2F2019%2F03%2F08%2FJavaWeb---HttpResponse%E5%AF%B9%E8%B1%A1%2F</url>
-    <content type="text"><![CDATA[一. HttpServletResponse对象介绍​ HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量 HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字，常见的状态码对应的常量： 状态码404对应的常量 状态码200对应的常量 状态码500对应的常量 二. HttpServletResponse对象常见应用]]></content>
+    <content type="text"><![CDATA[一. HttpServletResponse 对象介绍​ HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量 HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字，常见的状态码对应的常量： 状态码404对应的常量 状态码200对应的常量 状态码500对应的常量 二. HttpServletResponse常见应用——设置响应头控制浏览器的行为通过response实现请求重定向 请求重定向指：一个web资源收到客户端请求后，通知客户端去访问另外一个web资源，这称之为请求重定向。 应用场景：用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程 实现方式： ==response.sendRedirect(String location)==，即调用response对象的sendRedirect方法实现请求重定向 sendRedirect内部的实现原理：使用response设置 302状态码和设置location响应头实现重定向 范例1234567891011121314151617181920212223242526public class ResponseDemo04 extends HttpServlet &#123; // 方法: doGet public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;/*** 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了* ① response.setHeader("Location",* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);*/ response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); /*** 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");* response.setStatus(HttpServletResponse.SC_FOUND);* 设置302状态码，等同于response.setStatus(302);*/ &#125; // 方法: doPost public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; doGet(request, response); &#125;&#125; 3.2 /代表 webapps目录 的常见应用场景使用sendRedirect实现请求重定向1response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); 服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以这个”/“是给浏览器使用的，此时 /代表的就是webapps目录 ​ /JavaWeb_HttpServletResponse_Study_20140615/index.jsp这个地址指的就是 webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp response.sendRedirect(“/项目名称/文件夹目录/页面”);这种写法是将项目名称 写死在程序中 的做法，不灵活，万一哪天项目名称变了，此时就得改程序，所以推荐使用下面的灵活写法： 将 1response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); 这种写法改成 1response.sendRedirect(request.getContextPath()+"/index.jsp"); request.getContextPath() 获取到的内容就是 /JavaWeb_HttpServletResponse_Study_20140615，这样就比较灵活了，使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！ 使用超链接跳转1&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt; 这是客户端浏览器使用的超链接跳转，这个 / 是给浏览器使用的 ，此时 / 代表的就是webapps目录。 使用超链接访问web资源，绝对路径的写法推荐使用下面的写法改进 1&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt; 这样就可以避免在路径中出现项目的名称，使用 ${pageContext.request.contextPath} 取代 /JavaWeb_HttpServletResponse_Study_20140615 Form表单提交123&lt;form action="/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet" method="post"&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt; 这是客户端浏览器将form表单提交到服务器，所以这个 / 是给浏览器使用的，此时 / 代表的就是webapps目录。 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进： 123&lt;form action="$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet" method="post"&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt; ${pageContext.request.contextPath} 得到的就是 /JavaWeb_HttpServletResponse_Study_20140615 ${pageContext.request.contextPath}的效果等同于request.getContextPath()，两者获取到的都是“/项目名称” js脚本和css样式文件的引用123456&lt;%--使用绝对路径的方式引用js脚本--%&gt; &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt; &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt; &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt; &lt;%--使用绝对路径的方式引用css样式--%&gt; &lt;link rel="stylesheet" href="$&#123;pageContext.request.contextPath&#125;/css/index.css" type="text/css"/&gt; 总结​ ==只要是浏览器向服务器提交的, / 给浏览器使用, 都可以修改成推荐的方式== 参考博文​ javaweb学习总结(八)——HttpServletResponse对象(二)]]></content>
       <categories>
         <category>JavaWeb</category>
       </categories>
@@ -398,9 +398,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[数据结构---链表的概念及实现]]></title>
-    <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[链表线性表的链接存储结构成为链表 常见的链表: 单链表(每个节点有一个指针域的链表) 循环链表 双链表(每个节点有两个指针域的链表) 特点: 用一组任意的存储单元存储线性表的数据结构(存储单元可以是连续的,也可以是不连续的 数据元素的逻辑次序和物理次序 ==不一定一致== 相关概念 结点: 基本单元,由两部分组成 数据域: 用来存放节点本身的信息 指针域:用来存放本节点的直接后继节点的地址 空指针: 链表中最后一个节点的指针域不指向任何节点(通常用”∧”或者”NULL”表示 头指针: 指向单链表第一个节点的指针(head) 空表: 之神 head 为空指针,即 head=NULL 表头结点: 第一个节点之前再增加一个类型相同的结点(为了便于实现链表的各种运算, 其他节点成为表结点) 表结点: 除了表头结点其他的结点 在表结点中,第一个节点称为首结点 ,最后一个节点称为 尾节点]]></content>
+    <title><![CDATA[数据结构---线性表]]></title>
+    <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[线性表：定义:​ 由 n(n≥0) 个数据特性相同的元素构成的 有限序列 特点: 存在唯一的一个被称为”第一个”的数据元素 存在唯一的一个被称为”最后一个”的数据元素 除第一个之外, 结构中的每个数据元素均只有一个前驱元素 除最后一个之外, 结构中的每个数据元素均只有一个后继元素 存储结构及运算: 存储结构方式: 顺序存储方式(顺序表), 链接存储方式(链表) 运算: 线性表的初始化 求表的长度 取出表的元素 查找运算 相关概念 空表: 线性表的长度 n=0 前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素 后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素 随笔: 线性表中的数据元素之间的逻辑关系就是其相互位置上的 邻接关系 ,该关系是线性的,因此,线性表是一种线性结构 常见例子: 学生成绩表, 列车时刻表, 英文字母表 ​]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
@@ -409,9 +409,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[数据结构---线性表]]></title>
-    <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[线性表：定义:​ 由 n(n≥0) 个数据特性相同的元素构成的 有限序列 特点: 存在唯一的一个被称为”第一个”的数据元素 存在唯一的一个被称为”最后一个”的数据元素 除第一个之外, 结构中的每个数据元素均只有一个前驱元素 除最后一个之外, 结构中的每个数据元素均只有一个后继元素 存储结构及运算: 存储结构方式: 顺序存储方式(顺序表), 链接存储方式(链表) 运算: 线性表的初始化 求表的长度 取出表的元素 查找运算 相关概念 空表: 线性表的长度 n=0 前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素 后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素 随笔: 线性表中的数据元素之间的逻辑关系就是其相互位置上的 邻接关系 ,该关系是线性的,因此,线性表是一种线性结构 常见例子: 学生成绩表, 列车时刻表, 英文字母表 ​]]></content>
+    <title><![CDATA[数据结构---链表的概念及实现]]></title>
+    <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[链表线性表的链接存储结构成为链表 常见的链表: 单链表(每个节点有一个指针域的链表) 循环链表 双链表(每个节点有两个指针域的链表) 特点: 用一组任意的存储单元存储线性表的数据结构(存储单元可以是连续的,也可以是不连续的 数据元素的逻辑次序和物理次序 ==不一定一致== 相关概念 结点: 基本单元,由两部分组成 数据域: 用来存放节点本身的信息 指针域:用来存放本节点的直接后继节点的地址 空指针: 链表中最后一个节点的指针域不指向任何节点(通常用”∧”或者”NULL”表示 头指针: 指向单链表第一个节点的指针(head) 空表: 之神 head 为空指针,即 head=NULL 表头结点: 第一个节点之前再增加一个类型相同的结点(为了便于实现链表的各种运算, 其他节点成为表结点) 表结点: 除了表头结点其他的结点 在表结点中,第一个节点称为首结点 ,最后一个节点称为 尾节点]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
@@ -428,8 +428,8 @@
       </categories>
       <tags>
         <tag>人间词话</tag>
-        <tag>智慧</tag>
         <tag>人生</tag>
+        <tag>智慧</tag>
       </tags>
   </entry>
   <entry>
@@ -441,8 +441,8 @@
       </categories>
       <tags>
         <tag>人间词话</tag>
-        <tag>智慧</tag>
         <tag>人生</tag>
+        <tag>智慧</tag>
       </tags>
   </entry>
   <entry>
@@ -522,8 +522,8 @@
       </categories>
       <tags>
         <tag>人间词话</tag>
-        <tag>智慧</tag>
         <tag>人生</tag>
+        <tag>智慧</tag>
       </tags>
   </entry>
 </search>
