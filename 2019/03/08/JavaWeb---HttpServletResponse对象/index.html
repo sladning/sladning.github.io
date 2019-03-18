@@ -123,22 +123,18 @@
 
 
 
-<meta name="description" content="一. 基本概念1.1 WEB 开发的相关知识 WEB，在英语中web即表示网页的意思，它用于表示Internet主机上供外界访问的资源。  Internet上供外界访问的Web资源分为：  静态web资源（如html 页面）：指web页面中供人们浏览的数据始终是不变的。 动态web资源：指web页面中供人们浏览的数据是**">
+<meta name="description" content="一. HttpServletResponse 对象介绍​    HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的AP">
 <meta name="keywords" content="Java,JavaWeb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb---JavaWeb开发入门">
-<meta property="og:url" content="http://yoursite.com/2019/03/14/JavaWeb---JavaWeb开发入门/index.html">
+<meta property="og:title" content="JavaWeb---HttpResponse对象">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/JavaWeb---HttpServletResponse对象/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="一. 基本概念1.1 WEB 开发的相关知识 WEB，在英语中web即表示网页的意思，它用于表示Internet主机上供外界访问的资源。  Internet上供外界访问的Web资源分为：  静态web资源（如html 页面）：指web页面中供人们浏览的数据始终是不变的。 动态web资源：指web页面中供人们浏览的数据是**">
+<meta property="og:description" content="一. HttpServletResponse 对象介绍​    HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的AP">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://images0.cnblogs.com/i/289233/201405/152304507501851.jpg">
-<meta property="og:image" content="https://images0.cnblogs.com/i/289233/201405/152305257189334.png">
-<meta property="og:image" content="https://images0.cnblogs.com/i/289233/201405/152327264213217.png">
-<meta property="og:updated_time" content="2019-03-15T08:20:53.607Z">
+<meta property="og:updated_time" content="2019-03-15T09:48:20.579Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaWeb---JavaWeb开发入门">
-<meta name="twitter:description" content="一. 基本概念1.1 WEB 开发的相关知识 WEB，在英语中web即表示网页的意思，它用于表示Internet主机上供外界访问的资源。  Internet上供外界访问的Web资源分为：  静态web资源（如html 页面）：指web页面中供人们浏览的数据始终是不变的。 动态web资源：指web页面中供人们浏览的数据是**">
-<meta name="twitter:image" content="https://images0.cnblogs.com/i/289233/201405/152304507501851.jpg">
+<meta name="twitter:title" content="JavaWeb---HttpResponse对象">
+<meta name="twitter:description" content="一. HttpServletResponse 对象介绍​    HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的AP">
 
 
 
@@ -168,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/14/JavaWeb---JavaWeb开发入门/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletResponse对象/">
 
 
 
 
 
-  <title>JavaWeb---JavaWeb开发入门 | sladning</title>
+  <title>JavaWeb---HttpResponse对象 | sladning</title>
   
 
 
@@ -350,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/JavaWeb---JavaWeb开发入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletResponse对象/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刻在心里的坚强">
@@ -367,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaWeb---JavaWeb开发入门</h1>
+          <h1 class="post-title" itemprop="name headline">JavaWeb---HttpResponse对象</h1>
         
 
         <div class="post-meta">
@@ -379,8 +375,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T19:09:51+08:00">
-                2019-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T11:29:27+08:00">
+                2019-03-08
               </time>
             
 
@@ -438,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  986
+                  1.1k
                 </span>
               
 
@@ -454,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -475,29 +471,40 @@
       
 
       
-        <h1 id="一-基本概念"><a href="#一-基本概念" class="headerlink" title="一. 基本概念"></a>一. 基本概念</h1><h2 id="1-1-WEB-开发的相关知识"><a href="#1-1-WEB-开发的相关知识" class="headerlink" title="1.1 WEB 开发的相关知识"></a>1.1 WEB 开发的相关知识</h2><blockquote>
-<p>WEB，在英语中web即<strong>表示网页</strong>的意思，它用于表示<strong>Internet主机上供外界访问的资源</strong>。</p>
-</blockquote>
-<p>Internet上供外界访问的Web资源分为：</p>
-<ol>
-<li><strong>静态web资源</strong>（如html 页面）：指web页面中供人们<strong>浏览的数据始终是不变的</strong>。</li>
-<li><strong>动态web资源</strong>：指web页面中供人们浏览的数据是**</li>
-</ol>
-<a id="more"></a>
-<p>由程序产生的，不同时间点访问web页面看到的内容各不相同**。</p>
-<p>　　静态web资源开发技术：Html<br>　　常用动态web资源开发技术：JSP/Servlet、ASP、PHP等<br>　　在 Java 中，动态web资源开发技术统称为 <strong>==Javaweb==</strong>。</p>
-<h2 id="1-2-WEB应用程序"><a href="#1-2-WEB应用程序" class="headerlink" title="1.2 WEB应用程序"></a>1.2 WEB应用程序</h2><p>　　WEB应用程序指<strong>供浏览器访问的程序</strong>，通常也<strong>简称为web应用</strong>。例如有a.html 、b.html…..多个web资源，这多个web资源用于对外提供服务，此时应把这多个web资源放在一个目录中，以组成一个web应用（或web应用程序）<br>　　<strong>一个web应用由多个静态web资源和动态web资源组成</strong>，如:html、css、js文件，Jsp文件、java程序、支持jar包、配置文件等等。<br>　　Web应用开发好后，若想供外界访问，需要<strong>把web应用所在目录交给web服务器管理</strong>，这个过程称之为<strong>虚似目录的映射</strong></p>
-<h1 id="二-WEB服务器"><a href="#二-WEB服务器" class="headerlink" title="二. WEB服务器"></a>二. WEB服务器</h1><h2 id="2-1-WEB服务器简介"><a href="#2-1-WEB服务器简介" class="headerlink" title="2.1 WEB服务器简介"></a>2.1 WEB服务器简介</h2><p>　　1. Web服务器是指<strong>驻留于因特网上某种类型计算机的程序</strong>，是可以向发出请求的浏览器提供文档的<strong>程序</strong>。当Web浏览器（客户端）连到服务器上并请求文件时，服务器将处理该请求并将文件反馈到该浏览器上，附带的信息会告诉浏览器如何查看该文件（即文件类型）。</p>
-<p><img src="https://images0.cnblogs.com/i/289233/201405/152304507501851.jpg" alt="img"></p>
-<p>　　2、服务器是一种<strong>被动程序</strong>：只有当Internet上运行在其他计算机中的浏览器发出请求时，服务器才会响应。</p>
-<p><img src="https://images0.cnblogs.com/i/289233/201405/152305257189334.png" alt="img"></p>
-<h2 id="2-2、常见的Web服务器介绍"><a href="#2-2、常见的Web服务器介绍" class="headerlink" title="2.2、常见的Web服务器介绍"></a>2.2、常见的Web服务器介绍</h2><h4 id="1-WebLogic"><a href="#1-WebLogic" class="headerlink" title="1. WebLogic"></a>1. WebLogic</h4><h4 id="2-WebSphere"><a href="#2-WebSphere" class="headerlink" title="2. WebSphere"></a>2. WebSphere</h4><h4 id="3-Tomcat"><a href="#3-Tomcat" class="headerlink" title="3. Tomcat"></a>3. Tomcat</h4><p>　　TomcatTomcat是一个<strong>实现了JAVA EE标准的最小的WEB服务器</strong>，是Apache 软件基金会的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。因为Tomcat 技术先进、性能稳定，而且开源免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。<strong>学习JavaWeb开发一般都使用Tomcat服务器</strong>，该服务器支持全部JSP以及Servlet规范，启动界面如图：</p>
-<p><img src="https://images0.cnblogs.com/i/289233/201405/152327264213217.png" alt="img"></p>
-<h4 id="4-IIS"><a href="#4-IIS" class="headerlink" title="4. IIS"></a>4. IIS</h4><blockquote>
-<p>学习web开发，需要先安装一台web服务器，然后再在web服务器中开发相应的web资源，供用户使用浏览器访问。</p>
-</blockquote>
-<h1 id="三-搭建JavaWeb应用开发环境——Tomcat服务器"><a href="#三-搭建JavaWeb应用开发环境——Tomcat服务器" class="headerlink" title="三. 搭建JavaWeb应用开发环境——Tomcat服务器"></a>三. 搭建JavaWeb应用开发环境——Tomcat服务器</h1><h2 id="3-1-疑问：学习web开发，为什么必须要先装一个WEB服务器？"><a href="#3-1-疑问：学习web开发，为什么必须要先装一个WEB服务器？" class="headerlink" title="3.1 疑问：学习web开发，为什么必须要先装一个WEB服务器？"></a>3.1 疑问：学习web开发，为什么必须要先装一个WEB服务器？</h2><p>　　在本地计算机上随便创建一个 web 页面，用户是<strong>无法访问到的</strong>，但是如果启动 tomcat 服务器，把 web 页面放在 tomcat 服务器中，用户就可以访问了。这说明什么问题？<br>  　　1. 不管什么 web 资源，<strong>想被远程计算机访问</strong>，都必须有<strong>一个与之对应的网络通信程序</strong>，当用户来访问时，这个网络通信程序读取 web 资源数据，并把数据发送给来访者。<br>  　　2. WEB 服务器就是这样一个程序，它用于<strong>完成底层网络通迅</strong>。使用这些服务器，We应用的开发者<strong>只需要关注web资源怎么编写</strong>，而<strong>不需要关心资源如何发送到客户端手中</strong>，从而极大的减轻了开发者的开发工作量。</p>
-<h3 id="3-2、下载和安装Tomcat服务器"><a href="#3-2、下载和安装Tomcat服务器" class="headerlink" title="3.2、下载和安装Tomcat服务器"></a>3.2、下载和安装Tomcat服务器</h3><h5 id="见参考博客"><a href="#见参考博客" class="headerlink" title="见参考博客"></a>见参考博客</h5><h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3729033.html" target="_blank" rel="noopener">JavaWeb学习总结(一)——JavaWeb开发入门</a></p>
+        <h1 id="一-HttpServletResponse-对象介绍"><a href="#一-HttpServletResponse-对象介绍" class="headerlink" title="一. HttpServletResponse 对象介绍"></a>一. HttpServletResponse 对象介绍</h1><p>​    <strong>HttpServletResponse对象</strong> 代表<strong>服务器的响应</strong>。这个对象中封装了<strong>向客户端发送数据、发送响应头，发送响应状态码的方法</strong>。查看 HttpServletResponse 的API，可以看到这些相关的方法。</p>
+<h2 id="1-1-响应状态码的常量"><a href="#1-1-响应状态码的常量" class="headerlink" title="1.1 响应状态码的常量"></a>1.1 响应状态码的常量</h2><p>　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要<strong>向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字</strong>，常见的状态码对应的常量：</p>
+<ul>
+<li>状态码404对应的常量</li>
+<li>状态码200对应的常量</li>
+<li>状态码500对应的常量</li>
+</ul>
+<h1 id="二-HttpServletResponse常见应用——设置响应头控制浏览器的行为"><a href="#二-HttpServletResponse常见应用——设置响应头控制浏览器的行为" class="headerlink" title="二. HttpServletResponse常见应用——设置响应头控制浏览器的行为"></a>二. HttpServletResponse常见应用——设置响应头控制浏览器的行为</h1><h3 id="通过response实现请求重定向"><a href="#通过response实现请求重定向" class="headerlink" title="通过response实现请求重定向"></a>通过response实现请求重定向</h3><p>　　<strong>请求重定向指：</strong>一个web资源收到客户端请求后，通知<strong>客户端</strong>去访问<strong>另外一个web资源</strong>，这称之为请求重定向。</p>
+<p>　　<strong>应用场景：</strong>用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程</p>
+<p>　　<strong>实现方式：</strong> <strong>==response.sendRedirect(String location)==</strong>，即调用response对象的<strong>sendRedirect</strong>方法实现请求重定向<br>　　sendRedirect内部的实现原理：使用response设置 <strong>302状态码和设置location响应头实现重定向</strong></p>
+<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResponseDemo04</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 方法: doGet</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了</span></span><br><span class="line"><span class="comment">* ① response.setHeader("Location",</span></span><br><span class="line"><span class="comment">* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">      response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br><span class="line">        </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向</span></span><br><span class="line"><span class="comment">* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* response.setStatus(HttpServletResponse.SC_FOUND);</span></span><br><span class="line"><span class="comment">* 设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span>      </span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 方法: doPost</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-代表-webapps目录-的常见应用场景"><a href="#3-2-代表-webapps目录-的常见应用场景" class="headerlink" title="3.2 /代表 webapps目录 的常见应用场景"></a>3.2 <code>/</code>代表 webapps目录 的常见应用场景</h2><h3 id="使用sendRedirect实现请求重定向"><a href="#使用sendRedirect实现请求重定向" class="headerlink" title="使用sendRedirect实现请求重定向"></a>使用sendRedirect实现请求重定向</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p>　　服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以<strong>这个”/“是给浏览器使用的</strong>，此时 <code>/</code>代表的就是<strong>webapps目录</strong></p>
+<p>​    <code>/JavaWeb_HttpServletResponse_Study_20140615/index.jsp</code>这个地址指的就是 <code>webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp</code></p>
+<p>　　<strong>response.sendRedirect(“/项目名称/文件夹目录/页面”);</strong>这种写法是将项目名称 <strong>写死在程序中</strong> 的做法，<strong>不灵活</strong>，万一哪天项目名称变了，此时就得改程序，所以<strong>推荐使用下面的灵活写法</strong>：</p>
+<p>将</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>这种写法改成</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(request.getContextPath()+<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>request.getContextPath()</code> 获取到的内容就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code>，这样就比较灵活了，<strong>使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！</strong></p>
+<h3 id="使用超链接跳转"><a href="#使用超链接跳转" class="headerlink" title="使用超链接跳转"></a>使用超链接跳转</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>　　这是<strong>客户端浏览器</strong>使用的超链接跳转，这个 <code>/</code> 是给<strong>浏览器使用的</strong> ，此时 <code>/</code> 代表的就是<strong>webapps目录</strong>。</p>
+<p>使用超链接访问web资源，<strong>绝对路径的写法推荐使用下面的写法改进</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>　　这样就可以避免在路径中出现项目的名称，使用 <strong>${pageContext.request.contextPath}</strong> 取代 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p>
+<h3 id="Form表单提交"><a href="#Form表单提交" class="headerlink" title="Form表单提交"></a>Form表单提交</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;    </span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>　　这是<strong>客户端浏览器将form表单提交到服务器</strong>，所以这个 <code>/</code> 是给<strong>浏览器使用的</strong>，此时 <code>/</code> 代表的就是webapps目录。</p>
+<p> 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p><code>${pageContext.request.contextPath}</code> 得到的就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p>
+<p><code>${pageContext.request.contextPath}</code>的效果等同于<code>request.getContextPath()</code>，两者获取到的都是<strong>“/项目名称”</strong></p>
+<h3 id="js脚本和css样式文件的引用"><a href="#js脚本和css样式文件的引用" class="headerlink" title="js脚本和css样式文件的引用"></a>js脚本和css样式文件的引用</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--使用绝对路径的方式引用js脚本--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--使用绝对路径的方式引用css样式--%&gt;</span><br><span class="line"> &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/css/index.css"</span> type=<span class="string">"text/css"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    <strong>==只要是浏览器向服务器提交的, <code>/</code> 给浏览器使用, 都可以修改成推荐的方式==</strong></p>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3791993.html" target="_blank" rel="noopener">javaweb学习总结(八)——HttpServletResponse对象(二)</a></p>
 
       
     </div>
@@ -540,8 +547,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/14/JavaWeb---JSP原理/" rel="next" title="JavaWeb---JSP原理">
-                <i class="fa fa-chevron-left"></i> JavaWeb---JSP原理
+              <a href="/2019/03/08/Java基础知识---static关键字/" rel="next" title="Java基础知识---static关键字">
+                <i class="fa fa-chevron-left"></i> Java基础知识---static关键字
               </a>
             
           </div>
@@ -550,8 +557,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/14/JavaWeb---JSP基础语法/" rel="prev" title="JavaWeb---JSP基础语法">
-                JavaWeb---JSP基础语法 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/JavaWeb---HttpResponse对象/" rel="prev" title="JavaWeb---HttpServletResponse对象">
+                JavaWeb---HttpServletResponse对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -714,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-基本概念"><span class="nav-number">1.</span> <span class="nav-text">一. 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-WEB-开发的相关知识"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 WEB 开发的相关知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-WEB应用程序"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 WEB应用程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-WEB服务器"><span class="nav-number">2.</span> <span class="nav-text">二. WEB服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-WEB服务器简介"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 WEB服务器简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2、常见的Web服务器介绍"><span class="nav-number">2.2.</span> <span class="nav-text">2.2、常见的Web服务器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-WebLogic"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">1. WebLogic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-WebSphere"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">2. WebSphere</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Tomcat"><span class="nav-number">2.2.0.3.</span> <span class="nav-text">3. Tomcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-IIS"><span class="nav-number">2.2.0.4.</span> <span class="nav-text">4. IIS</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#三-搭建JavaWeb应用开发环境——Tomcat服务器"><span class="nav-number">3.</span> <span class="nav-text">三. 搭建JavaWeb应用开发环境——Tomcat服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-疑问：学习web开发，为什么必须要先装一个WEB服务器？"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 疑问：学习web开发，为什么必须要先装一个WEB服务器？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、下载和安装Tomcat服务器"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.2、下载和安装Tomcat服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#见参考博客"><span class="nav-number">3.1.1.0.1.</span> <span class="nav-text">见参考博客</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">3.1.1.0.2.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HttpServletResponse-对象介绍"><span class="nav-number">1.</span> <span class="nav-text">一. HttpServletResponse 对象介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-响应状态码的常量"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 响应状态码的常量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-HttpServletResponse常见应用——设置响应头控制浏览器的行为"><span class="nav-number">2.</span> <span class="nav-text">二. HttpServletResponse常见应用——设置响应头控制浏览器的行为</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过response实现请求重定向"><span class="nav-number">2.0.1.</span> <span class="nav-text">通过response实现请求重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-代表-webapps目录-的常见应用场景"><span class="nav-number">2.1.</span> <span class="nav-text">3.2 /代表 webapps目录 的常见应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用sendRedirect实现请求重定向"><span class="nav-number">2.1.1.</span> <span class="nav-text">使用sendRedirect实现请求重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用超链接跳转"><span class="nav-number">2.1.2.</span> <span class="nav-text">使用超链接跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Form表单提交"><span class="nav-number">2.1.3.</span> <span class="nav-text">Form表单提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js脚本和css样式文件的引用"><span class="nav-number">2.1.4.</span> <span class="nav-text">js脚本和css样式文件的引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.2.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">2.2.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
             
 
           </div>

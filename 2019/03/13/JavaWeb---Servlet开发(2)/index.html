@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. ServletConfig讲解1.1. 配置Servlet初始化参数　　在Servlet的配置文件web.xml中，可以使用一个或多个标签为servlet配置一些初始化参数。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-15T08:24:17.005Z">
+<meta property="og:updated_time" content="2019-03-15T14:40:03.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---Servlet开发(2)">
 <meta name="twitter:description" content="一. ServletConfig讲解1.1. 配置Servlet初始化参数　　在Servlet的配置文件web.xml中，可以使用一个或多个标签为servlet配置一些初始化参数。">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  58
+                  538
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -473,8 +473,13 @@
       
         <h2 id="一-ServletConfig讲解"><a href="#一-ServletConfig讲解" class="headerlink" title="一. ServletConfig讲解"></a>一. ServletConfig讲解</h2><h3 id="1-1-配置Servlet初始化参数"><a href="#1-1-配置Servlet初始化参数" class="headerlink" title="1.1. 配置Servlet初始化参数"></a>1.1. 配置Servlet初始化参数</h3><p>　　在Servlet的配置文件web.xml中，可以使用一个或多个<init-param>标签为servlet配置一些初始化参数。</init-param></p>
 <a id="more"></a>
-<p>参考博文:</p>
-<p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3763559.html" target="_blank" rel="noopener">javaweb学习总结(六)——Servlet开发(二)</a></p>
+<h5 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ServletConfigDemo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>gacl.servlet.study.ServletConfigDemo1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置ServletConfigDemo1的初始化参数 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>name<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>gacl<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>123<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2、通过-ServletConfig-获取-Servlet-的初始化参数"><a href="#1-2、通过-ServletConfig-获取-Servlet-的初始化参数" class="headerlink" title="1.2、通过 ServletConfig 获取 Servlet 的初始化参数"></a>1.2、通过 ServletConfig 获取 Servlet 的初始化参数</h3><p>　　当 servle t配置了初始化参数后，web 容器在创建 servlet 实例对象时，<strong>会自动将这些初始化参数封装到 ServletConfig 对象中</strong>，并<strong>在调用 servlet 的 init 方法时，将ServletConfig对象传递给servlet</strong>。进而，我们通过 ServletConfig 对象就可以得到当前servlet的初始化参数信息。</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletConfigDemo1</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 定义ServletConfig对象来接收配置的初始化参数</span></span><br><span class="line">    <span class="keyword">private</span> ServletConfig config;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.config = config;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取在 web.xml 中配置的初始化参数</span></span><br><span class="line">        <span class="comment">// 获取指定的初始化参数</span></span><br><span class="line">        String paramVal = <span class="keyword">this</span>.config.getInitParameter(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取所有的初始化参数</span></span><br><span class="line">        Enumeration&lt;String&gt; e = config.getInitParameterNames();</span><br><span class="line">        <span class="keyword">while</span>(e.hasMoreElements())&#123;</span><br><span class="line">            String name = e.nextElement();</span><br><span class="line">            String value = config.getInitParameter(name);</span><br><span class="line">            response.getWriter().print(name + <span class="string">"="</span> + value + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二、ServletContext对象"><a href="#二、ServletContext对象" class="headerlink" title="二、ServletContext对象"></a>二、ServletContext对象</h2><p>　　<strong>WEB容器在启动时</strong>，它会为每个WEB应用程序都创建<strong>一个对应的 ServletContext 对象</strong>，它<strong>代表当前web应用</strong>。<br>　　ServletConfig 对象中维护了 ServletContext 对象的引用，开发人员在编写servlet时，<strong>可以通过ServletConfig.getServletContext 方法获得 ServletContext 对象</strong>。<br>　　由于一个 WEB 应用中的<strong>所有 Servle t共享同一个 ServletContext 对象</strong>，因此 <strong>Servlet 对象之间可以通过ServletContext 对象来实现通讯</strong> 。ServletContext 对象通常也被称之为 context 域对象</p>
+<h2 id="三、ServletContext的应用"><a href="#三、ServletContext的应用" class="headerlink" title="三、ServletContext的应用"></a>三、ServletContext的应用</h2><h3 id="3-1、多个Servlet通过ServletContext对象实现数据共享"><a href="#3-1、多个Servlet通过ServletContext对象实现数据共享" class="headerlink" title="　　3.1、多个Servlet通过ServletContext对象实现数据共享"></a>　　3.1、多个Servlet通过ServletContext对象实现数据共享</h3><p>　<strong>范例:</strong> ServletContextDemo1 和 ServletContextDemo2 通过 ServletContext 对象实现数据共享</p>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3763559.html" target="_blank" rel="noopener">javaweb学习总结(六)——Servlet开发(二)</a></p>
 
       
     </div>
@@ -613,7 +618,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -691,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-ServletConfig讲解"><span class="nav-number">1.</span> <span class="nav-text">一. ServletConfig讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-配置Servlet初始化参数"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 配置Servlet初始化参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-ServletConfig讲解"><span class="nav-number">1.</span> <span class="nav-text">一. ServletConfig讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-配置Servlet初始化参数"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 配置Servlet初始化参数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实例"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">代码实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、通过-ServletConfig-获取-Servlet-的初始化参数"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、通过 ServletConfig 获取 Servlet 的初始化参数</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#二、ServletContext对象"><span class="nav-number">2.</span> <span class="nav-text">二、ServletContext对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、ServletContext的应用"><span class="nav-number">3.</span> <span class="nav-text">三、ServletContext的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、多个Servlet通过ServletContext对象实现数据共享"><span class="nav-number">3.1.</span> <span class="nav-text">　　3.1、多个Servlet通过ServletContext对象实现数据共享</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></div>
             
 
           </div>
@@ -725,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">33.1k</span>
+    <span title="Site words total count">40.1k</span>
   
 </div>
 

@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,JavaWeb,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sladning" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。 二. Request常用方法2.1. 获得客户机信息　　getRequestURL方法返回客户端发出请求时的完整URL。　　getRequ">
+<meta name="keywords" content="Java,JavaWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb---HttpServletRequest对象">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/JavaWeb---HttpServletRequest对象/index.html">
+<meta property="og:site_name" content="sladning">
+<meta property="og:description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。 二. Request常用方法2.1. 获得客户机信息　　getRequestURL方法返回客户端发出请求时的完整URL。　　getRequ">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-18T00:13:02.358Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaWeb---HttpServletRequest对象">
+<meta name="twitter:description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。 二. Request常用方法2.1. 获得客户机信息　　getRequestURL方法返回客户端发出请求时的完整URL。　　getRequ">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletRequest对象/">
+
+
+
+
+
+  <title>JavaWeb---HttpServletRequest对象 | sladning</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+  <!-- 更改动态背景-->
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <!-- 添加自己的github账号的进入 -->
+      <a href="https://github.com/sladning"><img style="position: absolute; top: 0; left: 0; border: 0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sladning</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletRequest对象/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaWeb---HttpServletRequest对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T11:29:27+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-HttpServletRequest介绍"><a href="#一-HttpServletRequest介绍" class="headerlink" title="一. HttpServletRequest介绍"></a>一. HttpServletRequest介绍</h1><p>　　HttpServletRequest对象代表 <strong>客户端的请求</strong> ，当 <strong>客户端通过HTTP协议访问服务器</strong> 时，HTTP请求头中的 <strong>所有信息都封装在这个对象中</strong> ，通过这个对象提供的方法，<strong>可以获得客户端请求的所有信息</strong> 。</p>
+<h1 id="二-Request常用方法"><a href="#二-Request常用方法" class="headerlink" title="二. Request常用方法"></a>二. Request常用方法</h1><h2 id="2-1-获得客户机信息"><a href="#2-1-获得客户机信息" class="headerlink" title="2.1. 获得客户机信息"></a>2.1. 获得客户机信息</h2><p>　　<strong>getRequestURL方法返回客户端发出请求时的完整URL。</strong><br>　　<strong>getRequestURI方法返回请求行中的资源名部分。</strong><br>　　<strong>getQueryString 方法返回请求行中的参数部分。</strong><br>　　getPathInfo方法返回请求URL中的额外路径信息。额外路径信息是请求URL中的位于Servlet的路径之后和查询参数之前的内容，它以“/”开头。<br>　　<strong>getRemoteAddr方法返回发出请求的客户机的IP地址。</strong><br>等</p>
+<h2 id="2-2-获得客户机请求头"><a href="#2-2-获得客户机请求头" class="headerlink" title="2.2 获得客户机请求头"></a>2.2 获得客户机请求头</h2><h2 id="2-3-获得客户机请求参数-客户端提交的数据"><a href="#2-3-获得客户机请求参数-客户端提交的数据" class="headerlink" title="2.3 获得客户机请求参数(客户端提交的数据)"></a>2.3 获得客户机请求参数(客户端提交的数据)</h2><ul>
+<li>getParameter(String)方法<strong>(常用)</strong></li>
+<li>getParameterValues(String name)方法<strong>(常用)</strong></li>
+<li>getParameterNames()方法(<strong>不常用</strong>)</li>
+<li>getParameterMap()方法<strong>(编写框架时常用)</strong></li>
+</ul>
+<p>详细代码见参考博客</p>
+<p>在服务器端使用getParameter方法和getParameterValues方法接收表单参数，代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取客户端通过Form表单提交上来的参数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestDemo03</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		<span class="comment">// 客户端是以 UTF-8 编码提交表单数据的，所以需要设置服务器端以UTF-8 的编码进行接收，否则对于中文数据就会产生乱码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 用户名(文本框)：&lt;input type="text" name="username" value="请输入用户名"&gt;</span></span><br><span class="line"><span class="comment">        * 获取填写的用户名</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">		<span class="comment">// 获取选中的性别</span></span><br><span class="line">        String sex = request.getParameter(<span class="string">"sex"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取选中的兴趣，因为可以选中多个值，所以获取到的值是一个字符串数组，因此需要使用 getParameterValues 方法来获取</span></span><br><span class="line">        <span class="comment">// &lt;input type="checkbox" name="inst" value="唱歌"&gt;唱歌</span></span><br><span class="line">        String[] insts = request.getParameterValues(<span class="string">"inst"</span>);</span><br><span class="line">        String hiddenField = request.getParameter(<span class="string">"hiddenField"</span>);<span class="comment">//获取隐藏域的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三-request接收表单提交中文参数乱码问题"><a href="#三-request接收表单提交中文参数乱码问题" class="headerlink" title="三. request接收表单提交中文参数乱码问题"></a>三. request接收表单提交中文参数乱码问题</h1><h3 id="3-1-以POST方式提交表单中文参数的乱码问题"><a href="#3-1-以POST方式提交表单中文参数的乱码问题" class="headerlink" title="3.1 以POST方式提交表单中文参数的乱码问题"></a>3.1 以POST方式提交表单中文参数的乱码问题</h3><h5 id="例如有如下的form表单页面"><a href="#例如有如下的form表单页面" class="headerlink" title="例如有如下的form表单页面"></a>例如有如下的form表单页面</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!--提交方式为 POST--&gt;</span><br><span class="line">    &lt;form action=<span class="string">"&lt;%=request.getContextPath()%&gt;/servlet/RequestDemo04"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        用户名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"userName"</span>/&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"post方式提交表单"</span>&gt; </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="servlet-中的代码"><a href="#servlet-中的代码" class="headerlink" title="servlet 中的代码"></a>servlet 中的代码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">    System.out.println(<span class="string">"userName:"</span> + userName);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果: userName: 佷粈涔?灏辨暣</span></span><br><span class="line"><span class="comment">// 是乱码</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-2-post方式提交中文数据乱码产生的原因和解决办法"><a href="#3-2-post方式提交中文数据乱码产生的原因和解决办法" class="headerlink" title="3.2. post方式提交中文数据乱码产生的原因和解决办法"></a>3.2. post方式提交中文数据乱码产生的原因和解决办法</h2><p>　　之所以会产生乱码，就是因为服务器和客户端<strong>沟通的编码不一致</strong>造成的，因此解决的办法是：在客户端和服务器之间<strong>设置一个统一的编码</strong>，之后就按照此编码进行数据的传输和接收。</p>
+<p>　　由于<strong>客户端是以UTF-8字符编码</strong> 将表单数据传输到服务器端的，因此服务器也需要<strong>设置以UTF-8字符编码进行接收</strong>，要想完成此操作，服务器可以直接使用从ServletRequest接口继承而来的<strong><code>setCharacterEncoding(charset)</code></strong> 方法进行统一的编码设置。修改后的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 客户端是以 UTF-8 编码传输数据到服务器端的，所以需要设置服务器端以UTF-8的编码进行接收，否则对于中文数据就会产生乱码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        String userName = request.getParameter(<span class="string">"userName"</span>);</span><br><span class="line">        System.out.println(<span class="string">"userName："</span>+userName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-以GET方式提交表单中文参数的乱码问题"><a href="#3-3-以GET方式提交表单中文参数的乱码问题" class="headerlink" title="3.3 以GET方式提交表单中文参数的乱码问题"></a>3.3 以GET方式提交表单中文参数的乱码问题</h2><h5 id="例如有如下的form表单页面-1"><a href="#例如有如下的form表单页面-1" class="headerlink" title="例如有如下的form表单页面"></a>例如有如下的form表单页面</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!--提交方式为 GET--&gt;</span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo04"</span> method=<span class="string">"get"</span>&gt;</span><br><span class="line">        姓名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"get方式提交表单"</span>&gt; </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="此时在服务器端接收中文参数时就会出现中文乱码"><a href="#此时在服务器端接收中文参数时就会出现中文乱码" class="headerlink" title="此时在服务器端接收中文参数时就会出现中文乱码"></a>此时在服务器端接收中文参数时就会出现中文乱码</h5><h3 id="3-4-get方式提交中文数据乱码产生的原因和解决办法"><a href="#3-4-get方式提交中文数据乱码产生的原因和解决办法" class="headerlink" title="3.4. get方式提交中文数据乱码产生的原因和解决办法"></a>3.4. get方式提交中文数据乱码产生的原因和解决办法</h3><p>　　对于以<strong>get方式</strong>传输的数据，request <strong>即使设置了以指定的编码接收数据也是无效的</strong> (至于为什么无效,没有弄明白)</p>
+<p>​    默认的还是 <strong>使用ISO8859-1</strong> 这个字符编码来接收数据，客户端以UTF-8的编码传输数据到服务器端，而服务器端的request对象使用的是ISO8859-1这个字符编码来接收数据，<strong>服务器和客户端沟通的编码不一致</strong>因此才会产生中文乱码的。</p>
+<p><strong>解决办法：</strong> 在接收到数据后</p>
+<ol>
+<li>获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组</li>
+<li>通过字节数组以指定的编码构建字符串，解决乱码问题。代码如下：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题</span></span><br><span class="line">    name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>) ;</span><br><span class="line">    System.out.println(<span class="string">"name："</span>+name);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-5-以超链接形式传递中文参数的乱码问题"><a href="#3-5-以超链接形式传递中文参数的乱码问题" class="headerlink" title="3.5 以超链接形式传递中文参数的乱码问题"></a>3.5 以超链接形式传递中文参数的乱码问题</h3><p>通过超链接后面加参数的形式，例如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=徐达沛"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>点击超链接，数据是以<strong>get的方式</strong>传输到服务器的，所以接收中文数据时也会产生中文乱码问题</p>
+<p>而解决中文乱码问题的方式与<strong>上述的以get方式提交表单中文数据乱码处理问题的方式一致</strong>，如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
+<p>　　另外，需要提的一点就是<strong>URL地址后面如果跟了中文数据，那么中文参数最好使用URL编码进行处理</strong>，如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=&lt;%=URLEncoder.encode("徐达沛", "UTF-8")%&gt;"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-6-提交中文数据乱码问题总结"><a href="#3-6-提交中文数据乱码问题总结" class="headerlink" title="3.6 提交中文数据乱码问题总结"></a>3.6 提交中文数据乱码问题总结</h3><h4 id="提交方式为-POST"><a href="#提交方式为-POST" class="headerlink" title="提交方式为 POST"></a>提交方式为 POST</h4><p>​    只需要在<strong>服务器端设置request对象的编码</strong>即可，客户端以哪种编码提交的，服务器端的request对象就以对应的编码接收，比如客户端是以UTF-8编码提交的</p>
+<h4 id="提交方式为GET"><a href="#提交方式为GET" class="headerlink" title="提交方式为GET"></a>提交方式为GET</h4><p>​    <strong>设置request对象的编码是无效的</strong>，request对象还是以默认的ISO8859-1编码接收数据，因此要想不乱码，只能在接收到数据后再<strong>手工转换</strong>，步骤如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取获取客户端提交上来的数据，得到的是乱码字符串,data="???è?????"</span></span><br><span class="line">String data = request.getParameter(<span class="string">"paramName"</span>); </span><br><span class="line"><span class="comment">// 2.查找ISO8859-1码表，得到客户机提交的原始数据的字节数组</span></span><br><span class="line"><span class="keyword">byte</span>[] source = data.getBytes(<span class="string">"ISO8859-1"</span>); </span><br><span class="line"><span class="comment">// 3.通过字节数组以指定的编码构建字符串，解决乱码</span></span><br><span class="line">data = <span class="keyword">new</span> String(source, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
+<p>　　通过字节数组以<strong>指定的编码</strong>构建字符串，这里<strong>指定的编码</strong>是根据客户端那边提交数据时使用的字符编码来定的，<strong>如果是GB2312，那么就设置成data = new String(source, “GB2312”)</strong></p>
+<h1 id="四-Request对象实现请求转发"><a href="#四-Request对象实现请求转发" class="headerlink" title="四.Request对象实现请求转发"></a>四.Request对象实现请求转发</h1><h3 id="4-1-请求转发的基本概念"><a href="#4-1-请求转发的基本概念" class="headerlink" title="4.1 请求转发的基本概念"></a>4.1 请求转发的基本概念</h3><p>​    <strong>请求转发:</strong> 指一个web资源收到客户端请求后，通知<strong>服务器</strong>去调用另外一个web资源进行处理。<br>　　<strong>请求转发的应用场景:</strong> MVC设计模式</p>
+<h5 id="在Servlet中实现请求转发的两种方式："><a href="#在Servlet中实现请求转发的两种方式：" class="headerlink" title="在Servlet中实现请求转发的两种方式："></a>在Servlet中实现请求转发的两种方式：</h5><ol>
+<li>通过 ServletContext 的 <code>getRequestDispatcher(String path)</code> 方法，该方法返回一个 <strong>RequestDispatcher 对象</strong>，调用这个对象的 <code>forward</code> 方法可以实现请求转发。</li>
+</ol>
+<p><strong>例如：将请求转发的test.jsp页面</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RequestDispatcher reqDispatcher = <span class="keyword">this</span>.getServletContext().getRequestDispatcher(<span class="string">"/test.jsp"</span>);</span><br><span class="line"></span><br><span class="line">reqDispatcher.forward(request, response);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>通过 <strong>request对象</strong> 提供的 <code>getRequestDispatche(String path)</code> 方法，该方法<strong>返回一个RequestDispatcher对象</strong>，调用这个对象的 <code>forward</code> 方法可以实现请求转发。</li>
+</ol>
+<p><strong>例如：将请求转发的test.jsp页面</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.getRequestDispatcher(<span class="string">"/test.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
+<p>　　request对象同时也是<strong>一个域对象(Map容器)</strong>，开发人员通过request对象在实现转发时，把数据通过request对象带给其它web资源处理。</p>
+<p><strong>request对象作为一个域对象(Map容器)使用时</strong>，主要是通过以下的<strong>四个方法</strong>来操作,如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法: setAttribute(String name,Object o);</span></span><br><span class="line"><span class="comment">// 将数据作为request对象的一个属性存放到request对象中</span></span><br><span class="line">request.setAttribute(<span class="string">"data"</span>, data);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法: getAttribute(String name);</span></span><br><span class="line"><span class="comment">// 获取request对象的name属性的属性值，</span></span><br><span class="line">request.getAttribute(<span class="string">"data"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法: removeAttribute(String name);</span></span><br><span class="line"><span class="comment">// 移除request对象的name属性</span></span><br><span class="line">request.removeAttribute(<span class="string">"data"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法: getAttributeNames()</span></span><br><span class="line"><span class="comment">// 获取request对象的所有属性名，返回的是一个</span></span><br><span class="line">Enumeration&lt;String&gt; attrNames = request.getAttributeNames();</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-请求重定向和请求转发的区别"><a href="#4-2-请求重定向和请求转发的区别" class="headerlink" title="4.2 请求重定向和请求转发的区别"></a>4.2 请求重定向和请求转发的区别</h3><p>一个web资源收到客户端请求后</p>
+<ul>
+<li><strong>通知服务器去调用另外一个web资源</strong>进行处理，称之为<strong>请求转发/307</strong>。</li>
+<li><strong>通知浏览器去访问另外一个web资源</strong>进行处理，称之为<strong>请求重定向/302</strong>。</li>
+</ul>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3798347.html" target="_blank" rel="noopener">javaweb学习总结(十)——HttpServletRequest对象(一)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/08/Java基础知识---面向对象(1)/" rel="next" title="Java基础知识---面向对象(1)">
+                <i class="fa fa-chevron-left"></i> Java基础知识---面向对象(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/Java基础知识---static关键字/" rel="prev" title="Java基础知识---static关键字">
+                Java基础知识---static关键字 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAyOS8xOTU3NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在心里的坚强">
+            
+              <p class="site-author-name" itemprop="name">刻在心里的坚强</p>
+              <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sladning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1353565771@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HttpServletRequest介绍"><span class="nav-number">1.</span> <span class="nav-text">一. HttpServletRequest介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-Request常用方法"><span class="nav-number">2.</span> <span class="nav-text">二. Request常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-获得客户机信息"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 获得客户机信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-获得客户机请求头"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 获得客户机请求头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-获得客户机请求参数-客户端提交的数据"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 获得客户机请求参数(客户端提交的数据)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-request接收表单提交中文参数乱码问题"><span class="nav-number">3.</span> <span class="nav-text">三. request接收表单提交中文参数乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-以POST方式提交表单中文参数的乱码问题"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 以POST方式提交表单中文参数的乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如有如下的form表单页面"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">例如有如下的form表单页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#servlet-中的代码"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">servlet 中的代码</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-post方式提交中文数据乱码产生的原因和解决办法"><span class="nav-number">3.1.</span> <span class="nav-text">3.2. post方式提交中文数据乱码产生的原因和解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-以GET方式提交表单中文参数的乱码问题"><span class="nav-number">3.2.</span> <span class="nav-text">3.3 以GET方式提交表单中文参数的乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如有如下的form表单页面-1"><span class="nav-number">3.2.0.0.1.</span> <span class="nav-text">例如有如下的form表单页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时在服务器端接收中文参数时就会出现中文乱码"><span class="nav-number">3.2.0.0.2.</span> <span class="nav-text">此时在服务器端接收中文参数时就会出现中文乱码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-get方式提交中文数据乱码产生的原因和解决办法"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.4. get方式提交中文数据乱码产生的原因和解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-以超链接形式传递中文参数的乱码问题"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.5 以超链接形式传递中文参数的乱码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-提交中文数据乱码问题总结"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.6 提交中文数据乱码问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式为-POST"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">提交方式为 POST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式为GET"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">提交方式为GET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-Request对象实现请求转发"><span class="nav-number">4.</span> <span class="nav-text">四.Request对象实现请求转发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-请求转发的基本概念"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 请求转发的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在Servlet中实现请求转发的两种方式："><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">在Servlet中实现请求转发的两种方式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-请求重定向和请求转发的区别"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 请求重定向和请求转发的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">4.0.2.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刻在心里的坚强</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">40.1k</span>
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+ 
