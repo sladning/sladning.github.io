@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。 二. Request常用方法2.1. 获得客户机信息　　getRequestURL方法返回客户端发出请求时的完整URL。　　getRequ">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-18T00:13:02.358Z">
+<meta property="og:updated_time" content="2019-03-19T01:55:03.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---HttpServletRequest对象">
 <meta name="twitter:description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。 二. Request常用方法2.1. 获得客户机信息　　getRequestURL方法返回客户端发出请求时的完整URL。　　getRequ">
@@ -349,7 +349,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletRequest对象/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  8
                 </span>
               
             </div>
@@ -488,25 +488,25 @@
 <p>　　由于<strong>客户端是以UTF-8字符编码</strong> 将表单数据传输到服务器端的，因此服务器也需要<strong>设置以UTF-8字符编码进行接收</strong>，要想完成此操作，服务器可以直接使用从ServletRequest接口继承而来的<strong><code>setCharacterEncoding(charset)</code></strong> 方法进行统一的编码设置。修改后的代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 客户端是以 UTF-8 编码传输数据到服务器端的，所以需要设置服务器端以UTF-8的编码进行接收，否则对于中文数据就会产生乱码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        String userName = request.getParameter(<span class="string">"userName"</span>);</span><br><span class="line">        System.out.println(<span class="string">"userName："</span>+userName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3-3-以GET方式提交表单中文参数的乱码问题"><a href="#3-3-以GET方式提交表单中文参数的乱码问题" class="headerlink" title="3.3 以GET方式提交表单中文参数的乱码问题"></a>3.3 以GET方式提交表单中文参数的乱码问题</h2><h5 id="例如有如下的form表单页面-1"><a href="#例如有如下的form表单页面-1" class="headerlink" title="例如有如下的form表单页面"></a>例如有如下的form表单页面</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!--提交方式为 GET--&gt;</span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo04"</span> method=<span class="string">"get"</span>&gt;</span><br><span class="line">        姓名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"get方式提交表单"</span>&gt; </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="此时在服务器端接收中文参数时就会出现中文乱码"><a href="#此时在服务器端接收中文参数时就会出现中文乱码" class="headerlink" title="此时在服务器端接收中文参数时就会出现中文乱码"></a>此时在服务器端接收中文参数时就会出现中文乱码</h5><h3 id="3-4-get方式提交中文数据乱码产生的原因和解决办法"><a href="#3-4-get方式提交中文数据乱码产生的原因和解决办法" class="headerlink" title="3.4. get方式提交中文数据乱码产生的原因和解决办法"></a>3.4. get方式提交中文数据乱码产生的原因和解决办法</h3><p>　　对于以<strong>get方式</strong>传输的数据，request <strong>即使设置了以指定的编码接收数据也是无效的</strong> (至于为什么无效,没有弄明白)</p>
+<h5 id="此时在服务器端接收中文参数时就会出现中文乱码"><a href="#此时在服务器端接收中文参数时就会出现中文乱码" class="headerlink" title="此时在服务器端接收中文参数时就会出现中文乱码"></a>此时在服务器端接收中文参数时就会出现中文乱码</h5><h3 id="3-4-get方式提交中文数据乱码产生的原因和解决办法"><a href="#3-4-get方式提交中文数据乱码产生的原因和解决办法" class="headerlink" title="3.4. get方式提交中文数据乱码产生的原因和解决办法"></a>3.4. get方式提交中文数据乱码产生的原因和解决办法</h3><!-- 　　对于以 **get方式** 传输的数据，request **即使设置了以指定的编码接收数据也是无效的** (至于为什么无效,没有弄明白) -->
 <p>​    默认的还是 <strong>使用ISO8859-1</strong> 这个字符编码来接收数据，客户端以UTF-8的编码传输数据到服务器端，而服务器端的request对象使用的是ISO8859-1这个字符编码来接收数据，<strong>服务器和客户端沟通的编码不一致</strong>因此才会产生中文乱码的。</p>
 <p><strong>解决办法：</strong> 在接收到数据后</p>
 <ol>
 <li>获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组</li>
 <li>通过字节数组以指定的编码构建字符串，解决乱码问题。代码如下：</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题</span></span><br><span class="line">    name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>) ;</span><br><span class="line">    System.out.println(<span class="string">"name："</span>+name);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题</span></span><br><span class="line">    name = <span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>) ;</span><br><span class="line">    System.out.println(<span class="string">"name："</span> + name);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-5-以超链接形式传递中文参数的乱码问题"><a href="#3-5-以超链接形式传递中文参数的乱码问题" class="headerlink" title="3.5 以超链接形式传递中文参数的乱码问题"></a>3.5 以超链接形式传递中文参数的乱码问题</h3><p>通过超链接后面加参数的形式，例如：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=徐达沛"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>点击超链接，数据是以<strong>get的方式</strong>传输到服务器的，所以接收中文数据时也会产生中文乱码问题</p>
-<p>而解决中文乱码问题的方式与<strong>上述的以get方式提交表单中文数据乱码处理问题的方式一致</strong>，如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123; pageContext.request.contextPath &#125;/servlet/RequestDemo05?userName=gacl&amp;name=徐达沛"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>点击超链接，数据是以 <strong>get的方式</strong> 传输到服务器的，所以接收中文数据时也会产生中文乱码问题</p>
+<p>解决中文乱码问题的方式与 <strong>上述的以get方式提交表单中文数据乱码处理问题的方式一致</strong> , 如下所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
-<p>　　另外，需要提的一点就是<strong>URL地址后面如果跟了中文数据，那么中文参数最好使用URL编码进行处理</strong>，如下所示：</p>
+<p>　　另外，需要提的一点就是 <strong>URL地址后面如果跟了中文数据，那么中文参数最好使用URL编码进行处理</strong> , 如下所示：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=&lt;%=URLEncoder.encode("徐达沛", "UTF-8")%&gt;"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="3-6-提交中文数据乱码问题总结"><a href="#3-6-提交中文数据乱码问题总结" class="headerlink" title="3.6 提交中文数据乱码问题总结"></a>3.6 提交中文数据乱码问题总结</h3><h4 id="提交方式为-POST"><a href="#提交方式为-POST" class="headerlink" title="提交方式为 POST"></a>提交方式为 POST</h4><p>​    只需要在<strong>服务器端设置request对象的编码</strong>即可，客户端以哪种编码提交的，服务器端的request对象就以对应的编码接收，比如客户端是以UTF-8编码提交的</p>
-<h4 id="提交方式为GET"><a href="#提交方式为GET" class="headerlink" title="提交方式为GET"></a>提交方式为GET</h4><p>​    <strong>设置request对象的编码是无效的</strong>，request对象还是以默认的ISO8859-1编码接收数据，因此要想不乱码，只能在接收到数据后再<strong>手工转换</strong>，步骤如下：</p>
+<h4 id="提交方式为GET"><a href="#提交方式为GET" class="headerlink" title="提交方式为GET"></a>提交方式为GET</h4><p>​    <strong>设置request对象的编码是无效的</strong>，request对象还是以默认的ISO8859-1编码接收数据，因此要想不乱码，只能在接收到数据后再 <strong>手工转换</strong>, 步骤如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取获取客户端提交上来的数据，得到的是乱码字符串,data="???è?????"</span></span><br><span class="line">String data = request.getParameter(<span class="string">"paramName"</span>); </span><br><span class="line"><span class="comment">// 2.查找ISO8859-1码表，得到客户机提交的原始数据的字节数组</span></span><br><span class="line"><span class="keyword">byte</span>[] source = data.getBytes(<span class="string">"ISO8859-1"</span>); </span><br><span class="line"><span class="comment">// 3.通过字节数组以指定的编码构建字符串，解决乱码</span></span><br><span class="line">data = <span class="keyword">new</span> String(source, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
-<p>　　通过字节数组以<strong>指定的编码</strong>构建字符串，这里<strong>指定的编码</strong>是根据客户端那边提交数据时使用的字符编码来定的，<strong>如果是GB2312，那么就设置成data = new String(source, “GB2312”)</strong></p>
+<p>　　通过字节数组以 <strong>指定的编码</strong> 构建字符串，这里 <strong>指定的编码</strong> -是根据客户端那边提交数据时使用的字符编码来定的，<strong>如果是GB2312，那么就设置成data = new String(source, “GB2312”)</strong></p>
 <h1 id="四-Request对象实现请求转发"><a href="#四-Request对象实现请求转发" class="headerlink" title="四.Request对象实现请求转发"></a>四.Request对象实现请求转发</h1><h3 id="4-1-请求转发的基本概念"><a href="#4-1-请求转发的基本概念" class="headerlink" title="4.1 请求转发的基本概念"></a>4.1 请求转发的基本概念</h3><p>​    <strong>请求转发:</strong> 指一个web资源收到客户端请求后，通知<strong>服务器</strong>去调用另外一个web资源进行处理。<br>　　<strong>请求转发的应用场景:</strong> MVC设计模式</p>
 <h5 id="在Servlet中实现请求转发的两种方式："><a href="#在Servlet中实现请求转发的两种方式：" class="headerlink" title="在Servlet中实现请求转发的两种方式："></a>在Servlet中实现请求转发的两种方式：</h5><ol>
 <li>通过 ServletContext 的 <code>getRequestDispatcher(String path)</code> 方法，该方法返回一个 <strong>RequestDispatcher 对象</strong>，调用这个对象的 <code>forward</code> 方法可以实现请求转发。</li>
@@ -579,8 +579,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/Java基础知识---static关键字/" rel="prev" title="Java基础知识---static关键字">
-                Java基础知识---static关键字 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/JavaWeb---HttpResponse对象/" rel="prev" title="JavaWeb---HttpServletResponse对象">
+                JavaWeb---HttpServletResponse对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -652,9 +652,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在心里的坚强">
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
             
-              <p class="site-author-name" itemprop="name">刻在心里的坚强</p>
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
               <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
           </div>
 
@@ -665,7 +665,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -767,7 +767,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">刻在心里的坚强</span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -777,7 +777,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.1k</span>
+    <span title="Site words total count">40.8k</span>
   
 </div>
 

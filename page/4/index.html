@@ -345,10 +345,10 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpResponse对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---Filter(1)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -364,7 +364,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/08/JavaWeb---HttpResponse对象/" itemprop="url">JavaWeb---HttpServletResponse对象</a></h1>
+                <a class="post-title-link" href="/2019/03/08/JavaWeb---Filter(1)/" itemprop="url">JavaWeb---Filter(1)</a></h1>
         
 
         <div class="post-meta">
@@ -376,7 +376,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T11:29:27+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T11:38:55+08:00">
                 2019-03-08
               </time>
             
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  2k
                 </span>
               
 
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  7
                 </span>
               
             </div>
@@ -468,43 +468,14 @@
 
       
         
-          
-            <h1 id="一-HttpServletResponse-对象介绍"><a href="#一-HttpServletResponse-对象介绍" class="headerlink" title="一. HttpServletResponse 对象介绍"></a>一. HttpServletResponse 对象介绍</h1><p>​    <strong>HttpServletResponse对象</strong> 代表<strong>服务器的响应</strong>。这个对象中封装了<strong>向客户端发送数据、发送响应头，发送响应状态码的方法</strong>。查看 HttpServletResponse 的API，可以看到这些相关的方法。</p>
-<h2 id="1-1-响应状态码的常量"><a href="#1-1-响应状态码的常量" class="headerlink" title="1.1 响应状态码的常量"></a>1.1 响应状态码的常量</h2><p>　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要<strong>向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字</strong>，常见的状态码对应的常量：</p>
-<ul>
-<li>状态码404对应的常量</li>
-<li>状态码200对应的常量</li>
-<li>状态码500对应的常量</li>
-</ul>
-<h1 id="二-HttpServletResponse常见应用——设置响应头控制浏览器的行为"><a href="#二-HttpServletResponse常见应用——设置响应头控制浏览器的行为" class="headerlink" title="二. HttpServletResponse常见应用——设置响应头控制浏览器的行为"></a>二. HttpServletResponse常见应用——设置响应头控制浏览器的行为</h1><h3 id="通过response实现请求重定向"><a href="#通过response实现请求重定向" class="headerlink" title="通过response实现请求重定向"></a>通过response实现请求重定向</h3><p>　　<strong>请求重定向指：</strong>一个web资源收到客户端请求后，通知<strong>客户端</strong>去访问<strong>另外一个web资源</strong>，这称之为请求重定向。</p>
-<p>　　<strong>应用场景：</strong>用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程</p>
-<p>　　<strong>实现方式：</strong> <strong>==response.sendRedirect(String location)==</strong>，即调用response对象的<strong>sendRedirect</strong>方法实现请求重定向<br>　　sendRedirect内部的实现原理：使用response设置 <strong>302状态码和设置location响应头实现重定向</strong></p>
-<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResponseDemo04</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 方法: doGet</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了</span></span><br><span class="line"><span class="comment">* ① response.setHeader("Location",</span></span><br><span class="line"><span class="comment">* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">      response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br><span class="line">        </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向</span></span><br><span class="line"><span class="comment">* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* response.setStatus(HttpServletResponse.SC_FOUND);</span></span><br><span class="line"><span class="comment">* 设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span>      </span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 方法: doPost</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-代表-webapps目录-的常见应用场景"><a href="#3-2-代表-webapps目录-的常见应用场景" class="headerlink" title="3.2 /代表 webapps目录 的常见应用场景"></a>3.2 <code>/</code>代表 webapps目录 的常见应用场景</h2><h3 id="使用sendRedirect实现请求重定向"><a href="#使用sendRedirect实现请求重定向" class="headerlink" title="使用sendRedirect实现请求重定向"></a>使用sendRedirect实现请求重定向</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
-<p>　　服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以<strong>这个”/“是给浏览器使用的</strong>，此时 <code>/</code>代表的就是<strong>webapps目录</strong></p>
-<p>​    <code>/JavaWeb_HttpServletResponse_Study_20140615/index.jsp</code>这个地址指的就是 <code>webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp</code></p>
-<p>　　<strong>response.sendRedirect(“/项目名称/文件夹目录/页面”);</strong>这种写法是将项目名称 <strong>写死在程序中</strong> 的做法，<strong>不灵活</strong>，万一哪天项目名称变了，此时就得改程序，所以<strong>推荐使用下面的灵活写法</strong>：</p>
-<p>将</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>这种写法改成</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(request.getContextPath()+<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
-<p><code>request.getContextPath()</code> 获取到的内容就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code>，这样就比较灵活了，<strong>使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！</strong></p>
-<h3 id="使用超链接跳转"><a href="#使用超链接跳转" class="headerlink" title="使用超链接跳转"></a>使用超链接跳转</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>　　这是<strong>客户端浏览器</strong>使用的超链接跳转，这个 <code>/</code> 是给<strong>浏览器使用的</strong> ，此时 <code>/</code> 代表的就是<strong>webapps目录</strong>。</p>
-<p>使用超链接访问web资源，<strong>绝对路径的写法推荐使用下面的写法改进</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>　　这样就可以避免在路径中出现项目的名称，使用 <strong>${pageContext.request.contextPath}</strong> 取代 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p>
-<h3 id="Form表单提交"><a href="#Form表单提交" class="headerlink" title="Form表单提交"></a>Form表单提交</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;    </span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<p>　　这是<strong>客户端浏览器将form表单提交到服务器</strong>，所以这个 <code>/</code> 是给<strong>浏览器使用的</strong>，此时 <code>/</code> 代表的就是webapps目录。</p>
-<p> 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<p><code>${pageContext.request.contextPath}</code> 得到的就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p>
-<p><code>${pageContext.request.contextPath}</code>的效果等同于<code>request.getContextPath()</code>，两者获取到的都是<strong>“/项目名称”</strong></p>
-<h3 id="js脚本和css样式文件的引用"><a href="#js脚本和css样式文件的引用" class="headerlink" title="js脚本和css样式文件的引用"></a>js脚本和css样式文件的引用</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--使用绝对路径的方式引用js脚本--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--使用绝对路径的方式引用css样式--%&gt;</span><br><span class="line"> &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/css/index.css"</span> type=<span class="string">"text/css"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    <strong>==只要是浏览器向服务器提交的, <code>/</code> 给浏览器使用, 都可以修改成推荐的方式==</strong></p>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3791993.html" target="_blank" rel="noopener">javaweb学习总结(八)——HttpServletResponse对象(二)</a></p>
-
-          
+          <h2 id="一、Filter简介"><a href="#一、Filter简介" class="headerlink" title="一、Filter简介"></a>一、Filter简介</h2><p>　　Filter也称之为<strong>过滤器</strong>，WEB开发人员通过Filter技术，对web服务器<strong>管理的所有web资源</strong>：例如Jsp,  Servlet, 静态图片文件或静态 html  文件等<strong>进行拦截</strong>，从而实现一些特殊的功能。例如实现URL级别的权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。<br>　　Servlet  API中提供了一个<strong>Filter接口</strong>，开发web应用时，如果编写的Java类实现了这个接口，则<strong>把这个java类称之为过滤器Filter</strong>。通过Filter技术，开发人员可以实现用户在访问某个目标资源之前，对访问的请求和响应进行拦截.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/08/JavaWeb---Filter(1)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -558,7 +529,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletResponse对象/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -768,7 +739,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Java基础知识---static关键字/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -949,10 +920,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpResponse对象/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/08/JavaWeb---HttpResponse对象/" itemprop="url">JavaWeb---HttpServletResponse对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T11:29:27+08:00">
+                2019-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-HttpServletResponse-对象介绍"><a href="#一-HttpServletResponse-对象介绍" class="headerlink" title="一. HttpServletResponse 对象介绍"></a>一. HttpServletResponse 对象介绍</h1><p>​    <strong>HttpServletResponse对象</strong> 代表<strong>服务器的响应</strong>。这个对象中封装了<strong>向客户端发送数据、发送响应头，发送响应状态码的方法</strong>。查看 HttpServletResponse 的API，可以看到这些相关的方法。</p>
+<h2 id="1-1-响应状态码的常量"><a href="#1-1-响应状态码的常量" class="headerlink" title="1.1 响应状态码的常量"></a>1.1 响应状态码的常量</h2><p>　　HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要<strong>向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字</strong>，常见的状态码对应的常量：</p>
+<ul>
+<li>状态码404对应的常量</li>
+<li>状态码200对应的常量</li>
+<li>状态码500对应的常量</li>
+</ul>
+<h1 id="二-HttpServletResponse常见应用——设置响应头控制浏览器的行为"><a href="#二-HttpServletResponse常见应用——设置响应头控制浏览器的行为" class="headerlink" title="二. HttpServletResponse常见应用——设置响应头控制浏览器的行为"></a>二. HttpServletResponse常见应用——设置响应头控制浏览器的行为</h1><h3 id="通过response实现请求重定向"><a href="#通过response实现请求重定向" class="headerlink" title="通过response实现请求重定向"></a>通过response实现请求重定向</h3><p>　　<strong>请求重定向指：</strong>一个web资源收到客户端请求后，通知<strong>客户端</strong>去访问<strong>另外一个web资源</strong>，这称之为请求重定向。</p>
+<p>　　<strong>应用场景：</strong>用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程</p>
+<p>　　<strong>实现方式：</strong> <strong>==response.sendRedirect(String location)==</strong>，即调用response对象的<strong>sendRedirect</strong>方法实现请求重定向<br>　　sendRedirect内部的实现原理：使用response设置 <strong>302状态码和设置location响应头实现重定向</strong></p>
+<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResponseDemo04</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 方法: doGet</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了</span></span><br><span class="line"><span class="comment">* ① response.setHeader("Location",</span></span><br><span class="line"><span class="comment">* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">      response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br><span class="line">        </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向</span></span><br><span class="line"><span class="comment">* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");</span></span><br><span class="line"><span class="comment">* response.setStatus(HttpServletResponse.SC_FOUND);</span></span><br><span class="line"><span class="comment">* 设置302状态码，等同于response.setStatus(302);</span></span><br><span class="line"><span class="comment">*/</span>      </span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 方法: doPost</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-代表-webapps目录-的常见应用场景"><a href="#3-2-代表-webapps目录-的常见应用场景" class="headerlink" title="3.2 /代表 webapps目录 的常见应用场景"></a>3.2 <code>/</code>代表 webapps目录 的常见应用场景</h2><h3 id="使用sendRedirect实现请求重定向"><a href="#使用sendRedirect实现请求重定向" class="headerlink" title="使用sendRedirect实现请求重定向"></a>使用sendRedirect实现请求重定向</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p>　　服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以<strong>这个”/“是给浏览器使用的</strong>，此时 <code>/</code>代表的就是<strong>webapps目录</strong></p>
+<p>​    <code>/JavaWeb_HttpServletResponse_Study_20140615/index.jsp</code>这个地址指的就是 <code>webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp</code></p>
+<p>　　<strong>response.sendRedirect(“/项目名称/文件夹目录/页面”);</strong>这种写法是将项目名称 <strong>写死在程序中</strong> 的做法，<strong>不灵活</strong>，万一哪天项目名称变了，此时就得改程序，所以<strong>推荐使用下面的灵活写法</strong>：</p>
+<p>将</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>这种写法改成</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(request.getContextPath()+<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>request.getContextPath()</code> 获取到的内容就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code>，这样就比较灵活了，<strong>使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！</strong></p>
+<h3 id="使用超链接跳转"><a href="#使用超链接跳转" class="headerlink" title="使用超链接跳转"></a>使用超链接跳转</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>　　这是<strong>客户端浏览器</strong>使用的超链接跳转，这个 <code>/</code> 是给<strong>浏览器使用的</strong> ，此时 <code>/</code> 代表的就是<strong>webapps目录</strong>。</p>
+<p>使用超链接访问web资源，<strong>绝对路径的写法推荐使用下面的写法改进</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>　　这样就可以避免在路径中出现项目的名称，使用 <strong>${pageContext.request.contextPath}</strong> 取代 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p>
+<h3 id="Form表单提交"><a href="#Form表单提交" class="headerlink" title="Form表单提交"></a>Form表单提交</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;    </span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>　　这是<strong>客户端浏览器将form表单提交到服务器</strong>，所以这个 <code>/</code> 是给<strong>浏览器使用的</strong>，此时 <code>/</code> 代表的就是webapps目录。</p>
+<p> 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p><code>${pageContext.request.contextPath}</code> 得到的就是 <code>/JavaWeb_HttpServletResponse_Study_20140615</code></p>
+<p><code>${pageContext.request.contextPath}</code>的效果等同于<code>request.getContextPath()</code>，两者获取到的都是<strong>“/项目名称”</strong></p>
+<h3 id="js脚本和css样式文件的引用"><a href="#js脚本和css样式文件的引用" class="headerlink" title="js脚本和css样式文件的引用"></a>js脚本和css样式文件的引用</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--使用绝对路径的方式引用js脚本--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--使用绝对路径的方式引用css样式--%&gt;</span><br><span class="line"> &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/css/index.css"</span> type=<span class="string">"text/css"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    <strong>==只要是浏览器向服务器提交的, <code>/</code> 给浏览器使用, 都可以修改成推荐的方式==</strong></p>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3791993.html" target="_blank" rel="noopener">javaweb学习总结(八)——HttpServletResponse对象(二)</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/JavaWeb---HttpServletRequest对象/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -1050,7 +1231,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  8
                 </span>
               
             </div>
@@ -1090,25 +1271,25 @@
 <p>　　由于<strong>客户端是以UTF-8字符编码</strong> 将表单数据传输到服务器端的，因此服务器也需要<strong>设置以UTF-8字符编码进行接收</strong>，要想完成此操作，服务器可以直接使用从ServletRequest接口继承而来的<strong><code>setCharacterEncoding(charset)</code></strong> 方法进行统一的编码设置。修改后的代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 客户端是以 UTF-8 编码传输数据到服务器端的，所以需要设置服务器端以UTF-8的编码进行接收，否则对于中文数据就会产生乱码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        String userName = request.getParameter(<span class="string">"userName"</span>);</span><br><span class="line">        System.out.println(<span class="string">"userName："</span>+userName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3-3-以GET方式提交表单中文参数的乱码问题"><a href="#3-3-以GET方式提交表单中文参数的乱码问题" class="headerlink" title="3.3 以GET方式提交表单中文参数的乱码问题"></a>3.3 以GET方式提交表单中文参数的乱码问题</h2><h5 id="例如有如下的form表单页面-1"><a href="#例如有如下的form表单页面-1" class="headerlink" title="例如有如下的form表单页面"></a>例如有如下的form表单页面</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!--提交方式为 GET--&gt;</span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo04"</span> method=<span class="string">"get"</span>&gt;</span><br><span class="line">        姓名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>/&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"get方式提交表单"</span>&gt; </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="此时在服务器端接收中文参数时就会出现中文乱码"><a href="#此时在服务器端接收中文参数时就会出现中文乱码" class="headerlink" title="此时在服务器端接收中文参数时就会出现中文乱码"></a>此时在服务器端接收中文参数时就会出现中文乱码</h5><h3 id="3-4-get方式提交中文数据乱码产生的原因和解决办法"><a href="#3-4-get方式提交中文数据乱码产生的原因和解决办法" class="headerlink" title="3.4. get方式提交中文数据乱码产生的原因和解决办法"></a>3.4. get方式提交中文数据乱码产生的原因和解决办法</h3><p>　　对于以<strong>get方式</strong>传输的数据，request <strong>即使设置了以指定的编码接收数据也是无效的</strong> (至于为什么无效,没有弄明白)</p>
+<h5 id="此时在服务器端接收中文参数时就会出现中文乱码"><a href="#此时在服务器端接收中文参数时就会出现中文乱码" class="headerlink" title="此时在服务器端接收中文参数时就会出现中文乱码"></a>此时在服务器端接收中文参数时就会出现中文乱码</h5><h3 id="3-4-get方式提交中文数据乱码产生的原因和解决办法"><a href="#3-4-get方式提交中文数据乱码产生的原因和解决办法" class="headerlink" title="3.4. get方式提交中文数据乱码产生的原因和解决办法"></a>3.4. get方式提交中文数据乱码产生的原因和解决办法</h3><!-- 　　对于以 **get方式** 传输的数据，request **即使设置了以指定的编码接收数据也是无效的** (至于为什么无效,没有弄明白) -->
 <p>​    默认的还是 <strong>使用ISO8859-1</strong> 这个字符编码来接收数据，客户端以UTF-8的编码传输数据到服务器端，而服务器端的request对象使用的是ISO8859-1这个字符编码来接收数据，<strong>服务器和客户端沟通的编码不一致</strong>因此才会产生中文乱码的。</p>
 <p><strong>解决办法：</strong> 在接收到数据后</p>
 <ol>
 <li>获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组</li>
 <li>通过字节数组以指定的编码构建字符串，解决乱码问题。代码如下：</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题</span></span><br><span class="line">    name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>) ;</span><br><span class="line">    System.out.println(<span class="string">"name："</span>+name);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题</span></span><br><span class="line">    name = <span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>) ;</span><br><span class="line">    System.out.println(<span class="string">"name："</span> + name);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-5-以超链接形式传递中文参数的乱码问题"><a href="#3-5-以超链接形式传递中文参数的乱码问题" class="headerlink" title="3.5 以超链接形式传递中文参数的乱码问题"></a>3.5 以超链接形式传递中文参数的乱码问题</h3><p>通过超链接后面加参数的形式，例如：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=徐达沛"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>点击超链接，数据是以<strong>get的方式</strong>传输到服务器的，所以接收中文数据时也会产生中文乱码问题</p>
-<p>而解决中文乱码问题的方式与<strong>上述的以get方式提交表单中文数据乱码处理问题的方式一致</strong>，如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123; pageContext.request.contextPath &#125;/servlet/RequestDemo05?userName=gacl&amp;name=徐达沛"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>点击超链接，数据是以 <strong>get的方式</strong> 传输到服务器的，所以接收中文数据时也会产生中文乱码问题</p>
+<p>解决中文乱码问题的方式与 <strong>上述的以get方式提交表单中文数据乱码处理问题的方式一致</strong> , 如下所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
-<p>　　另外，需要提的一点就是<strong>URL地址后面如果跟了中文数据，那么中文参数最好使用URL编码进行处理</strong>，如下所示：</p>
+<p>　　另外，需要提的一点就是 <strong>URL地址后面如果跟了中文数据，那么中文参数最好使用URL编码进行处理</strong> , 如下所示：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=&lt;%=URLEncoder.encode("徐达沛", "UTF-8")%&gt;"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="3-6-提交中文数据乱码问题总结"><a href="#3-6-提交中文数据乱码问题总结" class="headerlink" title="3.6 提交中文数据乱码问题总结"></a>3.6 提交中文数据乱码问题总结</h3><h4 id="提交方式为-POST"><a href="#提交方式为-POST" class="headerlink" title="提交方式为 POST"></a>提交方式为 POST</h4><p>​    只需要在<strong>服务器端设置request对象的编码</strong>即可，客户端以哪种编码提交的，服务器端的request对象就以对应的编码接收，比如客户端是以UTF-8编码提交的</p>
-<h4 id="提交方式为GET"><a href="#提交方式为GET" class="headerlink" title="提交方式为GET"></a>提交方式为GET</h4><p>​    <strong>设置request对象的编码是无效的</strong>，request对象还是以默认的ISO8859-1编码接收数据，因此要想不乱码，只能在接收到数据后再<strong>手工转换</strong>，步骤如下：</p>
+<h4 id="提交方式为GET"><a href="#提交方式为GET" class="headerlink" title="提交方式为GET"></a>提交方式为GET</h4><p>​    <strong>设置request对象的编码是无效的</strong>，request对象还是以默认的ISO8859-1编码接收数据，因此要想不乱码，只能在接收到数据后再 <strong>手工转换</strong>, 步骤如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取获取客户端提交上来的数据，得到的是乱码字符串,data="???è?????"</span></span><br><span class="line">String data = request.getParameter(<span class="string">"paramName"</span>); </span><br><span class="line"><span class="comment">// 2.查找ISO8859-1码表，得到客户机提交的原始数据的字节数组</span></span><br><span class="line"><span class="keyword">byte</span>[] source = data.getBytes(<span class="string">"ISO8859-1"</span>); </span><br><span class="line"><span class="comment">// 3.通过字节数组以指定的编码构建字符串，解决乱码</span></span><br><span class="line">data = <span class="keyword">new</span> String(source, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
-<p>　　通过字节数组以<strong>指定的编码</strong>构建字符串，这里<strong>指定的编码</strong>是根据客户端那边提交数据时使用的字符编码来定的，<strong>如果是GB2312，那么就设置成data = new String(source, “GB2312”)</strong></p>
+<p>　　通过字节数组以 <strong>指定的编码</strong> 构建字符串，这里 <strong>指定的编码</strong> -是根据客户端那边提交数据时使用的字符编码来定的，<strong>如果是GB2312，那么就设置成data = new String(source, “GB2312”)</strong></p>
 <h1 id="四-Request对象实现请求转发"><a href="#四-Request对象实现请求转发" class="headerlink" title="四.Request对象实现请求转发"></a>四.Request对象实现请求转发</h1><h3 id="4-1-请求转发的基本概念"><a href="#4-1-请求转发的基本概念" class="headerlink" title="4.1 请求转发的基本概念"></a>4.1 请求转发的基本概念</h3><p>​    <strong>请求转发:</strong> 指一个web资源收到客户端请求后，通知<strong>服务器</strong>去调用另外一个web资源进行处理。<br>　　<strong>请求转发的应用场景:</strong> MVC设计模式</p>
 <h5 id="在Servlet中实现请求转发的两种方式："><a href="#在Servlet中实现请求转发的两种方式：" class="headerlink" title="在Servlet中实现请求转发的两种方式："></a>在Servlet中实现请求转发的两种方式：</h5><ol>
 <li>通过 ServletContext 的 <code>getRequestDispatcher(String path)</code> 方法，该方法返回一个 <strong>RequestDispatcher 对象</strong>，调用这个对象的 <code>forward</code> 方法可以实现请求转发。</li>
@@ -1184,7 +1365,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Java基础知识---面向对象(1)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -1368,7 +1549,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/C语言---指针/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -1549,7 +1730,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/C语言---基础知识/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -1733,7 +1914,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Java基础知识---基础语法(2)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -1919,191 +2100,10 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据结构---线性表/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/08/数据结构---线性表/" itemprop="url">数据结构---线性表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-08T08:24:53+08:00">
-                2019-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  333
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="线性表："><a href="#线性表：" class="headerlink" title="线性表："></a>线性表：</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h3><p>​    由 n(n≥0) 个数据特性相同的元素构成的 <strong>有限序列</strong> </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/08/数据结构---线性表/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/数据结构---单链表的概念及实现/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -2313,9 +2313,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在心里的坚强">
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
             
-              <p class="site-author-name" itemprop="name">刻在心里的坚强</p>
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
               <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
           </div>
 
@@ -2326,7 +2326,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2412,7 +2412,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">刻在心里的坚强</span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -2422,7 +2422,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.1k</span>
+    <span title="Site words total count">40.8k</span>
   
 </div>
 

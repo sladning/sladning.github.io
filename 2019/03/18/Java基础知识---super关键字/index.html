@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java,Java基础知识,">
 
 
 
@@ -123,17 +123,18 @@
 
 
 
-<meta name="description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta name="description" content="一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数  二. super 注意的地方 this 和 super 很像，this指向的是当前对象的调用，super指向的是当前调用对象的父类。  类加载完毕，创建对象，父类的构造方法会被调用（默认自动无参），然后执行子类相应构造创建了一个子类对象，该子类对象还包含了一个父类对">
+<meta name="keywords" content="Java,Java基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sladning">
+<meta property="og:title" content="Java基础知识---super关键字">
 <meta property="og:url" content="http://yoursite.com/2019/03/18/Java基础知识---super关键字/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta property="og:description" content="一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数  二. super 注意的地方 this 和 super 很像，this指向的是当前对象的调用，super指向的是当前调用对象的父类。  类加载完毕，创建对象，父类的构造方法会被调用（默认自动无参），然后执行子类相应构造创建了一个子类对象，该子类对象还包含了一个父类对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-18T09:20:28.855Z">
+<meta property="og:updated_time" content="2019-03-19T01:55:19.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sladning">
-<meta name="twitter:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta name="twitter:title" content="Java基础知识---super关键字">
+<meta name="twitter:description" content="一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数  二. super 注意的地方 this 和 super 很像，this指向的是当前对象的调用，super指向的是当前调用对象的父类。  类加载完毕，创建对象，父类的构造方法会被调用（默认自动无参），然后执行子类相应构造创建了一个子类对象，该子类对象还包含了一个父类对">
 
 
 
@@ -169,7 +170,7 @@
 
 
 
-  <title> | sladning</title>
+  <title>Java基础知识---super关键字 | sladning</title>
   
 
 
@@ -348,7 +349,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/Java基础知识---super关键字/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在心里的坚强">
+      <meta itemprop="name" content="刻在生命里的坚强">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
     </span>
@@ -362,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Java基础知识---super关键字</h1>
         
 
         <div class="post-meta">
@@ -374,7 +375,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T17:20:28+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T17:40:27+08:00">
                 2019-03-18
               </time>
             
@@ -384,6 +385,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -411,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  484
                 </span>
               
 
@@ -448,7 +471,28 @@
       
 
       
-        
+        <h1 id="一-super-关键字作用"><a href="#一-super-关键字作用" class="headerlink" title="一. super 关键字作用"></a>一. super 关键字作用</h1><ol>
+<li>主要存在于子类方法中，用于指向子类对象中父类对象</li>
+<li>访问父类的属性</li>
+<li>访问父类的函数</li>
+<li>访问父类的构造函数</li>
+</ol>
+<h1 id="二-super-注意的地方"><a href="#二-super-注意的地方" class="headerlink" title="二. super 注意的地方"></a>二. super 注意的地方</h1><ul>
+<li><p>this 和 super 很像，this指向的是当前对象的调用，super指向的是<strong>当前调用对象的父类</strong>。</p>
+</li>
+<li><p>类加载完毕，创建对象，父类的构造方法会被调用（默认自动无参），然后执行子类相应构造创建了一个子类对象，<strong>该子类对象还包含了一个父类对象。该父类对象在子类对象内部</strong>。</p>
+</li>
+<li>this super 只能在有对象的前提下使用，<strong>不能在static方法内使用</strong>。</li>
+</ul>
+<h1 id="三-super关键字的使用"><a href="#三-super关键字的使用" class="headerlink" title="三. super关键字的使用"></a>三. super关键字的使用</h1><p>1.子类的构造函数默认第一行会默认调用父类无参的构造函数，隐式语句 <code>super();</code></p>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Son(<span class="keyword">int</span> y) &#123;</span><br><span class="line">		<span class="comment">// super();隐式语句</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.y = y + x;</span><br><span class="line">		System.out.println(<span class="string">"这是子类的有参构造"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-子类显式调用父类构造函数"><a href="#2-子类显式调用父类构造函数" class="headerlink" title="2. 子类显式调用父类构造函数"></a>2. 子类显式调用父类构造函数</h2><p>​    在子类构造函数 <strong>第一行</strong> 通过super关键字调用<strong>父类任何构造函数</strong>。如果显式调用父类构造函数，编译器自动添加的调用<strong>父类无参数的构造就消失</strong>。构造函数间的调用<strong>只能放在第一行，只能调用一次</strong> 。<strong>super()和this()不能同时存在构造函数第一行</strong> 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Son(<span class="keyword">int</span> y) &#123;</span><br><span class="line">    <span class="keyword">super</span>(y);<span class="comment">// 子类显式调用父类构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.y = y + x;</span><br><span class="line">    System.out.println(<span class="string">"这是子类的有参构造"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="四-super思考"><a href="#四-super思考" class="headerlink" title="四. super思考"></a>四. super思考</h1><p>​    如果开发者自定义了一个类，<strong>没有显示的进行类的继承</strong>，那么该类中成员函数是否可以使用super关键字？</p>
+<p>答: <strong>可以使用</strong>，继承了Object类，Object类是所有类的父类</p>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://blog.csdn.net/qq_33642117/article/details/51919528" target="_blank" rel="noopener">Java super关键字详解</a></p>
+<p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3635948.html" target="_blank" rel="noopener">java基础学习总结——super关键字</a></p>
+
       
     </div>
     
@@ -473,6 +517,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Java基础知识/" rel="tag"><i class="fa fa-tag"></i> Java基础知识</a>
+          
+        </div>
+      
 
       
       
@@ -491,6 +543,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/19/JavaWeb---JSTL标签库之核心标签/" rel="prev" title="JavaWeb---JSTL标签库值核心标签">
+                JavaWeb---JSTL标签库值核心标签 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -547,14 +603,23 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在心里的坚强">
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
             
-              <p class="site-author-name" itemprop="name">刻在心里的坚强</p>
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
               <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
           </div>
 
@@ -565,7 +630,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,6 +699,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-super-关键字作用"><span class="nav-number">1.</span> <span class="nav-text">一. super 关键字作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-super-注意的地方"><span class="nav-number">2.</span> <span class="nav-text">二. super 注意的地方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-super关键字的使用"><span class="nav-number">3.</span> <span class="nav-text">三. super关键字的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2-子类显式调用父类构造函数"><span class="nav-number">3.1.</span> <span class="nav-text">2. 子类显式调用父类构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-super思考"><span class="nav-number">4.</span> <span class="nav-text">四. super思考</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -651,7 +732,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">刻在心里的坚强</span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -661,7 +742,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.1k</span>
+    <span title="Site words total count">40.8k</span>
   
 </div>
 
