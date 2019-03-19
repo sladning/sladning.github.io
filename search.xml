@@ -13,6 +13,11 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>%2F2019%2F03%2F19%2FJavaWeb---EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Java基础知识---super关键字]]></title>
     <url>%2F2019%2F03%2F18%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---super%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
     <content type="text"><![CDATA[一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数 二. super 注意的地方 this 和 super 很像，this指向的是当前对象的调用，super指向的是当前调用对象的父类。 类加载完毕，创建对象，父类的构造方法会被调用（默认自动无参），然后执行子类相应构造创建了一个子类对象，该子类对象还包含了一个父类对象。该父类对象在子类对象内部。 this super 只能在有对象的前提下使用，不能在static方法内使用。 三. super关键字的使用1.子类的构造函数默认第一行会默认调用父类无参的构造函数，隐式语句 super(); 范例123456Son(int y) &#123; // super();隐式语句 this.y = y + x; System.out.println("这是子类的有参构造"); &#125; 2. 子类显式调用父类构造函数​ 在子类构造函数 第一行 通过super关键字调用父类任何构造函数。如果显式调用父类构造函数，编译器自动添加的调用父类无参数的构造就消失。构造函数间的调用只能放在第一行，只能调用一次 。super()和this()不能同时存在构造函数第一行 。 12345Son(int y) &#123; super(y);// 子类显式调用父类构造函数 this.y = y + x; System.out.println("这是子类的有参构造");&#125; 四. super思考​ 如果开发者自定义了一个类，没有显示的进行类的继承，那么该类中成员函数是否可以使用super关键字？ 答: 可以使用，继承了Object类，Object类是所有类的父类 参考博文​ Java super关键字详解 ​ java基础学习总结——super关键字]]></content>
@@ -146,9 +151,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---接口]]></title>
-    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3%2F</url>
-    <content type="text"><![CDATA[一. 概念 官方解释: Java接口是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能） 通俗理解: 接口可以理解为一种特殊的抽象类(100%的抽象类, 所有的方法都是抽象方法)，里面全部是由全局常量和公共的抽象方法(方法的定义)所组成,而没有变量和方法的实现 范例123456789101112131415/** * java中定义接口 * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可 */public interface JavaInterfaces &#123; // 常量的声明格式, 都是公共的、静态的，不能改变的 // 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的 public static final int id=10; int id=10; //方法的声明 // 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉 // 在接口里面声明的抽象方法默认是“public(公共的) public void start();&#125; 二. 特点 接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图 接口可以继承其他的接口,并添加新的属性和抽象方法. 抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类 接口是解决Java无法使用多继承的一种手段,, 实际中更多的作用是制定标准的。 一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承 见范例 接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口 三. 重点 一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。 不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的. 但是，我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法(Java多态的特性). 四. 接口的进一步理解​ 如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。interface USB &#123; void read(); void write();&#125;// 一个USB类实现USB接口。（实现其中的方法）class YouPan implements USB &#123; @Override public void read() &#123; System.out.println("U盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("U盘正在通过USB功能写入数据"); &#125;&#125;// 一个键盘类实现USB接口。（实现其中的方法）class JianPan implements USB &#123; @Override public void read() &#123; System.out.println("键盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("键盘正在通过USB功能写入数据"); &#125;&#125;// 测试public class Main &#123; public static void main(String[] args) &#123; // 生成一个实现可USB接口（标准）的U盘对象 YouPan youPan = new YouPan(); // 调用U盘的read( )方法读取数据 youPan.read(); // 调用U盘的write( )方法写入数据 youPan.write(); // 生成一个实现可USB接口（标准）的键盘对象 JianPan jianPan = new JianPan(); // 调用键盘的read( )方法读取数据 jianPan.read(); // 调用键盘的write( )方法写入数据 jianPan.write(); &#125;&#125; 参考博文​ java基础学习总结——接口 ​ JAVA基础——接口（全网最详细教程）]]></content>
+    <title><![CDATA[Java基础知识---继承]]></title>
+    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF%2F</url>
+    <content type="text"><![CDATA[Java 继承概念 继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。 子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法 类的继承格式123456// Java继承的关键字是：extendsclass 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125; 需要注意的是 Java 不支持多继承，但支持多重继承。 继承的特性 子类拥有父类非 private 的属性、方法。 子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。 子类可以用自己的方式实现父类的方法。 Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。 为什么需要继承 提高代码的 复用性 (复用性主要是可以多次使用，不用再多次写同样的代码）)。 提高程序的扩展性。 参考博文​ JAVA继承总结 ​ 菜鸟教程]]></content>
       <categories>
         <category>Java基础知识</category>
       </categories>
@@ -170,9 +175,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---继承]]></title>
-    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF%2F</url>
-    <content type="text"><![CDATA[Java 继承概念 继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。 子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法 类的继承格式123456// Java继承的关键字是：extendsclass 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125; 需要注意的是 Java 不支持多继承，但支持多重继承。 继承的特性 子类拥有父类非 private 的属性、方法。 子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。 子类可以用自己的方式实现父类的方法。 Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。 为什么需要继承 提高代码的 复用性 (复用性主要是可以多次使用，不用再多次写同样的代码）)。 提高程序的扩展性。 参考博文​ JAVA继承总结 ​ 菜鸟教程]]></content>
+    <title><![CDATA[Java基础知识---接口]]></title>
+    <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[一. 概念 官方解释: Java接口是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能） 通俗理解: 接口可以理解为一种特殊的抽象类(100%的抽象类, 所有的方法都是抽象方法)，里面全部是由全局常量和公共的抽象方法(方法的定义)所组成,而没有变量和方法的实现 范例123456789101112131415/** * java中定义接口 * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可 */public interface JavaInterfaces &#123; // 常量的声明格式, 都是公共的、静态的，不能改变的 // 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的 public static final int id=10; int id=10; //方法的声明 // 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉 // 在接口里面声明的抽象方法默认是“public(公共的) public void start();&#125; 二. 特点 接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图 接口可以继承其他的接口,并添加新的属性和抽象方法. 抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类 接口是解决Java无法使用多继承的一种手段,, 实际中更多的作用是制定标准的。 一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承 见范例 接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口 三. 重点 一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。 不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的. 但是，我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法(Java多态的特性). 四. 接口的进一步理解​ 如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。interface USB &#123; void read(); void write();&#125;// 一个USB类实现USB接口。（实现其中的方法）class YouPan implements USB &#123; @Override public void read() &#123; System.out.println("U盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("U盘正在通过USB功能写入数据"); &#125;&#125;// 一个键盘类实现USB接口。（实现其中的方法）class JianPan implements USB &#123; @Override public void read() &#123; System.out.println("键盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("键盘正在通过USB功能写入数据"); &#125;&#125;// 测试public class Main &#123; public static void main(String[] args) &#123; // 生成一个实现可USB接口（标准）的U盘对象 YouPan youPan = new YouPan(); // 调用U盘的read( )方法读取数据 youPan.read(); // 调用U盘的write( )方法写入数据 youPan.write(); // 生成一个实现可USB接口（标准）的键盘对象 JianPan jianPan = new JianPan(); // 调用键盘的read( )方法读取数据 jianPan.read(); // 调用键盘的write( )方法写入数据 jianPan.write(); &#125;&#125; 参考博文​ java基础学习总结——接口 ​ JAVA基础——接口（全网最详细教程）]]></content>
       <categories>
         <category>Java基础知识</category>
       </categories>
@@ -240,17 +245,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[how2J天猫整站---笔记]]></title>
-    <url>%2F2019%2F03%2F12%2Fhow2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[一.关于表表与表之间的关系，基本上是3种 一对一 一对多 多对一 表的杂谈 修改表结构是代价最大的改动 在建表过程中，会设置外键约束，所以表和表之间有依赖关系。 因此会先建立被外键指向的表 一般说来，对于一个新项目，建表的时候，会把sql语句都准备好，一次性执行]]></content>
-      <categories>
-        <category>how2J</category>
-      </categories>
-      <tags>
-        <tag>how2J</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[eclipse---快捷键]]></title>
     <url>%2F2019%2F03%2F12%2Feclipse%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[eclipse快捷键eclipse配置折叠/展开代码快捷键​ 如何设置]]></content>
@@ -259,6 +253,17 @@
       </categories>
       <tags>
         <tag>eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[how2J天猫整站---笔记]]></title>
+    <url>%2F2019%2F03%2F12%2Fhow2J%E5%A4%A9%E7%8C%AB%E6%95%B4%E7%AB%99J2EE---%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[一.关于表表与表之间的关系，基本上是3种 一对一 一对多 多对一 表的杂谈 修改表结构是代价最大的改动 在建表过程中，会设置外键约束，所以表和表之间有依赖关系。 因此会先建立被外键指向的表 一般说来，对于一个新项目，建表的时候，会把sql语句都准备好，一次性执行]]></content>
+      <categories>
+        <category>how2J</category>
+      </categories>
+      <tags>
+        <tag>how2J</tag>
       </tags>
   </entry>
   <entry>
@@ -306,15 +311,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---送给自己]]></title>
-    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1%2F</url>
-    <content type="text"><![CDATA[勇者愤怒, 抽刃向更强者.怯者愤怒, 却抽刀向更弱者 扬在脸上的微笑, 长在心里的善良,融进血液的骨气, 刻在生命里的坚强. 礼仪最重要的是在昭告自我,真正的宣誓是对自己说的话. —陈果 对一切人,一切西乡都保持一种开放二友善的胸襟和气度的时候,才真正成为名副其实的大学生. —陈果 挫折能使强者更强,弱者更弱,强者在面对中锻炼了自己,弱者在逃避中越发脆弱 最善言谈者就是最善于倾听的人]]></content>
+    <title><![CDATA[人间词话---ZJ]]></title>
+    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ%2F</url>
+    <content type="text"><![CDATA[没有人会拒绝微笑, 也没有人会拒绝真诚. 逢山开路, 遇水架桥.]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
       <tags>
         <tag>人间词话</tag>
-        <tag>送给自己</tag>
       </tags>
   </entry>
   <entry>
@@ -329,14 +333,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---ZJ]]></title>
-    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---ZJ%2F</url>
-    <content type="text"><![CDATA[没有人会拒绝微笑, 也没有人会拒绝真诚. 逢山开路, 遇水架桥.]]></content>
+    <title><![CDATA[人间词话---送给自己]]></title>
+    <url>%2F2019%2F03%2F09%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1%2F</url>
+    <content type="text"><![CDATA[勇者愤怒, 抽刃向更强者.怯者愤怒, 却抽刀向更弱者 扬在脸上的微笑, 长在心里的善良,融进血液的骨气, 刻在生命里的坚强. 礼仪最重要的是在昭告自我,真正的宣誓是对自己说的话. —陈果 对一切人,一切西乡都保持一种开放二友善的胸襟和气度的时候,才真正成为名副其实的大学生. —陈果 挫折能使强者更强,弱者更弱,强者在面对中锻炼了自己,弱者在逃避中越发脆弱 最善言谈者就是最善于倾听的人]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
       <tags>
         <tag>人间词话</tag>
+        <tag>送给自己</tag>
       </tags>
   </entry>
   <entry>
@@ -364,8 +369,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaWeb---HttpResponse对象]]></title>
-    <url>%2F2019%2F03%2F08%2FJavaWeb---HttpServletResponse%E5%AF%B9%E8%B1%A1%2F</url>
+    <title><![CDATA[JavaWeb---HttpServletResponse对象]]></title>
+    <url>%2F2019%2F03%2F08%2FJavaWeb---HttpResponse%E5%AF%B9%E8%B1%A1%2F</url>
     <content type="text"><![CDATA[一. HttpServletResponse 对象介绍​ HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量 HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字，常见的状态码对应的常量： 状态码404对应的常量 状态码200对应的常量 状态码500对应的常量 二. HttpServletResponse常见应用——设置响应头控制浏览器的行为通过response实现请求重定向 请求重定向指：一个web资源收到客户端请求后，通知客户端去访问另外一个web资源，这称之为请求重定向。 应用场景：用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程 实现方式： ==response.sendRedirect(String location)==，即调用response对象的sendRedirect方法实现请求重定向 sendRedirect内部的实现原理：使用response设置 302状态码和设置location响应头实现重定向 范例1234567891011121314151617181920212223242526public class ResponseDemo04 extends HttpServlet &#123; // 方法: doGet public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;/*** 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了* ① response.setHeader("Location",* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);*/ response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); /*** 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");* response.setStatus(HttpServletResponse.SC_FOUND);* 设置302状态码，等同于response.setStatus(302);*/ &#125; // 方法: doPost public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; doGet(request, response); &#125;&#125; 3.2 /代表 webapps目录 的常见应用场景使用sendRedirect实现请求重定向1response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); 服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以这个”/“是给浏览器使用的，此时 /代表的就是webapps目录 ​ /JavaWeb_HttpServletResponse_Study_20140615/index.jsp这个地址指的就是 webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp response.sendRedirect(“/项目名称/文件夹目录/页面”);这种写法是将项目名称 写死在程序中 的做法，不灵活，万一哪天项目名称变了，此时就得改程序，所以推荐使用下面的灵活写法： 将 1response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); 这种写法改成 1response.sendRedirect(request.getContextPath()+"/index.jsp"); request.getContextPath() 获取到的内容就是 /JavaWeb_HttpServletResponse_Study_20140615，这样就比较灵活了，使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！ 使用超链接跳转1&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt; 这是客户端浏览器使用的超链接跳转，这个 / 是给浏览器使用的 ，此时 / 代表的就是webapps目录。 使用超链接访问web资源，绝对路径的写法推荐使用下面的写法改进 1&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt; 这样就可以避免在路径中出现项目的名称，使用 ${pageContext.request.contextPath} 取代 /JavaWeb_HttpServletResponse_Study_20140615 Form表单提交123&lt;form action="/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet" method="post"&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt; 这是客户端浏览器将form表单提交到服务器，所以这个 / 是给浏览器使用的，此时 / 代表的就是webapps目录。 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进： 123&lt;form action="$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet" method="post"&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt; ${pageContext.request.contextPath} 得到的就是 /JavaWeb_HttpServletResponse_Study_20140615 ${pageContext.request.contextPath}的效果等同于request.getContextPath()，两者获取到的都是“/项目名称” js脚本和css样式文件的引用123456&lt;%--使用绝对路径的方式引用js脚本--%&gt; &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt; &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt; &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt; &lt;%--使用绝对路径的方式引用css样式--%&gt; &lt;link rel="stylesheet" href="$&#123;pageContext.request.contextPath&#125;/css/index.css" type="text/css"/&gt; 总结​ ==只要是浏览器向服务器提交的, / 给浏览器使用, 都可以修改成推荐的方式== 参考博文​ javaweb学习总结(八)——HttpServletResponse对象(二)]]></content>
       <categories>
         <category>JavaWeb</category>
@@ -376,20 +381,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java基础知识---static关键字]]></title>
-    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---static%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
-    <content type="text"><![CDATA[Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途 基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访问. 1. 静态变量 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 其为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享, 属于整个类的，它不属于专门的某个对象 非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问 static成员变量的初始化顺序按照定义的顺序进行初始化 注意: 注意不能把 任何方法体内的变量声明为静态 2. 静态方法 用static 声明的方法为静态方法(也叫类方法) 在静态方法里只能直接调用同类中其他的静态成员（包括变量和方法），而不能直接访问类中的非静态成员 。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。 对于非静态成员方法，它访问静态成员方法/变量显然是毫无限制的 静态方法不能以任何方式引用this和super关键字 因为静态方法在使用前不用创建任何实例对象，当静态方法调用时，this所引用的对象根本没有产生。 由于静态方法不依赖于任何对象就可以进行访问，因此对于静态方法来说，是没有this的，因为它不依附于任何对象，既然都没有对象，就谈不上this了 范例​ 想在不创建对象的情况下调用某个方法，就可以将这个方法设置为static。 ​ 最常见的static方法就是main方法。因为程序在执行main方法的时候没有创建任何对象，因此只有通过类名来访问。 3. 静态代码块 用来形成静态代码块以优化程序性能。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。 为什么说static块可以用来优化程序性能​ 是因为它的特性:只会在类加载的时候执行一次。 初始化的顺序 对象属性的初始化有三种方式 声明时初始化 静态代码块初始化 构造函数初始化 故意把初始化块，放在构造方法下面， 问题：这三种方式，谁先执行？谁后执行？ 代码演示12345678910111213141516171819202122232425public class StaticOrder &#123; // 声明时初始化 public String name = StaticOrder.getName("属性声明"); // 构造函数初始化 public StaticOrder() &#123; name = StaticOrder.getName("构造方法"); &#125; // 静态代码块初始化 &#123; name = StaticOrder.getName("初始化块"); &#125; // 被调用的 getName() 方法 public static String getName(String name) &#123; System.out.println("初始化: " + name); return name; &#125; public static void main(String[] args) &#123; new StaticOrder(); &#125;&#125;// 打印结果:// 初始化: 属性声明// 初始化: 初始化块// 初始化: 构造方法 所以顺序为: 声明时初始化 静态代码块初始化 构造函数初始化 杂:​ static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。 参考博文:​ java基础学习总结——static关键字 ​ 优质答案 ​ java中静态代码块的用法 static用法详解 ​ Java中的static关键字解析]]></content>
-      <categories>
-        <category>Java基础知识</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java基础知识</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[JavaWeb---HttpServletResponse对象]]></title>
-    <url>%2F2019%2F03%2F08%2FJavaWeb---HttpResponse%E5%AF%B9%E8%B1%A1%2F</url>
+    <title><![CDATA[JavaWeb---HttpResponse对象]]></title>
+    <url>%2F2019%2F03%2F08%2FJavaWeb---HttpServletResponse%E5%AF%B9%E8%B1%A1%2F</url>
     <content type="text"><![CDATA[一. HttpServletResponse 对象介绍​ HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。 1.1 响应状态码的常量 HttpServletResponse 定义了很多状态码的常量(具体可以查看Servlet的API)，当需要向客户端发送响应状态码时，可以使用这些常量，避免了直接写数字，常见的状态码对应的常量： 状态码404对应的常量 状态码200对应的常量 状态码500对应的常量 二. HttpServletResponse常见应用——设置响应头控制浏览器的行为通过response实现请求重定向 请求重定向指：一个web资源收到客户端请求后，通知客户端去访问另外一个web资源，这称之为请求重定向。 应用场景：用户登陆，用户首先访问登录页面，登录成功后，就会跳转到某个页面，这个过程就是一个请求重定向的过程 实现方式： ==response.sendRedirect(String location)==，即调用response对象的sendRedirect方法实现请求重定向 sendRedirect内部的实现原理：使用response设置 302状态码和设置location响应头实现重定向 范例1234567891011121314151617181920212223242526public class ResponseDemo04 extends HttpServlet &#123; // 方法: doGet public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;/*** 1. 调用sendRedirect方法实现请求重定向, sendRedirect方法内部调用了* ① response.setHeader("Location",* "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");* ② response.setStatus(HttpServletResponse.SC_FOUND);//设置302状态码，等同于response.setStatus(302);*/ response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); /*** 2.使用response设置302状态码和设置location响应头实现重定向实现请求重定向* response.setHeader("Location", "/JavaWeb_HttpServletResponse_Study_20140615/index.jsp");* response.setStatus(HttpServletResponse.SC_FOUND);* 设置302状态码，等同于response.setStatus(302);*/ &#125; // 方法: doPost public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; doGet(request, response); &#125;&#125; 3.2 /代表 webapps目录 的常见应用场景使用sendRedirect实现请求重定向1response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); 服务器发送一个URL地址给浏览器，浏览器拿到URL地址之后，再去请求服务器，所以这个”/“是给浏览器使用的，此时 /代表的就是webapps目录 ​ /JavaWeb_HttpServletResponse_Study_20140615/index.jsp这个地址指的就是 webapps\JavaWeb_HttpServletResponse_Study_20140615\index.jsp response.sendRedirect(“/项目名称/文件夹目录/页面”);这种写法是将项目名称 写死在程序中 的做法，不灵活，万一哪天项目名称变了，此时就得改程序，所以推荐使用下面的灵活写法： 将 1response.sendRedirect("/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"); 这种写法改成 1response.sendRedirect(request.getContextPath()+"/index.jsp"); request.getContextPath() 获取到的内容就是 /JavaWeb_HttpServletResponse_Study_20140615，这样就比较灵活了，使用request.getContextPath()代替”/项目名称”，推荐使用这种方式，灵活方便！ 使用超链接跳转1&lt;a href="/JavaWeb_HttpServletResponse_Study_20140615/index.jsp"&gt;跳转到首页&lt;/a&gt; 这是客户端浏览器使用的超链接跳转，这个 / 是给浏览器使用的 ，此时 / 代表的就是webapps目录。 使用超链接访问web资源，绝对路径的写法推荐使用下面的写法改进 1&lt;a href="$&#123;pageContext.request.contextPath&#125;/index.jsp"&gt;跳转到首页&lt;/a&gt; 这样就可以避免在路径中出现项目的名称，使用 ${pageContext.request.contextPath} 取代 /JavaWeb_HttpServletResponse_Study_20140615 Form表单提交123&lt;form action="/JavaWeb_HttpServletResponse_Study_20140615/servlet/CheckServlet" method="post"&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt; 这是客户端浏览器将form表单提交到服务器，所以这个 / 是给浏览器使用的，此时 / 代表的就是webapps目录。 对于form表单提交中action属性绝对路径的写法，也推荐使用如下的方式改进： 123&lt;form action="$&#123;pageContext.request.contextPath&#125;/servlet/CheckServlet" method="post"&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt; ${pageContext.request.contextPath} 得到的就是 /JavaWeb_HttpServletResponse_Study_20140615 ${pageContext.request.contextPath}的效果等同于request.getContextPath()，两者获取到的都是“/项目名称” js脚本和css样式文件的引用123456&lt;%--使用绝对路径的方式引用js脚本--%&gt; &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt; &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt; &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt; &lt;%--使用绝对路径的方式引用css样式--%&gt; &lt;link rel="stylesheet" href="$&#123;pageContext.request.contextPath&#125;/css/index.css" type="text/css"/&gt; 总结​ ==只要是浏览器向服务器提交的, / 给浏览器使用, 都可以修改成推荐的方式== 参考博文​ javaweb学习总结(八)——HttpServletResponse对象(二)]]></content>
       <categories>
         <category>JavaWeb</category>
@@ -409,6 +402,18 @@
       <tags>
         <tag>Java</tag>
         <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java基础知识---static关键字]]></title>
+    <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---static%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途 基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访问. 1. 静态变量 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 其为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享, 属于整个类的，它不属于专门的某个对象 非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问 static成员变量的初始化顺序按照定义的顺序进行初始化 注意: 注意不能把 任何方法体内的变量声明为静态 2. 静态方法 用static 声明的方法为静态方法(也叫类方法) 在静态方法里只能直接调用同类中其他的静态成员（包括变量和方法），而不能直接访问类中的非静态成员 。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。 对于非静态成员方法，它访问静态成员方法/变量显然是毫无限制的 静态方法不能以任何方式引用this和super关键字 因为静态方法在使用前不用创建任何实例对象，当静态方法调用时，this所引用的对象根本没有产生。 由于静态方法不依赖于任何对象就可以进行访问，因此对于静态方法来说，是没有this的，因为它不依附于任何对象，既然都没有对象，就谈不上this了 范例​ 想在不创建对象的情况下调用某个方法，就可以将这个方法设置为static。 ​ 最常见的static方法就是main方法。因为程序在执行main方法的时候没有创建任何对象，因此只有通过类名来访问。 3. 静态代码块 用来形成静态代码块以优化程序性能。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。 为什么说static块可以用来优化程序性能​ 是因为它的特性:只会在类加载的时候执行一次。 初始化的顺序 对象属性的初始化有三种方式 声明时初始化 静态代码块初始化 构造函数初始化 故意把初始化块，放在构造方法下面， 问题：这三种方式，谁先执行？谁后执行？ 代码演示12345678910111213141516171819202122232425public class StaticOrder &#123; // 声明时初始化 public String name = StaticOrder.getName("属性声明"); // 构造函数初始化 public StaticOrder() &#123; name = StaticOrder.getName("构造方法"); &#125; // 静态代码块初始化 &#123; name = StaticOrder.getName("初始化块"); &#125; // 被调用的 getName() 方法 public static String getName(String name) &#123; System.out.println("初始化: " + name); return name; &#125; public static void main(String[] args) &#123; new StaticOrder(); &#125;&#125;// 打印结果:// 初始化: 属性声明// 初始化: 初始化块// 初始化: 构造方法 所以顺序为: 声明时初始化 静态代码块初始化 构造函数初始化 杂:​ static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。 参考博文:​ java基础学习总结——static关键字 ​ 优质答案 ​ java中静态代码块的用法 static用法详解 ​ Java中的static关键字解析]]></content>
+      <categories>
+        <category>Java基础知识</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -458,17 +463,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[数据结构---链表的概念及实现]]></title>
-    <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[链表线性表的链接存储结构成为链表 常见的链表: 单链表(每个节点有一个指针域的链表) 循环链表 双链表(每个节点有两个指针域的链表) 特点: 用一组任意的存储单元存储线性表的数据结构(存储单元可以是连续的,也可以是不连续的 数据元素的逻辑次序和物理次序 ==不一定一致== 相关概念 结点: 基本单元,由两部分组成 数据域: 用来存放节点本身的信息 指针域:用来存放本节点的直接后继节点的地址 空指针: 链表中最后一个节点的指针域不指向任何节点(通常用”∧”或者”NULL”表示 头指针: 指向单链表第一个节点的指针(head) 空表: 之神 head 为空指针,即 head=NULL 表头结点: 第一个节点之前再增加一个类型相同的结点(为了便于实现链表的各种运算, 其他节点成为表结点) 表结点: 除了表头结点其他的结点 在表结点中,第一个节点称为首结点 ,最后一个节点称为 尾节点]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[数据结构---线性表]]></title>
     <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E7%BA%BF%E6%80%A7%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[线性表：定义:​ 由 n(n≥0) 个数据特性相同的元素构成的 有限序列 特点: 存在唯一的一个被称为”第一个”的数据元素 存在唯一的一个被称为”最后一个”的数据元素 除第一个之外, 结构中的每个数据元素均只有一个前驱元素 除最后一个之外, 结构中的每个数据元素均只有一个后继元素 存储结构及运算: 存储结构方式: 顺序存储方式(顺序表), 链接存储方式(链表) 运算: 线性表的初始化 求表的长度 取出表的元素 查找运算 相关概念 空表: 线性表的长度 n=0 前驱元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i~ 称为 a~i+1~ 的前驱元素 后继元素: 如果 a~i~ 和a~i+1~ 是相邻的具有前后关系的两个元素, 则 a~i+1~ 称为 a~i~ 的前驱元素 随笔: 线性表中的数据元素之间的逻辑关系就是其相互位置上的 邻接关系 ,该关系是线性的,因此,线性表是一种线性结构 常见例子: 学生成绩表, 列车时刻表, 英文字母表 ​]]></content>
@@ -480,9 +474,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[陈果老师语录]]></title>
-    <url>%2F2019%2F03%2F07%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C%2F</url>
-    <content type="text"><![CDATA[只有心灵才能洞察一切，世界上真正重要的东西要用心去看 你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋 选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安 回忆是一种重逢, 忘记是一份自由.]]></content>
+    <title><![CDATA[数据结构---链表的概念及实现]]></title>
+    <url>%2F2019%2F03%2F08%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84---%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[链表线性表的链接存储结构成为链表 常见的链表: 单链表(每个节点有一个指针域的链表) 循环链表 双链表(每个节点有两个指针域的链表) 特点: 用一组任意的存储单元存储线性表的数据结构(存储单元可以是连续的,也可以是不连续的 数据元素的逻辑次序和物理次序 ==不一定一致== 相关概念 结点: 基本单元,由两部分组成 数据域: 用来存放节点本身的信息 指针域:用来存放本节点的直接后继节点的地址 空指针: 链表中最后一个节点的指针域不指向任何节点(通常用”∧”或者”NULL”表示 头指针: 指向单链表第一个节点的指针(head) 空表: 之神 head 为空指针,即 head=NULL 表头结点: 第一个节点之前再增加一个类型相同的结点(为了便于实现链表的各种运算, 其他节点成为表结点) 表结点: 除了表头结点其他的结点 在表结点中,第一个节点称为首结点 ,最后一个节点称为 尾节点]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[涂磊老师语录]]></title>
+    <url>%2F2019%2F03%2F07%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E6%B6%82%E7%A3%8A%2F</url>
+    <content type="text"><![CDATA[我们总是善于去伤害那些爱我们的人， 因为我们根本伤害不了那些不爱我们的人;我们总是甘愿被那些我们爱的人伤害，那是因为我爱他们 喜欢可以心动，而爱一定会心痛；喜欢可以舍得，但爱一定舍不得；喜欢一个人，冬天不过是冬天，不过是漂亮一点而已；但是爱一个人，冬天可以变成春天；爱一个人，她落泪你就会跟着她一起落泪；而喜欢一个人，她落泪你只不过是安慰；喜欢是可以变成爱的，但如果爱了就说不出喜欢；喜欢是不排她的，而爱一定是排她的，唯一的；喜欢与责任无关，而爱一定要负责任，这就是喜欢和爱的区别 春风得意的浪子回头最珍贵，穷途末路的认错悔改最虚伪 你曾经买了一件很喜欢的衣裳却舍不得穿，郑重地供奉在衣柜里；许久之后，当你再看见它的时候，却发现它已经过时了。所以，你就这样与它错过了。你也曾经买了一块漂亮的蛋糕却舍不得吃，郑重地供奉在冰箱里；许久之后，当你再看见它的时候，却发现它已经过期了。所以，你也这样与它错过了。没有在最喜欢的时候上身的衣裳，没有在最可口的时候品尝的蛋糕，就像没有在最想做的时候去做的事情，都是遗憾。生命也有保存期限，想做的事该趁早去做。如果你只是把你的心愿郑重地供奉在心里，却未曾去实行，那么唯一的结果，就是与它错过，一如那件过时的衣裳，一如那块过期的蛋糕 有些人注定是你生命中的过客，却总是成为你记忆中的常客，但永远也仅止于做客 你以为责任是什么？你以为责任就是终身相守，扔几个钱在家里。真正的责任是要在乎你所爱的人的每一分每一秒的感受 男人无事献殷勤非奸即盗，女人对爱来者不拒不是欺就是爱 人最伟大的力量不是创造，而是自省！如果不能自我反省，不能看到自身的错误和不足，即使有非凡的力量，创造出的一切都只是埋没自己的坟墓！ 越是嘴上说自己有原则的人，越是圆滑，因为他们的原则便是永远不说负责任的话，永远模棱两可！狡猾的眼神中永远透露的是欺骗，向下的嘴角代表的永远是严肃。 在我看来，绝大多数现代人的虚荣来自于虚伪，虚伪来自于自卑！在日常生活中衣着光鲜、牛逼哄哄的家伙其实内心很恐慌！]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
@@ -493,9 +498,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[涂磊老师语录]]></title>
-    <url>%2F2019%2F03%2F07%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E6%B6%82%E7%A3%8A%2F</url>
-    <content type="text"><![CDATA[我们总是善于去伤害那些爱我们的人， 因为我们根本伤害不了那些不爱我们的人;我们总是甘愿被那些我们爱的人伤害，那是因为我爱他们 喜欢可以心动，而爱一定会心痛；喜欢可以舍得，但爱一定舍不得；喜欢一个人，冬天不过是冬天，不过是漂亮一点而已；但是爱一个人，冬天可以变成春天；爱一个人，她落泪你就会跟着她一起落泪；而喜欢一个人，她落泪你只不过是安慰；喜欢是可以变成爱的，但如果爱了就说不出喜欢；喜欢是不排她的，而爱一定是排她的，唯一的；喜欢与责任无关，而爱一定要负责任，这就是喜欢和爱的区别 春风得意的浪子回头最珍贵，穷途末路的认错悔改最虚伪 你曾经买了一件很喜欢的衣裳却舍不得穿，郑重地供奉在衣柜里；许久之后，当你再看见它的时候，却发现它已经过时了。所以，你就这样与它错过了。你也曾经买了一块漂亮的蛋糕却舍不得吃，郑重地供奉在冰箱里；许久之后，当你再看见它的时候，却发现它已经过期了。所以，你也这样与它错过了。没有在最喜欢的时候上身的衣裳，没有在最可口的时候品尝的蛋糕，就像没有在最想做的时候去做的事情，都是遗憾。生命也有保存期限，想做的事该趁早去做。如果你只是把你的心愿郑重地供奉在心里，却未曾去实行，那么唯一的结果，就是与它错过，一如那件过时的衣裳，一如那块过期的蛋糕 有些人注定是你生命中的过客，却总是成为你记忆中的常客，但永远也仅止于做客 你以为责任是什么？你以为责任就是终身相守，扔几个钱在家里。真正的责任是要在乎你所爱的人的每一分每一秒的感受 男人无事献殷勤非奸即盗，女人对爱来者不拒不是欺就是爱 人最伟大的力量不是创造，而是自省！如果不能自我反省，不能看到自身的错误和不足，即使有非凡的力量，创造出的一切都只是埋没自己的坟墓！ 越是嘴上说自己有原则的人，越是圆滑，因为他们的原则便是永远不说负责任的话，永远模棱两可！狡猾的眼神中永远透露的是欺骗，向下的嘴角代表的永远是严肃。 在我看来，绝大多数现代人的虚荣来自于虚伪，虚伪来自于自卑！在日常生活中衣着光鲜、牛逼哄哄的家伙其实内心很恐慌！]]></content>
+    <title><![CDATA[陈果老师语录]]></title>
+    <url>%2F2019%2F03%2F07%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E8%87%AA%E6%88%91%E6%88%90%E9%95%BF---%E9%99%88%E6%9E%9C%2F</url>
+    <content type="text"><![CDATA[只有心灵才能洞察一切，世界上真正重要的东西要用心去看 你使用什么样的双眼观世界，就印证了你有怎样的心眼，如果心眼大，你所见的世界宽广无边，如果你心眼小，充满羡慕嫉妒恨，所见的世界也是偏狭丑陋 选择之所以称之为选择，一定是痛苦的，因为选项是不相上下的，能轻松做决定的，都不叫选择，选择意味着舍弃一种美好，承受一种痛苦，不安 回忆是一种重逢, 忘记是一份自由.]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
@@ -541,9 +546,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---文章]]></title>
-    <url>%2F2019%2F03%2F06%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[感谢困难​ 林清玄​ 我做了一个梦。 梦见我在街上问人：“请问您可不可以给我一些困难、一些挫折，一些痛苦?” 所有的人都拒绝我，我着急地恳求别人：“那么，我雇用您，每小时五百元，请您给我一些折磨!” 那些陌生人摇摇头，沉默地离开，我因找不到愿意折磨我的人而惊醒。 我坐在床上发呆，是呀!困难，折磨，痛苦是多么珍贵!如果一切平顺，谁会静下来沉思，谁会生起智慧，谁又能在平凡安逸的日子中超越自我、登上高峰呢? 如果没有困难，谁又会谦卑地跪下来祈祷?谁又能相信有无边的宇宙?谁又能寄情于来生呢? 我深深地感谢着困难、挫折与痛苦。 也深深地感恩那些曾经折磨过我的人，他们是多么慈悲呀!我并未花钱聘雇他们，他们却以宝贵的时间来考验我、提升我，为了增长我的智慧。 真正的高贵​ 海明威 ​ 在风平浪静的大海，每个人都是领航员。 ​ 但是，只有阳光而无阴影，只有欢乐而无痛苦，那就不是人生。以最幸福的人的生活为例.他的生活也是一团缠结在一起的乱麻。痛苦与幸福交替出现,使得我们一会悲伤，一会高兴，甚至死亡本身也会使生命更加可爱。在人生的清醒的时刻，在悲伤与失落的阴影之下，人们与真实的自我最接近。 ​ 在生活和事业的种种事物中，性格比才智更能指导我们, 心灵比头脑更能引导我们,而由判断获得的克制, 耐心和教养比天分更能让我们受益。 ​ 我始终相信，内心生活开始更为严谨的人，他的外在生活也会变得更为简朴。在一个物欲横流的年代，但愿我能向世人表明，人类真正需求少得多么可怜。 ​ 反思自己的过错不至于重蹈覆辙才是真正的悔悟, 高人一等并没有什么值得夸耀的。真正的高贵是优于过去的自己。]]></content>
+    <title><![CDATA[人间词话---惊艳的文字]]></title>
+    <url>%2F2019%2F03%2F06%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%83%8A%E8%89%B3%E7%9A%84%E6%96%87%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[现代诗 酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。 —余光中《寻李白》 古诗 少年不知愁滋味,爱上层楼,爱上层楼.为赋新词强说愁.而今识尽愁滋味,欲说还休,欲说还休,却道天凉好个秋. —辛弃疾《丑奴儿》 十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。 —苏轼 古文 斯是陋室,惟吾德馨. —刘禹锡《陋室铭》 夏虫不可语冰 —孔子 文章摘要 我知道我很大胆冒昧, 听说你朋友很多, 我不配高攀, 可是很想在你的朋友里凑个数目. —钱钟书《围城》 别客气,我求你明天来.我想去吃,对自己没有好借口,借你的名义,自己享受一下,你就体贴下情,答应了吧. —钱钟书《围城》]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
@@ -552,9 +557,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[人间词话---惊艳的文字]]></title>
-    <url>%2F2019%2F03%2F06%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%83%8A%E8%89%B3%E7%9A%84%E6%96%87%E5%AD%97%2F</url>
-    <content type="text"><![CDATA[现代诗 酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐，就半个盛唐。 —余光中《寻李白》 古诗 少年不知愁滋味,爱上层楼,爱上层楼.为赋新词强说愁.而今识尽愁滋味,欲说还休,欲说还休,却道天凉好个秋. —辛弃疾《丑奴儿》 十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。 —苏轼 古文 斯是陋室,惟吾德馨. —刘禹锡《陋室铭》 夏虫不可语冰 —孔子 文章摘要 我知道我很大胆冒昧, 听说你朋友很多, 我不配高攀, 可是很想在你的朋友里凑个数目. —钱钟书《围城》 别客气,我求你明天来.我想去吃,对自己没有好借口,借你的名义,自己享受一下,你就体贴下情,答应了吧. —钱钟书《围城》]]></content>
+    <title><![CDATA[人间词话---文章]]></title>
+    <url>%2F2019%2F03%2F06%2F%E4%BA%BA%E9%97%B4%E8%AF%8D%E8%AF%9D---%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[感谢困难​ 林清玄​ 我做了一个梦。 梦见我在街上问人：“请问您可不可以给我一些困难、一些挫折，一些痛苦?” 所有的人都拒绝我，我着急地恳求别人：“那么，我雇用您，每小时五百元，请您给我一些折磨!” 那些陌生人摇摇头，沉默地离开，我因找不到愿意折磨我的人而惊醒。 我坐在床上发呆，是呀!困难，折磨，痛苦是多么珍贵!如果一切平顺，谁会静下来沉思，谁会生起智慧，谁又能在平凡安逸的日子中超越自我、登上高峰呢? 如果没有困难，谁又会谦卑地跪下来祈祷?谁又能相信有无边的宇宙?谁又能寄情于来生呢? 我深深地感谢着困难、挫折与痛苦。 也深深地感恩那些曾经折磨过我的人，他们是多么慈悲呀!我并未花钱聘雇他们，他们却以宝贵的时间来考验我、提升我，为了增长我的智慧。 真正的高贵​ 海明威 ​ 在风平浪静的大海，每个人都是领航员。 ​ 但是，只有阳光而无阴影，只有欢乐而无痛苦，那就不是人生。以最幸福的人的生活为例.他的生活也是一团缠结在一起的乱麻。痛苦与幸福交替出现,使得我们一会悲伤，一会高兴，甚至死亡本身也会使生命更加可爱。在人生的清醒的时刻，在悲伤与失落的阴影之下，人们与真实的自我最接近。 ​ 在生活和事业的种种事物中，性格比才智更能指导我们, 心灵比头脑更能引导我们,而由判断获得的克制, 耐心和教养比天分更能让我们受益。 ​ 我始终相信，内心生活开始更为严谨的人，他的外在生活也会变得更为简朴。在一个物欲横流的年代，但愿我能向世人表明，人类真正需求少得多么可怜。 ​ 反思自己的过错不至于重蹈覆辙才是真正的悔悟, 高人一等并没有什么值得夸耀的。真正的高贵是优于过去的自己。]]></content>
       <categories>
         <category>人间词话</category>
       </categories>
