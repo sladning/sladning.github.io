@@ -15,18 +15,18 @@
   <entry>
     <title></title>
     <url>%2F2019%2F03%2F19%2FJavaWeb---EL%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[一、EL表达式简介 EL 全名为 Expression Language。 EL主要作用： 获取数据 EL表达式主要用于替换 JSP 页面中的脚本表达式，以从各种类型的web域中检索 java 对象、获取数据。(某个web域 中的对象，访问javabean的属性、访问list集合、访问map集合、访问数组) 执行运算 利用 EL 表达式可以在JSP页面中执行一些基本的关系运算、逻辑运算和算术运算，以在JSP页面中完成一些简单的逻辑运算。${user==null} 获取web开发常用对象 EL 表达式定义了一些隐式对象，利用这些隐式对象，web开发人员可以很轻松获得对web常用对象的引用，从而获得这些对象中的数据。 调用Java方法 EL表达式允许用户开发自定义EL函数，以在JSP页面中通过EL表达式调用Java类的方法。]]></content>
   </entry>
   <entry>
     <title><![CDATA[Java基础知识---super关键字]]></title>
     <url>%2F2019%2F03%2F18%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---super%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
     <content type="text"><![CDATA[一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数 二. super 注意的地方 this 和 super 很像，this指向的是当前对象的调用，super指向的是当前调用对象的父类。 类加载完毕，创建对象，父类的构造方法会被调用（默认自动无参），然后执行子类相应构造创建了一个子类对象，该子类对象还包含了一个父类对象。该父类对象在子类对象内部。 this super 只能在有对象的前提下使用，不能在static方法内使用。 三. super关键字的使用1.子类的构造函数默认第一行会默认调用父类无参的构造函数，隐式语句 super(); 范例123456Son(int y) &#123; // super();隐式语句 this.y = y + x; System.out.println("这是子类的有参构造"); &#125; 2. 子类显式调用父类构造函数​ 在子类构造函数 第一行 通过super关键字调用父类任何构造函数。如果显式调用父类构造函数，编译器自动添加的调用父类无参数的构造就消失。构造函数间的调用只能放在第一行，只能调用一次 。super()和this()不能同时存在构造函数第一行 。 12345Son(int y) &#123; super(y);// 子类显式调用父类构造函数 this.y = y + x; System.out.println("这是子类的有参构造");&#125; 四. super思考​ 如果开发者自定义了一个类，没有显示的进行类的继承，那么该类中成员函数是否可以使用super关键字？ 答: 可以使用，继承了Object类，Object类是所有类的父类 参考博文​ Java super关键字详解 ​ java基础学习总结——super关键字]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -34,11 +34,11 @@
     <url>%2F2019%2F03%2F18%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---this%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
     <content type="text"><![CDATA[一. 概念​ this 关键字代表自身 注意 this关键字必须放在非静态方法里面 当必须指出 当前使用方法的对象是谁 时要使用 this 有时使用 this 可以处理方法中 成员变量和参数重名的现象 this 可以看做是 一个变量, 它的值是当前对象的引用 二. 在程序中使用用途: 使用this关键字 引用成员变量 使用this关键字在 自身构造方法内部引用其它构造方法 使用this关键字代表 自身类的对象 使用this关键字引用成员方法 1. 使用 this 引用成员变量​ 在一个类的方法或构造方法内部，可以使用“this.成员变量名”这样的格式来引用成员变量名，有些时候可以省略，有些时候不能省略。 1234567891011public class ReferenceVariable &#123; private int a; public ReferenceVariable(int a)&#123; this.a = a; &#125; public void setA(int a)&#123; this.a = a; &#125;&#125; 在该代码的构造方法和setA方法内部，都是用this.a引用类的成员变量。因为无论在构造方法还是setA方法内部，都包含2个变量名为a的变量，一个是参数a，另外一个是成员变量a。按照Java语言的变量作用范围规定，参数a的作用范围为构造方法或方法内部，成员变量a的作用范围是类的内部，这样在构造方法和setA方法内部就存在了变量a的冲突，Java语言规定当变量作用范围重叠时，作用域小的变量覆盖作用域大的变量。所以在构造方法和setA方法内部，参数a起作用。 这样需要访问成员变量a则必须使用this进行引用。当然，如果变量名不发生重叠，则this可以省略。 但是为了增强代码的可读性，一般将参数的名称和成员变量的名称保持一致，所以this的使用频率在规范的代码内部应该很多。 2. 引用构造方法​ 在一个类的构造方法内部，也可以使用this关键字引用其它的构造方法，这样可以降低代码的重复，也可以使所有的构造方法保持统一，这样方便以后的代码修改和维护，也方便代码的阅读。 1234567891011public class ReferenceConstructor &#123; int a; public ReferenceConstructor()&#123; this(0); &#125; public ReferenceConstructor(int a)&#123; this.a = a; &#125;&#125; 这里在不带参数的构造方法内部，使用this调用了另外一个构造方法，其中0是根据需要传递的参数的值 当一个类内部的构造方法比较多时，可以只书写一个构造方法的内部功能代码，然后其它的构造方法都通过调用该构造方法实现，这样既保证了所有的构造是统一的，也降低了代码的重复。 在实际使用时，需要注意的是，在构造方法内部使用this关键字调用其它的构造方法时，调用的代码只能出现在构造方法内部的第一行可执行代码。这样，在构造方法内部使用this关键字调用构造方法最多会出现一次。 3. 代表自身对象​ 在一个类的内部，也可以使用this代表自身类的对象，或者换句话说，每个类内部都有一个隐含的成员变量，该成员变量的类型是该类的类型，该成员变量的名称是this，实际使用this代表自身类的对象的 解释​ 假设我们在堆内存new了一个对象，在这个对象里面你有一个引用 this，this 指向这个对象自己，所以这就是this，这个new出来的对象名字是什么，我们不知道，不知道也没关系，因为这并不影响这个对象在内存里面的存在，这个对象只要在内存中存在，他就一定有一个引用this ,在 类的方法定义中 使用的 this 关键字代表 使用该方法的==对象的引用== 示例代码如下： 123456789public class ReferenceObject &#123; ReferenceObject instance; public ReferenceObject()&#123; instance = this; &#125; public void test()&#123; System.out.println(this); &#125;&#125; ​ 构造方法内部，将对象this的值赋值给instance，在test方法内部，输出对象this的内容，这里的this都代表自身类型的对象。 4. 引用成员方法 在一个类的内部，成员方法之间的互相调用时也可以使用“this.方法名(参数)”来进行引用，只是所有这样的引用中this都可以省略，所以这里就不详细介绍了 三. 内存中的分析范例12345678910111213141516171819202122232425// 如何区分两个 ipublic class Leaf &#123; // 在 Leaf 类里面定义一个成员变量 i int i = 0; // 定义 Leaf 这个类的构造方法,构造方法里面有一个局部变量i,这个i与成员变量i同名 // public Leaf(int i) &#123; // this.i 中使用this就是为了却分开成员变量i和形参i,如果这里不写this,而是直接写"i=i",这样就不好区分了,因此有时使用this可以处理方法中成员变量和参数重名的情况 // 后面这个 i 是构造方法里面声明的形参i,在这里有一个原则,当你确定不了一个参数到时指的是哪一个变量的时候,赵丽这个参数最近的声明(就近声明原则) this.i = i; &#125; Leaf increament() &#123; i++; // 这个方法要求的返回类型是Leaf本身的类型,也就是指向Leaf的一个引用,既然是要指向Leaf的一个引用,return this,this指向自身,自身又是Leaf.因此使用 return this 返回的值就是 Leaf本身 return this; &#125; void print() &#123; System.out.println("i = " + i); &#125; public static void main(String[] args) &#123; Leaf leaf = new Leaf(100); leaf.increament().increament().print(); &#125;&#125; 在内存中分析main方法的执行过程* Leaf leaf = new Leaf(100); 程序执行到这里的时候，栈空间里面有一个变量leaf，它指向了我们new出来的在堆空间里面的Leaf对象。new这个Leaf对象的时候，调用了构造方法Leaf(),这个构造方法里面有一个形参 i，所以在栈空间里面给构造方法分配有一小块内存，名字叫i用来装传递过来的实参。这里传过来的实参是100，所以 i 里面装的值就是100。得到这个值之后，构造方法继续执行，执行 this.i = i; 这里就是把栈空间里面的 i 的值通过值传递给Leaf对象里面的成员变量i，所以成员变量 i 的值也变成了100。 leaf.increament().increament().print(); 详情见参考博文 四. 总结​ this一般出现在方法里面，当这个方法还没有调用的时候，this指的是谁并不知道。但是实际当中，你如果new了一个对象出来，那么this指的就是当前这个对象。对哪个对象调用方法，this指的就是调用方法的这个对象（你对哪个对象调用这个方法，this指的就是谁）。如果再new一个对象，这个对象他也有自己的this，他自己的this就当然指的是他自己了。 参考博文​ JAVA中this的三种用法的详解 ​ java基础学习总结——this关键字]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -46,11 +46,11 @@
     <url>%2F2019%2F03%2F15%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%8F%8D%E5%B0%84%2F</url>
     <content type="text"><![CDATA[一. 什么是反射​ 反射之中包含了一个「反」字，所以想要解释反射就必须先从「正」开始解释。 1.1 正射​ 一般情况下，我们使用某个类时必定知道它是什么类，是用来做什么的。于是我们直接对这个类进行实例化，之后使用这个类对象进行操作。 正射范例1234// 进行类对象的初始化，可以理解为「正」。Apple apple = new Apple(); //直接初始化，「正射」apple.setPrice(5);System.out.println("Apple Price:" + apple.getPrice()); 1.2 反射​ 反射则是一开始并不知道我要初始化的类对象是什么，自然也无法使用 new 关键字来创建对象了。 这时候，我们使用 JDK 提供的反射 API 进行反射调用 反射范例123456789101112131415// 使用反射获取一个对象的步骤：// 1. 获取类的 Class 对象, 类对象Class clz = Class.forName("how2j10.Apple");// 2. 根据 Class 对象实例获取 Constructor 对象, 构造器Constructor appleConstructor = clz.getConstructor();// 3. 使用 Constructor 对象的 newInstance 方法获取反射类对象, 通过构造器实例化Object appleObj = appleConstructor.newInstance();// 如果要调用某一个方法，则需要经过下面的步骤// 1. 获取方法的 Method 对象Method setPriceMethod = clz.getMethod("setPrice", int.class);// 2. 利用 invoke 方法调用方法setPriceMethod.invoke(appleObj, 14);Method getPriceMethod = clz.getMethod("getPrice");System.out.println("Apple Price:" + getPriceMethod.invoke(appleObj)); ​ 上面两段代码的执行结果，其实是完全一样的。 ​ 但是其思路完全不一样，第一段代码在未运行时就已经确定了要运行的类（Apple），而第二段代码则是在运行时通过字符串值才得知要运行的类（com.chenshuyi.reflect.Apple）。 什么是反射？ 反射就是在运行时才知道要操作的类是什么，并且可以在运行时获取类的完整构造，并调用对应的方法。 二. 获取反射中的 Class 对象(类对象)2.1 类对象​ 概念: 类对象用于提供类本身的信息，比如有几种构造方法， 有多少属性，有哪些普通方法 什么是类对象 对象之间的区别: garen和teemo都是Hero对象，他们的区别在于，各自有不同的名称，血量，伤害值。 类之间的区别: Hero和Item都是类，他们的区别在于有不同的方法，不同的属性。 ==类对象，就是用于描述这种类，都有什么属性，什么方法的== 在反射中，要获取一个类或调用一个类的方法，我们首先需要获取到该类的 Class 对象。 2.2 获取class对象(类对象) 在 Java API 中，获取 Class 类对象有三种方法 在一个JVM中，一种类，只会有一个类对象存在。所以三种方式取出来的class对象，都是一样的。 方法范例1234567891011121314// how2j10 是包名, Apple 是类名String className = "how2j10.Apple";// 1. 使用 Class.forName 静态方法。当你知道该类的全路径名时，你可以使用该方法获取 Class 类对象。Class clz = Class.forName(className);// 2. 使用 .class 方法。 这种方法只适合在编译前就知道操作的 Class。Class clz = Apple.class;// 3. 第三种，使用类对象的 getClass() 方法。Class clz = new Apple().getClass();System.out.println("clz的值为:" + clz);// 打印结果: clz的值为:class how2j10.Apple 2.3 注意:​ 获取类对象的时候，会导致类属性被初始化 ​ 无论什么途径获取类对象，都会导致静态属性被初始化，而且只会执行一次。（除了直接使用 Class c = Hero.class 这种方式，这种方式不会导致静态属性被初始化） 三. 通过反射获取构造方法并使用3.1 获取单个的构造方法，并调用： public Constructor getConstructor(Class... parameterTypes) : 获取单个的”公有的”构造方法： public Constructor getDeclaredConstructor(Class... parameterTypes): 获取“某个构造方法”可以是私有的，或受保护、默认、公有 范例12// 获取构造器Constructor appleConstructor = clz.getConstructor(); 3.3 调用构造方法：​ newInstance是 Constructor类的方法（管理构造函数的类） api的解释为： newInstance(Object... initargs) : 使用此 Constructor 对象表示的构造方法来创建该构造方法的声明类的新实例，并用指定的初始化参数初始化该实例。 它的返回值是T类型，所以newInstance是创建了一个构造方法的声明类的新实例对象。并为之调用 范例12// 通过构造器实例化,使用 Constructor 对象的 newInstance 方法获取反射类对象Object appleObj = appleConstructor.newInstance(); 四. 获取成员变量4.1 获取成员变量并调用 批量的 Field[] getFields(): 获取所有的”公有字段” Field[] getDeclaredFields(): 获取所有字段，包括：私有、受保护、默认、公有 获取单个的 public Field getField(String fieldName) : 获取某个”公有的”字段； public Field getDeclaredField(String fieldName) : 获取某个字段***(可以是私有的) 4.2 设置字段的值​ Field --&gt; public void set(Object obj,Object value) 参数说明： obj : 要设置的字段所在的对象； value : 要为字段设置的值； 范例12345678910111213141516171819public class Fields &#123; public static void main(String[] args) throws Exception &#123; // 1.获取Class对象 Class stuClass = Class.forName("fanshe.field.Student"); // 2.获取字段 System.out.println("********获取公有字段**并调用*********"); Field f = stuClass.getField("name"); System.out.println(f); // 3.获取一个对象 // 产生Student对象 --&gt; Student stu = new Student(); Object obj = stuClass.getConstructor().newInstance(); // 4.为字段设置值 // 为Student对象中的name属性赋值 --&gt; stu.name = "刘德华" f.set(obj, "刘德华"); &#125;&#125; 五. 获取成员方法并调用5.1 获取成员方法： 批量的批量的 public Method[] getMethods() : 获取所有”公有方法”；（包含了父类的方法也包含Object类） public Method[] getDeclaredMethods() : 获取所有的成员方法，包括私有的(不包括继承的) 获取单个的： public Method getMethod(String name,Class&lt;?&gt;... parameterTypes) 参数说明 name : 方法名； Class … : 形参的Class类型对象 public Method getDeclaredMethod(String name,Class&lt;?&gt;... parameterTypes) 5.2 成员方法调用​ Method --&gt; public Object invoke(Object obj,Object... args) 参数说明 obj : 要调用方法的对象； args : 调用方式时所传递的实参； 12345678910111213141516171819202122public class MethodClass &#123; public static void main(String[] args) throws Exception &#123; // 1.获取Class对象 Class stuClass = Class.forName("fanshe.method.Student"); System.out.println("***************获取公有的show1()方法*******************"); //2. 获取方法 Method m = stuClass.getMethod("show1", String.class); System.out.println(m); // 3.实例化一个Student对象 Object obj = stuClass.getConstructor().newInstance(); // 4.方法的调用,一个是要调用的对象（获取有反射），一个是实参 m.invoke(obj, "刘德华"); System.out.println("***************获取私有的show4()方法******************"); m = stuClass.getDeclaredMethod("show4", int.class); System.out.println(m); m.setAccessible(true);//解除私有限定 Object result = m.invoke(obj, 20);//需要两个参数，一个是要调用的对象（获取有反射），一个是实参 System.out.println("返回值：" + result); &#125;&#125; 六. 反射方法的其它使用之—通过反射运行配置文件内容6.1 反射的作用 我们利用反射和配置文件，可以使：应用程序更新时，对源码无需进行任何修改 我们只需要将新类发送给客户端，并修改配置文件即可 代码实现student类12345public class Student &#123; public void show()&#123; System.out.println("is show()"); &#125;&#125; 配置文件以 txt 文件为例子（pro.txt） 12className = cn.fanshe.StudentmethodName = show 测试类1234567891011121314151617181920public class Demo &#123; public static void main(String[] args) throws Exception &#123; // 1.通过反射获取Class对象 Class stuClass = Class.forName(getValue("className")); //"cn.fanshe.Student" // 2.获取 show()方法 Method m = stuClass.getMethod(getValue("methodName")); //show // 3.调用show()方法 m.invoke( stuClass.getConstructor().newInstance()); &#125; // 此方法接收一个 key，在配置文件中获取相应的 value public static String getValue(String key) throws IOException&#123; Properties pro = new Properties();//获取配置文件的对象 FileReader in = new FileReader("pro.txt");//获取输入流 pro.load(in);//将流加载到配置文件对象中 in.close(); return pro.getProperty(key);//返回根据key获取的value值 &#125;&#125;// 打印结果: is show() 需求​ 当我们升级这个系统时，不要Student类，而需要新写一个Student2的类时，这时只需要更改pro.txt的文件内容就可以了。代码就一点不用改动 要替换的student2类12345public class Student2 &#123; public void show2()&#123; System.out.println("is show2()"); &#125;&#125; 配置文件更改为12className = cn.fanshe.Student2methodName = show2 控制台输出：1// 打印结果: is show2() 参考博文​ 大白话说Java反射：入门、使用、原理 ​ Java基础之—反射（非常重要） ​ how2j ​ Java 反射机制]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -155,11 +155,11 @@
     <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BB%A7%E6%89%BF%2F</url>
     <content type="text"><![CDATA[Java 继承概念 继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。 子类继承父类，表明子类是一种特殊的父类，并且具有父类所不具有的 一些属性或方法 类的继承格式123456// Java继承的关键字是：extendsclass 父类 &#123;&#125; class 子类 extends 父类 &#123;&#125; 需要注意的是 Java 不支持多继承，但支持多重继承。 继承的特性 子类拥有父类非 private 的属性、方法。 子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。 子类可以用自己的方式实现父类的方法。 Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类。 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。 为什么需要继承 提高代码的 复用性 (复用性主要是可以多次使用，不用再多次写同样的代码）)。 提高程序的扩展性。 参考博文​ JAVA继承总结 ​ 菜鸟教程]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -167,11 +167,11 @@
     <url>%2F2019%2F03%2F13%2Fjava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
     <content type="text"><![CDATA[Java 抽象类1. 抽象方法​ 一种特殊的方法：它只有声明，而没有具体的实现 123// 声明格式// 抽象方法必须用abstract关键字进行修饰abstract void fun(); 抽象方法必须定义在抽象类中。 2. 抽象类概念​ 抽象方法的类(一个类含有抽象方法，则称这个类为抽象类), 抽象类必须在类前用 abstract关键字 修饰。 一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。 特点 子类继承父类时，如果这个父类里面有抽象方法，并且子类觉得可以去实现父类的所有抽象方法，那么子类必须去实现父类的所有抽象方法, 父类里面的抽象方法，子类如果觉得实现不了，那么把就子类也声明成一个抽象类 因为抽象类中含有无具体实现的方法，所以不能用抽象类创建对象。父类里面的方法是抽象的，那么对于整个类来说，它就有一个没有实现的方法，这个方法不知道怎么去实现，那么这个类是就是残缺不全的，因此这个类应该被定义为一个抽象类 含有抽象方法的类必须被声明为抽象类 不意味着抽象类中只能有抽象方法，它和普通类一样，同样可以拥有成员变量和普通的成员方法 抽象类必须被继承 抽象类就是为了继承而存在的，如果你定义了一个抽象类，却不去继承它，那么等于白白创建了这个抽象类，因为你不能用它来做任何事情 抽象方法必须被重写 从某种意义上来说，抽象方法就是被用来重写的，所以在父类声明的抽象方法一定要在子类里面重写 范例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091package javastudy.summary;/** * 父类Animal * 在class的前面加上abstract，即声明成这样：abstract class Animal * 这样Animal类就成了一个抽象类了 */abstract class Animal &#123; public String name; public Animal(String name) &#123; this.name = name; &#125; /** * 抽象方法 * 这里只有方法的定义，没有方法的实现。 */ public abstract void enjoy(); &#125;/** * 这里的子类Cat从抽象类Animal继承下来，自然也继承了Animal类里面声明的抽象方法enjoy()， * 但子类Cat觉得自己去实现这个enjoy()方法也不合适，因此它把它自己也声明成一个抽象的类， * 那么，谁去实现这个抽象的enjoy方法，谁继承了子类，那谁就去实现这个抽象方法enjoy()。 */abstract class Cat extends Animal &#123; // Cat添加自己独有的属性 public String eyeColor; public Cat(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.eyeColor = c; &#125;&#125;/** * 子类BlueCat继承抽象类Cat，并且实现了从父类Cat继承下来的抽象方法enjoy */class BlueCat extends Cat &#123; public BlueCat(String n, String c) &#123; super(n, c); &#125; // 实现了抽象方法enjoy @Override public void enjoy() &#123; System.out.println("蓝猫叫..."); &#125; &#125;/** * 子类Dog继承抽象类Animal，并且实现了抽象方法enjoy */class Dog extends Animal &#123; // Dog类添加自己特有的属性 public String furColor; public Dog(String n, String c) &#123; super(n);//调用父类Animal的构造方法 this.furColor = c; &#125; @Override public void enjoy() &#123; System.out.println("狗叫...."); &#125;&#125;public class TestAbstract &#123; public static void main(String[] args) &#123; /** * 把Cat类声明成一个抽象类以后，就不能再对Cat类进行实例化了， * 因为抽象类是残缺不全的，缺胳膊少腿的，因此抽象类不能被实例化。 */ //Cat c = new Cat("Catname","blue"); Dog d = new Dog("dogname","black"); d.enjoy();//调用自己实现了的enjoy方法 BlueCat c = new BlueCat("BlueCatname","blue"); c.enjoy();//调用自己实现了的enjoy方法 &#125;&#125; 杂抽象类和普通类的主要有三点区别： 抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。 抽象类不能用来创建对象。 如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。 参考博文​ Java抽象类与接口的区别 ​ java基础学习总结——抽象类 ​ 深入理解Java的接口和抽象类]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -179,11 +179,11 @@
     <url>%2F2019%2F03%2F13%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%8E%A5%E5%8F%A3%2F</url>
     <content type="text"><![CDATA[一. 概念 官方解释: Java接口是一系列方法的声明，是一些方法特征的集合，一个接口只有方法的特征没有方法的实现，因此这些方法可以在不同的地方被不同的类实现，而这些实现可以具有不同的行为（功能） 通俗理解: 接口可以理解为一种特殊的抽象类(100%的抽象类, 所有的方法都是抽象方法)，里面全部是由全局常量和公共的抽象方法(方法的定义)所组成,而没有变量和方法的实现 范例123456789101112131415/** * java中定义接口 * 把一个类定义成一个接口的格式是把声明类的关键字class用声明接口的关键字interface替换掉即可 */public interface JavaInterfaces &#123; // 常量的声明格式, 都是公共的、静态的，不能改变的 // 下面两种都可以,因为在接口里面默认的属性声明都是“public static final”的 public static final int id=10; int id=10; //方法的声明 // 在接口里面的声明的方法都是抽象方法,默认是抽象的，因此在接口里面的抽象方法都会把abstract关键字省略掉 // 在接口里面声明的抽象方法默认是“public(公共的) public void start();&#125; 二. 特点 接口指明了一个类必须要做什么和不能做什么，相当于类的蓝图 接口可以继承其他的接口,并添加新的属性和抽象方法. 抽象方法只能存在于抽象类或者接口中，但抽象类中却能存在非抽象方法，即有方法体的方法。接口是百分之百的抽象类 接口是解决Java无法使用多继承的一种手段,, 实际中更多的作用是制定标准的。 一个类可以实现多个接口, 接口里面的成员变量不专属于某个对象，都是静态的成员变量，是属于整个类的,不会存在对象之间互相冲突的问题。实现多个接口，也就实现了多重继承 见范例 接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口 三. 重点 一个类如果要实现某个接口的话，那么它必须要实现这个接口中的所有方法。 不能直接去实例化一个接口，因为接口中的方法都是抽象的，是没有方法体的. 但是，我们可以使用接口类型的引用指向一个实现了该接口的对象，并且可以调用这个接口中的方法(Java多态的特性). 四. 接口的进一步理解​ 如果某个设备需要向电脑中读取或者写入某些东西，这些设备一般都是采用USB方式与电脑连接的，我们发现，只要带有USB功能的设备就可以插入电脑中使用了，那么我们可以认为USB就是一种功能，这种功能能够做出很多的事情（实现很多的方法），其实USB就可以看做是一种标准，一种接口，只要实现了USB标准的设备我就认为你已经拥有了USB这种功能。（因为你实现了我USB标准中规定的方法） 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344// 先声明USB接口：其中规定了要实现USB接口就必须实现接口规定实现的read( )和write( )这两个方法。interface USB &#123; void read(); void write();&#125;// 一个USB类实现USB接口。（实现其中的方法）class YouPan implements USB &#123; @Override public void read() &#123; System.out.println("U盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("U盘正在通过USB功能写入数据"); &#125;&#125;// 一个键盘类实现USB接口。（实现其中的方法）class JianPan implements USB &#123; @Override public void read() &#123; System.out.println("键盘正在通过USB功能读取数据"); &#125; @Override public void write() &#123; System.out.println("键盘正在通过USB功能写入数据"); &#125;&#125;// 测试public class Main &#123; public static void main(String[] args) &#123; // 生成一个实现可USB接口（标准）的U盘对象 YouPan youPan = new YouPan(); // 调用U盘的read( )方法读取数据 youPan.read(); // 调用U盘的write( )方法写入数据 youPan.write(); // 生成一个实现可USB接口（标准）的键盘对象 JianPan jianPan = new JianPan(); // 调用键盘的read( )方法读取数据 jianPan.read(); // 调用键盘的write( )方法写入数据 jianPan.write(); &#125;&#125; 参考博文​ java基础学习总结——接口 ​ JAVA基础——接口（全网最详细教程）]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -271,11 +271,11 @@
     <url>%2F2019%2F03%2F12%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E7%BA%BF%E7%A8%8B(1)%2F</url>
     <content type="text"><![CDATA[一. 线程的基本概念线程是一个程序里面不同的执行路径 每一个分支都叫做一个线程，main()叫做主分支，也叫主线程 程序的执行过程都是这样的​ 首先把程序的代码放到内存的代码区里面，代码放到代码区后并没有马上开始执行，但这时候说明了一个进程准备开始，进程已经产生了，但还没有开始执行，这就是进程，所以进程其实是一个静态的概念，它本身就不能动。 进程: 机器上的一个.class文件，机器上的一个.exe文件，这个叫做一个进程 平常所说的进程的执行指的是进程里面主线程开始执行了，也就是main()方法开始执行了。 ==进程是一个静态的概念，在我们机器里面实际上运行的都是线程。== 知识补充: CPU难道真的很神通广大，能够同时执行那么多程序吗？ 不是的，CPU的执行是这样的：CPU的速度很快，一秒钟可以算好几亿次，因此CPU把自己的时间分成一个个小时间片，我这个时间片执行你一会，下一个时间片执行他一会，再下一个时间片又执行其他人一会，虽然有几十个线程，但一样可以在很短的时间内把他们通通都执行一遍，但对我们人来说，CPU的执行速度太快了，因此看起来就像是在同时执行一样，但实际上在一个时间点上，CPU只有一个线程在运行。 小总结(学习线程首先要理清楚三个概念): 进程：进程是一个静态的概念 线程：一个进程里面有一个主线程叫main()方法，是一个程序里面的，一个进程里面不同的执行路径。 在同一个时间点上，一个CPU只能支持一个线程在执行。因为CPU运行的速度很快，因此我们看起来的感觉就像是多线程一样。 什么才是真正的多线程？如果你的机器是双CPU，或者是双核，这确确实实是多线程。 二. 线程的创建和启动在 JAVA 里面，JAVA的线程是通过java.lang.Thread类来实现的，每一个Thread对象代表一个新的线程。 创建一个新线程出来有两种方法： 从Thread类继承 实现接口 2.1 使用实现Runnable接口创建和启动新线程123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * @Description: 开辟一个新的线程来调用run方法 * 程序执行到 t.start() 后开辟了一条新的线程,主线程继续向下执行 * t.start() 这条线程是 run() 方法执行的线程, * run() 方法和 main() 方法再在交替进行,或者说叫并行执行 * @author zn * */public class TestThread1 &#123; public static void main(String args[]) &#123; // 这里new了一个线程类的对象出来 Runner1 r1 = new Runner1(); // r1.run(); // 这里使用的是Thread(Runnable target) 这构造方法 Thread t = new Thread(r1); // 要启动一个新的线程就必须new一个Thread对象出来 // 启动新开辟的线程，新线程执行的是run()方法，新线程与主线程会一起并行执行 t.start(); for (int i = 0; i &lt; 4; i++) &#123; System.out.println("maintheod：" + i); &#125; &#125;&#125;// 定义一个类用来实现 Runnable 接口，实现Runnable接口就表示这个类是一个线程类 class Runner1 implements Runnable &#123; // 每个线程都是方法run()来完成其操作的，方法run()称为线程体 public void run() &#123; for (int i = 0; i &lt; 4; i++) &#123; System.out.println("Runner1：" + i); &#125; &#125;&#125;/*打印结果: maintheod：0 maintheod：1 Runner1：0 maintheod：2 Runner1：1 maintheod：3 Runner1：2 Runner1：3*/ 不开辟新线程直接调用run方法123456789101112131415161718192021222324252627282930313233343536373839404142/** * @Description: 不开辟新线程直接调用run方法 * 首先进入主程序, 子程序 r2 执行完之后主程序 main() 在继续执行 * @author zn * */public class TestThread2 &#123; public static void main(String args[]) &#123; // 这里new了一个线程类的对象出来 Runner2 r2 = new Runner2(); // 这个称为方法调用，方法调用的执行是等run()方法执行完之后才会继续执行main()方法 r2.run(); // Thread t = new Thread(r2); // t.start(); for (int i = 0; i &lt; 4; i++) &#123; System.out.println("maintheod：" + i); &#125; &#125;&#125;// 定义一个类用来实现 Runnable 接口，实现Runnable接口就表示这个类是一个线程类class Runner2 implements Runnable &#123; // 每个线程都是方法run()来完成其操作的，方法run()称为线程体 public void run() &#123; for (int i = 0; i &lt; 4; i++) &#123; System.out.println("Runner2：" + i); &#125; &#125;&#125;/*打印结果: Runner2：0 Runner2：1 Runner2：2 Runner2：3 maintheod：0 maintheod：1 maintheod：2 maintheod：3*/ 2.2 继承Thread类，并重写其run()方法创建和启动新的线程123456789101112131415161718192021222324252627282930313233343536373839404142/** * @Description: 线程创建与启动的第二种方法：定义Thread的子类并实现run()方法 * 这里也是并发进行 * @author zn * */public class TestThread3 &#123; public static void main(String args[]) &#123; Runner3 r3 = new Runner3(); // 调用start()方法启动新开辟的线程 r3.start(); for (int i = 0; i &lt;= 4; i++) &#123; System.out.println("mainMethod：" + i); &#125; &#125;&#125;/* * Runner2类从Thread类继承 通过实例化Runner2类的一个对象就可以开辟一个新的线程 * 调用从Thread类继承来的start()方法就可以启动新开辟的线程 */class Runner3 extends Thread &#123; // 重写run()方法的实现 public void run() &#123; for (int i = 0; i &lt;= 4; i++) &#123; System.out.println("Runner3：" + i); &#125; &#125;&#125;/*打印结果: mainMethod：0 Runner3：0 mainMethod：1 Runner3：1 Runner3：2 Runner3：3 Runner3：4 mainMethod：2 mainMethod：3 mainMethod：4*/ 2.3 两种方法的选择优先选择实现Runnable接口 的这种方式去开辟一个新的线程。 因为接口的实现可以实现多个，而类的继承只能是单继承。因此在开辟新线程时能够使用Runnable接口就尽量不要使用从Thread类继承的方式来开辟新的线程。 三. 线程状态转换参考博文​ java基础学习总结——线程(一)]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -291,11 +291,11 @@
     <url>%2F2019%2F03%2F11%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E8%A6%86%E7%9B%96%2F</url>
     <content type="text"><![CDATA[一. 方法的重载(overload)指一个类中可以定义有 相同的名字 ,但 参数不同 的多个方法. 调用时, 会根据 不同的参数表 选择对应的方法 范例 构造方法 注意 方法名一样, 但参数不一样,就是重载(overload) 参数不一样 (1.参数的个数不一样 2. 参数的类型不一样, 只要有一个就可以) 方法名一样，参数类型一样，只有返回值不一样，这个不构成重载 理解: 多重加载，不同样式的加载 二. 方法的覆盖(override)指覆盖了一个方法并且对其重写，以求达到不同的作用,也可以叫做 重写 范例 对 接口方法 的实现 在 继承 中也可能会在 子类覆盖父类 中的方法 注意 覆盖的方法的标志必须要和被覆盖的方法的 标志 (相同的名字和相同的参数)完全匹配，才能达到覆盖的效果； 覆盖的方法的返回值必须和被覆盖的方法的返回一致； 覆盖的方法所抛出的异常必须和被覆盖方法的所抛出的异常一致，或者是其子类； 被覆盖的方法不能为private，否则在其子类中只是新定义了一个方法，并没有对其进行覆盖 参考博文 java中的方法覆盖（Overriding）和方法重载（Overloading）是什么意思？重写跟重载的区别？ 对比Java语言中的覆盖和重载]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -303,11 +303,11 @@
     <url>%2F2019%2F03%2F11%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%2F</url>
     <content type="text"><![CDATA[区别 public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用 private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用，私有财产神圣不可侵犯嘛，即便是子女，朋友，都不可以使用。 protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private 不写时默认为friendly ，也即是“包访问权限” 详细 作用域 自身 同包子类 不同包子类 同包类 其他类 private 访问(√) 继承(×) 继承(×) 访问(×) 访问(×) package 访问(√) 继承(√) 继承(×) 访问(√) 访问(×) protected 访问(√) 继承(√) 继承(√) 访问(√) 访问(×) public 访问(√) 继承(√) 继承(√) 访问(√) 访问(√) 如何使用 属性 通常使用private封装起来 方法 一般使用public用于被调用 会 被子类继承 的方法，通常使用protected package用的不多，一般新手会用package,因为还不知道有修饰符这个东西 总结 如果一个成员需要被外部包所访问，则必须使用public修饰符；如果一个成员需要被定义在不同包下的子类所访问，则可以使用public或protected修饰符；如果一个成员需要被本包下的其他类所访问，则可以不用写任何的修饰符，使用public或者protected也行 若一个成员想使用同类中其他成员，则使用任意一个修饰符即可；若一个成员不想被任何一个外部的类所访问，则使用private关键字比较恰当。 参考博客: Java中private、public、default、protected的区别]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -349,11 +349,11 @@
     <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(2)%2F</url>
     <content type="text"><![CDATA[一. Java类的定义 使用 class 关键字定义一个类 12345678910class Person &#123; // 成员变量(属性)定义 private int id; private int age = 10; //方法定义 public int getAge() &#123; return age; &#125; public void setAge(int i) &#123; age = i; &#125;&#125; 二. 成员变量 成员变量的作用范围为 整个类体 定义成员变量可以对其初始化, 如果 不对其初始化 , Java 使用默认的值 对其初始化(若不记得JAVA对成员变量默认的初始化是多少的话，定义一个成员变量，不给它初始化，然后直接打印这个成员变量,进行查看) 在 JAVA 里面的任何变量首先应该要声明，然后再赋值，然后再使用 成员变量和局部变量的区别: 成员变量 局部变量 不进行初始化 默认给初始化 不默认给初始化, 在方法里面声明一个局部变量如果不给它初始化时就会出错 三. 基本概念 — 引用​ Java语言中 除基本类型之外 的变量类型都称之为引用类型 Java中的对象是通过引用对其操作的 基本类型与引用类型的区别: 基本类型 引用类型 实现 当声明一个int i=0时，系统会马上给这个i分配一个内存空间（在 栈内存 里面分配一小块区域用来装数字0），里面装着一个值为0，以后使用i这个名字马上就可以访问这个内存空间里面的值 定义好这个类之后，需要使用new关键字把这个类的对象实例化出来，也就是真真正正造出一个对象出来才能使用这个对象 内存 占 一块 内存 占 两块 内存 存放位置 栈内存 栈内存: 引用对象 堆内存: 真正的内容(new出来的东西) 不论是基本数据类型还是引用类型，都会先在栈中分配一块内存 ，对于基本类型来说，这块区域包含的是 基本类型的内容；而对于引用类型来说，这块区域包含的是 指向真正内容的指针(存放真正内容的地址) ，真正的内容被手动的分配在堆上。 代码实例:123456789101112131415161718public class Hero &#123; String name; //姓名 float hp; //血量 public static void main(String[] args) &#123; //代表创建了一个Hero对象 //但是也仅仅是创建了一个对象，没有办法访问它 //为了访问这个对象，会使用引用来代表这个对象 new Hero(); //"h"这个变量是Hero类型，叫做引用(也叫 引用对象,对象的引用) //"="的意思指的h这个引用代表右侧创建的对象 //“代表” 在面向对象里，又叫做“指向” //引用h指向了新建的Hero对象 Hero h = new Hero(); &#125; &#125; 多个引用，一个对象，一个引用，多个对象区别： 多个引用指向一个对象，操作的都是同一个对象 一个引用多个对象，之前的对象就没有办法访问了, 这个引用就指向了另一个对象 四. 类和对象的关系如何在内存中区分类和对象 类是 静态 的概念, 在代码区 对象是new出来的, 位于 堆内存 , 类的每个成员变量在不同的对象中都有不同的值 (除了静态变量,static),而方法只有一分,执行的时候才占用内存 . 五. 构造方法(函数) 主要作用 :完成对象的初始化工作，(如果写的类里面没有构造函数,那么编译器会默认加上一个无参数且方法体为空的构造函数) 特点 使用 new + 构造方法创建一个新的对象 构造函数是定义在 Java类中的一个用来 初始化对象 的函数,(new一个东西的时候，实际上你调用的是一个构造方法，构造方法就是把自己构造成一个新的对象，所以叫构造方法，构造一个新对象用的方法叫构造方法) 构造函数与类同名, 且没有返回值(构造方法的名字必须和类的名字完全一模一样，包括大小写,这个方法的名字和类名完全相同，并且没有返回值，也就是在这个方法前面不能写任何的方法的返回类型修饰符，连void都不可以写) 范例12345678910111213141516public class Person &#123; int id; //在person这类里面定义两个成员变量id和age, int age=20; //给成员变量age赋了初值为20 /**这里就是person这个类的一个构造方法 * 构造方法的规则很简单，和类名要完全一样，一点都不能错，包括大小写。 * 并且没有返回值，不能写void在它前面修饰 * @param _id * @param _age */ public Person(int _id,int _age ) &#123; id = _id; age = _age; &#125;&#125;//内存分析见 孤傲苍狼博客 注意 如果类已经有了一个有参数有方法体的构造函数,这时编译器就不会再给它默认加上一个无参且方法体为空的构造函数.可以理解为无参的构造函数被覆盖了.这种情况称为没有默认构造函数 随笔数据区、代码区、栈区、堆区 区别: 栈区(stack)：由系统的编译器自动的释放， 主要用来存放方法中的参数，一些临时的局部变量等 ，并且方法中的参数一般在操作完后，会由编译器自动的释放掉。 堆区(heap):由程序员决定，在Java中，如果程序员不释放的话，一般会由垃圾回收机制自动的清理掉。此区域主要用来 存放我们经常创建的对象、动态的申请的临时空间等 。 数据区(data seg):也称全局区或者静态区，根据名称我们就应该知道用来存放一些全局的东西，比如我们经常用到的 静态变量、全局变量等 都会存放到数据区，此区域上的东西都被全局所共享。比如我们可以采取类名.的方式就可以访问到方法，这就是所谓的静态方法，存放到数据区的。 代码区：存放 程序编译后可以执行代码的地方 。比如执行代码时写的While语句、if条件语句等，都会存放到此 理解了内存，就理解了一切，就理解了各种各样的语言。所有的语言无非都是这样：局部变量分配内存永远在栈里面，new出来的东西分配内存永远是在堆里，静态的东西分配内存永远是在数据区。剩下的代码肯定是在代码区 参考博文:how2J 类和对象 孤傲苍狼 java基础学习总结——面向对象2 Java基本数据类型与引用数据类型 及在堆栈中内存的存储原理 数据区、代码区、栈区、堆区]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -409,11 +409,11 @@
     <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---static%E5%85%B3%E9%94%AE%E5%AD%97%2F</url>
     <content type="text"><![CDATA[Static 关键字 static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途 基本作用: 方便在 没有创建对象 的情况下来进行调用(方法/变量),被static修饰的变量和方法其随着类的加载而被加载 . 只要类被加载了，就可以通过类名去进行访问. 1. 静态变量 在类中用static声明的成员变量为 静态成员变量 (也叫类变量), 其为该类的公共变量, 在第一次使用时被初始化, 这个成员变量 只有一份 ，而且这一份是这个类 所有的对象 共享, 属于整个类的，它不属于专门的某个对象 非静态成员专属于某一个对象，想访问非静态成员必须new一个对象出来才能访问 static成员变量的初始化顺序按照定义的顺序进行初始化 注意: 注意不能把 任何方法体内的变量声明为静态 2. 静态方法 用static 声明的方法为静态方法(也叫类方法) 在静态方法里只能直接调用同类中其他的静态成员（包括变量和方法），而不能直接访问类中的非静态成员 。这是因为，对于非静态的方法和变量，需要先创建类的实例对象后才可使用，而静态方法在使用前不用创建任何对象。 对于非静态成员方法，它访问静态成员方法/变量显然是毫无限制的 静态方法不能以任何方式引用this和super关键字 因为静态方法在使用前不用创建任何实例对象，当静态方法调用时，this所引用的对象根本没有产生。 由于静态方法不依赖于任何对象就可以进行访问，因此对于静态方法来说，是没有this的，因为它不依附于任何对象，既然都没有对象，就谈不上this了 范例​ 想在不创建对象的情况下调用某个方法，就可以将这个方法设置为static。 ​ 最常见的static方法就是main方法。因为程序在执行main方法的时候没有创建任何对象，因此只有通过类名来访问。 3. 静态代码块 用来形成静态代码块以优化程序性能。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。 为什么说static块可以用来优化程序性能​ 是因为它的特性:只会在类加载的时候执行一次。 初始化的顺序 对象属性的初始化有三种方式 声明时初始化 静态代码块初始化 构造函数初始化 故意把初始化块，放在构造方法下面， 问题：这三种方式，谁先执行？谁后执行？ 代码演示12345678910111213141516171819202122232425public class StaticOrder &#123; // 声明时初始化 public String name = StaticOrder.getName("属性声明"); // 构造函数初始化 public StaticOrder() &#123; name = StaticOrder.getName("构造方法"); &#125; // 静态代码块初始化 &#123; name = StaticOrder.getName("初始化块"); &#125; // 被调用的 getName() 方法 public static String getName(String name) &#123; System.out.println("初始化: " + name); return name; &#125; public static void main(String[] args) &#123; new StaticOrder(); &#125;&#125;// 打印结果:// 初始化: 属性声明// 初始化: 初始化块// 初始化: 构造方法 所以顺序为: 声明时初始化 静态代码块初始化 构造函数初始化 杂:​ static可以修饰内部类，但是不能修饰普通类。静态内部类的话可以直接调用静态构造器（不用对象）。 参考博文:​ java基础学习总结——static关键字 ​ 优质答案 ​ java中静态代码块的用法 static用法详解 ​ Java中的static关键字解析]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -421,11 +421,11 @@
     <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(1)%2F</url>
     <content type="text"><![CDATA[一. 面向过程的思想和面向对象的思想面向过程 自顶向下,逐步细化 ​ 面向解决问题的过程进行编程​ 按照步骤化解决问题.(一个问题,分析这个问题如何去解决,第一步做什么, 第二步什么…), 当我们用面向过程的思想去编程或解决问题时，首先一定要把详细的实现过程弄清楚。一旦过程设计清楚，代码的实现简直轻而易举。 面向对象 Java 中万物皆对象，模拟真实的现实世界 ​ 在编程的时候尽可能的去模拟真实的现实世界，按照现实世界中的逻辑去处理一个问题，分析问题中参与其中的有哪些实体，这些实体应该有什么属性和方法，我们如何通过调用这些实体的属性和方法去解决问题。拿到一个问题,应该分析: 这个问题里面有哪些类和对象 在分析这些类和对象应该具有哪些属性和方法 分析类和类之间具有什么关系 设计思维: 合适的方法应该出现在合适的类里面 二. 类和对象类一类事物的抽象包括属性(静态)和方法(动态) 属性: 用来描述这一个对象（类）的特征 ,比如一个人的属性有身高，肤色，体重等等， 方法: 可以完成一个特定的功能，方法就像是动作, 比如人可以吃饭，跑步，学习，都可以是方法 Java中属性就是成员变量,方法就是函数, 不同的叫法 对象一类事物的具体的某一个东西(符合这类事物的具体特征) 在Java中, 对象就是类的实例化 随笔: 对象和类是分不开的，必须首先定义类才能有对象类和对象的关系，类就是模板，里面定义着属性和方法，而对象就是实例，通过类来创建（new）对象，叫类的实例化 三. 面向过程与面向对象的比较 都可以实现代码重用和模块化编程，但是面对对象的模块化更深，数据更封闭，也更安全！因为面向对象的封装性更强！ 面对对象的思维方式更加贴近于现实生活，更容易解决大型的复杂的业务逻辑 从前期开发角度上来看，面对对象远比面向过程要复杂，但是从维护和扩展功能的角度上来看，面对对象远比面向过程要简单！ 当我们的业务逻辑比较简单时，使用面向过程能更快的实现当我们的业务逻辑比较复杂时，为了将来的维护和扩展，还是面向对象更为靠谱 参考博文​ 编程思想：面向对象和面向过程]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -455,11 +455,11 @@
     <url>%2F2019%2F03%2F08%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(2)%2F</url>
     <content type="text"><![CDATA[一. 语句1.1 条件语句 if 语句 switch 语句 1.2 循环语句 for 循环语句 while 循环与do while 循环 1.3 break 和 continue 语句 二. 方法​ 一段用来完成特定功能的代码片段 1234[修饰符1 修饰符2 ...] 返回值类型 方法名(形式参数列表) &#123; java 语句; ...&#125; 方法可以有返回值，但可以不用这个返回值。方法首先要定义，然后才能调用 三、变量的作用域​ 变量的作用域只在“{ }”有效，出了这个“{ }”就没有作用了 四、递归调用 递归：在一个方法内部对自身的调用就称为递归 具体的参考 孤傲苍狼 博客 五、程序的执行过程 参考博文:​ java基础学习总结——基础语法2]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -515,11 +515,11 @@
     <url>%2F2019%2F03%2F07%2FJava%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86---%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95(1)%2F</url>
     <content type="text"><![CDATA[一.标识符​ 对于各种变量, 方法和类等要素 命名时使用的字符序列 称为标识符 凡是自己可以命名的地方都叫标识符, 都遵循标识符的规则 二.关键字​ 一些赋以特定的含义, 用作专门用途的字符串 成为关键字 大部分编辑会将关键字用特殊方式标出所有Java关键字都是小写英文 三. java基础数据类型3.1 Java常量​ eg: 整型常量: 123, 字符常量: ‘a’ 注意: 区分字符常量和字符串常量注意: “常量”这个名词还会用在另外其它语境中表示 值不可变的变量 3.2 Java变量1234// 变量i(变量的名字)中存放常量100(变量的值)int i = 100; float f = 3.14;String s = "hello"; 变量是 内存 中的一小块区域, 使用 变量名 来访问这块区域因此,每一个变量使用前必须要先 声明, 然后必须进行 赋值 (填充内容), 才能使用 补充(本质上理解): 一个程序在运行的时候，实际上这个程序是位于内存里面，然后才开始运行。一个.exe文件 存放在硬盘上是无法运行的 ，在硬盘上看到的.exe文件无非就是一个文件而已，当我们双击这个.exe文件时，运行起来的时候实际上是 整个.exe文件被放在了在内存里面 ，然后操作系统找到main方法，也就是程序的入口，然后就开始执行了。执行的过程之中，会不断地在内存里面分配一些区域 变量在内存里面就是一小块区域，变量有两个概念，一个是变量的名字，另一个是变量的值即这一小块区域是有名字的，里面装着一个值，因此以后要想访问这小块区域里面的内容就可以根据这小块区域的名字来访问了。因此，变量的本质就是一小块内存区域 。变量在内存里面分配多大的存储空间呢？ 答: 不同的变量类型分配不同大小的存储空间，每一个变量都是属于特定的数据类型的，声明成不同的数据类型，它就在内存里面分配不同的存储空间。 Java变量的分类:按被声明的 位置 划分: 局部变量: 方法或语句块内部定义的变量 成员变量: 方法外部, 类的内部定义的变量 类外面不能有变量的声明 按所属数据的 数据类型 划分: 基本数据类型变量 引用数据类型变量 3.3 Java数据类型3.3.1 基本数据类型 整数型: byte, short, int, long, 浮动型: float, double 布尔型: bool 字符型: char 3.3.2 基本数据类型的转换 boolean 类型不可以转换为其他的数据类型 容量小的类型自动转换为容量大的数据类型 容量大的类型转换为容量小的数据类型时, 要加上强制转换符,可能造成精度降低或溢出 有多种类型的数据混合运算时,系统首先自动的将所有数据类型转换成 容量最大 的那一种数据类型,然后在进行计算 范例1234567891011121314151617181920public class TestConvert &#123; public static void main(String arg[]) &#123; int i1 = 123; int i2 = 456; double d1 = (i1+i2)*1.2;//系统将转换为double型运算 float f1 = (float)((i1+i2)*1.2);//需要加强制转换符 byte b1 = 67; byte b2 = 89; byte b3 = (byte)(b1+b2);//系统将转换为int型运算，需要强制转换符 System.out.println(b3); double d2 = 1e200; float f2 = (float)d2;//会产生溢出 System.out.println(f2); float f3 = 1.23f;//必须加f long l1 = 123; long l2 = 30000000000L;//必须加l float f = l1+l2+f3;//系统将转换为float型计算 long l = (long)f;//强制转换会舍去小数部分（不是四舍五入） &#125;&#125; 3.3.3 引用数据类型 类(class) 接口(interface) 数组 参考博文:​ java基础学习总结——基础语法1]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Java基础知识</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -572,10 +572,11 @@
     <url>%2F2019%2F02%2F28%2FJava%E5%B8%B8%E8%A7%81%E7%AE%80%E5%86%99%2F</url>
     <content type="text"><![CDATA[ORM Object Relational Mapping 对象关系映射 对象和关系数据库的映射简单说，一个对象，对应数据库里的一条记录 DAOData Access Object的缩写，这些类专门用于进行数据库访问的操作]]></content>
       <categories>
-        <category>Java基础知识</category>
+        <category>Java_基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>Java_基础知识</tag>
       </tags>
   </entry>
   <entry>
