@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,java基础知识,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sladning" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一. String类1.1 源码(String成员属性)123456789public final class String    implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence&amp;#123;    /** The value is used for character storage. */    pr">
+<meta name="keywords" content="java,java基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识---String类(深入理解)">
+<meta property="og:url" content="http://yoursite.com/2019/03/20/Java基础知识---String类/index.html">
+<meta property="og:site_name" content="sladning">
+<meta property="og:description" content="一. String类1.1 源码(String成员属性)123456789public final class String    implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence&amp;#123;    /** The value is used for character storage. */    pr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-20T15:05:11.455Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础知识---String类(深入理解)">
+<meta name="twitter:description" content="一. String类1.1 源码(String成员属性)123456789public final class String    implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence&amp;#123;    /** The value is used for character storage. */    pr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/20/Java基础知识---String类/">
+
+
+
+
+
+  <title>Java基础知识---String类(深入理解) | sladning</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+  <!-- 更改动态背景-->
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <!-- 添加自己的github账号的进入 -->
+      <a href="https://github.com/sladning"><img style="position: absolute; top: 0; left: 0; border: 0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sladning</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/Java基础知识---String类/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java基础知识---String类(深入理解)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-20T20:53:27+08:00">
+                2019-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-String类"><a href="#一-String类" class="headerlink" title="一. String类"></a>一. String类</h1><h3 id="1-1-源码-String成员属性"><a href="#1-1-源码-String成员属性" class="headerlink" title="1.1 源码(String成员属性)"></a>1.1 源码(String成员属性)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/** The value is used for character storage. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">char</span> value[];</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** The offset is the first index of the storage that is used. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> offset;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="可以看出"><a href="#可以看出" class="headerlink" title="可以看出"></a>可以看出</h4><ol>
+<li><p>String类是 <strong>final 类</strong>，也即意味着String类<strong>不能被继承</strong>，并且它的成员方法都<strong>默认为final方法</strong>。在Java中，被final修饰的类是<strong>不允许被继承的</strong>，并且该类中的成员方法都默认为final方法</p>
+</li>
+<li><p>上面列举出了String类中一些的成员属性，从上面可以看出String类其实是<strong>通过char数组来保存字符串的</strong></p>
+</li>
+</ol>
+<h3 id="1-2-源码-String方法"><a href="#1-2-源码-String方法" class="headerlink" title="1.2 源码(String方法)"></a>1.2 源码(String方法)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (beginIndex &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(beginIndex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (endIndex &gt; count) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(endIndex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (beginIndex &gt; endIndex) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(endIndex - beginIndex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ((beginIndex == <span class="number">0</span>) &amp;&amp; (endIndex == count)) ? <span class="keyword">this</span> :</span><br><span class="line">        <span class="keyword">new</span> String(offset + beginIndex, endIndex - beginIndex, value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concat</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> otherLen = str.length();</span><br><span class="line">    <span class="keyword">if</span> (otherLen == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">char</span> buf[] = <span class="keyword">new</span> <span class="keyword">char</span>[count + otherLen];</span><br><span class="line">    getChars(<span class="number">0</span>, count, buf, <span class="number">0</span>);</span><br><span class="line">    str.getChars(<span class="number">0</span>, otherLen, buf, count);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(<span class="number">0</span>, count + otherLen, buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="可以看出-1"><a href="#可以看出-1" class="headerlink" title="可以看出"></a>可以看出</h4><ol>
+<li><p>无论是sub操做还是concat都<strong>不是在原有的字符串上进行的</strong>，而是<strong>重新生成了一个新的字符串对象</strong>。也就是说进行这些操作后，最原始的字符串并没有被改变。</p>
+</li>
+<li><p>在这里要永远记住一点：<strong>“String对象一旦被创建就是固定不变的了，对String对象的任何改变都不影响到原对象，相关的任何change操作都会生成新的对象”</strong>。</p>
+</li>
+</ol>
+<h1 id="二-字符串常量池"><a href="#二-字符串常量池" class="headerlink" title="二. 字符串常量池"></a>二. 字符串常量池</h1><p>​      我们知道字符串的分配和其他对象分配一样，是需要消耗高昂的时间和空间的，而且字符串我们使用的非常多。</p>
+<p>​    JVM为了提高性能和减少内存的开销，在实例化字符串的时候进行了一些优化：<strong>使用字符串常量池</strong>。<strong>每当我们创建字符串常量时，JVM会首先检查字符串常量池，如果该字符串已经存在常量池中，那么就直接返回常量池中的实例引用。如果字符串不存在常量池中，就会实例化该字符串并且将其放到常量池中。由于String字符串的不可变性我们可以十分肯定常量池中一定不存在两个相同的字符串</strong>（这点对理解上面至关重要）。</p>
+<p>​    Java中的常量池，实际上分为两种形态：<strong>静态常量池</strong>和<strong>运行时常量池</strong>。</p>
+<ul>
+<li><strong>静态常量池</strong>，即*.class文件中的常量池，class文件中的常量池不仅仅包含字符串(数字)字面量，还包含类、方法的信息，占用class文件绝大部分空间。</li>
+<li><strong>运行时常量池</strong>，则是jvm虚拟机在完成类装载操作后，将class文件中的常量池载入到内存中，并保存在方法区中，<strong>我们常说的常量池，就是指方法区中的运行时常量池</strong>。</li>
+</ul>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String a = <span class="string">"chenssy"</span>;</span><br><span class="line">String b = <span class="string">"chenssy"</span>;</span><br><span class="line"></span><br><span class="line">String c = <span class="keyword">new</span> String(<span class="string">"chenssy"</span>);</span><br></pre></td></tr></table></figure>
+<p>a, b(保存在栈中)和字面上的chenssy都是<strong>指向JVM字符串常量池中的”chenssy”对象</strong>，他们指向同一个对象</p>
+<p>​    new关键字一定会<strong>产生一个对象chenssy</strong>（注意这个chenssy和上面的chenssy<strong>不同</strong>），同时这个对象是<strong>存储在堆</strong>中。所以上面应该产生了两个对象：保存在栈中的c和保存堆中chenssy。但是在Java中根本就不存在两个完全一模一样的字符串对象。故<strong>堆中的chenssy应该是引用字符串常量池中chenssy</strong>。所以c、chenssy、池chenssy的关系应该是：c —&gt; chenssy —&gt; 池chenssy。所以我们修改内存中的值，他变化的是<strong>所有</strong>。</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><blockquote>
+<p>栈: a, b, c      堆: chenssy(c指向的对象)    JVM字符串常量: chenssy</p>
+</blockquote>
+<p>虽然a、b、c、chenssy是不同的对象，但是从String的内部结构我们是可以理解上面的。String  c = new  String(“chenssy”);虽然c的内容是创建在堆中，但是他的内部value还是指向JVM常量池的chenssy的value，它构造chenssy时所用的参数依然是chenssy字符串常量。</p>
+<h5 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 采用字面值的方式赋值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String str1=<span class="string">"aaa"</span>;</span><br><span class="line">    String str2=<span class="string">"aaa"</span>;</span><br><span class="line">    </span><br><span class="line">    System.out.println(str1==str2);<span class="comment">// true 可以看出str1跟str2是指向同一个对象 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行上述代码，<strong>结果为：true</strong><br>分析：</p>
+<ol>
+<li><p>当执行 <code>String str1=&quot;aaa&quot;</code> 时，JVM首先会<strong>去字符串池中查找</strong>是否存在”aaa”这个对象</p>
+<ul>
+<li><p>如果不存在，则在字符串池中创建”aaa”这个对象然后将池中”aaa”这个对象的引用地址返回给字符串常量str1，这样str1会指向池中”aaa”这个字符串对象；</p>
+</li>
+<li><p>如果存在，则不创建任何对象，直接将池中”aaa”这个对象的地址返回，赋给字符串常量。</p>
+</li>
+</ul>
+</li>
+<li>当创建字符串对象str2时，字符串池中已经存在”aaa”这个对象，直接把<strong>对象”aaa”的引用地址返回给str2，这样str2指向了池中”aaa”这个对象</strong>，也就是说str1和str2<strong>指向了同一个对象</strong>，因此语句 <code>System.out.println(str1 == str2)</code> 输出：true</li>
+</ol>
+<h5 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 采用new关键字新建一个字符串对象</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String str3 = <span class="keyword">new</span> String(<span class="string">"aaa"</span>);</span><br><span class="line">    String str4 = <span class="keyword">new</span> String(<span class="string">"aaa"</span>);</span><br><span class="line">    </span><br><span class="line">    System.out.println(str3==str4);<span class="comment">// false 可以看出用new的方式是生成不同的对象 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行上述代码，<strong>结果为：false</strong></p>
+<p>分析： </p>
+<ol>
+<li>采用new关键字新建一个字符串对象时，JVM首先在<strong>字符串池中查找</strong>有没有”aaa”这个字符串对象，<ul>
+<li>如果有，则不在池中再去创建”aaa”这个对象了，直接<strong>在堆中创建一个”aaa”字符串对象，然后将堆中的这个”aaa”对象的地址返回赋给引用str3</strong>，这样，str3就指向了堆中创建的这个”aaa”字符串对象；</li>
+<li>如果没有，则首先在字符串池中创建一个”aaa”字符串对象，然后再在堆中创建一个”aaa”字符串对象，然后将堆中这个”aaa”字符串对象的地址返回赋给str3引用，这样，str3指向了堆中创建的这个”aaa”字符串对象。</li>
+</ul>
+</li>
+<li>当执行 <code>String  str4=new  String(&quot;aaa&quot;)</code> 时， 因为采用 new 关键字创建对象时，每次new出来的都是一个新的对象，也即是说引用<strong>str3和str4指向的是两个不同的对象</strong>，因此语句 <code>System.out.println(str3  == str4)</code> 输出：false</li>
+</ol>
+<h5 id="例子3"><a href="#例子3" class="headerlink" title="例子3"></a>例子3</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译期确定</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String s0 = <span class="string">"helloworld"</span>;</span><br><span class="line">    String s1 = <span class="string">"helloworld"</span>;</span><br><span class="line">    String s2 = <span class="string">"hello"</span>+<span class="string">"world"</span>;</span><br><span class="line"></span><br><span class="line">    System.out.println(s0==s1); <span class="comment">//true 可以看出s0跟s1是指向同一个对象 </span></span><br><span class="line">    System.out.println(s0==s2); <span class="comment">//true 可以看出s0跟s2是指向同一个对象 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行上述代码，<strong>结果为：true、true</strong></p>
+<p>分析：</p>
+<ol>
+<li>s0和s1中的”helloworld”都是字符串常量，它们在编译期就被确定了，所以 <code>s0==s1</code> 为true；</li>
+<li>“hello” 和 “world” 也都是字符串常量，当一个字符串由多个字符串常量连接而成时，它自己肯定也是字符串常量，所以<strong>s2也同样在编译期就被解析为一个字符串常量，所以s2也是常量池中”helloworld”的一个引用</strong>。所以我们得出 <code>s0==s1==s2</code></li>
+</ol>
+<h5 id="例子4"><a href="#例子4" class="headerlink" title="例子4"></a>例子4</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译期无法确定</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String s0 = <span class="string">"helloworld"</span>; </span><br><span class="line">    String s1 = <span class="keyword">new</span> String(<span class="string">"helloworld"</span>); </span><br><span class="line">    String s2 = <span class="string">"hello"</span> + <span class="keyword">new</span> String(<span class="string">"world"</span>); </span><br><span class="line"></span><br><span class="line">    System.out.println( s0==s1 ); <span class="comment">// false  </span></span><br><span class="line">    System.out.println( s0==s2 ); <span class="comment">// false </span></span><br><span class="line">    System.out.println( s1==s2 ); <span class="comment">// false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行上述代码，<strong>结果为：false、false、false</strong></p>
+<p>分析：</p>
+<ol>
+<li><p>用 <code>new String()</code> 创建的<strong>字符串不是常量</strong>，不能在编译期就确定，所以new String() 创建的字符串<strong>不放入常量池中</strong>，它们有自己的地址空间(在堆中,堆中的对象又指向常量池中的字符串)</p>
+</li>
+<li><p>s0 还是常量池中”helloworld”的引用，s1因为无法在编译期确定，所以是运行时创建的新对象”helloworld”的引用，s2因为有后半部分new  String(”world”)所以也无法在编译期确定，所以也是一个新创建对象”helloworld”的引用</p>
+</li>
+</ol>
+<h5 id="例子5"><a href="#例子5" class="headerlink" title="例子5"></a>例子5</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 继续-编译期无法确定</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String str1=<span class="string">"abc"</span>;   </span><br><span class="line">    String str2=<span class="string">"def"</span>;   </span><br><span class="line">    String str3=str1+str2;</span><br><span class="line"></span><br><span class="line">    System.out.println(str3==<span class="string">"abcdef"</span>); <span class="comment">// false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行上述代码，<strong>结果为：false</strong></p>
+<p>分析：</p>
+<ol>
+<li>因为str3指向<strong>堆中的</strong>“abcdef”对象，而”abcdef”是<strong>字符串池中的</strong>对象，所以结果为false</li>
+<li>JVM 对 <code>String str=&quot;abc&quot;</code> 对象放在常量池中是在编译时做的，而 <code>String str3=str1+str2</code> 是在<strong>运行时刻才能知道的</strong>。new对象也是在运行时才做的</li>
+<li><strong><code>+</code></strong> 运算符会在堆中建立来两个String对象，这两个对象的值分别是”abc”和”def”，也就是说<strong>从字符串池中复制这两个值，然后在堆中创建两个对象</strong>，然后再建立对象str3,然后将”abcdef”的堆地址赋给str3。</li>
+</ol>
+<h5 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h5><ol>
+<li><p>栈中开辟一块中间存放引用str1，str1指向池中String常量”abc”。 </p>
+</li>
+<li><p>栈中开辟一块中间存放引用str2，str2指向池中String常量”def”。 </p>
+</li>
+<li><p>栈中开辟一块中间存放引用str3。</p>
+</li>
+<li><p>str1 + str2通过StringBuilder的最后一步toString()方法还原一个新的String对象”abcdef”，因此堆中开辟一块空间存放此对象。</p>
+</li>
+<li><p>引用str3指向堆中(str1 + str2)所还原的新String对象。 </p>
+</li>
+<li><p>str3指向的对象在堆中，而常量”abcdef”在池中，输出为false。</p>
+</li>
+<li><p>最后: </p>
+<blockquote>
+<p>栈中: 3个, str1, str2, str3</p>
+<p>字符串池中: 3个, “abc”, “def”, “abcdef”</p>
+<p>堆中: 3个, str1, str2, (str1+str2)</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xiaoxi/p/6036701.html" target="_blank" rel="noopener">深入理解Java中的String</a>    </p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/java基础知识/" rel="tag"><i class="fa fa-tag"></i> java基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/20/Java基础知识---String类(深入理解)/" rel="next" title="Java基础知识---String类(深入理解)">
+                <i class="fa fa-chevron-left"></i> Java基础知识---String类(深入理解)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/20/Java基础知识---String类(2)/" rel="prev" title="Java基础知识---String类(2)">
+                Java基础知识---String类(2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAyOS8xOTU3NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
+            
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
+              <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sladning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1353565771@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-String类"><span class="nav-number">1.</span> <span class="nav-text">一. String类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-源码-String成员属性"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 源码(String成员属性)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看出"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">可以看出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-源码-String方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 源码(String方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看出-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">可以看出</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-字符串常量池"><span class="nav-number">2.</span> <span class="nav-text">二. 字符串常量池</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">范例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例子1"><span class="nav-number">2.0.0.2.1.</span> <span class="nav-text">例子1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例子2"><span class="nav-number">2.0.0.2.2.</span> <span class="nav-text">例子2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例子3"><span class="nav-number">2.0.0.2.3.</span> <span class="nav-text">例子3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例子4"><span class="nav-number">2.0.0.2.4.</span> <span class="nav-text">例子4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#例子5"><span class="nav-number">2.0.0.2.5.</span> <span class="nav-text">例子5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤："><span class="nav-number">2.0.0.2.6.</span> <span class="nav-text">步骤：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">2.0.0.2.7.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">54.6k</span>
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+ 
