@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="一、JSP指令简介　　JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。 在JSP 2.0规范中共定义了三个指令：  page指令 Include指令 taglib指令   JSP指令的基本语法格式：&amp;lt;%@ 指令 属性名=”值” %&amp;gt;">
+<meta name="description" content="一、JSP 指令简介　　JSP指令（directive）是为 JSP 引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎 如何处理JSP页面中的其余部分。 在 JSP 2.0规范中共定义了三个指令：  page指令 Include指令 taglib指令   JSP指令的基本语法格式：&amp;lt;%@ 指令 属性名=”值” %&amp;gt;">
 <meta name="keywords" content="Java,JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb---JSP指令">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/JavaWeb---JSP指令/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="一、JSP指令简介　　JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。 在JSP 2.0规范中共定义了三个指令：  page指令 Include指令 taglib指令   JSP指令的基本语法格式：&amp;lt;%@ 指令 属性名=”值” %&amp;gt;">
+<meta property="og:description" content="一、JSP 指令简介　　JSP指令（directive）是为 JSP 引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎 如何处理JSP页面中的其余部分。 在 JSP 2.0规范中共定义了三个指令：  page指令 Include指令 taglib指令   JSP指令的基本语法格式：&amp;lt;%@ 指令 属性名=”值” %&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T01:17:01.269Z">
+<meta property="og:updated_time" content="2019-03-25T03:01:14.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---JSP指令">
-<meta name="twitter:description" content="一、JSP指令简介　　JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。 在JSP 2.0规范中共定义了三个指令：  page指令 Include指令 taglib指令   JSP指令的基本语法格式：&amp;lt;%@ 指令 属性名=”值” %&amp;gt;">
+<meta name="twitter:description" content="一、JSP 指令简介　　JSP指令（directive）是为 JSP 引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎 如何处理JSP页面中的其余部分。 在 JSP 2.0规范中共定义了三个指令：  page指令 Include指令 taglib指令   JSP指令的基本语法格式：&amp;lt;%@ 指令 属性名=”值” %&amp;gt;">
 
 
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  1.3k
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -471,8 +471,8 @@
       
 
       
-        <h2 id="一、JSP指令简介"><a href="#一、JSP指令简介" class="headerlink" title="一、JSP指令简介"></a>一、JSP指令简介</h2><p>　　JSP指令（directive）是为JSP引擎而设计的，它们并<strong>不直接产生任何可见输出</strong>，而只是告诉引擎<strong>如何处理JSP页面中的其余部分</strong>。</p>
-<p>在JSP 2.0规范中共定义了三个指令：</p>
+        <h2 id="一、JSP-指令简介"><a href="#一、JSP-指令简介" class="headerlink" title="一、JSP 指令简介"></a>一、JSP 指令简介</h2><p>　　JSP指令（directive）是为 JSP 引擎而设计的，它们并<strong>不直接产生任何可见输出</strong>，而只是告诉引擎 <strong>如何处理JSP页面中的其余部分</strong>。</p>
+<p>在 JSP 2.0规范中共定义了三个指令：</p>
 <ul>
 <li>page指令</li>
 <li>Include指令</li>
@@ -510,8 +510,28 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;h1 style="color:blue;"&gt;网页尾部&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
 <p>　　在<strong>WebRoot文件夹下</strong>创建一个IncludeTagTest.jsp页面，在IncludeTagTest.jsp页面中使用<strong>@include</strong>指令<strong>引入</strong>head.jspf页面和foot.jspf页面，代码如下：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;jsp的Include指令测试&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">  &lt;%--使用include标签引入引入其它JSP页面--%&gt;</span><br><span class="line">    &lt;%<span class="meta">@include</span> file=<span class="string">"/jspfragments/head.jspf"</span> %&gt;</span><br><span class="line">    &lt;h1&gt;网页主体内容&lt;/h1&gt;</span><br><span class="line">    &lt;%<span class="meta">@include</span> file=<span class="string">"/jspfragments/foot.jspf"</span> %&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-总结-include指令"><a href="#3-2-总结-include指令" class="headerlink" title="3.2 总结@include指令"></a>3.2 总结@include指令</h2><p>　　使用@include<strong>可以包含任意的内容</strong>，文件的后缀是什么都无所谓。这种<strong>把别的文件内容包含到自身页面的@include语句就叫作静态包含</strong>，作用只是把别的页面内容包含进来，属于静态包含</p>
+<h2 id="3-2-总结-include-指令"><a href="#3-2-总结-include-指令" class="headerlink" title="3.2 总结 @include 指令"></a>3.2 总结 @include 指令</h2><p>　　使用@include<strong>可以包含任意的内容</strong>，文件的后缀是什么都无所谓。这种<strong>把别的文件内容包含到自身页面的@include语句就叫作静态包含</strong>，作用只是把别的页面内容包含进来，属于静态包含</p>
 <h2 id="3-3-jsp-include指令"><a href="#3-3-jsp-include指令" class="headerlink" title="3.3 jsp:include指令"></a>3.3 jsp:include指令</h2><p>　　<strong>jsp:include指令</strong>为动态包含，如果被包含的页面是JSP，则先处理之后再将结果包含，而如果包含的是非*.jsp文件，则只是把文件内容静态包含进来，功能与@include类似。后面再具体介绍</p>
+<h1 id="四-taglib-指令"><a href="#四-taglib-指令" class="headerlink" title="四. taglib 指令"></a>四. taglib 指令</h1><h2 id="4-1-引入"><a href="#4-1-引入" class="headerlink" title="4.1 引入"></a>4.1 引入</h2><p>Taglib 指令是<strong>定义一个标签库以及其自定义标签的前缀</strong>.<br>需要导入<strong>standard.jar</strong> ; <strong>jsp-api.jar</strong>  两个包 </p>
+<p>在 JSP 页面中<strong>使用第三方的标签库</strong>时，需要使用 taglib 指令来 “导包”。例如：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> prefix=<span class="string">"c"</span>%&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><ul>
+<li><p><strong>prefix</strong> : 标签库别名 </p>
+</li>
+<li><p><strong>uri</strong> : 是由第三方标签库定义的，所以你需要知道第三方定义的uri</p>
+</li>
+</ul>
+<h2 id="4-2-标签库引入-jsp-文件时-uri-有两种写法"><a href="#4-2-标签库引入-jsp-文件时-uri-有两种写法" class="headerlink" title="4.2 标签库引入 jsp 文件时 uri 有两种写法"></a>4.2 标签库引入 jsp 文件时 uri 有两种写法</h2><ol>
+<li><p>自定义</p>
+</li>
+<li><p>标准定义 </p>
+</li>
+</ol>
+<p>当打开一个tld文件时，在文件的头部会有一个uri节点，里面的内容即为uri的标准定义。</p>
+<p>使用标准定义的优点在于，不用在web.xml下加上上面的代码</p>
+<h5 id="源码-Referenced-Library-standard-jar-META-INF-c-tld"><a href="#源码-Referenced-Library-standard-jar-META-INF-c-tld" class="headerlink" title="源码 Referenced Library/standard.jar/META-INF/c.tld"></a>源码 Referenced Library/standard.jar/META-INF/c.tld</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;short-name&gt;c&lt;/short-name&gt;</span><br><span class="line">&lt;uri&gt;http:<span class="comment">//java.sun.com/jsp/jstl/core&lt;/uri&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"utf-8"</span>%&gt; </span><br><span class="line">&lt;%@ taglib uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> prefix=<span class="string">"c"</span> %&gt; </span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE&gt; </span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>&gt; 			</span><br><span class="line">        &lt;title&gt;collection&lt;/title&gt; </span><br><span class="line">    &lt;/head&gt; </span><br><span class="line">    &lt;body&gt; </span><br><span class="line">    &lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<hr>
 <h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3778993.html" target="_blank" rel="noopener">javaweb学习总结(十六)——JSP指令</a></p>
 
       
@@ -651,7 +671,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -662,7 +682,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -673,7 +693,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -729,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JSP指令简介"><span class="nav-number">1.</span> <span class="nav-text">一、JSP指令简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">例如</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Page指令"><span class="nav-number"></span> <span class="nav-text">二、Page指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-include指令"><span class="nav-number"></span> <span class="nav-text">三. include指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-include指令"><span class="nav-number">1.</span> <span class="nav-text">3.1 @include指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#include指令细节注意问题："><span class="nav-number">1.0.1.</span> <span class="nav-text">include指令细节注意问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例-1"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-总结-include指令"><span class="nav-number">2.</span> <span class="nav-text">3.2 总结@include指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-jsp-include指令"><span class="nav-number">3.</span> <span class="nav-text">3.3 jsp:include指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JSP-指令简介"><span class="nav-number">1.</span> <span class="nav-text">一、JSP 指令简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">例如</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Page指令"><span class="nav-number"></span> <span class="nav-text">二、Page指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-include指令"><span class="nav-number"></span> <span class="nav-text">三. include指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-include指令"><span class="nav-number">1.</span> <span class="nav-text">3.1 @include指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#include指令细节注意问题："><span class="nav-number">1.0.1.</span> <span class="nav-text">include指令细节注意问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例-1"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-总结-include-指令"><span class="nav-number">2.</span> <span class="nav-text">3.2 总结 @include 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-jsp-include指令"><span class="nav-number">3.</span> <span class="nav-text">3.3 jsp:include指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-taglib-指令"><span class="nav-number"></span> <span class="nav-text">四. taglib 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-引入"><span class="nav-number">1.</span> <span class="nav-text">4.1 引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解释"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">解释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-标签库引入-jsp-文件时-uri-有两种写法"><span class="nav-number">2.</span> <span class="nav-text">4.2 标签库引入 jsp 文件时 uri 有两种写法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#源码-Referenced-Library-standard-jar-META-INF-c-tld"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">源码 Referenced Library/standard.jar/META-INF/c.tld</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jsp"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">jsp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
             
 
           </div>
@@ -763,7 +783,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">62.3k</span>
+    <span title="Site words total count">73.6k</span>
   
 </div>
 

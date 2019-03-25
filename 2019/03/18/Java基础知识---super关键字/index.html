@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-20T00:04:47.942Z">
+<meta property="og:updated_time" content="2019-03-25T06:23:05.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识---super关键字">
 <meta name="twitter:description" content="一. super 关键字作用 主要存在于子类方法中，用于指向子类对象中父类对象 访问父类的属性 访问父类的函数 访问父类的构造函数">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  484
+                  784
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -472,7 +472,7 @@
 
       
         <h1 id="一-super-关键字作用"><a href="#一-super-关键字作用" class="headerlink" title="一. super 关键字作用"></a>一. super 关键字作用</h1><ol>
-<li>主要存在于子类方法中，用于指向子类对象中父类对象</li>
+<li>主要存在于子类方法中，用于指向子类对象中<strong>父类对象</strong></li>
 <li>访问父类的属性</li>
 <li>访问父类的函数</li>
 <li>访问父类的构造函数</li>
@@ -485,12 +485,15 @@
 </li>
 <li>this super 只能在有对象的前提下使用，<strong>不能在static方法内使用</strong>。</li>
 </ul>
-<h1 id="三-super关键字的使用"><a href="#三-super关键字的使用" class="headerlink" title="三. super关键字的使用"></a>三. super关键字的使用</h1><p>1.子类的构造函数默认第一行会默认调用父类无参的构造函数，隐式语句 <code>super();</code></p>
-<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Son(<span class="keyword">int</span> y) &#123;</span><br><span class="line">		<span class="comment">// super();隐式语句</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.y = y + x;</span><br><span class="line">		System.out.println(<span class="string">"这是子类的有参构造"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三-super关键字的使用"><a href="#三-super关键字的使用" class="headerlink" title="三. super关键字的使用"></a>三. super关键字的使用</h1><h2 id="1-子类隐式调用父类构造函数"><a href="#1-子类隐式调用父类构造函数" class="headerlink" title="1. 子类隐式调用父类构造函数"></a>1. 子类隐式调用父类构造函数</h2><p>子类的构造函数默认第一行会默认调用父类无参的构造函数，隐式语句 <code>super();</code></p>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Son(<span class="keyword">int</span> y) &#123;</span><br><span class="line">    <span class="comment">// super();隐式语句</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.y = y + x;</span><br><span class="line">    System.out.println(<span class="string">"这是子类的有参构造"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="2-子类显式调用父类构造函数"><a href="#2-子类显式调用父类构造函数" class="headerlink" title="2. 子类显式调用父类构造函数"></a>2. 子类显式调用父类构造函数</h2><p>​    在子类构造函数 <strong>第一行</strong> 通过super关键字调用<strong>父类任何构造函数</strong>。如果显式调用父类构造函数，编译器自动添加的调用<strong>父类无参数的构造就消失</strong>。构造函数间的调用<strong>只能放在第一行，只能调用一次</strong> 。<strong>super()和this()不能同时存在构造函数第一行</strong> 。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Son(<span class="keyword">int</span> y) &#123;</span><br><span class="line">    <span class="keyword">super</span>(y);<span class="comment">// 子类显式调用父类构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.y = y + x;</span><br><span class="line">    System.out.println(<span class="string">"这是子类的有参构造"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="四-super思考"><a href="#四-super思考" class="headerlink" title="四. super思考"></a>四. super思考</h1><p>​    如果开发者自定义了一个类，<strong>没有显示的进行类的继承</strong>，那么该类中成员函数是否可以使用super关键字？</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		value = <span class="number">100</span>;</span><br><span class="line">		System.out.println(<span class="string">"父类的value属性值 = "</span> + value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 子类除了继承父类所具有的valu属性外，自己又另外声明了一个value属性，此时的子类拥有两个value属性。</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 在子类ChildClass里面重写了从父类继承下来的method()方法里面的实现，即重写(覆盖)了method()方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 使用super作为父类对象的引用对象来调用父类对象里面的f()方法</span></span><br><span class="line">		<span class="keyword">super</span>.method();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 这个value是子类自己定义的那个value，不是从父类继承下来的那个value</span></span><br><span class="line">		value = <span class="number">200</span>;</span><br><span class="line">		System.out.println(<span class="string">"子类的value属性值="</span> + value);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"修改父类的value之前,值为: "</span> + <span class="keyword">super</span>.value);</span><br><span class="line">		<span class="keyword">super</span>.value = <span class="number">300</span>;</span><br><span class="line">		System.out.println(<span class="string">"修改父类的value之后,值为: "</span> + <span class="keyword">super</span>.value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSuper</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Son son = <span class="keyword">new</span> Son();</span><br><span class="line">		son.method();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 打印结果:</span></span><br><span class="line"><span class="comment"> * 父类的value属性值 = 100</span></span><br><span class="line"><span class="comment"> * 子类的value属性值=200</span></span><br><span class="line"><span class="comment"> * 修改父类的value之前,值为: 100</span></span><br><span class="line"><span class="comment"> * 修改父类的value之后,值为: 300</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>详细的内存分析见 <strong>参考博文</strong></p>
+<h1 id="四-super思考"><a href="#四-super思考" class="headerlink" title="四. super思考"></a>四. super思考</h1><p>如果开发者自定义了一个类，<strong>没有显示的进行类的继承</strong>，那么该类中成员函数是否可以使用super关键字？</p>
 <p>答: <strong>可以使用</strong>，继承了Object类，Object类是所有类的父类</p>
+<hr>
 <h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://blog.csdn.net/qq_33642117/article/details/51919528" target="_blank" rel="noopener">Java super关键字详解</a></p>
 <p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3635948.html" target="_blank" rel="noopener">java基础学习总结——super关键字</a></p>
 
@@ -631,7 +634,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -642,7 +645,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -653,7 +656,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -709,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-super-关键字作用"><span class="nav-number">1.</span> <span class="nav-text">一. super 关键字作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-super-注意的地方"><span class="nav-number">2.</span> <span class="nav-text">二. super 注意的地方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-super关键字的使用"><span class="nav-number">3.</span> <span class="nav-text">三. super关键字的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2-子类显式调用父类构造函数"><span class="nav-number">3.1.</span> <span class="nav-text">2. 子类显式调用父类构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-super思考"><span class="nav-number">4.</span> <span class="nav-text">四. super思考</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-super-关键字作用"><span class="nav-number">1.</span> <span class="nav-text">一. super 关键字作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-super-注意的地方"><span class="nav-number">2.</span> <span class="nav-text">二. super 注意的地方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-super关键字的使用"><span class="nav-number">3.</span> <span class="nav-text">三. super关键字的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-子类隐式调用父类构造函数"><span class="nav-number">3.1.</span> <span class="nav-text">1. 子类隐式调用父类构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-子类显式调用父类构造函数"><span class="nav-number">3.2.</span> <span class="nav-text">2. 子类显式调用父类构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">3.2.0.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#四-super思考"><span class="nav-number">4.</span> <span class="nav-text">四. super思考</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
             
 
           </div>
@@ -743,7 +746,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">62.3k</span>
+    <span title="Site words total count">73.6k</span>
   
 </div>
 
