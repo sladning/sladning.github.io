@@ -123,16 +123,16 @@
 
 
 
-<meta name="description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta name="description" content="打破幻想,立足现实,脚踏实地,自强不息">
 <meta property="og:type" content="website">
 <meta property="og:title" content="sladning">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta property="og:description" content="打破幻想,立足现实,脚踏实地,自强不息">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sladning">
-<meta name="twitter:description" content="每行一步，就是为了远离地狱，因为我就生活在地狱里">
+<meta name="twitter:description" content="打破幻想,立足现实,脚踏实地,自强不息">
 
 
 
@@ -345,6 +345,1587 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/计算机知识---绝对路径与相对路径/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/计算机知识---绝对路径与相对路径/" itemprop="url">计算机知识---绝对路径与相对路径</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T22:57:55+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机知识/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  974
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-基本概念"><a href="#一-基本概念" class="headerlink" title="一. 基本概念"></a>一. 基本概念</h1><ol>
+<li><p><strong>相对路径</strong> : 顾名思义，相对路径就是<strong>相对于当前文件的路径</strong>。网页中一般表示路径使用这个方法。</p>
+</li>
+<li><p><strong>绝对路径</strong> : 绝对路径就是你的<strong>主页上的文件或目录在硬盘上真正的路径</strong>。</p>
+<ul>
+<li><p><strong>硬盘上</strong> : 你的Perl 程序是存放在 c:/apache/cgi-bin 下的，那么 c:/apache/cgi-bin就是cgi-bin目录的绝对路径</p>
+</li>
+<li><p><strong>网络中</strong> : 以http开头的链接都是绝对路径，绝对路径就是你的主页上的文件或目录在硬盘上真正的路径，绝对路径一般在CGI程序的路径配置中经常用到，而在制作网页中实际很少用到。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="二、相对路径使用的特殊符号"><a href="#二、相对路径使用的特殊符号" class="headerlink" title="二、相对路径使用的特殊符号"></a>二、相对路径使用的特殊符号</h1><h4 id="相对路径使用的特殊符号"><a href="#相对路径使用的特殊符号" class="headerlink" title="相对路径使用的特殊符号"></a>相对路径使用的特殊符号</h4><ul>
+<li><p><strong><code>./</code></strong>：代表目前所在的目录</p>
+</li>
+<li><p><strong><code>../</code></strong> : 代表上一层目录</p>
+</li>
+<li><p><strong><code>/</code></strong> : 代表根目录</p>
+</li>
+</ul>
+<p>根目录下有Site1和Image/Image.jpg，Site1下有Page1.html文件和Site2文件夹。Site2下有Page2.html和Page2Image.jpg图片文件。</p>
+<p>1、文件在当前目录</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Page2.html访问Page2Image.jpg</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">”./Page2Image.jpg”</span>&gt;</span>或者<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">”Page2Image.</span> <span class="attr">jpg</span>”&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="三-绝对路径与相对路径的比较"><a href="#三-绝对路径与相对路径的比较" class="headerlink" title="三. 绝对路径与相对路径的比较"></a>三. 绝对路径与相对路径的比较</h1><h3 id="3-1-绝对路径的优点"><a href="#3-1-绝对路径的优点" class="headerlink" title="3.1 绝对路径的优点"></a>3.1 绝对路径的优点</h3><pre><code>A、如果有人抄袭你的网站内容，里面的链接还会指向你的网站，有些抄袭的人比较懒，根本不会去改内容。其实也不局限于被抄袭，如果有人将你的网页保存到本地电脑中，里面的链接、图片、css、以及js仍然会连接到你的网站。
+
+B、如果网页位置改变，里面的链接还是指向正确的URL。
+</code></pre><h3 id="3-2-绝对路径的缺点"><a href="#3-2-绝对路径的缺点" class="headerlink" title="3.2 绝对路径的缺点"></a>3.2 绝对路径的缺点</h3><pre><code>A、在编码编写时不方便使用绝对路径，因为链接应该指向真正的域名而不是开发站点。
+</code></pre><blockquote>
+<p> 相对路径的优缺点和绝对路径几乎相反。</p>
+</blockquote>
+<h3 id="3-3-相对路径的优点："><a href="#3-3-相对路径的优点：" class="headerlink" title="3.3 相对路径的优点："></a>3.3 相对路径的优点：</h3><pre><code>A、容易移动内容，可以整个目录移动。
+
+B、测试方法比较灵活，本机测试时比较方便。
+</code></pre><h3 id="3-4-相对路径的缺点："><a href="#3-4-相对路径的缺点：" class="headerlink" title="3.4 相对路径的缺点："></a>3.4 相对路径的缺点：</h3><pre><code>A、部分内容页面换了位置时，链接容易失效。
+
+B、容易被人大面积采集抄袭。
+</code></pre><blockquote>
+<p>相对路径和绝对路径在系统文件中与在网络中类似，文件的路径符号是斜线﻿“/”，而网络路径却是和它相反的反斜线“/”</p>
+</blockquote>
+<h1 id="四-路径分割符"><a href="#四-路径分割符" class="headerlink" title="四. 路径分割符"></a>四. 路径分割符</h1><h4 id="在目录中的分隔符"><a href="#在目录中的分隔符" class="headerlink" title="在目录中的分隔符"></a>在目录中的分隔符</h4><ul>
+<li><p>在Windows中分隔符为 <strong><code>\</code></strong></p>
+</li>
+<li><p>在Unix/Linux中分隔符为 <strong><code>/</code></strong></p>
+</li>
+<li>浏览器地址栏网址使用 <strong><code>/</code></strong></li>
+</ul>
+<blockquote>
+<p>有时我们会看到这样的路径写法，<code>&quot;C:\\Windows\\System&quot;</code>，也就是用两个反斜杠来分隔路径</p>
+<p>这种写法在网络应用或编程中经 常看到，事实上，上面这个路径可以用 <code>&quot;C:/Windows/System&quot;</code> 来代替，不会出错。但是如果写成了 <code>&quot;C:\Windows\System&quot;</code> ， 那就可能会出现各种奇怪的错误了</p>
+</blockquote>
+<p>在 Java程序中 反斜杠 <code>\</code> 与不同的字符会组成不同的转义字符,如 <code>\n</code> 代表换行,</p>
+<p>在字符串中要表示字符 <code>\</code> , 需要写成 <code>\\</code></p>
+<p>​    字符串解析不仅仅局限于C编译器，Java编译器、一些配置文件的解析、Web服务器等等，都会遇到对字符串进行解析的这个问题，由于传统的 Windows采用的是单个反斜杠的路径分隔形式，导致在对文件路径进行解析的时候可能发生不必要的错误，所以就出现了用双反斜杠”\\”分隔路径的形式。 <strong>不管解析引擎是否将反斜杠解析成转义字符，最终在内存中得到的都是”\”</strong>，结果也就不会出问题了。</p>
+<hr>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://blog.csdn.net/jzdzhiyun/article/details/5282512" target="_blank" rel="noopener">关于绝对路径和相对路径</a></p>
+<p>​    <a href="https://www.jianshu.com/p/cf0c6764e5d4" target="_blank" rel="noopener">编程中常见的斜杠（”/“和”\”）问题</a></p>
+<p>​    </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/Java基础知识---File/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/Java基础知识---File/" itemprop="url">Java基础知识---File</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T22:38:55+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一-初识-File"><a href="#一-初识-File" class="headerlink" title="一. 初识 File"></a>一. 初识 File</h1><h2 id="1-1-File类说明"><a href="#1-1-File类说明" class="headerlink" title="1.1 File类说明"></a>1.1 <strong>File类说明</strong></h2><p>​    存储在变量,数组和对象中的数据是暂时的,<strong>当程序终止时他们就会丢失</strong>.</p>
+<p>​    为了能够永久的保存程序中创建的数据,需要将他们存储到硬盘或光盘的文件中.这些文件可以移动,传送,亦可以被其他程序使用.由于数据存储在文件中,所以我们<strong>需要学习一个和文件有密切关系的类,叫做File类</strong>,将要掌握获取文件的属性以及删除和重命名文件.最终如何向文件中写入数据和从文件中读取数据.</p>
+<p>那么File类关心的是在磁盘上文件的存储.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/26/Java基础知识---File/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/Java基础知识---Iterator迭代器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/Java基础知识---Iterator迭代器/" itemprop="url">Java基础知识---Iterator迭代器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T21:38:55+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  718
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-迭代器概述"><a href="#一-迭代器概述" class="headerlink" title="一. 迭代器概述"></a>一. 迭代器概述</h1><h3 id="1-1-迭代器模式"><a href="#1-1-迭代器模式" class="headerlink" title="1.1 迭代器模式"></a>1.1 迭代器模式</h3><p>​    提供一种方法对一个容器对象中的各个元素进行访问，而又不暴露该对象容器的内部细节</p>
+<h3 id="1-2-什么是迭代器？"><a href="#1-2-什么是迭代器？" class="headerlink" title="1.2 什么是迭代器？"></a>1.2 什么是迭代器？</h3><p>　　Java集合框架的集合类，我们有时候称之为<strong>容器</strong>。容器的种类有很多种，比如ArrayList、LinkedList、HashSet…，每种容器都有自己的特点，每种容器都有自己特有的数据结构。</p>
+<p>　　因为容器的内部结构不同，<strong>很多时候可能不知道该怎样去遍历一个容器中的元素</strong>。所以<strong>为了使对容器内元素的操作更为简单，Java引入了迭代器模式！</strong></p>
+<h1 id="二-java-util-Iterator"><a href="#二-java-util-Iterator" class="headerlink" title="二. java.util.Iterator"></a>二. java.util.Iterator</h1><p>　　在Java中Iterator为<strong>一个接口</strong>，它只提供了迭代的基本规则。</p>
+<p>​    在JDK中它是这样定义的：对Collection进行迭代的迭代器。迭代器取代了Java Collection Framework中的Enumeration。</p>
+<p>迭代器与枚举有两点不同:</p>
+<ol>
+<li><p>迭代器在迭代期间可以从集合中移除元素。</p>
+</li>
+<li><p>方法名得到了改进，Enumeration的方法名称都比较长。</p>
+</li>
+</ol>
+<h4 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>; </span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="三个方法解释"><a href="#三个方法解释" class="headerlink" title="三个方法解释"></a>三个方法解释</h4><ul>
+<li><strong><code>hasNext()</code></strong> : 如判断是否存在下一个对象元素.有仍有元素可以迭代,则返回true</li>
+<li><strong><code>next()</code></strong> : 返回迭代的下一个元素</li>
+<li><strong><code>remove()</code></strong> : 从迭代器指向 collenction 中移除元素</li>
+</ul>
+<h1 id="三-java-util-Iterable"><a href="#三-java-util-Iterable" class="headerlink" title="三.  java.util.Iterable"></a>三.  java.util.Iterable</h1><p>　　Java中还提供了一个Iterable接口，Iterable接口实现后的功能是 “”返回“ 一个迭代器，我们常用的实现了该接口的子接口有:Collection<e>、List<e>、Set<e>等。该接口的iterator()方法返回一个标准的Iterator实现。实现Iterable接口允许对象成为Foreach语句的目标。就可以通过foreach语句来遍历你的底层序列。</e></e></e></p>
+<p>　　Iterable接口包含一个能产生Iterator对象的方法，并且Iterable被foreach用来在序列中移动。因此<strong>如果创建了实现Iterable接口的类，都可以将它用于foreach中</strong>。</p>
+<h4 id="接口定义-1"><a href="#接口定义-1" class="headerlink" title="接口定义"></a>接口定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Package java.lang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterable</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">Iterator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="四-使用迭代器遍历集合"><a href="#四-使用迭代器遍历集合" class="headerlink" title="四. 使用迭代器遍历集合"></a>四. 使用迭代器遍历集合</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    list.add(<span class="string">"abc"</span>);</span><br><span class="line">    list.add(<span class="string">"edf"</span>);</span><br><span class="line">    list.add(<span class="string">"ghi"</span>);</span><br><span class="line">    <span class="comment">// 方式一, 不常用</span></span><br><span class="line">    <span class="keyword">for</span>(Iterator&lt;String&gt; iterator = list.iterator(); it.hasNext(); ) &#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方式二, 常用</span></span><br><span class="line">    Iterator&lt;Person&gt; iterator = array.iterator();</span><br><span class="line">    <span class="keyword">while</span>(iterator.hasNext() ) &#123;</span><br><span class="line">        System.out.println(iterator.next().getName()); <span class="comment">//输出的是wang，而不是tom</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使用forEach遍历</span></span><br><span class="line">    <span class="keyword">for</span>(String string : List) &#123;</span><br><span class="line">        System.out.println(string);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用-foreach-遍历集合的优势在于代码更加的简洁，更不容易出错，不用关心下标的起始值和终止值。"><a href="#使用-foreach-遍历集合的优势在于代码更加的简洁，更不容易出错，不用关心下标的起始值和终止值。" class="headerlink" title="使用 foreach 遍历集合的优势在于代码更加的简洁，更不容易出错，不用关心下标的起始值和终止值。"></a>使用 foreach 遍历集合的优势在于代码更加的简洁，更不容易出错，不用关心下标的起始值和终止值。</h5><hr>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/zyuze/p/7726582.html" target="_blank" rel="noopener">深入理解Java中的迭代器</a></p>
+<p>​    <a href="https://www.cnblogs.com/xujian2014/p/5846128.html" target="_blank" rel="noopener">Java集合Iterator迭代器的实现</a></p>
+<p>​    <a href="https://blog.csdn.net/Jae_Wang/article/details/80526216" target="_blank" rel="noopener">Java迭代器(iterator详解以及和for循环的区别)</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/JavaWeb---文件上传与下载/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/JavaWeb---文件上传与下载/" itemprop="url">JavaWeb---文件上传与下载</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T21:38:55+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​    在web应用系统开发中，文件上传和下载功能是非常常用的功能，</p>
+<p>​    对于文件上传，浏览器在上传的过程中是<strong>将文件以流的形式提交到服务器端</strong>的，如果直接使用Servlet获取上传文件的输入流然后再解析里面的请求参数是比较麻烦</p>
+<p>​    一般选择采用apache的开源工具common-fileupload这个文件上传组件</p>
+<h1 id="一-开发环境搭建"><a href="#一-开发环境搭建" class="headerlink" title="一. 开发环境搭建"></a>一. 开发环境搭建</h1><p>创建一个 <code>FileUploadAndDownLoad</code> 项目，加入Apache的 <code>commons-fileupload</code> 文件上传组件的相关Jar包</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">commons-io-1.4.jar</span><br><span class="line">commons-fileupload-1.2.2.jar</span><br></pre></td></tr></table></figure>
+<h1 id="二-实现文件上传"><a href="#二-实现文件上传" class="headerlink" title="二. 实现文件上传"></a>二. 实现文件上传</h1><h2 id="2-1-文件上传页面和消息提示页面"><a href="#2-1-文件上传页面和消息提示页面" class="headerlink" title="2.1 文件上传页面和消息提示页面"></a>2.1 文件上传页面和消息提示页面</h2><p>upload.jsp 页面</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">      </span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/servlet/UploadHandleServlet"</span> enctype=<span class="string">"multipart/form-data"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        上传用户：&lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span>&gt;&lt;br/&gt;</span><br><span class="line">        上传文件<span class="number">1</span>：&lt;input type=<span class="string">"file"</span> name=<span class="string">"file1"</span>&gt;&lt;br/&gt;</span><br><span class="line">        上传文件<span class="number">2</span>：&lt;input type=<span class="string">"file"</span> name=<span class="string">"file2"</span>&gt;&lt;br/&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ol>
+<li>form 的 method <strong>必须是 post 的</strong>，get不能上传文件。 还需要加上 <code>enctype=&quot;multipart/form-data&quot;</code> 表示提交的数据是二进制文件</li>
+<li>需要提供 <code>type=&quot;file&quot;</code> 的字段进行上传</li>
+</ol>
+<h2 id="2-2-处理文件上传的Servlet"><a href="#2-2-处理文件上传的Servlet" class="headerlink" title="2.2 处理文件上传的Servlet"></a>2.2 处理文件上传的Servlet</h2><p><code>UploadHandleServlet</code> 代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UploadHandleServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 得到上传文件的保存目录，将上传的文件存放于WEB-INF目录下，不允许外界直接访问，保证上传文件的安全</span></span><br><span class="line">        String savePath = <span class="keyword">this</span>.getServletContext().getRealPath(<span class="string">"/WEB-INF/upload"</span>);</span><br><span class="line">        File file = <span class="keyword">new</span> File(savePath);</span><br><span class="line">        <span class="comment">// 判断上传文件的保存目录是否存在</span></span><br><span class="line">        <span class="keyword">if</span> (!file.exists() &amp;&amp; !file.isDirectory()) &#123;</span><br><span class="line">            System.out.println(savePath + <span class="string">"目录不存在，需要创建"</span>);</span><br><span class="line">            <span class="comment">// 创建目录</span></span><br><span class="line">            file.mkdir();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 消息提示</span></span><br><span class="line">        String message = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">// 使用Apache文件上传组件处理文件上传步骤：</span></span><br><span class="line">            <span class="comment">// 1、创建一个DiskFileItemFactory工厂</span></span><br><span class="line">            DiskFileItemFactory factory = <span class="keyword">new</span> DiskFileItemFactory();</span><br><span class="line">            <span class="comment">// 2、创建一个文件上传解析器</span></span><br><span class="line">            ServletFileUpload upload = <span class="keyword">new</span> ServletFileUpload(factory);</span><br><span class="line">            <span class="comment">// 解决上传文件名的中文乱码</span></span><br><span class="line">            upload.setHeaderEncoding(<span class="string">"UTF-8"</span>); </span><br><span class="line">            <span class="comment">// 3、判断提交上来的数据是否是上传表单的数据</span></span><br><span class="line">            <span class="keyword">if</span>(!ServletFileUpload.isMultipartContent(request))&#123;</span><br><span class="line">                <span class="comment">// 按照传统方式获取数据</span></span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 4、使用ServletFileUpload解析器解析上传数据，解析结果返回的是一个List&lt;FileItem&gt;集合，每一个FileItem对应一个Form表单的输入项</span></span><br><span class="line">            List&lt;FileItem&gt; list = upload.parseRequest(request);</span><br><span class="line">            <span class="keyword">for</span>(FileItem item : list)&#123;</span><br><span class="line">                <span class="comment">// 如果fileitem中封装的是普通输入项的数据</span></span><br><span class="line">                <span class="keyword">if</span>(item.isFormField())&#123;</span><br><span class="line">                    String name = item.getFieldName();</span><br><span class="line">                    <span class="comment">// 解决普通输入项的数据的中文乱码问题</span></span><br><span class="line">                    String value = item.getString(<span class="string">"UTF-8"</span>);</span><br><span class="line">                    <span class="comment">// value = new String(value.getBytes("iso8859-1"),"UTF-8");</span></span><br><span class="line">                    System.out.println(name + <span class="string">"="</span> + value);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 如果fileitem中封装的是上传文件</span></span><br><span class="line">                    <span class="comment">// 得到上传的文件名称，</span></span><br><span class="line">                    String filename = item.getName();</span><br><span class="line">                    System.out.println(filename);</span><br><span class="line">                    <span class="keyword">if</span>(filename==<span class="keyword">null</span> || filename.trim().equals(<span class="string">""</span>))&#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                 	&#125;</span><br><span class="line">                    <span class="comment">// 注意：不同的浏览器提交的文件名是不一样的，有些浏览器提交上来的文件名是带有路径的，如：  c:\a\b\1.txt，而有些只是单纯的文件名，如：1.txt</span></span><br><span class="line">                    <span class="comment">// 处理获取到的上传文件的文件名的路径部分，只保留文件名部分</span></span><br><span class="line">                    filename = filename.substring(filename.lastIndexOf(<span class="string">"\\"</span>)+<span class="number">1</span>);</span><br><span class="line">                    <span class="comment">// 获取item中的上传文件的输入流</span></span><br><span class="line">                    InputStream in = item.getInputStream();</span><br><span class="line">                    <span class="comment">// 创建一个文件输出流</span></span><br><span class="line">                    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(savePath + <span class="string">"\\"</span> + filename);</span><br><span class="line">                    <span class="comment">//创建一个缓冲区</span></span><br><span class="line">                    <span class="keyword">byte</span> buffer[] = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                    <span class="comment">//判断输入流中的数据是否已经读完的标识</span></span><br><span class="line">                    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">                    <span class="comment">//循环将输入流读入到缓冲区当中，(len=in.read(buffer))&gt;0就表示in里面还有数据</span></span><br><span class="line">                    <span class="keyword">while</span>((len=in.read(buffer))&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                        <span class="comment">//使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + "\\" + filename)当中</span></span><br><span class="line">                        out.write(buffer, <span class="number">0</span>, len);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//关闭输入流</span></span><br><span class="line">                    in.close();</span><br><span class="line">                    <span class="comment">//关闭输出流</span></span><br><span class="line">                    out.close();</span><br><span class="line">                    <span class="comment">//删除处理文件上传时生成的临时文件</span></span><br><span class="line">                    item.delete();</span><br><span class="line">                    message = <span class="string">"文件上传成功！"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            message= <span class="string">"文件上传失败！"</span>;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        request.setAttribute(<span class="string">"message"</span>,message);</span><br><span class="line">        request.getRequestDispatcher(<span class="string">"/message.jsp"</span>).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/4200090.html" target="_blank" rel="noopener">JavaWeb学习总结(五十)——文件上传和下载</a></p>
+<p>​    <a href="https://blog.csdn.net/alan_liuyue/article/details/72782207" target="_blank" rel="noopener">Java文件上传功能代码 —— 普遍适用</a></p>
+<p>​    <a href="https://www.cnblogs.com/ygj0930/p/6073505.html" target="_blank" rel="noopener">JavaWeb开发之网站实现文件上传功能</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/JQuery---常用方法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/JQuery---常用方法/" itemprop="url">JQuery---常用方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T09:03:18+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">JQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  169
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-理解-function"><a href="#一-理解-function" class="headerlink" title="一. 理解 $(function(){})"></a>一. 理解 $(function(){})</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$();</span><br><span class="line"></span><br><span class="line">function()&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(function()&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="二-通过id获取元素"><a href="#二-通过id获取元素" class="headerlink" title="二. 通过id获取元素"></a>二. 通过id获取元素</h1><p>与javascript 通过id获取元素节点 的方式(document.getElementById )不同<br>通过 <code>$(&quot;#id&quot;)</code> 获取</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p><strong>document.getElementById</strong> 获取到的是 DOM里的 元素节点<br><strong>$(“#id”)</strong> 获取到的是一个 JQuery 对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &gt;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.write( $(<span class="string">"#d"</span>) );</span><br><span class="line">        <span class="built_in">document</span>.close();</span><br><span class="line">	&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;div id="d"&gt;Hello JQuery&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="三-增加监听器"><a href="#三-增加监听器" class="headerlink" title="三. 增加监听器"></a>三. 增加监听器</h1><p>JQuery增加click事件的监听</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $(<span class="string">"#b1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"点击了按钮"</span>);</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"> </span></span><br><span class="line"><span class="regexp">&lt;button id="b1"&gt;按钮&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ol>
+<li>b1按钮的点击事件</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#b1"</span>).click();</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>弹出对话框的函数 </li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   alert(<span class="string">"点击了按钮"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/JavaScript---函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/JavaScript---函数/" itemprop="url">JavaScript---函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-26T08:51:18+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  94
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-定义"><a href="#一-定义" class="headerlink" title="一. 定义"></a>一. 定义</h1><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>function</td>
+<td>关键字</td>
+</tr>
+<tr>
+<td>print</td>
+<td>函数名称</td>
+</tr>
+<tr>
+<td>(message)</td>
+<td>参数列表,参数为message</td>
+</tr>
+<tr>
+<td>{</td>
+<td>函数开始</td>
+</tr>
+<tr>
+<td></td>
+<td>返回结果</td>
+</tr>
+<tr>
+<td>}</td>
+<td>函数结束</td>
+</tr>
+</tbody>
+</table>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">message</span>)</span>&#123;</span><br><span class="line">    	<span class="built_in">document</span>.write(<span class="string">"这一句话是由一个自定义函数打印"</span>);</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> message + <span class="string">"!!!!"</span></span><br><span class="line">	&#125;</span><br><span class="line">	&lt;!-- 光有函数的定义，还不够，它不会自动执行,需要调用--&gt;</span><br><span class="line">	print();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/Java基础知识---流/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/Java基础知识---流/" itemprop="url">Java基础知识---流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T20:53:27+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一-JAVA流式输入-输出原理"><a href="#一-JAVA流式输入-输出原理" class="headerlink" title="一. JAVA流式输入/输出原理"></a>一. JAVA流式输入/输出原理</h1><h3 id="1-流是用来-读写-数据的"><a href="#1-流是用来-读写-数据的" class="headerlink" title="1) 流是用来==读写==数据的"></a>1) 流是用来==读写==数据的</h3><p>​    Java有一个类叫File，它封装的是文件的文件名，<strong>只是内存里面的一个对象</strong>，真正的文件是在硬盘上的一块空间，在这个文件里面存放着各种各样的数据.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/25/Java基础知识---流/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/HTML---input属性/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/HTML---input属性/" itemprop="url">HTML---input属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T20:51:18+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一-input-属性"><a href="#一-input-属性" class="headerlink" title="一. input 属性"></a>一. input 属性</h1><ul>
+<li><strong>name</strong> : 元素的名称；这个不需要多解释了，也就是name的取值代表为当前input元素起个名字</li>
+<li><strong>width</strong> : 当 input type=”image”时，通过width属性控制元素的宽度；</li>
+<li><p><strong>height</strong> : 当 input type=”image”时，通过width属性控制元素的高度；</p>
+</li>
+<li><p><strong>type</strong> : 该属性是input标签里唯一的必须输入的属性，默认为type = “text”</p>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/25/HTML---input属性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/Java常用类---基本类型之间的转换/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -472,187 +2053,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/25/Java常用类---基本类型之间的转换/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/JavaWeb---XML详解(2)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/JavaWeb---XML详解(2)/" itemprop="url">JavaWeb---XML详解(2)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T08:26:27+08:00">
-                2019-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-web-xml-的加载过程"><a href="#一-web-xml-的加载过程" class="headerlink" title="一. web.xml 的加载过程"></a>一. web.xml 的加载过程</h1><p>​    当启动一个WEB项目时，<strong>容器</strong>包括 (JBoss、Tomcat等) <strong>首先会读取项目web.xml配置文件里的配置</strong>，当这一步骤没有出错并且完成之后，项目才能正常地被启动起来</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/25/JavaWeb---XML详解(2)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -876,1329 +2276,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/JavaWeb---XML详解/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/JavaWeb---XML详解/" itemprop="url">JavaWeb---XML详解(1)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T08:26:27+08:00">
-                2019-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.7k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-XML-概念"><a href="#一-XML-概念" class="headerlink" title="一. XML 概念"></a>一. XML 概念</h1><h2 id="1-1-什么是-XML"><a href="#1-1-什么是-XML" class="headerlink" title="1.1 什么是 XML ?"></a>1.1 什么是 XML ?</h2><p>​    XML是指可扩展标记语言(eXtensible Markup Language)，它是一种<strong>标记语言</strong>，很类似HTML。它被设计的宗旨是<strong>传输数据，而非显示数据</strong>。</p>
-<p><strong>XML标签没有被预定义，需要用户自行定义标签。</strong> XML技术是W3C组织(World Wide Web Consortium万维网联盟)发布的，目前遵循的是W3C组织于2000年发布的XML1.0规范。 </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/25/JavaWeb---XML详解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/街舞---popping/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/街舞---popping/" itemprop="url">街舞---popping</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-24T20:41:51+08:00">
-                2019-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/街舞/" itemprop="url" rel="index">
-                    <span itemprop="name">街舞</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-popping由来"><a href="#一-popping由来" class="headerlink" title="一. popping由来"></a>一. popping由来</h1><p>​    比较为大众所知的是一个名叫 <strong>Boogaloo Sam</strong> 的人，在看到电视节目 Soul Train 上 locker 的表演后激发出来的，然后他在1977年建立了一个舞团, 叫做 The Electric boogaloos(EB舞团)<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/24/街舞---popping/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/Java基础知识---泛型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/Java基础知识---泛型/" itemprop="url">Java基础知识---泛型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T09:35:51+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-概述"><a href="#一-概述" class="headerlink" title="一. 概述"></a>一. 概述</h1><p>泛型在java中有很重要的地位，在面向对象编程及各种设计模式中有非常广泛的应用。</p>
-<p>什么是泛型？为什么要使用泛型？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/22/Java基础知识---泛型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/Java基础知识---集合框架/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/22/Java基础知识---集合框架/" itemprop="url">Java基础知识---集合框架</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T09:10:51+08:00">
-                2019-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-集合框架图"><a href="#一-集合框架图" class="headerlink" title="一. 集合框架图"></a>一. 集合框架图</h1><p><img src="https://images2015.cnblogs.com/blog/249993/201611/249993-20161122113410534-705560500.jpg" alt="简化图"></p>
-<p>​    所有集合类都位于<strong>java.util包</strong>下。Java的集合类主要由<strong>两个接口派生而出：Collection和Map</strong>，Collection和Map是Java集合框架的根接口，这两个接口又包含了一些子接口或实现类。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/22/Java基础知识---集合框架/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/JavaWeb---Servlet跳转/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/JavaWeb---Servlet跳转/" itemprop="url">JavaWeb---Servlet跳转</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T22:29:27+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  164
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-Servlet跳转"><a href="#一-Servlet跳转" class="headerlink" title="一. Servlet跳转"></a>一. Servlet跳转</h1><h3 id="1-1-redirect-方式-客户端跳转"><a href="#1-1-redirect-方式-客户端跳转" class="headerlink" title="1.1 redirect 方式 (客户端跳转)"></a>1.1 redirect 方式 (客户端跳转)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>页面的路径是<strong>相对路径</strong> , sendRedirect可以将页面跳转到<strong>任何页面，不一定局限于本web应用中</strong></p>
-</li>
-<li><p>跳转后<strong>浏览器地址栏变化</strong></p>
-</li>
-<li>称之为<strong>请求重定向/302</strong></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/21/JavaWeb---Servlet跳转/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/Java基础知识---final关键字/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/Java基础知识---final关键字/" itemprop="url">Java基础知识---final关键字</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T21:18:27+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  965
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-修饰类"><a href="#1-修饰类" class="headerlink" title="1. 修饰类"></a>1. 修饰类</h2><ul>
-<li><p>当用final修饰一个类时，表明这个类<strong>不能被继承</strong>。</p>
-</li>
-<li><p>如果一个类你永远不会让他被继承，就可以用final进行修饰。</p>
-</li>
-<li><p>final类中的成员变量可以根据需要设为final，但是要注意 <strong>final类中的所有成员方法都会被隐式地指定为final方法</strong></p>
-</li>
-</ul>
-<blockquote>
-<p> 在使用final修饰类的时候，要注意谨慎选择，除非这个类真的在以后不会用来继承或者出于安全的考虑，尽量不要将类设计为final类</p>
-</blockquote>
-<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 默认为 final 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">People</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-修饰方法"><a href="#2-修饰方法" class="headerlink" title="2. 修饰方法"></a>2. 修饰方法</h2><p>使用 final 方法的原因有两个</p>
-<ol>
-<li>把方法锁定，以防任何继承类修改它的含义；</li>
-<li>效率。在早期的Java实现版本中，会将final方法转为内嵌调用。但是如果方法过于庞大，可能看不到内嵌调用带来的任何性能提升。在最近的Java版本中，不需要使用final方法进行这些优化了。</li>
-</ol>
-<blockquote>
-<p>如果只有在想 <strong>明确禁止</strong> 该方法在子类中被覆盖的情况下才将方法设置为final的。即父类的final方法是不能被子类所覆盖的，也就是说<strong>子类是不能够存在和父类一模一样的方法</strong> </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getName</span><span class="params">()</span> </span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 因为private修饰，子类中不能继承到此方法，因此，子类中的getName方法是重新定义的、</span></span><br><span class="line"><span class="comment">     * 属于子类本身的方法，编译正常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">getName</span><span class="params">()</span> </span>&#123;        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 因为pblic修饰，子类可以继承到此方法，导致重写了父类的final方法，编译出错</span></span><br><span class="line"><span class="comment">    public final void getName() &#123;    </span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-修饰变量"><a href="#3-修饰变量" class="headerlink" title="3. 修饰变量"></a>3. 修饰变量</h2><p>final成员变量表示常量，只能被赋值一次，赋值后值不再改变。</p>
-<ul>
-<li><p>当final修饰一个基本数据类型时，表示该基本数据类型的值一旦<strong>在初始化后便不能发生变化</strong>；</p>
-</li>
-<li><p>如果final修饰一个引用类型时，则在对其初始化之后便<strong>不能再让其指向其他对象了</strong>，但该引用所指向的<strong>对象的内容是可以发生变化的</strong>。本质上是一回事，因为引用的值是一个地址，final要求值，即地址的值不发生变化。</p>
-</li>
-</ul>
-<h3 id="初始化方式"><a href="#初始化方式" class="headerlink" title="初始化方式"></a>初始化方式</h3><p>final修饰一个成员变量（属性），必须要显示初始化。这里有两种初始化方式</p>
-<ol>
-<li>在变量声明的时候初始化；</li>
-<li>1在声明变量的时候不赋初值，但是要在这个变量所在的类的所有的构造函数中对这个变量赋初值。</li>
-</ol>
-<blockquote>
-<p> 当函数的参数类型声明为final时，说明该参数是只读型的。即你可以读取使用该参数，但是无法改变该参数的值。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Man</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        i = <span class="number">1</span>; <span class="comment">// 报错</span></span><br><span class="line">        <span class="keyword">final</span> Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        obj = <span class="keyword">new</span> Object(); <span class="comment">// 报错</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>二、深入理解final关键字</strong></p>
-<p>在了解了final关键字的基本用法之后，这一节我们来看一下final关键字容易混淆的地方。</p>
-<p>类的final变量和普通变量有什么区别？</p>
-<h4 id="2、被final修饰的引用变量指向的对象内容可变吗？"><a href="#2、被final修饰的引用变量指向的对象内容可变吗？" class="headerlink" title="2、被final修饰的引用变量指向的对象内容可变吗？"></a>2、被final修饰的引用变量指向的对象内容可变吗？</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFinal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">final</span> MyClass myClass = <span class="keyword">new</span> MyClass(); </span><br><span class="line">	    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">4</span>; i++) &#123;</span><br><span class="line">	    	myClass.i++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    	</span><br><span class="line">	    System.out.println(myClass.i);</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123; </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> i = <span class="number">0</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 打印结果: 4</span></span><br></pre></td></tr></table></figure>
-<p>这段代码可以顺利编译通过并且有输出结果，输出结果为4。这说明引用变量被final修饰之后，虽然不能再指向其他对象，但是它<strong>指向的对象的内容是可变的</strong></p>
-<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xiaoxi/p/6392154.html" target="_blank" rel="noopener">浅谈Java中的final关键字</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/Java基础知识---异常处理/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刻在生命里的坚强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sladning">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/Java基础知识---异常处理/" itemprop="url">Java基础知识---异常处理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T19:45:27+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-异常的概念"><a href="#一-异常的概念" class="headerlink" title="一. 异常的概念"></a>一. 异常的概念</h1><p>​    <strong>异常指的是运行期出现的错误，也就是当程序开始执行以后执行期出现的错误</strong>。出现错误时观察错误的名字和行号最为重要。</p>
-<ul>
-<li>Java 异常是 Java 提供的用于<strong>处理程序中错误的一种机制</strong></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/21/Java基础知识---异常处理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2236,7 +2318,7 @@
               <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
             
               <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
-              <p class="site-description motion-element" itemprop="description">每行一步，就是为了远离地狱，因为我就生活在地狱里</p>
+              <p class="site-description motion-element" itemprop="description">打破幻想,立足现实,脚踏实地,自强不息</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -2246,7 +2328,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2257,7 +2339,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2268,7 +2350,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2342,7 +2424,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">73.6k</span>
+    <span title="Site words total count">84.5k</span>
   
 </div>
 
