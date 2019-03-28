@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. HttpServletResponse 对象介绍​    HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T14:39:54.809Z">
+<meta property="og:updated_time" content="2019-03-28T02:38:11.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---HttpResponse对象">
 <meta name="twitter:description" content="一. HttpServletResponse 对象介绍​    HttpServletResponse对象 代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。查看 HttpServletResponse 的API，可以看到这些相关的方法。">
@@ -504,6 +504,7 @@
 <p><code>${pageContext.request.contextPath}</code>的效果等同于<code>request.getContextPath()</code>，两者获取到的都是<strong>“/项目名称”</strong></p>
 <h3 id="js脚本和css样式文件的引用"><a href="#js脚本和css样式文件的引用" class="headerlink" title="js脚本和css样式文件的引用"></a>js脚本和css样式文件的引用</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--使用绝对路径的方式引用js脚本--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="$&#123;pageContext.request.contextPath&#125;/js/index.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--$&#123;pageContext.request.contextPath&#125;与request.getContextPath()写法是得到的效果是一样的--%&gt;</span><br><span class="line"> &lt;script type="text/javascript" src="&lt;%=request.getContextPath()%&gt;/js/login.js"&gt;&lt;/script&gt;</span><br><span class="line"> &lt;%--使用绝对路径的方式引用css样式--%&gt;</span><br><span class="line"> &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/css/index.css"</span> type=<span class="string">"text/css"</span>/&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    <strong>==只要是浏览器向服务器提交的, <code>/</code> 给浏览器使用, 都可以修改成推荐的方式==</strong></p>
+<hr>
 <h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3791993.html" target="_blank" rel="noopener">javaweb学习总结(八)——HttpServletResponse对象(二)</a></p>
 
       
@@ -643,7 +644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -755,7 +756,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">84.8k</span>
+    <span title="Site words total count">89.6k</span>
   
 </div>
 

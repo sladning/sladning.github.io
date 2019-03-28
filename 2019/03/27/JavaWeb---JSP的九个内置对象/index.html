@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,JavaWeb,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sladning" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一. JSP运行原理　　每个JSP 页面在第一次被访问时，WEB容器都会把请求交给JSP引擎（即一个Java程序）去处理。JSP引擎先将JSP翻译成一个 _jspServlet(实质上也是一个 servlet ) ，然后按照servlet的调用方式进行调用。　　由于 JSP 第一次访问时会翻译成 servlet ，所以第一次访问通常会比较慢，但第二次访问，JSP引擎如果发现JSP没有变化，就不再翻">
+<meta name="keywords" content="Java,JavaWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb---JSP的九个内置对象">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/JavaWeb---JSP的九个内置对象/index.html">
+<meta property="og:site_name" content="sladning">
+<meta property="og:description" content="一. JSP运行原理　　每个JSP 页面在第一次被访问时，WEB容器都会把请求交给JSP引擎（即一个Java程序）去处理。JSP引擎先将JSP翻译成一个 _jspServlet(实质上也是一个 servlet ) ，然后按照servlet的调用方式进行调用。　　由于 JSP 第一次访问时会翻译成 servlet ，所以第一次访问通常会比较慢，但第二次访问，JSP引擎如果发现JSP没有变化，就不再翻">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-28T01:07:48.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaWeb---JSP的九个内置对象">
+<meta name="twitter:description" content="一. JSP运行原理　　每个JSP 页面在第一次被访问时，WEB容器都会把请求交给JSP引擎（即一个Java程序）去处理。JSP引擎先将JSP翻译成一个 _jspServlet(实质上也是一个 servlet ) ，然后按照servlet的调用方式进行调用。　　由于 JSP 第一次访问时会翻译成 servlet ，所以第一次访问通常会比较慢，但第二次访问，JSP引擎如果发现JSP没有变化，就不再翻">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/27/JavaWeb---JSP的九个内置对象/">
+
+
+
+
+
+  <title>JavaWeb---JSP的九个内置对象 | sladning</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+  <!-- 更改动态背景-->
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <!-- 添加自己的github账号的进入 -->
+      <a href="https://github.com/sladning"><img style="position: absolute; top: 0; left: 0; border: 0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sladning</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/JavaWeb---JSP的九个内置对象/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaWeb---JSP的九个内置对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-27T22:29:27+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-JSP运行原理"><a href="#一-JSP运行原理" class="headerlink" title="一. JSP运行原理"></a>一. JSP运行原理</h1><p>　　每个JSP 页面在第一次被访问时，WEB容器都会把请求交给JSP引擎（即一个Java程序）去处理。JSP引擎先将JSP翻译成一个 <code>_jspServlet</code>(实质上也是一个 servlet ) ，然后按照servlet的调用方式进行调用。<br>　　由于 JSP 第一次访问时会翻译成 servlet ，所以第一次访问通常会比较慢，但第二次访问，JSP引擎如果发现JSP没有变化，就不再翻译，而是直接调用，所以程序的执行效率不会受到影响。<br>　　JSP 引擎在调用 JSP 对应的 <code>_jspServlet</code> 时，会<strong>传递或创建9个与web开发相关的对象</strong>供 <code>_jspServlet</code> 使用。JSP技术的设计者为便于开发人员在编写JSP页面时获得这些web对象的引用，特意定义了9个相应的变量，开发人员在JSP页面中通过这些变量就可以快速获得这9大对象的引用。</p>
+<a id="more"></a>
+<h1 id="二-认识九个内置对象"><a href="#二-认识九个内置对象" class="headerlink" title="二. 认识九个内置对象"></a>二. 认识九个内置对象</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">NO.</th>
+<th style="text-align:left">内置对象</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left"><strong>pageContext</strong></td>
+<td><strong>javax.servlet.jsp.PageContext</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left"><strong>request</strong></td>
+<td><strong>javax.servlet.http.HttpServletRequest</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:left"><strong>response</strong></td>
+<td><strong>javax.servlet.http.HttpServletResponse</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:left"><strong>session</strong></td>
+<td><strong>javax.servlet.http.HttpSession</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:left"><strong>application</strong></td>
+<td><strong>javax.servlet.ServletContext</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:left"><strong>config</strong></td>
+<td><strong>javax.servlet.ServletConfig</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:left">out</td>
+<td>javax.servlet.jsp.JspWriter</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:left">page</td>
+<td>java.lang.Object</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:left">exception</td>
+<td>java.lang.Throwable</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>request，response，session，application，config这些对象在前面都已经作了详细的介绍，这里重点介绍一下剩下的pageContext对象，out对象，page对象</p>
+</blockquote>
+<p><strong>内置对象（又叫隐式对象）:不需要预先声明就可以在脚本代码和表达式中随意使用</strong></p>
+<h1 id="三-page对象"><a href="#三-page对象" class="headerlink" title="三. page对象"></a>三. page对象</h1><p>　　page 对象表示当前一个 JSP 页面，可以理解为一个对象本身，即：把一个JSP当作一个对象来看待。</p>
+<p>​    page对象在开发中几乎不用，了解一下即可</p>
+<h1 id="四-out对象"><a href="#四-out对象" class="headerlink" title="四. out对象"></a>四. out对象</h1><p>　　<strong>out对象用于向客户端发送文本数据。</strong><br>out对象是通过调用 pageContext 对象的 getOut 方法返回的, 其作用和用法与<code>ServletResponse.getWriter</code> 方法返回的 PrintWriter 对象非常相似。<br>　　JSP页面中的out对象的类型为 JspWriter，JspWriter 相当于一种带缓存功能的 PrintWriter，设置 JSP 页面的page指令的buffer属性可以调整它的缓存大小，甚至关闭它的缓存。<br>　　只有向out对象中写入了内容，且满足如下任何一个条件时，out对象才去调用ServletResponse.getWriter方法，并通过该方法返回的PrintWriter对象将out对象的缓冲区中的内容真正写入到Servlet引擎提供的缓冲区中：</p>
+<h4 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h4><ul>
+<li>设置page指令的buffer属性关闭了out对象的缓存功能</li>
+<li>out对象的缓冲区已满</li>
+<li>整个JSP页面结束</li>
+</ul>
+<h1 id="五-pageContext对象"><a href="#五-pageContext对象" class="headerlink" title="五. pageContext对象"></a>五. pageContext对象</h1><p>　　pageContext对象是 JSP 技术中最重要的一个对象，它<strong>代表 JSP 页面的运行环境</strong>，这个对象不仅封装了对其它8大隐式对象的引用，它<strong>自身还是一个域对象(容器)，可以用来保存数据</strong>。并且，这个对象还封装了web开发中经常涉及到的一些常用操作，例如引入和跳转其它资源、检索其它域对象中的属性等。  </p>
+<h3 id="5-1-获得其他对象方法"><a href="#5-1-获得其他对象方法" class="headerlink" title="5.1 获得其他对象方法"></a>5.1 获得其他对象方法</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">方法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong><code>getException()</code></strong></td>
+<td>返回exception隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getPage()</code></strong></td>
+<td>返回page隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getRequest()</code></strong></td>
+<td>返回request隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getResponse()</code></strong></td>
+<td>返回response隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getServletConfig()</code></strong></td>
+<td>返回config隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getServletContext()</code></strong></td>
+<td>返回application隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getSession()</code></strong></td>
+<td>返回session隐式对象</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><code>getOut()</code></strong></td>
+<td>返回out隐式对象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-2-pageContext封装其它8大内置对象的意义"><a href="#5-2-pageContext封装其它8大内置对象的意义" class="headerlink" title="5.2 pageContext封装其它8大内置对象的意义"></a>5.2 pageContext封装其它8大内置对象的意义</h2><p>　　如果在编程过程中，把pageContext对象传递给一个普通java对象，那么这个java对象将可以获取8大隐式对象，此时这个java对象就可以和浏览器交互了，此时这个java对象就成为了一个动态web资源了，这就是pageContext封装其它8大内置对象的意义，<strong>把pageContext传递给谁，谁就能成为一个动态web资源</strong></p>
+<h5 id="那么什么情况下需要把pageContext传递给另外一个java类呢，什么情况下需要使用这种技术呢"><a href="#那么什么情况下需要把pageContext传递给另外一个java类呢，什么情况下需要使用这种技术呢" class="headerlink" title="那么什么情况下需要把pageContext传递给另外一个java类呢，什么情况下需要使用这种技术呢?"></a>那么什么情况下需要把pageContext传递给另外一个java类呢，什么情况下需要使用这种技术呢?</h5><blockquote>
+<p>​    在比较正规的开发中，jsp页面是不允许出现java代码的，如果jsp页面出现了 java 代码，那么就应该想办法把 java 代码移除掉，我们可以<strong>开发一个自定义标签来移除 jsp 页面上的 java 代码</strong>，首先围绕自定义标签写一个java类，jsp引擎在执行自定义标签的时候就会调用围绕自定义标签写的那个 java 类，在调用 java 类的时候就会把 pageContext 对象传递给这个java类，由于pageContext对象封装了对其它8大隐式对象的引用，因此在这个java类中就可以使用jsp页面中的8大隐式对象(request，response，config，application，exception，Session，page，out)了，pageContext对象在jsp自定义标签开发中特别重要。</p>
+</blockquote>
+<h2 id="5-3-pageContext作为域对象"><a href="#5-3-pageContext作为域对象" class="headerlink" title="5.3 pageContext作为域对象"></a>5.3 pageContext作为域对象</h2><p>　　pageContext对象可以作为容器来使用，因此可以将一些数据存储在pageContext对象中。</p>
+<h3 id="1-常用方法"><a href="#1-常用方法" class="headerlink" title="1) 常用方法"></a>1) 常用方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAttribute</span><span class="params">(String name, Object value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getAttribute</span><span class="params">(String name)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeAttribute</span><span class="params">(String name)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">findAttribute</span><span class="params">(String name)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>findAttribute()</strong> : 用来<strong>查找各个域中的属性的</strong></p>
+<p>　　当要查找某个属性时，findAttribute方法按照查找顺序 <strong>“page→request→session→application”</strong> 在这四个对象中去查找，只要找到了就返回属性值，如果四个对象都没有找到要查找的属性，则返回一个null。</p>
+<h5 id="范例：使用pageContext的findAttribute方法查找属性值"><a href="#范例：使用pageContext的findAttribute方法查找属性值" class="headerlink" title="范例：使用pageContext的findAttribute方法查找属性值"></a>范例：使用pageContext的findAttribute方法查找属性值</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> contentType=<span class="string">"text/html;charset=UTF-8"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;pageContext的findAttribute方法查找属性值&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    pageContext.setAttribute(<span class="string">"name1"</span>, <span class="string">"孤傲苍狼"</span>);</span><br><span class="line">    request.setAttribute(<span class="string">"name2"</span>, <span class="string">"白虎神皇"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"name3"</span>, <span class="string">"玄天邪帝"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"name4"</span>, <span class="string">"灭世魔尊"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">// 使用pageContext的findAttribute方法查找属性，由于取得的值为Object类型，因此必须使用String强制向下转型，转换成String类型</span></span><br><span class="line">    <span class="comment">// 查找name1属性，按照顺序"page→request→session→application"在这四个对象中去查找</span></span><br><span class="line">    String refName1 = (String)pageContext.findAttribute(<span class="string">"name1"</span>);</span><br><span class="line">    String refName2 = (String)pageContext.findAttribute(<span class="string">"name2"</span>);</span><br><span class="line">    String refName3 = (String)pageContext.findAttribute(<span class="string">"name3"</span>);</span><br><span class="line">    String refName4 = (String)pageContext.findAttribute(<span class="string">"name4"</span>);</span><br><span class="line">    String refName5 = (String)pageContext.findAttribute(<span class="string">"name5"</span>); <span class="comment">// 查找一个不存在的属性</span></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;pageContext.findAttribute方法查找到的属性值：&lt;/h1&gt;</span><br><span class="line">&lt;h3&gt;pageContext对象的name1属性：$&#123;name1&#125;&lt;/h3&gt;</span><br><span class="line">&lt;h3&gt;request对象的name2属性：$&#123;name2&#125;&lt;/h3&gt;</span><br><span class="line">&lt;h3&gt;session对象的name3属性：$&#123;name3&#125;&lt;/h3&gt;</span><br><span class="line">&lt;h3&gt;application对象的name4属性：$&#123;name4&#125;&lt;/h3&gt;</span><br><span class="line">&lt;h3&gt;不存在的name5属性：$&#123;name5&#125;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-pageContext对象中封装了访问其它域的方法"><a href="#2-pageContext对象中封装了访问其它域的方法" class="headerlink" title="2) pageContext对象中封装了访问其它域的方法"></a>2) pageContext对象中封装了访问其它域的方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getAttribute</span><span class="params">(String name, <span class="keyword">int</span> scope)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAttribute</span><span class="params">(String name, Object value, <span class="keyword">int</span> scope)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeAttribute</span><span class="params">(String name, <span class="keyword">int</span> scope)</span></span></span><br></pre></td></tr></table></figure>
+<p>代表各个域的常量</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PageContext.APPLICATION_SCOPE</span><br><span class="line">PageContext.SESSION_SCOPE</span><br><span class="line">PageContext.REQUEST_SCOPE</span><br><span class="line">PageContext.PAGE_SCOPE</span><br></pre></td></tr></table></figure>
+<h5 id="范例：pageContext访问其它域"><a href="#范例：pageContext访问其它域" class="headerlink" title="范例：pageContext访问其它域"></a>范例：pageContext访问其它域</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    <span class="comment">// 此时相当于往session对象中存放了一个name属性，</span></span><br><span class="line">	<span class="comment">// 等价于 session.setAttribute("name","孤傲苍狼");</span></span><br><span class="line">    pageContext.setAttribute(<span class="string">"name"</span>,<span class="string">"孤傲苍狼"</span>,PageContext.SESSION_SCOPE);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">	<span class="comment">// 两种取出来的方式</span></span><br><span class="line">    <span class="comment">// 取得session对象的属性，使用pageContext对象获取</span></span><br><span class="line">    String refName1 = (String)pageContext.getAttribute(<span class="string">"name"</span>,PageContext.SESSION_SCOPE);  </span><br><span class="line">    <span class="comment">// 由于取得的值为Object类型，因此必须使用String强制向下转型，转换成String类型</span></span><br><span class="line">     String refName2 = (String)session.getAttribute(<span class="string">"name"</span>);  </span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="5-4-PageContext-引入和跳转到其他资源"><a href="#5-4-PageContext-引入和跳转到其他资源" class="headerlink" title="5.4 PageContext 引入和跳转到其他资源"></a>5.4 PageContext 引入和跳转到其他资源</h2><p>　　PageContext类中定义了<strong>一个forward方法</strong>(用来跳转页面)和两个include方法(用来引入页面)来分别简化和替代RequestDispatcher.forward方法和include方法。<br>　　方法接收的资源如果以“/”开头， “/”代表当前web应用。</p>
+<p><strong>范例：使用pageContext的forward方法跳转到其他页面</strong></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    <span class="comment">// 使用pageContext的forward方法跳转到 pageContextDemo05.jsp 页面，/代表了当前的web应用</span></span><br><span class="line">    pageContext.forward(<span class="string">"/pageContextDemo05.jsp"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 pageContext.forward(relativeUrlPath)替代 RequestDispatcher.forward(relativeUrlPath)</span></span><br><span class="line">    <span class="comment">// 使用 RequestDispatcher 的 forward 方法实现的跳转方式</span></span><br><span class="line"> pageContext.getRequest().getRequestDispatcher(<span class="string">"/pageContextDemo05.jsp"</span>).forward(request, response);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pageContext.forward(<span class="string">"/pageContextDemo05.jsp"</span>);</span><br></pre></td></tr></table></figure>
+<p>​    这种写法是用来简化和替代  <code>pageContext.getRequest().getRequestDispatcher(&quot;/pageContextDemo05.jsp&quot;).forward(request,
+response);</code>这种写法的。在实际开发中，使用pageContext.forward(relativeUrlPath)方法跳转页面用得不多，主要是因为要在Jsp页面中嵌套java代码，所以这种做法简单了解一下即可</p>
+<p>​    在开发中，要想从一个Jsp页面采用服务器端跳转的方式跳转到另一个Jsp页面，那么一般会使用 <code>&lt;jsp:forward&gt;</code> 标签，<code>&lt;jsp:forward&gt;</code> 标签用于把请求转发给另外一个资源。</p>
+<h5 id="范例：使用pageContext的include方法引入资源"><a href="#范例：使用pageContext的include方法引入资源" class="headerlink" title="范例：使用pageContext的include方法引入资源"></a>范例：使用pageContext的include方法引入资源</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;使用pageContext的include方法引入资源&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;%-- 使用jsp:include标签引入资源, &lt;jsp:include page=<span class="string">"/jspfragments/head.jsp"</span>/&gt; --%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    pageContext.include(<span class="string">"/jspfragments/head.jsp"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;hr/&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3779872.html" target="_blank" rel="noopener">JavaWeb学习总结(十七)——JSP中的九个内置对象</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/JavaWeb/" rel="tag"><i class="fa fa-tag"></i> JavaWeb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/27/JavaWeb---Cookie/" rel="next" title="JavaWeb---Cookie">
+                <i class="fa fa-chevron-left"></i> JavaWeb---Cookie
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/27/JavaWeb---Session/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAyOS8xOTU3NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
+            
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
+              <p class="site-description motion-element" itemprop="description">打破幻想,立足现实,脚踏实地,自强不息</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sladning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1353565771@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-JSP运行原理"><span class="nav-number">1.</span> <span class="nav-text">一. JSP运行原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-认识九个内置对象"><span class="nav-number">2.</span> <span class="nav-text">二. 认识九个内置对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-page对象"><span class="nav-number">3.</span> <span class="nav-text">三. page对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-out对象"><span class="nav-number">4.</span> <span class="nav-text">四. out对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">条件</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#五-pageContext对象"><span class="nav-number">5.</span> <span class="nav-text">五. pageContext对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-获得其他对象方法"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 获得其他对象方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-pageContext封装其它8大内置对象的意义"><span class="nav-number">5.1.</span> <span class="nav-text">5.2 pageContext封装其它8大内置对象的意义</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#那么什么情况下需要把pageContext传递给另外一个java类呢，什么情况下需要使用这种技术呢"><span class="nav-number">5.1.0.0.1.</span> <span class="nav-text">那么什么情况下需要把pageContext传递给另外一个java类呢，什么情况下需要使用这种技术呢?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-pageContext作为域对象"><span class="nav-number">5.2.</span> <span class="nav-text">5.3 pageContext作为域对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-常用方法"><span class="nav-number">5.2.1.</span> <span class="nav-text">1) 常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例：使用pageContext的findAttribute方法查找属性值"><span class="nav-number">5.2.1.0.1.</span> <span class="nav-text">范例：使用pageContext的findAttribute方法查找属性值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-pageContext对象中封装了访问其它域的方法"><span class="nav-number">5.2.2.</span> <span class="nav-text">2) pageContext对象中封装了访问其它域的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例：pageContext访问其它域"><span class="nav-number">5.2.2.0.1.</span> <span class="nav-text">范例：pageContext访问其它域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-PageContext-引入和跳转到其他资源"><span class="nav-number">5.3.</span> <span class="nav-text">5.4 PageContext 引入和跳转到其他资源</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例：使用pageContext的include方法引入资源"><span class="nav-number">5.3.0.0.1.</span> <span class="nav-text">范例：使用pageContext的include方法引入资源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">5.3.0.0.2.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">89.6k</span>
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+ 
