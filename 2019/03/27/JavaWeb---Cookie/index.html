@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="一. 会话的概念 会话 : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。 有状态会话 : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。  二、会话过程中要解决的一些问题？　　每个用户在使用浏览器与服务器进行会话的过程中，不可避免各自会产生一些数据，程序要想办法为每个用户保存这些数据。 三、保存会">
+<meta name="description" content="一. 会话的概念 会话 : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。 有状态会话 : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。">
 <meta name="keywords" content="Java,JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb---Cookie">
 <meta property="og:url" content="http://yoursite.com/2019/03/27/JavaWeb---Cookie/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="一. 会话的概念 会话 : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。 有状态会话 : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。  二、会话过程中要解决的一些问题？　　每个用户在使用浏览器与服务器进行会话的过程中，不可避免各自会产生一些数据，程序要想办法为每个用户保存这些数据。 三、保存会">
+<meta property="og:description" content="一. 会话的概念 会话 : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。 有状态会话 : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-27T14:40:16.407Z">
+<meta property="og:updated_time" content="2019-03-29T02:23:14.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---Cookie">
-<meta name="twitter:description" content="一. 会话的概念 会话 : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。 有状态会话 : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。  二、会话过程中要解决的一些问题？　　每个用户在使用浏览器与服务器进行会话的过程中，不可避免各自会产生一些数据，程序要想办法为每个用户保存这些数据。 三、保存会">
+<meta name="twitter:description" content="一. 会话的概念 会话 : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，整个过程称之为一个会话。 有状态会话 : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。">
 
 
 
@@ -475,6 +475,7 @@
 <li><strong>会话</strong> : (简单理解)用户开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器<strong>，整个过程称之为一个会话</strong>。</li>
 <li><strong>有状态会话</strong> : 一个同学来过教室，下次再来教室，我们会知道这个同学曾经来过，这称之为有状态会话。</li>
 </ul>
+<a id="more"></a>
 <h2 id="二、会话过程中要解决的一些问题？"><a href="#二、会话过程中要解决的一些问题？" class="headerlink" title="二、会话过程中要解决的一些问题？"></a>二、会话过程中要解决的一些问题？</h2><p>　　每个用户在使用浏览器与服务器进行会话的过程中，不可避免各自会产生一些数据，程序要想办法为每个用户保存这些数据。</p>
 <h2 id="三、保存会话数据的两种技术"><a href="#三、保存会话数据的两种技术" class="headerlink" title="三、保存会话数据的两种技术"></a>三、保存会话数据的两种技术</h2><h3 id="3-1、Cookie"><a href="#3-1、Cookie" class="headerlink" title="3.1、Cookie"></a>3.1、Cookie</h3><p>　　Cookie是客户端技术，程序把每个用户的数据以cookie的形式写给用户各自的浏览器。当用户使用浏览器再去访问服务器中的web资源时，就会带着各自的数据去。这样，web资源处理的就是用户各自的数据了。</p>
 <h3 id="3-2、Session"><a href="#3-2、Session" class="headerlink" title="3.2、Session"></a>3.2、Session</h3><p>　　Session是服务器端技术，利用这个技术，服务器在运行时可以为每一个用户的浏览器创建一个其独享的session对象，由于session为用户浏览器独享，所以用户在访问服务器的web资源时，可以把各自的数据放在各自的session中，当用户再去访问服务器中的其它web资源时，其它web资源再从用户各自的session中取出数据为用户服务。</p>
@@ -616,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -728,7 +729,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">89.6k</span>
+    <span title="Site words total count">90.9k</span>
   
 </div>
 

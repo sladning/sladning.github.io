@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="一. Servlet跳转1.1 redirect 方式 (客户端跳转)1response.sendRedirect(&quot;/index.jsp&quot;);  页面的路径是相对路径 , sendRedirect可以将页面跳转到任何页面，不一定局限于本web应用中  跳转后浏览器地址栏变化  称之为请求重定向/302">
+<meta name="description" content="一. Servlet 跳转1.1 redirect 方式 (客户端跳转)​    发送一个请求给服务器端资源，这个服务器资源会首先给客户端一个响应，客户端再根据这个响应当中所包含的地址，再次向服务器端发送一个请求，也就是说客户端跳转是两次请求，两次响应； 1response.sendRedirect(&quot;/index.jsp&quot;);  页面的路径是相对路径 , sendRedirect可以将页面跳转到">
 <meta name="keywords" content="Java,JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb---Servlet跳转">
 <meta property="og:url" content="http://yoursite.com/2019/03/21/JavaWeb---Servlet跳转/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="一. Servlet跳转1.1 redirect 方式 (客户端跳转)1response.sendRedirect(&quot;/index.jsp&quot;);  页面的路径是相对路径 , sendRedirect可以将页面跳转到任何页面，不一定局限于本web应用中  跳转后浏览器地址栏变化  称之为请求重定向/302">
+<meta property="og:description" content="一. Servlet 跳转1.1 redirect 方式 (客户端跳转)​    发送一个请求给服务器端资源，这个服务器资源会首先给客户端一个响应，客户端再根据这个响应当中所包含的地址，再次向服务器端发送一个请求，也就是说客户端跳转是两次请求，两次响应； 1response.sendRedirect(&quot;/index.jsp&quot;);  页面的路径是相对路径 , sendRedirect可以将页面跳转到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T14:57:09.962Z">
+<meta property="og:updated_time" content="2019-03-29T01:04:07.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---Servlet跳转">
-<meta name="twitter:description" content="一. Servlet跳转1.1 redirect 方式 (客户端跳转)1response.sendRedirect(&quot;/index.jsp&quot;);  页面的路径是相对路径 , sendRedirect可以将页面跳转到任何页面，不一定局限于本web应用中  跳转后浏览器地址栏变化  称之为请求重定向/302">
+<meta name="twitter:description" content="一. Servlet 跳转1.1 redirect 方式 (客户端跳转)​    发送一个请求给服务器端资源，这个服务器资源会首先给客户端一个响应，客户端再根据这个响应当中所包含的地址，再次向服务器端发送一个请求，也就是说客户端跳转是两次请求，两次响应； 1response.sendRedirect(&quot;/index.jsp&quot;);  页面的路径是相对路径 , sendRedirect可以将页面跳转到">
 
 
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  164
+                  564
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -471,23 +471,64 @@
       
 
       
-        <h1 id="一-Servlet跳转"><a href="#一-Servlet跳转" class="headerlink" title="一. Servlet跳转"></a>一. Servlet跳转</h1><h3 id="1-1-redirect-方式-客户端跳转"><a href="#1-1-redirect-方式-客户端跳转" class="headerlink" title="1.1 redirect 方式 (客户端跳转)"></a>1.1 redirect 方式 (客户端跳转)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
+        <h1 id="一-Servlet-跳转"><a href="#一-Servlet-跳转" class="headerlink" title="一. Servlet 跳转"></a>一. Servlet 跳转</h1><h3 id="1-1-redirect-方式-客户端跳转"><a href="#1-1-redirect-方式-客户端跳转" class="headerlink" title="1.1 redirect 方式 (客户端跳转)"></a>1.1 redirect 方式 (客户端跳转)</h3><p>​    发送一个请求给服务器端资源，这个服务器资源会首先给客户端一个响应，客户端再根据这个响应当中所包含的地址，再次向服务器端发送一个请求，也就是说<strong>客户端跳转是两次请求，两次响应</strong>；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"/index.jsp"</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>页面的路径是<strong>相对路径</strong> , sendRedirect可以将页面跳转到<strong>任何页面，不一定局限于本web应用中</strong></p>
 </li>
-<li><p>跳转后<strong>浏览器地址栏变化</strong></p>
+<li><p>跳转后 <strong>浏览器地址栏变化</strong></p>
 </li>
 <li>称之为<strong>请求重定向/302</strong></li>
 </ul>
 <a id="more"></a>
-<h3 id="1-2-forward方式-服务器端跳转"><a href="#1-2-forward方式-服务器端跳转" class="headerlink" title="1.2 forward方式 (服务器端跳转)"></a>1.2 forward方式 (服务器端跳转)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/index.jsp"</span>); </span><br><span class="line">dispatcher.forward(request, response); </span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line">request.getRequestDispatcher(<span class="string">"/index.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-forward方式-服务器端跳转"><a href="#1-2-forward方式-服务器端跳转" class="headerlink" title="1.2 forward方式 (服务器端跳转)"></a>1.2 forward方式 (服务器端跳转)</h3><p>​    由客户端发送一个请求，请求一个服务器资源 (如JSP和Servlet) ，这个资源又将请求转到另一个服务器资源，然后再给客户端发送一个响应，也就是说<strong>服务器端跳转是客户端发送一次请求，服务器端给出一次响应</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/index.jsp"</span>); </span><br><span class="line">dispatcher.forward(request, response); </span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line">request.getRequestDispatcher(<span class="string">"/index.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>页面的路径是<strong>相对路径</strong> , forward方式<strong>只能跳转到本web应用中的页面上</strong></p>
+<li><p>页面的路径是 <strong>相对路径</strong> , forward方式 <strong>只能跳转到本web应用中的页面上</strong></p>
 </li>
-<li><p>跳转后浏览器地址栏<strong>不会变化</strong></p>
+<li><p>跳转后浏览器地址栏 <strong>不会变化</strong></p>
 </li>
-<li><strong>请求转发/307</strong>称为</li>
+<li><strong>请求转发/307</strong> 称为</li>
 </ul>
+<h1 id="二-两者之间的区别"><a href="#二-两者之间的区别" class="headerlink" title="二. 两者之间的区别"></a>二. 两者之间的区别</h1><table>
+<thead>
+<tr>
+<th>方面</th>
+<th>redirect 方式 (response , 客户端跳转)</th>
+<th>forward方式 (request , 服务器端跳转)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浏览器地址</td>
+<td>会变化 (在地址栏中显示的是最后一次请求地址)</td>
+<td>会不变化 (在地址栏中显示的事第一次页面地址)</td>
+</tr>
+<tr>
+<td>当前资源</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>指定目标资源的URL</td>
+<td>“”代表的是应用服务器根目录，即<code>http://localhost:8080/</code></td>
+<td>代表的是应用程序根目录,即<code>http://localhost:8080/项目名/</code></td>
+</tr>
+<tr>
+<td></td>
+<td>可以向站外跳转</td>
+<td>只能站内跳转</td>
+</tr>
+<tr>
+<td>是否可以获取到请求中的属性和参数</td>
+<td>不可以</td>
+<td>可以</td>
+</tr>
+</tbody>
+</table>
+<p>注意：<br>    1、客户端跳转“/”代表服务器路径webapps，即服务器根路径，服务器端跳转“/”代表站点根路径，即应用程序根路径；</p>
+<p>​    2、尽量使用response.sendRedirect(“fail.jsp”)而不去使用forward，因为当服务器崩溃了，那么sendRedirect则就会起很大的好处了</p>
+<hr>
 <h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://blog.csdn.net/chao2016/article/details/50663427" target="_blank" rel="noopener">java学习心得——servlet的两种跳转方式</a></p>
 
       
@@ -541,8 +582,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/22/Java基础知识---集合框架/" rel="prev" title="Java基础知识---集合框架">
-                Java基础知识---集合框架 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/JavaWeb---项目中的绝对路径与相对路径/" rel="prev" title="JavaWeb---项目中的绝对路径与相对路径">
+                JavaWeb---项目中的绝对路径与相对路径 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,7 +668,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -705,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Servlet跳转"><span class="nav-number">1.</span> <span class="nav-text">一. Servlet跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-redirect-方式-客户端跳转"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 redirect 方式 (客户端跳转)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-forward方式-服务器端跳转"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 forward方式 (服务器端跳转)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Servlet-跳转"><span class="nav-number">1.</span> <span class="nav-text">一. Servlet 跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-redirect-方式-客户端跳转"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 redirect 方式 (客户端跳转)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-forward方式-服务器端跳转"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 forward方式 (服务器端跳转)</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-两者之间的区别"><span class="nav-number">2.</span> <span class="nav-text">二. 两者之间的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></div>
             
 
           </div>
@@ -739,7 +780,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">89.6k</span>
+    <span title="Site words total count">90.9k</span>
   
 </div>
 

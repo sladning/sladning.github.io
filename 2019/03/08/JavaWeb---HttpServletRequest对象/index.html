@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-22T07:14:32.362Z">
+<meta property="og:updated_time" content="2019-03-29T01:03:51.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---HttpServletRequest对象">
 <meta name="twitter:description" content="一. HttpServletRequest介绍　　HttpServletRequest对象代表 客户端的请求 ，当 客户端通过HTTP协议访问服务器 时，HTTP请求头中的 所有信息都封装在这个对象中 ，通过这个对象提供的方法，可以获得客户端请求的所有信息 。">
@@ -483,32 +483,68 @@
 <p>详细代码见参考博客</p>
 <p>在服务器端使用getParameter方法和getParameterValues方法接收表单参数，代码如下:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取客户端通过Form表单提交上来的参数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestDemo03</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		<span class="comment">// 客户端是以 UTF-8 编码提交表单数据的，所以需要设置服务器端以UTF-8 的编码进行接收，否则对于中文数据就会产生乱码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 用户名(文本框)：&lt;input type="text" name="username" value="请输入用户名"&gt;</span></span><br><span class="line"><span class="comment">        * 获取填写的用户名</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">		<span class="comment">// 获取选中的性别</span></span><br><span class="line">        String sex = request.getParameter(<span class="string">"sex"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取选中的兴趣，因为可以选中多个值，所以获取到的值是一个字符串数组，因此需要使用 getParameterValues 方法来获取</span></span><br><span class="line">        <span class="comment">// &lt;input type="checkbox" name="inst" value="唱歌"&gt;唱歌</span></span><br><span class="line">        String[] insts = request.getParameterValues(<span class="string">"inst"</span>);</span><br><span class="line">        String hiddenField = request.getParameter(<span class="string">"hiddenField"</span>);<span class="comment">//获取隐藏域的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-4-获取路径"><a href="#2-4-获取路径" class="headerlink" title="2.4 获取路径"></a>2.4 获取路径</h2><h3 id="方法与作用"><a href="#方法与作用" class="headerlink" title="方法与作用"></a>方法与作用</h3><ol>
-<li><p><strong>getServletPath()</strong> : 获取能够与<strong>“url-pattern”中匹配的路径</strong>，注意是完全匹配的部分，<strong>* 的部分不包括</strong>。</p>
-</li>
-<li><p><strong>getPageInfo()</strong> : 与getServletPath()获取的路径<strong>互补</strong>，能够得到的是“url-pattern”中 <strong>*</strong> 的路径部分</p>
-</li>
-<li><p><strong>getContextPath()</strong> : 获取项目的<strong>根路径</strong></p>
-<blockquote>
-<p><code>getContextPath()</code> 与 <code>req.getServletContext().getContextPath()</code>获取到内容的<strong>是相同的</strong>,都是项目的根路径</p>
-</blockquote>
-</li>
-<li><p><strong>getRequestURI()</strong> : 获取<strong>根路径到地址结尾</strong></p>
-</li>
-<li><p><strong>getRequestURL()</strong> :获取请求的地址链接（浏览器中输入的地址）</p>
-</li>
-<li><p><strong>getServletContext().getRealPath(“/”)</strong> :获取“/”在机器中的实际地址</p>
-</li>
-<li><p><strong>getScheme()</strong> : 获取的是使用的协议(http 或https)</p>
-</li>
-<li><p><strong>getProtocol()</strong> : 获取的是协议的名称(HTTP/1.11)</p>
-</li>
-<li><p><strong>getServerName()</strong> : 获取的是域名(xxx.com)</p>
-</li>
-<li><p><strong>getLocalName</strong> : 获取到的是IP</p>
-</li>
-</ol>
-<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><p>请求 <code>http://localhost:8080/testweb/abc/def/ghi/test.html</code> (url-pattern=/abc/def/*)<br>打印的值为：</p>
+<h2 id="2-4-获取路径"><a href="#2-4-获取路径" class="headerlink" title="2.4 获取路径"></a>2.4 获取路径</h2><h3 id="方法与作用"><a href="#方法与作用" class="headerlink" title="方法与作用"></a>方法与作用</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">方法</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><strong>getServletPath()</strong></td>
+<td style="text-align:left">获取能够与<strong>“url-pattern”中匹配的路径</strong>，注意是完全匹配的部分，<strong>* 的部分不包括</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>getPageInfo()</strong></td>
+<td style="text-align:left">与getServletPath()获取的路径<strong>互补</strong>，能够得到的是“url-pattern”中 <strong>*</strong> 的路径部分</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>getContextPath()</strong></td>
+<td style="text-align:left">获取项目的<strong>根路径</strong> (<code>getContextPath()</code> 与 <code>req.getServletContext().getContextPath()</code>获取到内容的<strong>是相同的</strong>,都是项目的根路径)</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>getRequestURI()</strong></td>
+<td style="text-align:left">获取<strong>根路径到地址结尾</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center"><strong>getRequestURL()</strong></td>
+<td style="text-align:left">获取请求的地址链接（浏览器中输入的地址）</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center"><strong>getServletContext().getRealPath(“/”)</strong></td>
+<td style="text-align:left">获取“/”在机器中的实际地址</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center"><strong>getScheme()</strong></td>
+<td style="text-align:left">获取的是使用的协议(http 或https)</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center"><strong>getProtocol()</strong></td>
+<td style="text-align:left">获取的是协议的名称(HTTP/1.11)</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center"><strong>getServerName()</strong></td>
+<td style="text-align:left">获取的是域名(xxx.com)</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center"><strong>getLocalName()</strong></td>
+<td style="text-align:left">获取到的是IP</td>
+</tr>
+</tbody>
+</table>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><p>请求 <code>http://localhost:8080/testweb/abc/def/ghi/test.html</code> (url-pattern=/abc/def/*)<br>打印的值为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> servletPath: /abc/<span class="function"><span class="keyword">def</span> </span></span><br><span class="line"><span class="function">2. <span class="title">pageInfo</span>:</span> /ghi/test.html</span><br><span class="line"><span class="number">3.</span> contextPath: /testweb</span><br><span class="line"><span class="number">4.</span> uri: /testweb/abc/<span class="function"><span class="keyword">def</span>/<span class="title">ghi</span>/<span class="title">test</span>.<span class="title">html</span></span></span><br><span class="line"><span class="function">5. <span class="title">url</span>:</span> http://localhost:<span class="number">8080</span>/testweb/abc/<span class="function"><span class="keyword">def</span>/<span class="title">ghi</span>/<span class="title">test</span>.<span class="title">html</span></span></span><br><span class="line"><span class="function">6. <span class="title">realPath</span>:</span>G:\java\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\testweb\</span><br></pre></td></tr></table></figure>
 <h2 id="2-5-传参"><a href="#2-5-传参" class="headerlink" title="2.5 传参"></a>2.5 传参</h2><p>setAttribute和getAttribute可以用来在进行服务端跳转的时候，在不同的Servlet之间进行数据共享</p>
 <h1 id="三-request接收表单提交中文参数乱码问题"><a href="#三-request接收表单提交中文参数乱码问题" class="headerlink" title="三. request接收表单提交中文参数乱码问题"></a>三. request接收表单提交中文参数乱码问题</h1><h3 id="3-1-以POST方式提交表单中文参数的乱码问题"><a href="#3-1-以POST方式提交表单中文参数的乱码问题" class="headerlink" title="3.1 以POST方式提交表单中文参数的乱码问题"></a>3.1 以POST方式提交表单中文参数的乱码问题</h3><h5 id="例如有如下的form表单页面"><a href="#例如有如下的form表单页面" class="headerlink" title="例如有如下的form表单页面"></a>例如有如下的form表单页面</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!--提交方式为 POST--&gt;</span><br><span class="line">    &lt;form action=<span class="string">"&lt;%=request.getContextPath()%&gt;/servlet/RequestDemo04"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        用户名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"userName"</span>/&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"post方式提交表单"</span>&gt; </span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
@@ -536,7 +572,7 @@
 <h4 id="提交方式为GET"><a href="#提交方式为GET" class="headerlink" title="提交方式为GET"></a>提交方式为GET</h4><p>​    <strong>设置request对象的编码是无效的</strong>，request对象还是以默认的ISO8859-1编码接收数据，因此要想不乱码，只能在接收到数据后再 <strong>手工转换</strong>, 步骤如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取获取客户端提交上来的数据，得到的是乱码字符串,data="???è?????"</span></span><br><span class="line">String data = request.getParameter(<span class="string">"paramName"</span>); </span><br><span class="line"><span class="comment">// 2.查找ISO8859-1码表，得到客户机提交的原始数据的字节数组</span></span><br><span class="line"><span class="keyword">byte</span>[] source = data.getBytes(<span class="string">"ISO8859-1"</span>); </span><br><span class="line"><span class="comment">// 3.通过字节数组以指定的编码构建字符串，解决乱码</span></span><br><span class="line">data = <span class="keyword">new</span> String(source, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
 <p>　　通过字节数组以 <strong>指定的编码</strong> 构建字符串，这里 <strong>指定的编码</strong> -是根据客户端那边提交数据时使用的字符编码来定的，<strong>如果是GB2312，那么就设置成data = new String(source, “GB2312”)</strong></p>
-<h1 id="四-Request对象实现请求转发"><a href="#四-Request对象实现请求转发" class="headerlink" title="四.Request对象实现请求转发"></a>四.Request对象实现请求转发</h1><h3 id="4-1-请求转发的基本概念"><a href="#4-1-请求转发的基本概念" class="headerlink" title="4.1 请求转发的基本概念"></a>4.1 请求转发的基本概念</h3><p>​    <strong>请求转发:</strong> 指一个web资源收到客户端请求后，通知<strong>服务器</strong>去调用另外一个web资源进行处理。<br>　　<strong>请求转发的应用场景:</strong> MVC设计模式</p>
+<h1 id="四-Request-对象实现请求转发"><a href="#四-Request-对象实现请求转发" class="headerlink" title="四.Request 对象实现请求转发"></a>四.Request 对象实现请求转发</h1><h3 id="4-1-请求转发的基本概念"><a href="#4-1-请求转发的基本概念" class="headerlink" title="4.1 请求转发的基本概念"></a>4.1 请求转发的基本概念</h3><p>​    <strong>请求转发:</strong> 指一个web资源收到客户端请求后，通知<strong>服务器</strong>去调用另外一个web资源进行处理。<br>　　<strong>请求转发的应用场景:</strong> MVC设计模式</p>
 <h5 id="在Servlet中实现请求转发的两种方式："><a href="#在Servlet中实现请求转发的两种方式：" class="headerlink" title="在Servlet中实现请求转发的两种方式："></a>在Servlet中实现请求转发的两种方式：</h5><ol>
 <li>通过 ServletContext 的 <code>getRequestDispatcher(String path)</code> 方法，该方法返回一个 <strong>RequestDispatcher 对象</strong>，调用这个对象的 <code>forward</code> 方法可以实现请求转发。</li>
 </ol>
@@ -555,7 +591,7 @@
 <li><strong>通知服务器去调用另外一个web资源</strong>进行处理，称之为<strong>请求转发/307</strong></li>
 <li><strong>通知浏览器去访问另外一个web资源</strong>进行处理，称之为<strong>请求重定向/302</strong></li>
 </ul>
-<h1 id="五-request设置参数"><a href="#五-request设置参数" class="headerlink" title="五. request设置参数"></a>五. request设置参数</h1><h4 id="存储代码"><a href="#存储代码" class="headerlink" title="存储代码"></a>存储代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroEditServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> id = Integer.parseInt(request.getParameter(<span class="string">"id"</span>));</span><br><span class="line">        Hero hero = <span class="keyword">new</span> HeroDAO().get(id);</span><br><span class="line">        <span class="comment">// 存进来</span></span><br><span class="line">        request.setAttribute(<span class="string">"hero"</span>, hero);</span><br><span class="line">        request.getRequestDispatcher(<span class="string">"editHero.jsp"</span>).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五-request-设置参数"><a href="#五-request-设置参数" class="headerlink" title="五. request 设置参数"></a>五. request 设置参数</h1><h4 id="存储代码"><a href="#存储代码" class="headerlink" title="存储代码"></a>存储代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroEditServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> id = Integer.parseInt(request.getParameter(<span class="string">"id"</span>));</span><br><span class="line">        Hero hero = <span class="keyword">new</span> HeroDAO().get(id);</span><br><span class="line">        <span class="comment">// 存进来</span></span><br><span class="line">        request.setAttribute(<span class="string">"hero"</span>, hero);</span><br><span class="line">        request.getRequestDispatcher(<span class="string">"editHero.jsp"</span>).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="拿出来"><a href="#拿出来" class="headerlink" title="拿出来"></a>拿出来</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span> <span class="keyword">import</span>=<span class="string">"java.util.*,bean.*,java.sql.*"</span>%&gt;</span><br><span class="line"> </span><br><span class="line">&lt;form action=<span class="string">'updateHero'</span> method=<span class="string">'post'</span>&gt;</span><br><span class="line">    &lt;!-- 将信息提取出来 --&gt;</span><br><span class="line">    名字 ： &lt;input type=<span class="string">'text'</span> name=<span class="string">'name'</span> value=<span class="string">'$&#123;hero.name&#125;'</span>&gt; &lt;br&gt;</span><br><span class="line">    血量 ：&lt;input type=<span class="string">'text'</span> name=<span class="string">'hp'</span> value=<span class="string">'$&#123;hero.hp&#125;'</span>&gt; &lt;br&gt;</span><br><span class="line">    伤害： &lt;input type=<span class="string">'text'</span> name=<span class="string">'damage'</span> value=<span class="string">'$&#123;hero.damage&#125;'</span>&gt; &lt;br&gt;</span><br><span class="line">    &lt;input type=<span class="string">'hidden'</span> name=<span class="string">'id'</span> value=<span class="string">'$&#123;hero.id&#125;'</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">'submit'</span> value=<span class="string">'更新'</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
 <p>可以在拂去端跳转后的.jsp文件取出来</p>
 <hr>
@@ -602,8 +638,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/JavaWeb---HttpServletResponse对象/" rel="next" title="JavaWeb---HttpResponse对象">
-                <i class="fa fa-chevron-left"></i> JavaWeb---HttpResponse对象
+              <a href="/2019/03/08/Java基础知识---static关键字/" rel="next" title="Java基础知识---static关键字">
+                <i class="fa fa-chevron-left"></i> Java基础知识---static关键字
               </a>
             
           </div>
@@ -612,8 +648,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/Java基础知识---static关键字/" rel="prev" title="Java基础知识---static关键字">
-                Java基础知识---static关键字 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/JavaWeb---HttpServletResponse对象/" rel="prev" title="JavaWeb---HttpResponse对象">
+                JavaWeb---HttpResponse对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -698,7 +734,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -776,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HttpServletRequest介绍"><span class="nav-number">1.</span> <span class="nav-text">一. HttpServletRequest介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-Request常用方法"><span class="nav-number">2.</span> <span class="nav-text">二. Request常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-获得客户机信息"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 获得客户机信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-获得客户机请求头"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 获得客户机请求头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-获得客户机请求参数-客户端提交的数据"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 获得客户机请求参数(客户端提交的数据)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-获取路径"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 获取路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法与作用"><span class="nav-number">2.4.1.</span> <span class="nav-text">方法与作用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范例"><span class="nav-number">2.4.1.0.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-传参"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 传参</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#三-request接收表单提交中文参数乱码问题"><span class="nav-number">3.</span> <span class="nav-text">三. request接收表单提交中文参数乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-以POST方式提交表单中文参数的乱码问题"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 以POST方式提交表单中文参数的乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如有如下的form表单页面"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">例如有如下的form表单页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#servlet-中的代码"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">servlet 中的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-post方式提交中文数据乱码产生的原因和解决办法"><span class="nav-number">3.1.</span> <span class="nav-text">3.2. post方式提交中文数据乱码产生的原因和解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-以GET方式提交表单中文参数的乱码问题"><span class="nav-number">3.2.</span> <span class="nav-text">3.3 以GET方式提交表单中文参数的乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如有如下的form表单页面-1"><span class="nav-number">3.2.0.0.1.</span> <span class="nav-text">例如有如下的form表单页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时在服务器端接收中文参数时就会出现中文乱码"><span class="nav-number">3.2.0.0.2.</span> <span class="nav-text">此时在服务器端接收中文参数时就会出现中文乱码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-get方式提交中文数据乱码产生的原因和解决办法"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.4. get方式提交中文数据乱码产生的原因和解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-以超链接形式传递中文参数的乱码问题"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.5 以超链接形式传递中文参数的乱码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-提交中文数据乱码问题总结"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.6 提交中文数据乱码问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式为-POST"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">提交方式为 POST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式为GET"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">提交方式为GET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-Request对象实现请求转发"><span class="nav-number">4.</span> <span class="nav-text">四.Request对象实现请求转发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-请求转发的基本概念"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 请求转发的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在Servlet中实现请求转发的两种方式："><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">在Servlet中实现请求转发的两种方式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-请求重定向和请求转发的区别"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 请求重定向和请求转发的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-request设置参数"><span class="nav-number">5.</span> <span class="nav-text">五. request设置参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储代码"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">存储代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拿出来"><span class="nav-number">5.0.0.2.</span> <span class="nav-text">拿出来</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">5.0.0.2.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HttpServletRequest介绍"><span class="nav-number">1.</span> <span class="nav-text">一. HttpServletRequest介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-Request常用方法"><span class="nav-number">2.</span> <span class="nav-text">二. Request常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-获得客户机信息"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 获得客户机信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-获得客户机请求头"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 获得客户机请求头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-获得客户机请求参数-客户端提交的数据"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 获得客户机请求参数(客户端提交的数据)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-获取路径"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 获取路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法与作用"><span class="nav-number">2.4.1.</span> <span class="nav-text">方法与作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-传参"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 传参</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-request接收表单提交中文参数乱码问题"><span class="nav-number">3.</span> <span class="nav-text">三. request接收表单提交中文参数乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-以POST方式提交表单中文参数的乱码问题"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 以POST方式提交表单中文参数的乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如有如下的form表单页面"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">例如有如下的form表单页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#servlet-中的代码"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">servlet 中的代码</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-post方式提交中文数据乱码产生的原因和解决办法"><span class="nav-number">3.1.</span> <span class="nav-text">3.2. post方式提交中文数据乱码产生的原因和解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-以GET方式提交表单中文参数的乱码问题"><span class="nav-number">3.2.</span> <span class="nav-text">3.3 以GET方式提交表单中文参数的乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例如有如下的form表单页面-1"><span class="nav-number">3.2.0.0.1.</span> <span class="nav-text">例如有如下的form表单页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#此时在服务器端接收中文参数时就会出现中文乱码"><span class="nav-number">3.2.0.0.2.</span> <span class="nav-text">此时在服务器端接收中文参数时就会出现中文乱码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-get方式提交中文数据乱码产生的原因和解决办法"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.4. get方式提交中文数据乱码产生的原因和解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-以超链接形式传递中文参数的乱码问题"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.5 以超链接形式传递中文参数的乱码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-提交中文数据乱码问题总结"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.6 提交中文数据乱码问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式为-POST"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">提交方式为 POST</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式为GET"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">提交方式为GET</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-Request-对象实现请求转发"><span class="nav-number">4.</span> <span class="nav-text">四.Request 对象实现请求转发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-请求转发的基本概念"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 请求转发的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在Servlet中实现请求转发的两种方式："><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">在Servlet中实现请求转发的两种方式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-请求重定向和请求转发的区别"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 请求重定向和请求转发的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-request-设置参数"><span class="nav-number">5.</span> <span class="nav-text">五. request 设置参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#存储代码"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">存储代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拿出来"><span class="nav-number">5.0.0.2.</span> <span class="nav-text">拿出来</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">5.0.0.2.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></div>
             
 
           </div>
@@ -810,7 +846,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">89.6k</span>
+    <span title="Site words total count">90.9k</span>
   
 </div>
 

@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,java基础知识,">
 
 
 
@@ -124,15 +124,16 @@
 
 
 <meta name="description" content="一. 泛型的基本概念泛型的定义 : 泛型是JDK 1.5的一项新特性，它的本质是参数化类型（Parameterized Type）的应用，也就是说所操作的数据类型被指定为一个参数，在用到的时候在指定具体的类型。这种参数类型可以用在类、接口和方法的创建中，分别称为泛型类、泛型接口和泛型方法。">
+<meta name="keywords" content="java,java基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sladning">
+<meta property="og:title" content="Java基础知识---泛型(2)">
 <meta property="og:url" content="http://yoursite.com/2019/03/27/Java基础知识---泛型(2)/index.html">
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. 泛型的基本概念泛型的定义 : 泛型是JDK 1.5的一项新特性，它的本质是参数化类型（Parameterized Type）的应用，也就是说所操作的数据类型被指定为一个参数，在用到的时候在指定具体的类型。这种参数类型可以用在类、接口和方法的创建中，分别称为泛型类、泛型接口和泛型方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-27T13:11:30.787Z">
+<meta property="og:updated_time" content="2019-03-29T02:24:27.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sladning">
+<meta name="twitter:title" content="Java基础知识---泛型(2)">
 <meta name="twitter:description" content="一. 泛型的基本概念泛型的定义 : 泛型是JDK 1.5的一项新特性，它的本质是参数化类型（Parameterized Type）的应用，也就是说所操作的数据类型被指定为一个参数，在用到的时候在指定具体的类型。这种参数类型可以用在类、接口和方法的创建中，分别称为泛型类、泛型接口和泛型方法。">
 
 
@@ -169,7 +170,7 @@
 
 
 
-  <title> | sladning</title>
+  <title>Java基础知识---泛型(2) | sladning</title>
   
 
 
@@ -362,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Java基础知识---泛型(2)</h1>
         
 
         <div class="post-meta">
@@ -374,7 +375,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-27T18:11:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-27T09:35:51+08:00">
                 2019-03-27
               </time>
             
@@ -384,6 +385,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -448,9 +471,7 @@
       
 
       
-        <hr>
-<hr>
-<h1 id="一-泛型的基本概念"><a href="#一-泛型的基本概念" class="headerlink" title="一. 泛型的基本概念"></a>一. 泛型的基本概念</h1><p><strong>泛型的定义</strong> : 泛型是JDK 1.5的一项新特性，它的本质是参数化类型（Parameterized Type）的应用，也就是说所操作的数据类型被指定为一个参数，在用到的时候在指定具体的类型。这种参数类型可以用在类、接口和方法的创建中，分别称为泛型类、泛型接口和泛型方法。</p>
+        <h1 id="一-泛型的基本概念"><a href="#一-泛型的基本概念" class="headerlink" title="一. 泛型的基本概念"></a>一. 泛型的基本概念</h1><p><strong>泛型的定义</strong> : 泛型是JDK 1.5的一项新特性，它的本质是参数化类型（Parameterized Type）的应用，也就是说所操作的数据类型被指定为一个参数，在用到的时候在指定具体的类型。这种参数类型可以用在类、接口和方法的创建中，分别称为泛型类、泛型接口和泛型方法。</p>
 <a id="more"></a>
 <h4 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h4><p>在JDK1.5之前，Java泛型程序设计是用继承来实现的。因为Object类是所用类的基类，所以只需要维持一个Object类型的引用即可。就比如A<strong>rrayList只维护一个Object引用的数组</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JDK1.5之前的</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;......&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Object o)</span></span>&#123;......&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object[] elementData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -536,6 +557,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/java基础知识/" rel="tag"><i class="fa fa-tag"></i> java基础知识</a>
+          
+        </div>
+      
 
       
       
@@ -545,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/Java基础知识---数组/" rel="next" title="Java基础知识---数组">
-                <i class="fa fa-chevron-left"></i> Java基础知识---数组
+              <a href="/2019/03/26/计算机知识---绝对路径与相对路径/" rel="next" title="计算机知识---绝对路径与相对路径">
+                <i class="fa fa-chevron-left"></i> 计算机知识---绝对路径与相对路径
               </a>
             
           </div>
@@ -555,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/27/Java常用类---图片处理ImageIO类/" rel="prev" title="Java常用类---图片处理ImageIO类">
-                Java常用类---图片处理ImageIO类 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/27/Java基础知识---数组/" rel="prev" title="Java基础知识---数组">
+                Java基础知识---数组 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -641,7 +670,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -753,7 +782,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">89.6k</span>
+    <span title="Site words total count">90.9k</span>
   
 </div>
 
