@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="参考博文: 一. 基础 创建数据库  1CREATE DATABASE database-name">
+<meta name="description" content="一. 数据库 创建数据库  1CREATE database database-name;">
 <meta name="keywords" content="sql语句">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql语句">
 <meta property="og:url" content="http://yoursite.com/2019/03/11/sql语句/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="参考博文: 一. 基础 创建数据库  1CREATE DATABASE database-name">
+<meta property="og:description" content="一. 数据库 创建数据库  1CREATE database database-name;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T13:17:23.177Z">
+<meta property="og:updated_time" content="2019-04-02T09:55:46.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql语句">
-<meta name="twitter:description" content="参考博文: 一. 基础 创建数据库  1CREATE DATABASE database-name">
+<meta name="twitter:description" content="一. 数据库 创建数据库  1CREATE database database-name;">
 
 
 
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  62
+                  106
                 </span>
               
 
@@ -449,26 +449,40 @@
       
 
       
-        <p>参考博文:</p>
-<h1 id="一-基础"><a href="#一-基础" class="headerlink" title="一. 基础"></a>一. 基础</h1><ol>
+        <h1 id="一-数据库"><a href="#一-数据库" class="headerlink" title="一. 数据库"></a>一. 数据库</h1><ol>
 <li>创建数据库</li>
 </ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">database</span>-<span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">database</span> <span class="keyword">database</span>-<span class="keyword">name</span>;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <ol start="2">
 <li>删除数据库</li>
 </ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">database</span>-<span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">database</span> <span class="keyword">database</span>-<span class="keyword">name</span>;</span><br></pre></td></tr></table></figure>
 <ol start="3">
+<li>查看当前数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>选择(进入)数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="keyword">database</span>-<span class="keyword">name</span>；</span><br></pre></td></tr></table></figure>
+<h1 id="二-表"><a href="#二-表" class="headerlink" title="二. 表"></a>二. 表</h1><ol>
+<li>查看当前数据库所有的表(已经选定数据库)</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>-<span class="keyword">name</span>；</span><br></pre></td></tr></table></figure>
+<ol start="2">
 <li>创建新表</li>
 </ol>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CEEATE DATABASE database-name</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CEEATE DATABASE database-name</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CEEATE DATABASE database-name</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CEEATE DATABASE database-name</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CEEATE DATABASE database-name</span><br></pre></td></tr></table></figure>
 <p><strong>参考博文:</strong> </p>
 <p><a href="https://www.cnblogs.com/1234abcd/p/5530314.html" target="_blank" rel="noopener">经典SQL语句大全(绝对的经典)</a></p>
 <p><a href="http://how2j.cn/k/tmall-j2ee/tmall-j2ee-943/943.html" target="_blank" rel="noopener">how2J</a></p>
+<p><a href="https://blog.csdn.net/qq_34777600/article/details/81178891" target="_blank" rel="noopener">MySQL数据库–命令行操作</a></p>
 
       
     </div>
@@ -509,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/11/Java基础知识---访问修饰符/" rel="next" title="Java基础知识---修饰符">
-                <i class="fa fa-chevron-left"></i> Java基础知识---修饰符
+              <a href="/2019/03/11/Java基础知识---方法的重载和覆盖/" rel="next" title="Java基础知识---方法的重载和覆盖">
+                <i class="fa fa-chevron-left"></i> Java基础知识---方法的重载和覆盖
               </a>
             
           </div>
@@ -605,7 +619,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -616,7 +630,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -627,7 +641,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -683,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-基础"><span class="nav-number">1.</span> <span class="nav-text">一. 基础</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-数据库"><span class="nav-number">1.</span> <span class="nav-text">一. 数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-表"><span class="nav-number">2.</span> <span class="nav-text">二. 表</span></a></li></ol></div>
             
 
           </div>
@@ -717,7 +731,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">90.9k</span>
+    <span title="Site words total count">92.3k</span>
   
 </div>
 

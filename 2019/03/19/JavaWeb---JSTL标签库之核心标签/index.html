@@ -131,7 +131,7 @@
 <meta property="og:site_name" content="sladning">
 <meta property="og:description" content="一. JSTL标签库介绍　　　　JSTL标签库的使用是为弥补 html 标签的不足，规范自定义标签的使用而诞生的,是一个 JSP 的标签集合, 使用 JSLT 标签的目的就是 不希望在 jsp 页面中出现 java 逻辑代码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-25T03:13:57.716Z">
+<meta property="og:updated_time" content="2019-04-04T08:54:43.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---JSTL标签库之核心标签">
 <meta name="twitter:description" content="一. JSTL标签库介绍　　　　JSTL标签库的使用是为弥补 html 标签的不足，规范自定义标签的使用而诞生的,是一个 JSP 的标签集合, 使用 JSLT 标签的目的就是 不希望在 jsp 页面中出现 java 逻辑代码">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  940
+                  1.1k
                 </span>
               
 
@@ -524,9 +524,54 @@
 </table>
 <h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;c:out value="&amp;lt 未使用转义字符 &amp;gt" escapeXml="true" default="默认值"&gt;&lt;/c:out&gt;&lt;br/&gt;</span><br><span class="line">    &lt;c:out value="&amp;lt 使用转义字符 &amp;gt" escapeXml="false" default="默认值"&gt;&lt;/c:out&gt;&lt;br/&gt;</span><br><span class="line">    &lt;c:out value="$&#123;null&#125;" escapeXml="false"&gt;使用的表达式结果为null，则输出该默认值&lt;/c:out&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <h5 id="打印结果"><a href="#打印结果" class="headerlink" title="打印结果"></a>打印结果</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt 未使用转义字符 &amp;gt</span><br><span class="line">&lt; 使用转义字符 &gt;</span><br><span class="line">使用的表达式结果为null，则输出该默认值</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-表达式控制标签"><a href="#3-2-表达式控制标签" class="headerlink" title="3.2 表达式控制标签"></a>3.2 表达式控制标签</h2><h3 id="1-lt-c-if-gt-标签"><a href="#1-lt-c-if-gt-标签" class="headerlink" title="1) &lt;c:if&gt; 标签"></a>1) <code>&lt;c:if&gt;</code> 标签</h3><p>判断表达式的值，如果表达式的值<strong>为 true</strong> 则执行其主体内容</p>
-<h4 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"&lt;boolean&gt;"</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-lt-c-set-gt-标签"><a href="#2-lt-c-set-gt-标签" class="headerlink" title="2) &lt;c:set&gt; 标签"></a>2) <code>&lt;c:set&gt;</code> 标签</h3><p>设置变量值和对象属性</p>
+<h4 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:set</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   target=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   property=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>描述</strong></th>
+<th><strong>是否必要</strong></th>
+<th><strong>默认值</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>要存储的值</td>
+<td>否</td>
+<td>主体的内容</td>
+</tr>
+<tr>
+<td>target</td>
+<td>要修改的属性所属的对象</td>
+<td>否</td>
+<td>无</td>
+</tr>
+<tr>
+<td>property</td>
+<td>要修改的属性</td>
+<td>否</td>
+<td>无</td>
+</tr>
+<tr>
+<td>var</td>
+<td>存储信息的变量</td>
+<td>否</td>
+<td>无</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>var属性的作用域</td>
+<td>否</td>
+<td>Page</td>
+</tr>
+</tbody>
+</table>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:set <span class="keyword">var</span>=<span class="string">"salary"</span> scope=<span class="string">"session"</span> value=<span class="string">"$&#123;2000*2&#125;"</span>/&gt;</span><br><span class="line">&lt;c:out value=<span class="string">"$&#123;salary&#125;"</span>/&gt;</span><br><span class="line">&lt;!-- 运行结果: <span class="number">4000</span> --&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-表达式控制标签"><a href="#3-2-表达式控制标签" class="headerlink" title="3.2 表达式控制标签"></a>3.2 表达式控制标签</h2><h3 id="1-lt-c-if-gt-标签"><a href="#1-lt-c-if-gt-标签" class="headerlink" title="1) &lt;c:if&gt; 标签"></a>1) <code>&lt;c:if&gt;</code> 标签</h3><p>判断表达式的值，如果表达式的值<strong>为 true</strong> 则执行其主体内容</p>
+<h4 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"&lt;boolean&gt;"</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><table>
 <thead>
 <tr>
 <th style="text-align:center">属性</th>
@@ -558,7 +603,7 @@
 </table>
 <h4 id="实例-模拟-if-else"><a href="#实例-模拟-if-else" class="headerlink" title="实例 (模拟 if-else )"></a>实例 (模拟 if-else )</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:set <span class="keyword">var</span>=<span class="string">"salary"</span> scope=<span class="string">"session"</span> value=<span class="string">"$&#123;2000*2&#125;"</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;salary &gt; 2000&#125;"</span> <span class="keyword">var</span>=<span class="string">"flag"</span> scope=<span class="string">"session"</span>&gt;</span><br><span class="line">   &lt;p&gt;我的工资为: &lt;c:out value=<span class="string">"$&#123;salary&#125;"</span>/&gt;&lt;p&gt;</span><br><span class="line">&lt;/c:if&gt;</span><br><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;not flag&#125;"</span>&gt;</span><br><span class="line">   &lt;p&gt;我的工资为: &lt;c:out value=<span class="string">"$&#123;salary&#125;"</span>/&gt;&lt;p&gt;</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="3-3-循环标签"><a href="#3-3-循环标签" class="headerlink" title="3.3 循环标签"></a>3.3 循环标签</h4><h3 id="forEach-语法格式"><a href="#forEach-语法格式" class="headerlink" title="forEach 语法格式"></a>forEach 语法格式</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach</span><br><span class="line">    items=<span class="string">"&lt;object&gt;"</span> 		</span><br><span class="line">    begin=<span class="string">"&lt;int&gt;"</span>			</span><br><span class="line">    end=<span class="string">"&lt;int&gt;"</span>				</span><br><span class="line">    step=<span class="string">"&lt;int&gt;"</span>			</span><br><span class="line">    <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span>			</span><br><span class="line">    varStatus=<span class="string">"&lt;string&gt;"</span> &gt;</span><br></pre></td></tr></table></figure>
-<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><table>
+<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><table>
 <thead>
 <tr>
 <th>属性</th>
@@ -748,7 +793,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -759,7 +804,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -770,7 +815,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -826,7 +871,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-JSTL标签库介绍"><span class="nav-number">1.</span> <span class="nav-text">一. JSTL标签库介绍　　</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-JSTL标签库的分类"><span class="nav-number">2.</span> <span class="nav-text">二. JSTL标签库的分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-核心标签库使用说明"><span class="nav-number">3.</span> <span class="nav-text">三. 核心标签库使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-表达式控制标签"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 表达式控制标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-lt-c-out-gt-标签"><span class="nav-number">3.1.1.</span> <span class="nav-text">1) &lt;c:out&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法格式"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">3.1.1.3.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#打印结果"><span class="nav-number">3.1.1.3.1.</span> <span class="nav-text">打印结果</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-表达式控制标签"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 表达式控制标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-lt-c-if-gt-标签"><span class="nav-number">3.2.1.</span> <span class="nav-text">1) &lt;c:if&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法格式-1"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-模拟-if-else"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">实例 (模拟 if-else )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-循环标签"><span class="nav-number">3.2.1.4.</span> <span class="nav-text">3.3 循环标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-语法格式"><span class="nav-number">3.2.2.</span> <span class="nav-text">forEach 语法格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-表格隔行背景色变化"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">实例 (表格隔行背景色变化,)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">3.2.2.2.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-JSTL标签库介绍"><span class="nav-number">1.</span> <span class="nav-text">一. JSTL标签库介绍　　</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-JSTL标签库的分类"><span class="nav-number">2.</span> <span class="nav-text">二. JSTL标签库的分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-核心标签库使用说明"><span class="nav-number">3.</span> <span class="nav-text">三. 核心标签库使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-表达式控制标签"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 表达式控制标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-lt-c-out-gt-标签"><span class="nav-number">3.1.1.</span> <span class="nav-text">1) &lt;c:out&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法格式"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">3.1.1.3.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#打印结果"><span class="nav-number">3.1.1.3.1.</span> <span class="nav-text">打印结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-lt-c-set-gt-标签"><span class="nav-number">3.1.2.</span> <span class="nav-text">2) &lt;c:set&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法格式-1"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-1"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-表达式控制标签"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 表达式控制标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-lt-c-if-gt-标签"><span class="nav-number">3.2.1.</span> <span class="nav-text">1) &lt;c:if&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法格式-2"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-模拟-if-else"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">实例 (模拟 if-else )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-循环标签"><span class="nav-number">3.2.1.4.</span> <span class="nav-text">3.3 循环标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-语法格式"><span class="nav-number">3.2.2.</span> <span class="nav-text">forEach 语法格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-3"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-表格隔行背景色变化"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">实例 (表格隔行背景色变化,)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">3.2.2.2.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -860,7 +905,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">90.9k</span>
+    <span title="Site words total count">92.3k</span>
   
 </div>
 
