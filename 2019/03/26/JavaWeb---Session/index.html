@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="还没有写">
+<meta name="description" content="一. Session 概述1.1 简单介绍　　在WEB开发中，服务器可以为每个用户浏览器创建一个会话对象（session对象），注意：一个浏览器独占一个session对象(默认情况下)。因此，在需要保存用户数据时，服务器程序可以把用户数据写到用户浏览器独占的session中，当用户使用浏览器访问其它程序时，其它程序可以从用户的session中取出该用户的数据，为用户服务。 2.2 Session和">
 <meta name="keywords" content="JavaWeb,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb---Session">
 <meta property="og:url" content="http://yoursite.com/2019/03/26/JavaWeb---Session/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="还没有写">
+<meta property="og:description" content="一. Session 概述1.1 简单介绍　　在WEB开发中，服务器可以为每个用户浏览器创建一个会话对象（session对象），注意：一个浏览器独占一个session对象(默认情况下)。因此，在需要保存用户数据时，服务器程序可以把用户数据写到用户浏览器独占的session中，当用户使用浏览器访问其它程序时，其它程序可以从用户的session中取出该用户的数据，为用户服务。 2.2 Session和">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-31T02:10:01.870Z">
+<meta property="og:updated_time" content="2019-04-04T11:30:34.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb---Session">
-<meta name="twitter:description" content="还没有写">
+<meta name="twitter:description" content="一. Session 概述1.1 简单介绍　　在WEB开发中，服务器可以为每个用户浏览器创建一个会话对象（session对象），注意：一个浏览器独占一个session对象(默认情况下)。因此，在需要保存用户数据时，服务器程序可以把用户数据写到用户浏览器独占的session中，当用户使用浏览器访问其它程序时，其它程序可以从用户的session中取出该用户的数据，为用户服务。 2.2 Session和">
 
 
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4
+                  564
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -471,7 +471,30 @@
       
 
       
-        <p>还没有写</p>
+        <h1 id="一-Session-概述"><a href="#一-Session-概述" class="headerlink" title="一. Session 概述"></a>一. Session 概述</h1><h2 id="1-1-简单介绍"><a href="#1-1-简单介绍" class="headerlink" title="1.1 简单介绍"></a>1.1 简单介绍</h2><p>　　在WEB开发中，服务器可以为每个用户浏览器创建<strong>一个会话对象（session对象）</strong>，注意：<strong>一个浏览器</strong>独占一个session对象(默认情况下)。因此，在需要保存用户数据时，服务器程序可以把用户数据写到用户浏览器独占的session中，<strong>当用户使用浏览器访问其它程序时，其它程序可以从用户的session中取出该用户的数据，为用户服务</strong>。</p>
+<h2 id="2-2-Session和Cookie的主要区别"><a href="#2-2-Session和Cookie的主要区别" class="headerlink" title="2.2 Session和Cookie的主要区别"></a>2.2 Session和Cookie的主要区别</h2><ul>
+<li>Cookie数据存储在客户端的浏览器内存中或本地缓存文件中，Session数据存储在服务器端的内存中。</li>
+<li>Cookie数据存储安全性较低，Session数据存储安全性较高。</li>
+<li>Session数据存储在服务器端内存中，访问增多时，降低服务器端性能。而Cookie则不会对服务器端性能造成影响。</li>
+<li>单个Cookie存储的数据最大是4KB，一个网站只能存储20个Cookie。Session则没有这个问题。</li>
+<li>Session在关闭浏览器时失效，而持久Cookie则可以存储更长有效时间。</li>
+<li>Session对象由服务器创建，开发人员可以调用request对象的getSession方法得到session对象。</li>
+</ul>
+<h1 id="二-Session入门"><a href="#二-Session入门" class="headerlink" title="二. Session入门"></a>二. <strong>Session入门</strong></h1><h2 id="2-1-Session常用API"><a href="#2-1-Session常用API" class="headerlink" title="2.1 Session常用API"></a>2.1 <strong>Session常用API</strong></h2><ul>
+<li><strong><code>request.getSession()</code></strong> : 获得HttpSession对象</li>
+<li><strong><code>session.setAttribute(String name, Object value)</code></strong> : 设置数据</li>
+<li><strong><code>session.getAttribute(String name)</code></strong> : 获取共享数据</li>
+</ul>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session = request.getSession();</span><br><span class="line">session.setAttribute(<span class="string">"name"</span>, <span class="string">"longestory"</span>);</span><br><span class="line">String name = (String)session.getAttribute(<span class="string">"name"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-Servlet三大域对象"><a href="#2-2-Servlet三大域对象" class="headerlink" title="2.2 Servlet三大域对象"></a>2.2 Servlet三大域对象</h2><p>现在掌握了 <code>HttpSession</code> 对象的基本使用方法，到目前为止，Servlet的 <strong>三大域对象</strong> 都已经掌握。</p>
+<ul>
+<li><strong><code>HttpServletRequest</code></strong> : 一个请求创建一个request对象，所以在<strong>同一个请求中可以共享request</strong>，例如一个请求从 <code>AServlet</code> <strong>转发</strong>到 <code>BServlet</code>，那么 <code>AServlet</code> 和 <code>BServlet</code> 可以<strong>共享request域中的数据</strong></li>
+<li><strong><code>ServletContext</code></strong> : 一个应用只创建一个 <code>ServletContext</code> 对象，所以在 <code>ServletContext</code> 中的数据可以<strong>在整个应用中共享</strong>，只要不启动服务器，那么 <code>ServletContext</code> 中的数据就可以共享</li>
+<li><strong><code>HttpSession</code></strong> :  一个会话创建一个对象，<strong>同一会话</strong>中的多个请求中可以共享session中的数据。</li>
+</ul>
+<hr>
+<h5 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h5><p>​    <a href="https://www.cnblogs.com/xdp-gacl/p/3855702.html" target="_blank" rel="noopener">JavaWeb学习总结(十二)——Session</a></p>
+<p>​    <a href="https://www.cnblogs.com/aaron911/p/7889353.html" target="_blank" rel="noopener">JavaWeb Session</a></p>
 
       
     </div>
@@ -583,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -670,6 +702,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Session-概述"><span class="nav-number">1.</span> <span class="nav-text">一. Session 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-简单介绍"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 简单介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Session和Cookie的主要区别"><span class="nav-number">1.2.</span> <span class="nav-text">2.2 Session和Cookie的主要区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-Session入门"><span class="nav-number">2.</span> <span class="nav-text">二. Session入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Session常用API"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Session常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Servlet三大域对象"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Servlet三大域对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考博文"><span class="nav-number">2.2.0.0.1.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -697,7 +745,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">92.3k</span>
+    <span title="Site words total count">93.3k</span>
   
 </div>
 
