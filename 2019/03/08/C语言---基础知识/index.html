@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="C语言基础知识:结构体:定义: 将一些已知的数据类型放在一起来定义的一种数据类型  结构体并没有创造出新的数据类型，这点要搞清楚。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。">
+<meta name="description" content="1. 结构体:定义​    将一些已知的数据类型放在一起来定义的一种 新的数据类型  结构体并没有创造出新的数据类型。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。">
 <meta name="keywords" content="C语言">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言基础知识">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/C语言---基础知识/index.html">
 <meta property="og:site_name" content="sladning">
-<meta property="og:description" content="C语言基础知识:结构体:定义: 将一些已知的数据类型放在一起来定义的一种数据类型  结构体并没有创造出新的数据类型，这点要搞清楚。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。">
+<meta property="og:description" content="1. 结构体:定义​    将一些已知的数据类型放在一起来定义的一种 新的数据类型  结构体并没有创造出新的数据类型。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-15T08:17:08.503Z">
+<meta property="og:updated_time" content="2019-04-08T00:19:47.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言基础知识">
-<meta name="twitter:description" content="C语言基础知识:结构体:定义: 将一些已知的数据类型放在一起来定义的一种数据类型  结构体并没有创造出新的数据类型，这点要搞清楚。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。">
+<meta name="twitter:description" content="1. 结构体:定义​    将一些已知的数据类型放在一起来定义的一种 新的数据类型  结构体并没有创造出新的数据类型。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。">
 
 
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  476
+                  466
                 </span>
               
 
@@ -471,22 +471,18 @@
       
 
       
-        <h1 id="C语言基础知识"><a href="#C语言基础知识" class="headerlink" title="C语言基础知识:"></a>C语言基础知识:</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体:"></a>结构体:</h2><p><strong>定义:</strong> 将一些已知的数据类型放在一起来定义的一种数据类型</p>
+        <h1 id="1-结构体"><a href="#1-结构体" class="headerlink" title="1. 结构体:"></a>1. 结构体:</h1><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>​    将一些已知的数据类型放在一起来定义的一种 <strong>新的数据类型</strong></p>
 <blockquote>
-<p>结构体并没有创造出新的数据类型，这点要搞清楚。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。</p>
+<p>结构体并<strong>没有创造出新的数据类型</strong>。C语言的结构体和其他高级语言的类有点相似的概念，可以完成对一种事物的抽象。</p>
 </blockquote>
 <a id="more"></a>
-<p><strong>代码中的定义:</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> 结构名 // 结构名是结构的标识符不是变量名</span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    类型  变量名; </span><br><span class="line">    类型  变量名;</span><br><span class="line">&#125; 结构变量;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子:</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span> </span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">8</span>]; </span><br><span class="line">    <span class="keyword">int</span> age; </span><br><span class="line">    <span class="keyword">char</span> sex[<span class="number">2</span>]; </span><br><span class="line">    <span class="keyword">char</span> depart[<span class="number">20</span>]; </span><br><span class="line">    <span class="keyword">float</span> wage1, wage2, wage3, wage4, wage5; </span><br><span class="line">&#125; Mike, Marry;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">John</span>;</span>	<span class="comment">// struct student:类型说明符, John 变量名</span></span><br><span class="line"><span class="comment">// 定义了两个 struct student 类型的变量 Mike, Marry</span></span><br></pre></td></tr></table></figure>
-<h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef:"></a>typedef:</h2><blockquote>
-<p>使用 typedef 关键字来定义自己习惯的数据类型名称，来替代系统默认的基本类型名称、数组类型名称、指针类型名称与用户自定义的结构型名称、共用型名称、枚举型名称等。</p>
-</blockquote>
-<p>基本用法</p>
-<h3 id="1-为基本类型数据定义新的类型名"><a href="#1-为基本类型数据定义新的类型名" class="headerlink" title="1. 为基本类型数据定义新的类型名"></a>1. 为基本类型数据定义新的类型名</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> COUNT; <span class="comment">// 为基本类型数据定义新的类型名</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	COUNT a = <span class="number">88</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"结果为: %d"</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果: 结果为: 88</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称"><a href="#2-为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称" class="headerlink" title="2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称"></a>2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以结构体为例，下面我们定义一个名为 Point 的结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">double</span> y;</span><br><span class="line">    <span class="keyword">double</span> z;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 在调用这个结构体时，我们必须像下面的代码这样来调用这个结构体</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Point</span> <span class="title">oPoint2</span>;</span></span><br><span class="line">	oPoint2.x = <span class="number">3.3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%f"</span>, oPoint2.x); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果: 3.300000</span></span><br></pre></td></tr></table></figure>
-<h5 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPoint</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">double</span> y;</span><br><span class="line">    <span class="keyword">double</span> z;</span><br><span class="line">&#125; Point;</span><br><span class="line"><span class="comment">// 1.相当于把 x = struct tagPoint &#123; …&#125;</span></span><br><span class="line"><span class="comment">// 2.typedef x Point;</span></span><br><span class="line"><span class="comment">// 可以看做是简写</span></span><br></pre></td></tr></table></figure>
-<p><strong>参考文章:</strong> </p>
-<p>​    <a href="http://c.biancheng.net/view/298.html" target="_blank" rel="noopener">typedef的用法，C语言typedef详解</a></p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 规则</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> 结构名      // 结构名是结构的标识符不是变量名</span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    类型  变量名; </span><br><span class="line">    类型  变量名;</span><br><span class="line">&#125; 结构变量;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span> </span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">8</span>]; </span><br><span class="line">    <span class="keyword">int</span> age; </span><br><span class="line">    <span class="keyword">float</span> wage1, wage2, wage3, wage4, wage5; </span><br><span class="line">&#125; Mike, Marry;          <span class="comment">// 定义了两个 struct student 类型的变量 Mike, Marry</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">John</span>;</span>	<span class="comment">// struct student:类型说明符, John: 变量名</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-typedef"><a href="#2-typedef" class="headerlink" title="2. typedef"></a>2. typedef</h1><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>​    使用 <strong>typedef 关键字</strong> 来定义自己习惯的数据类型名称，来 <strong>替代</strong> 系统默认的基本类型名称、数组类型名称、指针类型名称与用户自定义的结构型名称、共用型名称、枚举型名称等。</p>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><h4 id="1-为基本类型数据定义新的类型名"><a href="#1-为基本类型数据定义新的类型名" class="headerlink" title="1. 为基本类型数据定义新的类型名"></a>1. 为基本类型数据定义新的类型名</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> COUNT; <span class="comment">// COUNT 等价于 int</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	COUNT a = <span class="number">88</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"结果为: %d"</span>, a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果: 结果为: 88</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称"><a href="#2-为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称" class="headerlink" title="2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称"></a>2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">// 以结构体为例，定义一个名为 Point 的结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> a;</span><br><span class="line">    <span class="keyword">double</span> b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 在调用这个结构体时，我们必须像下面的代码这样来调用这个结构体</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Point</span> <span class="title">point1</span>;</span></span><br><span class="line">	point1.a = <span class="number">3.3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%f"</span>, point1.a); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印结果: 3.300000</span></span><br></pre></td></tr></table></figure>
+<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">// 相当于 1. typedef x Point</span></span><br><span class="line"><span class="comment">//		 2.	x = struct tagPoint &#123; …&#125;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPoint</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> a;</span><br><span class="line">    <span class="keyword">double</span> b;</span><br><span class="line"></span><br><span class="line">&#125; Point;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Point point1;</span><br><span class="line">	point1.a = <span class="number">3.3</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%f"</span>, point1.a); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p>​    <a href="http://c.biancheng.net/view/298.html" target="_blank" rel="noopener">typedef的用法，C语言typedef详解</a></p>
 
       
     </div>
@@ -527,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/Java基础知识---基础语法(2)/" rel="next" title="Java基础知识---基础语法(2)">
-                <i class="fa fa-chevron-left"></i> Java基础知识---基础语法(2)
+              <a href="/2019/03/08/C语言---指针/" rel="next" title="C语言---指针">
+                <i class="fa fa-chevron-left"></i> C语言---指针
               </a>
             
           </div>
@@ -537,8 +533,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/C语言---指针/" rel="prev" title="C语言---指针">
-                C语言---指针 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/Java基础知识---面向对象(1)/" rel="prev" title="Java基础知识---面向对象(1)">
+                Java基础知识---面向对象(1) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -634,7 +630,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -645,7 +641,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -701,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C语言基础知识"><span class="nav-number">1.</span> <span class="nav-text">C语言基础知识:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体"><span class="nav-number">1.1.</span> <span class="nav-text">结构体:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typedef"><span class="nav-number">1.2.</span> <span class="nav-text">typedef:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-为基本类型数据定义新的类型名"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 为基本类型数据定义新的类型名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解析"><span class="nav-number">1.2.2.0.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-结构体"><span class="nav-number">1.</span> <span class="nav-text">1. 结构体:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.0.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#2-typedef"><span class="nav-number">2.</span> <span class="nav-text">2. typedef</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规则"><span class="nav-number">2.0.2.</span> <span class="nav-text">规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-为基本类型数据定义新的类型名"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">1. 为基本类型数据定义新的类型名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">2. 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简写"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">简写</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">2.0.2.3.1.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></ol></li></div>
             
 
           </div>
@@ -735,7 +731,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">93.3k</span>
+    <span title="Site words total count">96k</span>
   
 </div>
 
