@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据结构,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sladning" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一. 队列的定义​    队列简称队 , 也是一种运算受限的线性表，其限定是只允许在线性表的一端进行插入运算，而在另一端进行删除运算  又称先进先出 (First In First Out, FIFO )的线性表">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构---队列">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/数据结构---队列/index.html">
+<meta property="og:site_name" content="sladning">
+<meta property="og:description" content="一. 队列的定义​    队列简称队 , 也是一种运算受限的线性表，其限定是只允许在线性表的一端进行插入运算，而在另一端进行删除运算  又称先进先出 (First In First Out, FIFO )的线性表">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/数组实现队列.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/普通队列.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/循环队列示意图.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/循环数组首尾情况.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/循环队列满还是空.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/队列_数组_运行结果.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/链表实现队列.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/队列_链表_运行结果.png">
+<meta property="og:updated_time" content="2019-04-10T07:14:54.516Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构---队列">
+<meta name="twitter:description" content="一. 队列的定义​    队列简称队 , 也是一种运算受限的线性表，其限定是只允许在线性表的一端进行插入运算，而在另一端进行删除运算  又称先进先出 (First In First Out, FIFO )的线性表">
+<meta name="twitter:image" content="http://yoursite.com/images/数据结构/基本数据结构/栈和队列/数组实现队列.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/09/数据结构---队列/">
+
+
+
+
+
+  <title>数据结构---队列 | sladning</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+  <!-- 更改动态背景-->
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <!-- 添加自己的github账号的进入 -->
+      <a href="https://github.com/sladning"><img style="position: absolute; top: 0; left: 0; border: 0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sladning</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/数据结构---队列/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构---队列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T13:24:53+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-队列的定义"><a href="#一-队列的定义" class="headerlink" title="一. 队列的定义"></a>一. 队列的定义</h1><p>​    <strong>队列</strong>简称队 , 也是一种运算受限的线性表，其限定是<strong>只允许在线性表的一端进行插入运算，而在另一端进行删除运算</strong></p>
+<blockquote>
+<p>又称<strong>先进先出</strong> (First In First Out, <strong>FIFO</strong> )的线性表</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><strong>队头</strong> : 允许进行删除的一端</li>
+<li><strong>队尾</strong> : 允许插入的一端</li>
+<li><strong>进队(入队)</strong> : 在队列中插入一个新元素的操作</li>
+<li><strong>出队(离队)</strong> : 从队列中删除一个元素的操作</li>
+<li><strong>空队列</strong> : 队列中没有元素</li>
+</ul>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<li>排队买火车票</li>
+<li>排队买饭</li>
+</ul>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ol>
+<li>初始化队: initQueue()</li>
+<li>检查队是否为空队 : isEmpty()</li>
+<li>进队: enQueue()</li>
+<li>出队: deQueue()</li>
+<li>取队头元素: front()</li>
+</ol>
+<h1 id="二-数组实现队列"><a href="#二-数组实现队列" class="headerlink" title="二. 数组实现队列"></a>二. 数组实现队列</h1><p>队列使用 <strong>front</strong> 和 <strong>rear</strong> 分别队列第一个元素和最后一个元素的位置</p>
+<p><img src="/images/数据结构/基本数据结构/栈和队列/数组实现队列.png" alt="数组实现队列"></p>
+<h3 id="普通队列"><a href="#普通队列" class="headerlink" title="普通队列"></a>普通队列</h3><p><img src="/images/数据结构/基本数据结构/栈和队列/普通队列.png" alt="数组实现队列"></p>
+<h4 id="入队出队操作"><a href="#入队出队操作" class="headerlink" title="入队出队操作"></a>入队出队操作</h4><ol>
+<li>入队时，通过rear的位置判断队列是否已满。如果没有满，则将rear后移一位，将新元素放置在rear所在位置</li>
+<li>出队时，也可以通过rear的位置判断队列是否为空。如果不空，则只需将front后移一位即可<br>获取队头元素，判断队列不空，则只需返回front指向位置的元素即可</li>
+</ol>
+<blockquote>
+<p>通过出队操作将数据弹出队列后，<strong>front之前的空间还能够再次得到吗</strong>？</p>
+<p>不能。所以使用普通数组实现队列，就再也不能使用front之前的空间了，这会导致大量空间丢失</p>
+</blockquote>
+<h3 id="循环数组"><a href="#循环数组" class="headerlink" title="循环数组"></a>循环数组</h3><p>为了解决这个问题，将普通数组换成<strong>循环数组</strong>。在循环数组中，<strong>末尾元素的下一个元素不是数组外，而是数组的头元素。这样就能够再次使用front之前的存储空间了。</strong></p>
+<h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p><img src="/images/数据结构/基本数据结构/栈和队列/循环队列示意图.png" alt="数组实现队列"></p>
+<p>在实现修改入队和出队操作之前，再深思一步，这时是否还能简单通过判断rear的位置来判断队列空或满呢？</p>
+<blockquote>
+<p>当然不可以。那是否可以考虑front和rear之间的位置关系呢？考虑如下两种边界情况：</p>
+</blockquote>
+<p><img src="/images/数据结构/基本数据结构/栈和队列/循环数组首尾情况.png" alt="数组实现队列"></p>
+<h4 id="在数组中空出一个位置，用以标记队列是否已满"><a href="#在数组中空出一个位置，用以标记队列是否已满" class="headerlink" title="在数组中空出一个位置，用以标记队列是否已满"></a><strong>在数组中空出一个位置</strong>，用以标记队列是否已满</h4><p><img src="/images/数据结构/基本数据结构/栈和队列/循环队列满还是空.png" alt="数组实现队列"></p>
+<p>利用循环队列的取余的麽运算可以是循环队列的运算更加简介</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 队尾指针加1的操作</span></span><br><span class="line">q-&gt;rear = (q-&gt;rear + <span class="number">1</span>) % SIZE;</span><br><span class="line"><span class="comment">// 队头指针加1的操作</span></span><br><span class="line">q-&gt;front = (q-&gt;front + <span class="number">1</span>) % SIZE;</span><br></pre></td></tr></table></figure>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIZE 6 		<span class="comment">// 循环队列,存入的元素为 SIZE - 1 </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列数组结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Queue</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> arr[SIZE];		<span class="comment">// 队列的大小 </span></span><br><span class="line">    <span class="keyword">int</span> front;			<span class="comment">// 队头指针 </span></span><br><span class="line">    <span class="keyword">int</span> rear;			<span class="comment">// 队尾指针 </span></span><br><span class="line">&#125; Queue;</span><br></pre></td></tr></table></figure>
+<h3 id="1-入队"><a href="#1-入队" class="headerlink" title="1. 入队"></a>1. 入队</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 入队 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(Queue *q, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"入栈元素为: %d\n"</span>, val);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 如果队列满,则无法入队 </span></span><br><span class="line">    <span class="keyword">if</span>(IsFull(q)) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列已满,入队失败!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 赋值 </span></span><br><span class="line">    q-&gt;arr[q-&gt;rear] = val;</span><br><span class="line">    <span class="comment">// 队尾指针 +1, 因为是循环队列,所以取余判断 </span></span><br><span class="line">    q-&gt;rear = (q-&gt;rear + <span class="number">1</span>) % SIZE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-出队"><a href="#2-出队" class="headerlink" title="2. 出队"></a>2. 出队</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 出队 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(Queue *q)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (IsEmpty(q)) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列为空,出队失败!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 获取出队元素的值 </span></span><br><span class="line">	<span class="keyword">int</span> val = q-&gt;arr[q-&gt;front];</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"出队, 元素为: %d\n"</span>, val);</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 清空后指针, 向前一动一个</span></span><br><span class="line">    <span class="keyword">int</span> temp = q-&gt;front;</span><br><span class="line">    q-&gt;front = (q-&gt;front + <span class="number">1</span>) % SIZE;</span><br><span class="line">    temp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-遍历队列"><a href="#3-遍历队列" class="headerlink" title="3. 遍历队列"></a>3. 遍历队列</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历队列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverseQueue</span><span class="params">(Queue *q)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"打印队列:\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 临时指针,代替 front; </span></span><br><span class="line">	<span class="keyword">int</span> pTemp = q-&gt;front; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (IsEmpty(q)) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列为空,无法打印!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (q-&gt;rear != pTemp) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, q-&gt;arr[pTemp]);</span><br><span class="line">		pTemp = (pTemp + <span class="number">1</span>) % SIZE; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n-------------------------------------------------------\n"</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-完整代码"><a href="#4-完整代码" class="headerlink" title="4. 完整代码"></a>4. 完整代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环队列 </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;                                  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;                                 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIZE 6 		<span class="comment">// 循环队列,存入的元素为 SIZE - 1 </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列数组结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Queue</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> arr[SIZE];		<span class="comment">// 队列的大小 </span></span><br><span class="line">    <span class="keyword">int</span> front;			<span class="comment">// 队头指针 </span></span><br><span class="line">    <span class="keyword">int</span> rear;			<span class="comment">// 队尾指针 </span></span><br><span class="line">&#125; Queue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化队列 </span></span><br><span class="line">Init(Queue *q) &#123;</span><br><span class="line">	<span class="comment">// 初始化队头,队尾指针 </span></span><br><span class="line">    q-&gt;front = <span class="number">0</span>;</span><br><span class="line">    q-&gt;rear = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"初始化队列!\n"</span>);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列是否已满 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsFull</span><span class="params">(Queue *q)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 队尾指针 + 1 (空出来的位置) == 队头指针</span></span><br><span class="line">	<span class="keyword">if</span> ((q-&gt;rear + <span class="number">1</span>) % SIZE == q-&gt;front) </span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列是否为空 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">(Queue *q)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 队尾指针 == 队头指针</span></span><br><span class="line">	<span class="keyword">if</span> (q-&gt;rear == q-&gt;front)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 入队 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(Queue *q, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"入栈元素为: %d\n"</span>, val);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 如果队列满,则无法入队 </span></span><br><span class="line">    <span class="keyword">if</span>(IsFull(q)) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列已满,入队失败!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 赋值 </span></span><br><span class="line">    q-&gt;arr[q-&gt;rear] = val;</span><br><span class="line">    <span class="comment">// 队尾指针 +1, 因为是循环队列,所以取余判断 </span></span><br><span class="line">    q-&gt;rear = (q-&gt;rear + <span class="number">1</span>) % SIZE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历队列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverseQueue</span><span class="params">(Queue *q)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"打印队列:\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 临时指针,代替 front; </span></span><br><span class="line">	<span class="keyword">int</span> pTemp = q-&gt;front; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (IsEmpty(q)) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列为空,无法打印!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> (q-&gt;rear != pTemp) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, q-&gt;arr[pTemp]);</span><br><span class="line">		pTemp = (pTemp + <span class="number">1</span>) % SIZE; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n-------------------------------------------------------\n"</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 出队 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(Queue *q)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (IsEmpty(q)) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"队列为空,出队失败!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 获取出队元素的值 </span></span><br><span class="line">	<span class="keyword">int</span> val = q-&gt;arr[q-&gt;front];</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"出队, 元素为: %d\n"</span>, val);</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 清空后指针, 向前一动一个</span></span><br><span class="line">    <span class="keyword">int</span> temp = q-&gt;front;</span><br><span class="line">    q-&gt;front = (q-&gt;front + <span class="number">1</span>) % SIZE;</span><br><span class="line">    temp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主函数,测试 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Queue <span class="built_in">queue</span>;</span><br><span class="line">	<span class="comment">// 初始化 </span></span><br><span class="line">	Init(&amp;<span class="built_in">queue</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 入队</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	enQueue(&amp;<span class="built_in">queue</span>, <span class="number">1</span>);</span><br><span class="line">	enQueue(&amp;<span class="built_in">queue</span>, <span class="number">2</span>);</span><br><span class="line">	enQueue(&amp;<span class="built_in">queue</span>, <span class="number">3</span>);</span><br><span class="line">	enQueue(&amp;<span class="built_in">queue</span>, <span class="number">4</span>);</span><br><span class="line">	enQueue(&amp;<span class="built_in">queue</span>, <span class="number">5</span>);</span><br><span class="line">	enQueue(&amp;<span class="built_in">queue</span>, <span class="number">6</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 遍历队列</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	traverseQueue(&amp;<span class="built_in">queue</span>); </span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 出队 </span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	deQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">	deQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	traverseQueue(&amp;<span class="built_in">queue</span>); 	</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="打印结果"><a href="#打印结果" class="headerlink" title="打印结果"></a>打印结果</h3><p><img src="/images/数据结构/基本数据结构/栈和队列/队列_数组_运行结果.png" alt="数组实现队列"></p>
+<h1 id="三-链表实现队列"><a href="#三-链表实现队列" class="headerlink" title="三. 链表实现队列"></a>三. 链表实现队列</h1><h4 id="图解-1"><a href="#图解-1" class="headerlink" title="图解"></a>图解</h4><p><img src="/images/数据结构/基本数据结构/栈和队列/链表实现队列.png" alt="数组实现队列"></p>
+<h3 id="准备-1"><a href="#准备-1" class="headerlink" title="准备"></a>准备</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 队列的单链表实现</span></span><br><span class="line"><span class="comment">// 头结点：哨兵作用，不存放数据，用来初始化队列时使队头队尾指向的地方</span></span><br><span class="line"><span class="comment">// 首结点：头结点后第一个结点，存放数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义结点结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    Elementype Element;        <span class="comment">// 数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> * <span class="title">Next</span>;</span></span><br><span class="line">&#125;NODE, *PNODE;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义队列结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> &#123;</span></span><br><span class="line">    PNODE Front, Rear;        <span class="comment">// 队列头，尾指针</span></span><br><span class="line">&#125; Queue, *PQueue;</span><br></pre></td></tr></table></figure>
+<h3 id="1-初始化队列"><a href="#1-初始化队列" class="headerlink" title="1. 初始化队列"></a>1. 初始化队列</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化队列 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 动态创建头结点，使队头，队尾指向该结点</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front = <span class="built_in">queue</span>-&gt;Rear = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 头结点相当于哨兵结点的作用，不存储数据（区别于首结点）</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">queue</span>-&gt;Front == <span class="literal">NULL</span>) &#123;        <span class="comment">// 判断内存是否分配成功</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"创建队列，无法分配所需内存..."</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front-&gt;Next = <span class="literal">NULL</span>;    <span class="comment">// 初始队列头结点指针指向为空</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"初始化队列成功!\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-入队"><a href="#2-入队" class="headerlink" title="2.入队"></a>2.入队</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 入队,从队列尾部插入数据 val</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(PQueue <span class="built_in">queue</span>,<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 创建一个新结点用于存放插入的元素</span></span><br><span class="line">    PNODE P = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));    </span><br><span class="line">    <span class="keyword">if</span> (P == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"内存分配失败，无法插入数据%d..."</span>, val);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    P-&gt;Element = val;    	<span class="comment">// 把要插入的数据放到结点数据域</span></span><br><span class="line">    P-&gt;Next = <span class="literal">NULL</span>;        	<span class="comment">// 新结点指针指向为空</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Rear-&gt;Next = P;  <span class="comment">// 使上一个队列尾部的结点指针指向新建的结点</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Rear = P;    	<span class="comment">// 更新队尾指针，使其指向队列最后的结点</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"入队成功, 入队元素: %d\n"</span>, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-出队"><a href="#3-出队" class="headerlink" title="3. 出队"></a>3. 出队</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 出队, 从队列的首结点开始出队</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">if</span> (IsEmptyQueue(<span class="built_in">queue</span>)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"队列已经空，无法出队!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    PNODE  P= <span class="built_in">queue</span>-&gt;Front-&gt;Next;    	<span class="comment">// 临时指针</span></span><br><span class="line">    <span class="keyword">int</span> val = P-&gt;Element;    			<span class="comment">// 保存其值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"出队成功, 出队元素: %d"</span>, val);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front-&gt;Next = P-&gt;Next;    	<span class="comment">// 更新头结点</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 没有看懂这一步 </span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">queue</span>-&gt;Rear == P)</span><br><span class="line">        <span class="built_in">queue</span>-&gt;Rear = <span class="built_in">queue</span>-&gt;Front;</span><br><span class="line">        </span><br><span class="line">    <span class="built_in">free</span>(P);    	<span class="comment">// 释放头队列</span></span><br><span class="line">    P = <span class="literal">NULL</span>;    	<span class="comment">// 防止产生野指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-遍历队列"><a href="#4-遍历队列" class="headerlink" title="4. 遍历队列"></a>4. 遍历队列</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历队列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraverseQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (IsEmptyQueue(<span class="built_in">queue</span>)) &#123;</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;     </span><br><span class="line">	   </span><br><span class="line">    PNODE P = <span class="built_in">queue</span>-&gt;Front-&gt;Next;    <span class="comment">// 从队列首结点开始遍历(非头结点，注意区分)</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"遍历队列结果为："</span>);</span><br><span class="line">    <span class="keyword">while</span> (P != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, P-&gt;Element);</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-删除整个队列，包括头结点"><a href="#5-删除整个队列，包括头结点" class="headerlink" title="5. 删除整个队列，包括头结点"></a>5. 删除整个队列，包括头结点</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除整个队列，包括头结点</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 从头结点开始删除</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">queue</span>-&gt;Front != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">queue</span>-&gt;Rear = <span class="built_in">queue</span>-&gt;Front-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>(<span class="built_in">queue</span>-&gt;Front);</span><br><span class="line">        <span class="built_in">queue</span>-&gt;Front = <span class="built_in">queue</span>-&gt;Rear;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"摧毁队列成功!\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-清空队列-不包括头结点"><a href="#6-清空队列-不包括头结点" class="headerlink" title="6. 清空队列(不包括头结点)"></a>6. 清空队列(不包括头结点)</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 清空队列, 最后只剩下队头,队尾指针指向头结点,头结点没有删除</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">    PNODE P = <span class="built_in">queue</span>-&gt;Front-&gt;Next;   <span class="comment">// 临时指针</span></span><br><span class="line">    PNODE Q = <span class="literal">NULL</span>;        			<span class="comment">// 临时指针</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Rear = <span class="built_in">queue</span>-&gt;Front;     <span class="comment">// 使队尾指针指向头结点</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使队头指针的 Next指向NULL </span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front-&gt;Next = <span class="literal">NULL</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从首结点开始清空,利用 P和 Q 清理后向后移动 </span></span><br><span class="line">    <span class="keyword">while</span> (P != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        Q = P;</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>(Q);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"清空队列成功!\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-完整代码"><a href="#7-完整代码" class="headerlink" title="7. 完整代码"></a>7. 完整代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 队列的单链表实现</span></span><br><span class="line"><span class="comment">// 头结点：哨兵作用，不存放数据，用来初始化队列时使队头队尾指向的地方</span></span><br><span class="line"><span class="comment">// 首结点：头结点后第一个结点，存放数据</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Elementype;        <span class="comment">// 定义数据类型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义结点结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    Elementype Element;        <span class="comment">// 数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> * <span class="title">Next</span>;</span></span><br><span class="line">&#125;NODE, *PNODE;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义队列结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> &#123;</span></span><br><span class="line">    PNODE Front, Rear;        <span class="comment">// 队列头，尾指针</span></span><br><span class="line">&#125; Queue, *PQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化队列 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 动态创建头结点，使队头，队尾指向该结点</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front = <span class="built_in">queue</span>-&gt;Rear = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 头结点相当于哨兵结点的作用，不存储数据（区别于首结点）</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">queue</span>-&gt;Front == <span class="literal">NULL</span>) &#123;        <span class="comment">// 判断内存是否分配成功</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"创建队列，无法分配所需内存..."</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front-&gt;Next = <span class="literal">NULL</span>;    <span class="comment">// 初始队列头结点指针指向为空</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"初始化队列成功!\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义判断队列是否为空函数</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsEmptyQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 如果队头 == 队尾,即为空 </span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">queue</span>-&gt;Front == <span class="built_in">queue</span>-&gt;Rear) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"队列为空!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">//         printf("队列不为空!\n");</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 入队,从队列尾部插入数据 val</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(PQueue <span class="built_in">queue</span>,<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 创建一个新结点用于存放插入的元素</span></span><br><span class="line">    PNODE P = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));    </span><br><span class="line">    <span class="keyword">if</span> (P == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"内存分配失败，无法插入数据%d..."</span>, val);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    P-&gt;Element = val;    	<span class="comment">// 把要插入的数据放到结点数据域</span></span><br><span class="line">    P-&gt;Next = <span class="literal">NULL</span>;        	<span class="comment">// 新结点指针指向为空</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Rear-&gt;Next = P;  <span class="comment">// 使上一个队列尾部的结点指针指向新建的结点</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Rear = P;    	<span class="comment">// 更新队尾指针，使其指向队列最后的结点</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"入队成功, 入队元素: %d\n"</span>, val);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 出队, 从队列的首结点开始出队</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">if</span> (IsEmptyQueue(<span class="built_in">queue</span>)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"队列已经空，无法出队!\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    PNODE  P= <span class="built_in">queue</span>-&gt;Front-&gt;Next;    	<span class="comment">// 临时指针</span></span><br><span class="line">    <span class="keyword">int</span> val = P-&gt;Element;    			<span class="comment">// 保存其值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"出队成功, 出队元素: %d"</span>, val);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front-&gt;Next = P-&gt;Next;    	<span class="comment">// 更新头结点</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 没有看懂这一步 </span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">queue</span>-&gt;Rear == P)</span><br><span class="line">        <span class="built_in">queue</span>-&gt;Rear = <span class="built_in">queue</span>-&gt;Front;</span><br><span class="line">        </span><br><span class="line">    <span class="built_in">free</span>(P);    	<span class="comment">// 释放头队列</span></span><br><span class="line">    P = <span class="literal">NULL</span>;    	<span class="comment">// 防止产生野指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历队列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraverseQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (IsEmptyQueue(<span class="built_in">queue</span>)) &#123;</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;     </span><br><span class="line">	   </span><br><span class="line">    PNODE P = <span class="built_in">queue</span>-&gt;Front-&gt;Next;    <span class="comment">// 从队列首结点开始遍历(非头结点，注意区分)</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"遍历队列结果为："</span>);</span><br><span class="line">    <span class="keyword">while</span> (P != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, P-&gt;Element);</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除整个队列，包括头结点</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 从头结点开始删除</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">queue</span>-&gt;Front != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">queue</span>-&gt;Rear = <span class="built_in">queue</span>-&gt;Front-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>(<span class="built_in">queue</span>-&gt;Front);</span><br><span class="line">        <span class="built_in">queue</span>-&gt;Front = <span class="built_in">queue</span>-&gt;Rear;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"摧毁队列成功!\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 清空队列, 最后只剩下队头,队尾指针指向头结点,头结点没有删除</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearQueue</span><span class="params">(PQueue <span class="built_in">queue</span>)</span> </span>&#123;</span><br><span class="line">    PNODE P = <span class="built_in">queue</span>-&gt;Front-&gt;Next;   <span class="comment">// 临时指针</span></span><br><span class="line">    PNODE Q = <span class="literal">NULL</span>;        			<span class="comment">// 临时指针</span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Rear = <span class="built_in">queue</span>-&gt;Front;     <span class="comment">// 使队尾指针指向头结点</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 使队头指针的 Next指向NULL </span></span><br><span class="line">    <span class="built_in">queue</span>-&gt;Front-&gt;Next = <span class="literal">NULL</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从首结点开始清空,利用 P和 Q 清理后向后移动 </span></span><br><span class="line">    <span class="keyword">while</span> (P != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        Q = P;</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>(Q);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"清空队列成功!\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val = <span class="number">0</span>;    			<span class="comment">// 定义临时变量</span></span><br><span class="line">    Queue <span class="built_in">queue</span>;    			<span class="comment">// 创建队列变量</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 调用初始化队列函数</span></span><br><span class="line">    InitQueue(&amp;<span class="built_in">queue</span>);  </span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 调用判断队列是否为空函数  		</span></span><br><span class="line">    IsEmptyQueue(&amp;<span class="built_in">queue</span>);    	</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 入队 </span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    enQueue(&amp;<span class="built_in">queue</span>, <span class="number">100</span>);</span><br><span class="line">    enQueue(&amp;<span class="built_in">queue</span>, <span class="number">200</span>);</span><br><span class="line">    enQueue(&amp;<span class="built_in">queue</span>, <span class="number">300</span>);</span><br><span class="line">    enQueue(&amp;<span class="built_in">queue</span>, <span class="number">400</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">if</span> (!IsEmptyQueue(&amp;<span class="built_in">queue</span>)) </span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">"队列不为空!\n"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历队列 </span></span><br><span class="line">    TraverseQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 出队</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    deQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">    TraverseQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 清空队列 </span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    ClearQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">    IsEmptyQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 摧毁队列</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    DestroyQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="打印结果-1"><a href="#打印结果-1" class="headerlink" title="打印结果"></a>打印结果</h3><p><img src="/images/数据结构/基本数据结构/栈和队列/队列_链表_运行结果.png" alt="数组实现队列"></p>
+<hr>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p>​    数据结构 — 严蔚敏</p>
+<p>​    数据结构 — 田鲁怀</p>
+<p>​    <a href="https://www.cnblogs.com/maluning/p/7979456.html" target="_blank" rel="noopener">C语言描述队列的实现及操作（链表实现）</a></p>
+<p>​    <a href="https://blog.csdn.net/juanqinyang/article/details/51354293" target="_blank" rel="noopener">数据结构-队列(queue)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/08/数据结构---栈/" rel="next" title="数据结构---栈">
+                <i class="fa fa-chevron-left"></i> 数据结构---栈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/10/数据结构---树/" rel="prev" title="数据结构---树">
+                数据结构---树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAyOS8xOTU3NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
+            
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
+              <p class="site-description motion-element" itemprop="description">打破幻想,立足现实,脚踏实地,自强不息</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sladning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1353565771@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-队列的定义"><span class="nav-number">1.</span> <span class="nav-text">一. 队列的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.0.2.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">1.0.3.</span> <span class="nav-text">基本操作</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-数组实现队列"><span class="nav-number">2.</span> <span class="nav-text">二. 数组实现队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通队列"><span class="nav-number">2.0.1.</span> <span class="nav-text">普通队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#入队出队操作"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">入队出队操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环数组"><span class="nav-number">2.0.2.</span> <span class="nav-text">循环数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">图解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在数组中空出一个位置，用以标记队列是否已满"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">在数组中空出一个位置，用以标记队列是否已满</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.0.3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-入队"><span class="nav-number">2.0.4.</span> <span class="nav-text">1. 入队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-出队"><span class="nav-number">2.0.5.</span> <span class="nav-text">2. 出队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-遍历队列"><span class="nav-number">2.0.6.</span> <span class="nav-text">3. 遍历队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-完整代码"><span class="nav-number">2.0.7.</span> <span class="nav-text">4. 完整代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印结果"><span class="nav-number">2.0.8.</span> <span class="nav-text">打印结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-链表实现队列"><span class="nav-number">3.</span> <span class="nav-text">三. 链表实现队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解-1"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">图解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-初始化队列"><span class="nav-number">3.0.2.</span> <span class="nav-text">1. 初始化队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-入队"><span class="nav-number">3.0.3.</span> <span class="nav-text">2.入队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-出队"><span class="nav-number">3.0.4.</span> <span class="nav-text">3. 出队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-遍历队列"><span class="nav-number">3.0.5.</span> <span class="nav-text">4. 遍历队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-删除整个队列，包括头结点"><span class="nav-number">3.0.6.</span> <span class="nav-text">5. 删除整个队列，包括头结点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-清空队列-不包括头结点"><span class="nav-number">3.0.7.</span> <span class="nav-text">6. 清空队列(不包括头结点)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-完整代码"><span class="nav-number">3.0.8.</span> <span class="nav-text">7. 完整代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印结果-1"><span class="nav-number">3.0.9.</span> <span class="nav-text">打印结果</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">3.0.9.0.1.</span> <span class="nav-text">参考文章</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">115k</span>
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+ 

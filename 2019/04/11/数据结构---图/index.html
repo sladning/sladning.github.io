@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Audrey_Hepburn.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据结构,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="sladning" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一. 图的定义图 (Graph) 是图形结构的简称，它是一种复杂的非线性数据结构，一个图 G 是由两个集合 V(G)和 E(G) 组成的 , 1. 图的二元组定义 : G(V,E) G表示一个图 V是图G中的 顶点的集合 E是图G中 边的集合">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构---图">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/数据结构---图/index.html">
+<meta property="og:site_name" content="sladning">
+<meta property="og:description" content="一. 图的定义图 (Graph) 是图形结构的简称，它是一种复杂的非线性数据结构，一个图 G 是由两个集合 V(G)和 E(G) 组成的 , 1. 图的二元组定义 : G(V,E) G表示一个图 V是图G中的 顶点的集合 E是图G中 边的集合">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/图的示例.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/子图示例.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/连通图示例.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/带权图示例.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/无向图邻接矩阵.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/有向图邻接矩阵.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/有向网图邻接矩阵.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/无向图邻接表.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/带权图邻接表.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/深度优先遍历.png">
+<meta property="og:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/广度优先遍历.png">
+<meta property="og:updated_time" content="2019-04-11T02:31:43.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构---图">
+<meta name="twitter:description" content="一. 图的定义图 (Graph) 是图形结构的简称，它是一种复杂的非线性数据结构，一个图 G 是由两个集合 V(G)和 E(G) 组成的 , 1. 图的二元组定义 : G(V,E) G表示一个图 V是图G中的 顶点的集合 E是图G中 边的集合">
+<meta name="twitter:image" content="http://yoursite.com/images/数据结构/基本数据结构/图/图的示例.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/11/数据结构---图/">
+
+
+
+
+
+  <title>数据结构---图 | sladning</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+  <!-- 更改动态背景-->
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <!-- 添加自己的github账号的进入 -->
+      <a href="https://github.com/sladning"><img style="position: absolute; top: 0; left: 0; border: 0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sladning</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/数据结构---图/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刻在生命里的坚强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Audrey_Hepburn.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sladning">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构---图</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-11T08:24:53+08:00">
+                2019-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-图的定义"><a href="#一-图的定义" class="headerlink" title="一. 图的定义"></a>一. 图的定义</h1><p><strong>图 (Graph)</strong> 是图形结构的简称，它是一种复杂的<strong>非线性数据结构</strong>，一个图 G 是<strong>由两个集合 V(G)和 E(G) 组成的</strong> ,</p>
+<h3 id="1-图的二元组定义-G-V-E"><a href="#1-图的二元组定义-G-V-E" class="headerlink" title="1. 图的二元组定义 : G(V,E)"></a>1. 图的二元组定义 : G(V,E)</h3><ul>
+<li>G表示一个图</li>
+<li>V是图G中的 <strong>顶点的集合</strong></li>
+<li>E是图G中 <strong>边的集合</strong></li>
+</ul>
+<a id="more"></a>
+<p><strong>顶点(Vertex)</strong> : 图中的数据元素 (线性表中我们把数据元素叫元素，树中将数据元素叫结点)</p>
+<p><strong>边(Edge)</strong> : 顶点之间的逻辑关系用边来表示，边集可以是空的</p>
+<h3 id="2-无向图-如图G2"><a href="#2-无向图-如图G2" class="headerlink" title="2. 无向图 (如图G2)"></a>2. 无向图 (如图G2)</h3><ul>
+<li><p><strong>无向边(Edge)</strong>：顶点V1到V2之间的边没有方向，则称这条边为无向边。</p>
+</li>
+<li><p><strong>无向图(Undirected graphs)</strong>：图中任意两个顶点之间的边都是无向边。(V1, V2) = (V2, V1)</p>
+</li>
+</ul>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例:"></a>范例:</h4><p>对于无向图G2来说，G2 = (V, E)</p>
+<ul>
+<li>顶点集合 <strong>V = { V1, V2, V3, V4 }</strong>  </li>
+<li>边集合 <strong>E = { (V1, V2), (V1, V4), (V2, V5), (V2, V3), (V3, V4), (V3, V5) }</strong></li>
+</ul>
+<h3 id="3-有向图-如图G1"><a href="#3-有向图-如图G1" class="headerlink" title="3. 有向图 (如图G1)"></a>3. 有向图 (如图G1)</h3><p><strong>有向边</strong> : 若从顶点 V1 到 V2 的边有方向，则称这条边为有向边，也称弧(Arc)。用 <strong>&lt;V1,V2&gt;</strong> 表示，V1 为弧尾(Tail)，V2 为弧头 (Head).&lt;V1，V2&gt; ≠ &lt;V2，V1&gt;</p>
+<p><strong>有向图(Directed graphs)</strong> : 图中任意两个顶点之间的边都是有向边</p>
+<blockquote>
+<p><strong>注意：无向边用“()”，而有向边用“&lt; &gt;”表示。</strong></p>
+</blockquote>
+<h4 id="图的示例"><a href="#图的示例" class="headerlink" title="图的示例"></a>图的示例</h4><p><img src="/images/数据结构/基本数据结构/图/图的示例.png" alt="图的示例"></p>
+<h1 id="二-图的基本术语"><a href="#二-图的基本术语" class="headerlink" title="二. 图的基本术语"></a>二. 图的基本术语</h1><h3 id="1-端点和邻接点"><a href="#1-端点和邻接点" class="headerlink" title="1. 端点和邻接点"></a>1. 端点和邻接点</h3><h4 id="无向图中"><a href="#无向图中" class="headerlink" title="无向图中"></a>无向图中</h4><p>若存在一条边 <strong>(V~i~ , V~j~)</strong> ,则称 V~i~  和 V~j~ 为此边的两个<strong>端点</strong>,并称为顶点 V~i~  和 V~j~ 互为<strong>邻接点</strong></p>
+<h4 id="有向图中"><a href="#有向图中" class="headerlink" title="有向图中"></a>有向图中</h4><p>若存在一条有向边 <strong>&lt;V~i~ , V~j~&gt;</strong> ,</p>
+<ul>
+<li>称此边是顶点 V~i~ 的一条<strong>出边</strong> , 顶点 V~j~ 的一条<strong>入边</strong> </li>
+<li>称 V~i~ 为此边的起点, 称 V~j~ 为此边的终点</li>
+<li>V~i~ 是 V~j~ 的出边邻接点, 点 V~j~ 是 V~i~ 的入边邻接点, <strong>V~i~ 和 V~j~ 互为邻接点</strong></li>
+</ul>
+<h3 id="2-顶点的度-入度和出度"><a href="#2-顶点的度-入度和出度" class="headerlink" title="2. 顶点的度, 入度和出度"></a>2. 顶点的度, 入度和出度</h3><h4 id="无向图中-1"><a href="#无向图中-1" class="headerlink" title="无向图中"></a>无向图中</h4><p>与顶点 V 相邻的边数称为该顶点的 <strong>度</strong> , 记为 D(v) </p>
+<blockquote>
+<p>图 G2 中, V3 的度为 3</p>
+</blockquote>
+<h4 id="有向图中-1"><a href="#有向图中-1" class="headerlink" title="有向图中"></a>有向图中</h4><ul>
+<li><strong>入度</strong> : 与顶点 V <strong>为终点的弧的数目</strong> 称为顶点 V 的入度</li>
+<li><strong>出度</strong> : 与顶点 V <strong>为起点的弧的数目</strong> 称为顶点 V 的入度</li>
+<li><strong>度</strong> : 入度和出度的和</li>
+</ul>
+<blockquote>
+<p>图 G1 中, V1的入度为1, 出度为2, 度为3</p>
+</blockquote>
+<h3 id="3-完全图-稠密图和稀疏图"><a href="#3-完全图-稠密图和稀疏图" class="headerlink" title="3. 完全图, 稠密图和稀疏图"></a>3. 完全图, 稠密图和稀疏图</h3><p><strong>无向完全图</strong>：无向图中，任意两个顶点之间都存在边。</p>
+<p><strong>有向完全图</strong>：有向图中，任意两个顶点之间都存在方向互为相反的两条弧。</p>
+<p><strong>稀疏图</strong>：有很少条边</p>
+<p><strong>稠密图</strong>：有很多条边, 接近完全图</p>
+<h3 id="4-子图-Subgraph"><a href="#4-子图-Subgraph" class="headerlink" title="4. 子图(Subgraph)"></a>4. 子图(Subgraph)</h3><p>假设 G = (V,{E}) 和 G‘ = (V’,{E’}) , 如果 V’ 包含于 V 且 E’ 包含于 E ，则称G’为G的子图</p>
+<p><img src="/images/数据结构/基本数据结构/图/子图示例.png" alt="子图示例"></p>
+<h3 id="5-路径-回路和路径长度"><a href="#5-路径-回路和路径长度" class="headerlink" title="5. 路径, 回路和路径长度"></a>5. 路径, 回路和路径长度</h3><p>如果G是有向图, 则路径也是有向的</p>
+<p><strong>路径长度</strong> : 一条路径上所经过的边或弧的数目</p>
+<p><strong>回路(环)</strong> : 第一个顶点和最后一个顶点 <strong>相同</strong> 的路径</p>
+<h3 id="6-连通-连通分量和连通图"><a href="#6-连通-连通分量和连通图" class="headerlink" title="6. 连通, 连通分量和连通图"></a>6. 连通, 连通分量和连通图</h3><h4 id="在无向图中"><a href="#在无向图中" class="headerlink" title="在无向图中"></a>在无向图中</h4><p><strong>连通</strong> : 如果从顶点 A 到顶点 B 有路径</p>
+<p><strong>连通图</strong> : 图中任意两个顶点都是连通的</p>
+<p><strong>连通分量</strong>：无向图中的极大连通子图。(子图必须是连通的且含有极大顶点数)。图1有两个连通分量</p>
+<p><img src="/images/数据结构/基本数据结构/图/连通图示例.png" alt="连通图示例"></p>
+<h3 id="7-带权图和网"><a href="#7-带权图和网" class="headerlink" title="7. 带权图和网"></a>7. 带权图和网</h3><p><strong>权(Weight)</strong> : 与图的边或弧相关的数</p>
+<p><strong>网</strong> : 每条边都带权的图称为带权图或网</p>
+<p><img src="/images/数据结构/基本数据结构/图/带权图示例.png" alt="带权图图示例"></p>
+<h1 id="三-图的存储结构"><a href="#三-图的存储结构" class="headerlink" title="三. 图的存储结构"></a>三. 图的存储结构</h1><h3 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1. 邻接矩阵"></a>1. 邻接矩阵</h3><p>用两个数组</p>
+<ul>
+<li>一个一维数组存储图中顶点信息</li>
+<li>一个二维数组（称为邻接矩阵）存储图中的边或弧的信息</li>
+</ul>
+<h4 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h4><p><img src="/images/数据结构/基本数据结构/图/无向图邻接矩阵.png" alt="带权图图示例"></p>
+<h4 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h4><p><img src="/images/数据结构/基本数据结构/图/有向图邻接矩阵.png" alt="带权图图示例"></p>
+<h4 id="有向网图邻接矩阵"><a href="#有向网图邻接矩阵" class="headerlink" title="有向网图邻接矩阵"></a>有向网图邻接矩阵</h4><p><img src="/images/数据结构/基本数据结构/图/有向网图邻接矩阵.png" alt="带权图图示例"></p>
+<h3 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2. 邻接表"></a>2. 邻接表</h3><p>​     对于<strong>边数相对顶点较少的图</strong>，邻接矩阵是存在对存储空间的极大浪费的，特别是稀疏有向图。所以可以考虑用链表来按需存储。</p>
+<p><strong>邻接表</strong> : 数组与链表相结合的存储方法</p>
+<h4 id="无向图-1"><a href="#无向图-1" class="headerlink" title="无向图"></a>无向图</h4><p>有向图则类似</p>
+<p><img src="/images/数据结构/基本数据结构/图/无向图邻接表.png" alt="无向图邻接表"></p>
+<h4 id="带权图"><a href="#带权图" class="headerlink" title="带权图"></a>带权图</h4><p><img src="/images/数据结构/基本数据结构/图/带权图邻接表.png" alt="带权图邻接表"></p>
+<h1 id="四-图的遍历"><a href="#四-图的遍历" class="headerlink" title="四. 图的遍历"></a>四. 图的遍历</h1><p>​    从任意指定的某个顶点 (称此为初始点) 出发，按照一定的搜索方法 <strong>依次访问图中所有顶点，且每个顶点仅被访问一次</strong></p>
+<p>根据搜索路径不同, 图的遍历方法有两种</p>
+<ul>
+<li>深度优先搜索遍历 (DFS)</li>
+<li>广度优先搜索遍历 (BFS)</li>
+</ul>
+<blockquote>
+<p>这两种方法对无向图和有向图都适用</p>
+</blockquote>
+<h3 id="1-深度优先遍历-DFS"><a href="#1-深度优先遍历-DFS" class="headerlink" title="1. 深度优先遍历 (DFS)"></a>1. 深度优先遍历 (DFS)</h3><p>类似于树的先序遍历, 是树的先序遍历的推广</p>
+<ol>
+<li>首先访问初始出发点 V0，并<strong>将其标记设置为已访问</strong></li>
+<li>然后任选一个<strong>与 V0 邻接，且没有被访问的邻接点 V1</strong> 作为新的出发点，访问 V1 之后，<strong>将其标记设置为已访问</strong></li>
+<li>再以 V1 为新的出发点, 继续进行深度优先搜索</li>
+<li>重复上述过程，若遇到一个所有邻接点均未被访问过的节点，则回到以访问节点序列中，最后一个还没有被访问的邻接点的顶点, 再从该顶点出发继续进行深度优先搜索，直到图中的所有顶点都被访问过，搜索结束</li>
+</ol>
+<p><img src="/images/数据结构/基本数据结构/图/深度优先遍历.png" alt="深度优先遍历"></p>
+<h3 id="1-深度优先遍历-DFS-1"><a href="#1-深度优先遍历-DFS-1" class="headerlink" title="1. 深度优先遍历 (DFS)"></a>1. 深度优先遍历 (DFS)</h3><p>类似于树的层次遍历, 是树的层次遍历的推广</p>
+<p><img src="/images/数据结构/基本数据结构/图/广度优先遍历.png" alt="广度优先遍历"></p>
+<hr>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p>​    数据结构 — 严蔚敏</p>
+<p>​    数据结构 — 田鲁怀</p>
+<p>​    <a href="https://blog.csdn.net/Ontheroad_/article/details/72739380" target="_blank" rel="noopener">数据结构-图-知识点总结</a></p>
+<p>​    <a href="https://blog.csdn.net/daijin888888/article/details/73177325" target="_blank" rel="noopener">数据结构——图</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/10/数据结构---前序,中序,后序遍历(递归,非递归)/" rel="next" title="数据结构---二叉树的遍历">
+                <i class="fa fa-chevron-left"></i> 数据结构---二叉树的遍历
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAyOS8xOTU3NQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Audrey_Hepburn.jpg" alt="刻在生命里的坚强">
+            
+              <p class="site-author-name" itemprop="name">刻在生命里的坚强</p>
+              <p class="site-description motion-element" itemprop="description">打破幻想,立足现实,脚踏实地,自强不息</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sladning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1353565771@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-图的定义"><span class="nav-number">1.</span> <span class="nav-text">一. 图的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-图的二元组定义-G-V-E"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 图的二元组定义 : G(V,E)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-无向图-如图G2"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 无向图 (如图G2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范例"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">范例:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有向图-如图G1"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 有向图 (如图G1)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图的示例"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">图的示例</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-图的基本术语"><span class="nav-number">2.</span> <span class="nav-text">二. 图的基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-端点和邻接点"><span class="nav-number">2.0.1.</span> <span class="nav-text">1. 端点和邻接点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无向图中"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">无向图中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有向图中"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">有向图中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-顶点的度-入度和出度"><span class="nav-number">2.0.2.</span> <span class="nav-text">2. 顶点的度, 入度和出度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无向图中-1"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">无向图中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有向图中-1"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">有向图中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-完全图-稠密图和稀疏图"><span class="nav-number">2.0.3.</span> <span class="nav-text">3. 完全图, 稠密图和稀疏图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-子图-Subgraph"><span class="nav-number">2.0.4.</span> <span class="nav-text">4. 子图(Subgraph)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-路径-回路和路径长度"><span class="nav-number">2.0.5.</span> <span class="nav-text">5. 路径, 回路和路径长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-连通-连通分量和连通图"><span class="nav-number">2.0.6.</span> <span class="nav-text">6. 连通, 连通分量和连通图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在无向图中"><span class="nav-number">2.0.6.1.</span> <span class="nav-text">在无向图中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-带权图和网"><span class="nav-number">2.0.7.</span> <span class="nav-text">7. 带权图和网</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-图的存储结构"><span class="nav-number">3.</span> <span class="nav-text">三. 图的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-邻接矩阵"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. 邻接矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无向图"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">无向图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有向图"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">有向图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有向网图邻接矩阵"><span class="nav-number">3.0.1.3.</span> <span class="nav-text">有向网图邻接矩阵</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-邻接表"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. 邻接表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无向图-1"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">无向图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带权图"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">带权图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-图的遍历"><span class="nav-number">4.</span> <span class="nav-text">四. 图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-深度优先遍历-DFS"><span class="nav-number">4.0.1.</span> <span class="nav-text">1. 深度优先遍历 (DFS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-深度优先遍历-DFS-1"><span class="nav-number">4.0.2.</span> <span class="nav-text">1. 深度优先遍历 (DFS)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">4.0.2.0.1.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刻在生命里的坚强</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">115k</span>
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+  
+</body>
+  <!-- 更改动态背景 -->
+  <script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</html>
+
+ 
